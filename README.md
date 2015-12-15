@@ -1,11 +1,10 @@
 # TrackingCode
-A place to keep all the tracking code.
+A place to keep all the tracking code, tracking notebook, and instructions to use for cms HI group. There are a number of different major
+issues corresponding to different folders:
 
-## PileupStudies branch
+- HIRun2015Ana, to make tracking performance plots, tracking efficiency correction factors for mostly MB samples
+- pileUpFilters, everything you need for "pileUp filter" in run2 pp analysis 
 
-Everything you need for pileup study can be found in this branch. There are a few important folders:
-- README.md, short instruction on how to use the pileUpFilters
-- pileUpFilter, the subsystem that can be run on lxplus, including python config file and source code
-- notebook, the full detail documentation of pielup studies and performance plots
-- files, input of the notebook
-- macros, script to produce the performance plots
+
+
+
