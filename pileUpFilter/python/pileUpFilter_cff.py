@@ -1,8 +1,8 @@
 import FWCore.ParameterSet.Config as cms
 
-import pileUpCorrector.pileUpFilter.pileUpFilter_cfi
+import TrackingCode.pileUpFilter.pileUpFilter_cfi
 
-pileUpFilter_default = pileUpCorrector.pileUpFilter.pileUpFilter_cfi.pileupVertexFilter.clone() 
+pileUpFilter_default = TrackingCode.pileUpFilter.pileUpFilter_cfi.pileupVertexFilter.clone() 
 
 ### define your own filter ###
 
