@@ -7,7 +7,7 @@ This Repo can help you obtain the tracking performance plots and tracking effici
 - Choose the corresponding sample (no GlobalTag is needed)
 - cmsRun 
 
-The output is a few 2D and 3D histograms in default. 
+The output is a few 2D and 3D histograms in default. Option of filling Ntuple is also available in config. 
 
 - Go to /macros/
 - run <pre><code> root -l plotHist2D.C </pre></code> for performance plots with overall centrality 
