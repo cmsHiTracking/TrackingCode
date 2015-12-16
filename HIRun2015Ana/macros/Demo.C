@@ -9,7 +9,7 @@ similarly for 2D case.
 
 void Demo(){
 	
-	TrackCorrector3D testload("../rootfile/PbPb_eff_MC_v1.root");//efficiency in 2D and 3D histograms
+	TrackCorrector3D testload("../histo/PbPb_eff_MC_v1.root");//efficiency in 2D and 3D histograms
 	testload.load("HITrackCorrections");//name of the folder
 
 	//double getWeigt(pt, eta, centralitybin)
