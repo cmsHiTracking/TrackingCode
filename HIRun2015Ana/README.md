@@ -10,8 +10,8 @@ This Repo can help you obtain the tracking performance plots and tracking effici
 The output is a few 2D and 3D histograms in default. 
 
 - Go to /macros/
-- run <pre><code> root -l plotHist2D.C <pre><code> for performance plots with overall centrality 
-- run <pre><code> root -l plotHist3D.C <pre><code> for performance plots with different centrality 
+- run <pre><code> root -l plotHist2D.C </pre></code> for performance plots with overall centrality 
+- run <pre><code> root -l plotHist3D.C </pre></code> for performance plots with different centrality 
 - See <strong> Demo.C </strong> for correction table
 
 
