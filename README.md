@@ -9,7 +9,8 @@ issues corresponding to different folders:
 
 To get started:
 
-- Go to /CMSSW_VERSIONS/src/
+- do <pre><code> cd CMSSW_75X/src </pre></code>
+- do <pre><code> cmsenv </pre></code>
 - do <pre><code> git clone https://github.com/cmsHiTracking/TrackingCode.git </pre></code>
 - do <pre><code> scram b -j4 </pre></code>
 
