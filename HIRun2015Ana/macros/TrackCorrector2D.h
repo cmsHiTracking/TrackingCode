@@ -15,7 +15,7 @@ class TrackCorrector2D
     TrackCorrector2D();
     TrackCorrector2D( std::string fileName );
     void load(std::string dirName);
-    double getWeight( double pT, double eta, double occ );
+    double getWeight( double pT, double eta, double occ, string option );
     double getWeightNoFake( double pT, double eta, double occ );
     double getEvtFakeRatepPb( double pT, double mul, double occ );
     double getEvtFakeRatePbp( double pT, double mul, double occ );
@@ -126,7 +126,7 @@ TrackCorrector2D::~TrackCorrector2D()
 }
 
 double
-TrackCorrector2D::getWeight(double pT, double eta, double occ ) 
+TrackCorrector2D::getWeight(double pT, double eta, double occ, string option = "" ) 
 {
 
   double eff = reff2D->GetBinContent(
@@ -147,7 +147,13 @@ TrackCorrector2D::getWeight(double pT, double eta, double occ )
               rmul2D->GetYaxis()->FindBin(pT));
   if( mul >= 0.9999 || mul <= 0.0001) mul = 0;
 
-  return (1. - fak ) * ( 1. - sec ) / eff  / (1. + mul );
+  if( option == "eff" ) return eff;
+  else if( option == "fak" ) return fak;
+  else if( option == "sec" ) return sec;
+  else if( option == "mul" ) return mul;
+  else{
+    return (1. - fak ) * ( 1. - sec ) / eff  / (1. + mul );
+  }
 }
 
 double
