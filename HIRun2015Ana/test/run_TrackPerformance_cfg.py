@@ -64,7 +64,9 @@ process.HITrackCorrections.dzErrMax = 3.0
 process.HITrackCorrections.ptErrMax = 0.1
 process.HITrackCorrections.nhitsMin = 11
 process.HITrackCorrections.chi2nMax = 0.15
-### 
+# vertex reweight parameters
+process.HITrackCorrections.vtxWeightParameters = cms.vdouble(0.0306789, 0.427748, 5.16555, 0.0228019, -0.02049, 7.01258 )
+###
 
 from Configuration.AlCa.GlobalTag import GlobalTag
 process.GlobalTag = GlobalTag(process.GlobalTag, '75X_mcRun2_HeavyIon_v11', '')
