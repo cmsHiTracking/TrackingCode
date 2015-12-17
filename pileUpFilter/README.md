@@ -12,9 +12,12 @@ See details in pileUpFilter/notebook/pileUpFilterMustRead.ipynb
 
 ## Instructions to add pileUp filter
 
-- go to CMSSW_versions/src directory
-- type <pre><code> git clone https://github.com/KongTu/pileUpCorrector.git </pre></code>
-- <pre><code>scram b -j4 </pre></code>
+if you haven't "git clone " the whole package, then do it now:
+
+<pre><code> git clone https://github.com/cmsHiTracking/TrackingCode.git </code></pre>
+
+assuming you have the <strong> TrackingCode </strong> in place and compiled, then
+
 - go to your config file that runs, add the following line where you load includes 
 <pre><code> process.load("pileUpCorrector.pileUpFilter.pileUpFilter_cff") </pre></code>
 - add your filter candidate process in the <strong> cms.Path() </strong>, for example: <pre><code> process.pileUpFilter_baseCut_loose </pre></code>
