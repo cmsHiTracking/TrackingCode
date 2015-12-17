@@ -13,8 +13,8 @@ void plotCutVariables(){
 	TFile* file = new TFile("../your/directory/DATA_tree.root"); //need to overwrite
 	TFile* file1 = new TFile("../your/directory/MC_tree.root");// need to overwrite
 	
-	TTree* ana = (TTree*) file->Get("ana_PbPb/trackTree");
-	TTree* hydjet = (TTree*) file1->Get("ana_PbPb/trackTree");
+	TTree* ana = (TTree*) file->Get("yourFolderName/trackTree");
+	TTree* hydjet = (TTree*) file1->Get("yourFolderName/trackTree");
 
 	vector<char*> varNames;
 	varNames.push_back( "fabs(trkPtError)/trkPt>>cut1" );
@@ -69,8 +69,8 @@ void plotCutVariables(){
 		if( i == 0 || i  == 5 || i == 6 || i == 7 ) {
 			gPad->SetLogy(1);
 		}
-		ana->Draw(varNames[i], "highPurity == 1 && (nLumi > 1 && nLumi < 17) || nLumi == 18 || (nLumi > 19 && nLumi < 70 ) ");
-		hydjet->Draw(varNames1[i], "highPurity == 1 && (nLumi > 1 && nLumi < 17) || nLumi == 18 || (nLumi > 19 && nLumi < 70 ) " );
+		ana->Draw(varNames[i], "highPurity == 1 ");
+		hydjet->Draw(varNames1[i], "highPurity == 1 " );
 
 		cut[i]->Scale( 1/(cut[i]->Integral()) );
 		cut[i]->Draw("");
@@ -78,26 +78,4 @@ void plotCutVariables(){
 		cut1[i]->Scale( 1/(cut1[i]->Integral()) );
 		cut1[i]->Draw("same");
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
