@@ -78,4 +78,11 @@ void plotCutVariables(){
 		cut1[i]->Scale( 1/(cut1[i]->Integral()) );
 		cut1[i]->Draw("same");
 	}
+
+	TLegend *w1 = new TLegend(0.75,0.75,0.87,0.87);
+	w1->SetLineColor(kWhite);
+	w1->SetFillColor(0);
+	w1->AddEntry(cut1[0], "MC", "P");
+	w1->AddEntry(cut[0], "Data", "P");
+	w1->Draw("same");
 }
