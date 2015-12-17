@@ -53,7 +53,7 @@ process.HITrackCorrections.centralitySrc = cms.InputTag("centralityBin","HFtower
 process.HITrackCorrections.trackSrc = cms.InputTag("hiGeneralTracks")
 process.HITrackCorrections.qualityString = cms.string("highPurity")
 # options
-process.HITrackCorrections.useCentrality = True
+process.HITrackCorrections.useCentrality = False
 process.HITrackCorrections.applyTrackCuts = True
 process.HITrackCorrections.fillNTuples = False
 process.HITrackCorrections.applyVertexZCut = True
