@@ -1,12 +1,17 @@
 #include "RiceStyle.h"
 
-
 using namespace std;
+
+/*
+Because the tree format output is too large to include on git, this is an example of plotting
+cut variables distribution between MC and Data. As long as the output is in Ntuple or TrackTree 
+format, input the MC and Data Ntuple in the following directory
+*/
 
 void plotCutVariables(){
 	
-	TFile* file = new TFile("../Ntuple/singleTrackTree_test.root");
-	TFile* file1 = new TFile("../Ntuple/trackTree_MC_v1.root");
+	TFile* file = new TFile("../your/directory/DATA_tree.root"); //need to overwrite
+	TFile* file1 = new TFile("../your/directory/MC_tree.root");// need to overwrite
 	
 	TTree* ana = (TTree*) file->Get("ana_PbPb/trackTree");
 	TTree* hydjet = (TTree*) file1->Get("ana_PbPb/trackTree");
