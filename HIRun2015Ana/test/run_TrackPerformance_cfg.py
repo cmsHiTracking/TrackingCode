@@ -57,6 +57,7 @@ process.HITrackCorrections.useCentrality = True
 process.HITrackCorrections.applyTrackCuts = True
 process.HITrackCorrections.fillNTuples = False
 process.HITrackCorrections.applyVertexZCut = True
+process.HITrackCorrections.doVtxReweighting = False
 # cut values
 process.HITrackCorrections.dxyErrMax = 3.0
 process.HITrackCorrections.dzErrMax = 3.0
