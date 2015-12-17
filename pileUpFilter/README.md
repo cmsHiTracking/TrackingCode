@@ -19,7 +19,7 @@ if you haven't "git clone " the whole package, then do it now:
 assuming you have the <strong> TrackingCode </strong> in place and compiled, then
 
 - go to your config file that runs, add the following line where you load includes 
-<pre><code> process.load("pileUpCorrector.pileUpFilter.pileUpFilter_cff") </pre></code>
+<pre><code> process.load("TrackingCode.pileUpFilter.pileUpFilter_cff") </pre></code>
 - add your filter candidate process in the <strong> cms.Path() </strong>, for example: <pre><code> process.pileUpFilter_baseCut_loose </pre></code>
 
 Enjoy!
