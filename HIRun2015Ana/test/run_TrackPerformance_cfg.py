@@ -35,9 +35,8 @@ process.load("SimTracker.TrackerHitAssociation.clusterTpAssociationProducer_cfi"
 process.source = cms.Source("PoolSource",
     duplicateCheckMode = cms.untracked.string("noDuplicateCheck"),
     fileNames =  cms.untracked.vstring(
-'root://xrootd3.cmsaf.mit.edu//store/user/velicanu/Hydjet_Quenched_MinBias_5020GeV_750/Hydjet_Quenched_MinBias_5020GeV_750_RECODEBUG_v0/151117_112112/0000/step3_102.root'
-#'root://xrootd3.cmsaf.mit.edu//store/user/dgulhan/PYTHIA_QCD_TuneCUETP8M1_cfi_GEN_SIM_5020GeV/PYTHIA_QCD80_TuneCUETP8M1_cfi_RECODEBUGHI_757p1/151201_113700/0000/step3_1.root'
-#'root://cmsxrootd.fnal.gov//store/user/dgulhan/PYTHIA_QCD_TuneCUETP8M1_cfi_GEN_SIM_5020GeV/Pythia8_Dijet80_pp_TuneCUETP8M1_Hydjet_MinBias_5020GeV_RECODEBUG_PrivMC/151106_130724/0000/step3_101.root'
+#'/store/user/dgulhan/PYTHIA_QCD_TuneCUETP8M1_cfi_GEN_SIM_5020GeV/Pythia8_Dijet80_pp_TuneCUETP8M1_Hydjet_MinBias_5020GeV_RECODEBUG_758_PrivMC/151217_175524/0000/step3_102.root'
+'/store/user/velicanu/Hydjet_Quenched_MinBias_5020GeV_750/Hydjet_Quenched_MinBias_5020GeV_750_RECODEBUG_v0/151117_112112/0000/step3_102.root'
 )
 )
 
@@ -52,18 +51,21 @@ process.centralityBin.nonDefaultGlauberModel = cms.string("HydjetDrum5")
 process.HITrackCorrections.centralitySrc = cms.InputTag("centralityBin","HFtowers")
 process.HITrackCorrections.trackSrc = cms.InputTag("hiGeneralTracks")
 process.HITrackCorrections.qualityString = cms.string("highPurity")
+process.HITrackCorrections.pfCandSrc = cms.untracked.InputTag("particleFlowTmp")
 # options
 process.HITrackCorrections.useCentrality = False
 process.HITrackCorrections.applyTrackCuts = True
 process.HITrackCorrections.fillNTuples = False
 process.HITrackCorrections.applyVertexZCut = True
 process.HITrackCorrections.doVtxReweighting = False
+process.HITrackCorrections.doCaloMatched = True
 # cut values
 process.HITrackCorrections.dxyErrMax = 3.0
 process.HITrackCorrections.dzErrMax = 3.0
 process.HITrackCorrections.ptErrMax = 0.1
 process.HITrackCorrections.nhitsMin = 11
 process.HITrackCorrections.chi2nMax = 0.15
+process.HITrackCorrections.reso = 2.0
 # vertex reweight parameters
 process.HITrackCorrections.vtxWeightParameters = cms.vdouble(0.0306789, 0.427748, 5.16555, 0.0228019, -0.02049, 7.01258 )
 ###

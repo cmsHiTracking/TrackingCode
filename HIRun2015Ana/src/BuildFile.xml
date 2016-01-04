@@ -11,6 +11,8 @@
 <use name="DataFormats/TrackerRecHit2D"/>
 <use name="DataFormats/SiStripDetId"/>
 <use name="DataFormats/SiPixelDetId"/>
+<use name="DataFormats/ParticleFlowCandidate"/>
+<use name="DataFormats/ParticleFlowReco"/>
 <use name="SimTracker/Records"/>
 <use name="SimTracker/TrackAssociation"/>
 <use name="CLHEP"/>

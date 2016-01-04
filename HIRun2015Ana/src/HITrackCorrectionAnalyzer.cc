@@ -36,6 +36,12 @@
 #include "SimTracker/Records/interface/TrackAssociatorRecord.h"
 #include "DataFormats/RecoCandidate/interface/TrackAssociation.h"
 
+// Particle Flow
+#include "DataFormats/ParticleFlowCandidate/interface/PFCandidate.h"
+#include "DataFormats/ParticleFlowReco/interface/PFBlock.h"
+#include "DataFormats/ParticleFlowReco/interface/PFCluster.h"
+#include "DataFormats/ParticleFlowReco/interface/PFClusterFwd.h"
+
 #include "TrackingCode/HIRun2015Ana/interface/HITrackCorrectionTreeHelper.h"
 
 class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
@@ -51,6 +57,7 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       virtual void endJob() ;
       void initHistos(const edm::Service<TFileService> & fs);
       bool passesTrackCuts(const reco::Track & track, const reco::Vertex & vertex);
+      bool caloMatched(const reco::Track & track, const edm::Event& iEvent, unsigned it );
 
       // ----------member data ---------------------------
 
@@ -71,10 +78,14 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       edm::EDGetTokenT<reco::RecoToSimCollection> associatorMapRTS_;
       edm::EDGetTokenT<reco::SimToRecoCollection> associatorMapSTR_;
 
+      edm::InputTag pfCandSrc_;
+
       std::vector<double> ptBins_;
       std::vector<double> etaBins_;
       std::vector<double> occBins_;
 
+      bool doCaloMatched_;
+      double reso_;
       
       std::vector<double> vtxWeightParameters_;
       bool doVtxReweighting_;
@@ -110,13 +121,15 @@ associatorMapSTR_(consumes<reco::SimToRecoCollection>(iConfig.getParameter<edm::
 ptBins_(iConfig.getParameter<std::vector<double> >("ptBins")),
 etaBins_(iConfig.getParameter<std::vector<double> >("etaBins")),
 occBins_(iConfig.getParameter<std::vector<double> >("occBins")),
+doCaloMatched_(iConfig.getParameter<bool>("doCaloMatched")),
+reso_(iConfig.getParameter<double>("reso")),
 vtxWeightParameters_(iConfig.getParameter<std::vector<double> >("vtxWeightParameters")),
 doVtxReweighting_(iConfig.getParameter<bool>("doVtxReweighting")),
 applyVertexZCut_(iConfig.getParameter<bool>("applyVertexZCut")),
 vertexZMax_(iConfig.getParameter<double>("vertexZMax")),
 applyTrackCuts_(iConfig.getParameter<bool>("applyTrackCuts")),
 qualityString_(iConfig.getParameter<std::string>("qualityString")),
-dxyErrMax_(iConfig.getParameter<double>("dzErrMax")),
+dxyErrMax_(iConfig.getParameter<double>("dxyErrMax")),
 dzErrMax_(iConfig.getParameter<double>("dzErrMax")),
 ptErrMax_(iConfig.getParameter<double>("ptErrMax")),
 nhitsMin_(iConfig.getParameter<int>("nhitsMin")),
@@ -126,6 +139,9 @@ fillNTuples_(iConfig.getParameter<bool>("fillNTuples")),
 useCentrality_(iConfig.getParameter<bool>("useCentrality")),
 centralitySrc_(consumes<int>(iConfig.getParameter<edm::InputTag>("centralitySrc")))
 {
+
+   pfCandSrc_ = iConfig.getUntrackedParameter<edm::InputTag>("pfCandSrc");
+
    edm::Service<TFileService> fs;
    initHistos(fs);
 
@@ -231,7 +247,8 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
      reco::Track* tr=const_cast<reco::Track*>(track.get());
      // skip tracks that fail cuts, using vertex with most tracks as PV       
      if( ! passesTrackCuts(*tr, vsorted[0]) ) continue;
-
+     if( ! caloMatched(*tr, iEvent, i) ) continue;
+    
      trkCorr2D_["hrec"]->Fill(tr->eta(), tr->pt(), w);
      trkCorr3D_["hrec3D"]->Fill(tr->eta(), tr->pt(), occ, w);
 
@@ -331,6 +348,46 @@ HITrackCorrectionAnalyzer::passesTrackCuts(const reco::Track & track, const reco
    if(chi2n > chi2nMax_ ) return false;  
 
    return true;
+}
+
+bool 
+HITrackCorrectionAnalyzer::caloMatched( const reco::Track & track, const edm::Event& iEvent, unsigned it )
+{
+  if( ! doCaloMatched_ ) return true;
+
+  // obtain pf candidates
+  edm::Handle<reco::PFCandidateCollection> pfCandidates;
+  iEvent.getByLabel(pfCandSrc_, pfCandidates);
+  if( !pfCandidates.isValid() ) return false;
+
+  double ecalEnergy = 0.;
+  double hcalEnergy = 0.;
+
+  for( unsigned ic = 0; ic < pfCandidates->size(); ic++ ) {//calo matching loops
+
+      const reco::PFCandidate& cand = (*pfCandidates)[ic];
+
+      int type = cand.particleId();
+
+      // only charged hadrons and leptons can be asscociated with a track
+      if(!(type == reco::PFCandidate::h ||     //type1
+      type == reco::PFCandidate::e ||     //type2
+      type == reco::PFCandidate::mu      //type3
+      )) continue;
+
+      reco::TrackRef trackRef = cand.trackRef();
+      if( it == trackRef.key() ) {
+        // cand_index = ic;
+        ecalEnergy = cand.ecalEnergy();
+        hcalEnergy = cand.hcalEnergy();              
+        break;
+      } 
+  }
+
+  if((track.pt()-reso_*track.ptError())*TMath::CosH( track.eta() )>15 && (track.pt()-reso_*track.ptError())*TMath::CosH( track.eta() ) > hcalEnergy+ecalEnergy ) return false;
+  else {
+    return true;
+  }
 }
 
 
