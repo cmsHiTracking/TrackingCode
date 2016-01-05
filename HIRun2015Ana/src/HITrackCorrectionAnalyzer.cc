@@ -300,6 +300,7 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
        {
          const reco::Track* tmtr = rtit->first.get();
          if( ! passesTrackCuts(*tmtr, vsorted[0]) ) continue;
+         if( ! caloMatched(*tmtr, iEvent, rtit) ) continue;
          nrec++;
          if( doMomRes_ ) momRes_->Fill( tp->eta(), tp->pt(), tmtr->pt(), w);
        }
