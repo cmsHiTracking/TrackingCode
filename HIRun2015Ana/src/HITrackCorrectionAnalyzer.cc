@@ -245,6 +245,7 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
    for(edm::View<reco::Track>::size_type i=0; i<tcol->size(); ++i){ 
      edm::RefToBase<reco::Track> track(tcol, i);
      reco::Track* tr=const_cast<reco::Track*>(track.get());
+
      // skip tracks that fail cuts, using vertex with most tracks as PV       
      if( ! passesTrackCuts(*tr, vsorted[0]) ) continue;
      if( ! caloMatched(*tr, iEvent, i) ) continue;
@@ -300,7 +301,16 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
        {
          const reco::Track* tmtr = rtit->first.get();
          if( ! passesTrackCuts(*tmtr, vsorted[0]) ) continue;
-         if( ! caloMatched(*tmtr, iEvent, rtit) ) continue;
+         unsigned index = -1;
+         if( doCaloMatched_ ){ 
+          for(edm::View<reco::Track>::size_type i=0; i<tcol->size(); ++i){ 
+             edm::RefToBase<reco::Track> track(tcol, i);
+             reco::Track* tr=const_cast<reco::Track*>(track.get());
+             index++;
+             if( tmtr->pt() == tr->pt() && tmtr->eta() == tr->eta() && tmtr->phi() == tr->phi() && tmtr->numberOfValidHits() == tr->numberOfValidHits() ) break;//simple match to find the corresponding index number (i-th track) in the track collection
+          }
+         if( ! caloMatched(*tmtr, iEvent, index) ) continue;
+         }  
          nrec++;
          if( doMomRes_ ) momRes_->Fill( tp->eta(), tp->pt(), tmtr->pt(), w);
        }
