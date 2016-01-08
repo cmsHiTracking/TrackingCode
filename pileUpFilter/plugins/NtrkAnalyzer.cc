@@ -176,6 +176,7 @@ private:
   double offlineDCA_;
 
   TH1D* Ntrk;
+  TH1D* leadingPt;
   TH1D* vertexZ;
 
 
@@ -244,6 +245,7 @@ NtrkAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
   iEvent.getByLabel(trackSrc_, tracks);
 
   int count = 0;
+  double max_pt = 0.0;
 
   for(unsigned it = 0; it < tracks->size(); it++){
 
@@ -263,12 +265,14 @@ NtrkAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
         if ( fabs(trk.eta()) > 2.4 || trk.pt() < 0.4  ) continue;
 
+        if( trk.pt() > max_pt ) max_pt = trk.pt();
         vertexZ->Fill( dzvtx );
         count++;
       
   } 
 
   Ntrk->Fill( count );
+  leadingPt->Fill( max_pt );
 
 }
 // ------------ method called once each job just before starting event loop  ------------
@@ -280,6 +284,7 @@ NtrkAnalyzer::beginJob()
   TH3D::SetDefaultSumw2();
 
   Ntrk = fs->make<TH1D>("Ntrk",";Ntrk",300,0,300);
+  leadingPt = fs->make<TH1D>("leadingPt",";p_{T} (GeV)",1000,0,200);
   vertexZ = fs->make<TH1D>("vertexZ",";vertexZ",1000,-1,1);
 }
 
