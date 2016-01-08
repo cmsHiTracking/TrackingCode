@@ -4,8 +4,8 @@ using namespace std;
 
 void plotFilterFraction(){
 	
-	TFile* file = new TFile("../rootfile/Ntrk_pileup_1.root");
-	vector<TH1D*> hist = loadingHistogram(file, "ana_PbPb","/Ntrk", 6);
+	TFile* file = new TFile("../rootfile/pielUpFilterEfficiency_MC_2.root");
+	vector<TH1D*> hist = loadingHistogram(file, "ana_PbPb","/Ntrk", 4);
 	TCanvas* c1 = makeCanvas("c1","Filter Fraction");
 	TH1D* base = makeHist("base", "","N^{offline}_{trk}","Fraction accepted", 200, 0,100, kBlack);
 
@@ -31,22 +31,17 @@ void plotFilterFraction(){
 	gr[2] = new TGraphAsymmErrors();
 	gr[2]->Divide(hist[3], hist[0], "cp");
 	gr[2]->SetMarkerStyle(20);
-	gr[2]->SetLineColor(3);
-	gr[2]->SetMarkerColor(3);
+	gr[2]->SetLineColor(4);
+	gr[2]->SetMarkerColor(4);
 	gr[2]->Draw("same");
 
-	gr[3] = new TGraphAsymmErrors();
-	gr[3]->Divide(hist[4], hist[0], "cp");
-	gr[3]->SetMarkerStyle(20);
-	gr[3]->SetLineColor(4);
-	gr[3]->SetMarkerColor(4);
-	gr[3]->Draw("same");
+    TLegend *w1 = new TLegend(0.35,0.45,0.55,0.65);
+    w1->SetLineColor(kWhite);
+    w1->SetFillColor(0);
+    w1->AddEntry(gr[0], "Gplus+dz","P");
+	w1->AddEntry(gr[1], "Gplus","P");
+	w1->AddEntry(gr[2], "vtx1","P");
 
-	gr[4] = new TGraphAsymmErrors();
-	gr[4]->Divide(hist[5], hist[0], "cp");
-	gr[4]->SetMarkerStyle(20);
-	gr[4]->SetLineColor(5);
-	gr[4]->SetMarkerColor(5);
-	gr[4]->Draw("same");
+	w1->Draw("same");
 
 }
