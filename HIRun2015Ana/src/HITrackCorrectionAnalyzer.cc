@@ -396,9 +396,9 @@ HITrackCorrectionAnalyzer::caloMatched( const reco::Track & track, const edm::Ev
   }
 
   //if((track.pt()-reso_*track.ptError())*TMath::CosH( track.eta() )>15 && (track.pt()-reso_*track.ptError())*TMath::CosH( track.eta() ) > hcalEnergy+ecalEnergy ) return false;
-  if( (hcalEnergy+ecalEnergy)/( track.pt()*TMath::CosH(track.eta() ) ) < reso_ ) return false;// simple Calo matching
+  if( track.pt() < 20 || (hcalEnergy+ecalEnergy)/( track.pt()*TMath::CosH(track.eta() ) ) > reso_ || (hcalEnergy+ecalEnergy)/(TMath::CosH(track.eta())) > (track.pt() - 80.0)  ) return true;
   else {
-    return true;
+    return false;
   }
 }
 

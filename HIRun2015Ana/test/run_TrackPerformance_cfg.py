@@ -12,7 +12,7 @@ process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 process.load('TrackingCode.HIRun2015Ana.HITrackCorrectionAnalyzer_cfi')
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(10)
+    input = cms.untracked.int32(-1)
 )
 
 process.options = cms.untracked.PSet(wantSummary = cms.untracked.bool(True))
@@ -65,7 +65,7 @@ process.HITrackCorrections.dzErrMax = 3.0
 process.HITrackCorrections.ptErrMax = 0.1
 process.HITrackCorrections.nhitsMin = 11
 process.HITrackCorrections.chi2nMax = 0.15
-process.HITrackCorrections.reso = 2.0
+process.HITrackCorrections.reso = 0.2
 # vertex reweight parameters
 process.HITrackCorrections.vtxWeightParameters = cms.vdouble(0.0306789, 0.427748, 5.16555, 0.0228019, -0.02049, 7.01258 )
 ###
