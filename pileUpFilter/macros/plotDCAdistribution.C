@@ -14,8 +14,8 @@ void plotDCAdistribution(){
 	TH1D* temp1 = (TH1D*)file[0]->Get("ana_PbPb0/vertexZ");
 	TH1D* temp2 = (TH1D*)file[1]->Get("ana_PbPb0/vertexZ");
 
-	TH1D* base1 = makeHist("base1","pp DATA","Track impact parameter Z","Normalized", 100,-1.3,1.3);
-	TH1D* base2 = makeHist("base2","pp MC","Track impact parameter Z","Normalized", 100,-1.3,1.3);
+	TH1D* base1 = makeHist("base1","pp DATA","Track impact parameter Z","", 100,-1.3,1.3);
+	TH1D* base2 = makeHist("base2","pp MC","Track impact parameter Z","", 100,-1.3,1.3);
 
 	base1->GetYaxis()->SetRangeUser(0,0.05);
 	base2->GetYaxis()->SetRangeUser(0,0.05);
