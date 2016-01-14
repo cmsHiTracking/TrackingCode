@@ -358,7 +358,7 @@ HITrackCorrectionAnalyzer::passesTrackCuts(const reco::Track & track, const reco
    if(fabs(track.ptError()) / track.pt() > ptErrMax_) return false;
    if(nhits < nhitsMin_ ) return false;
    int count = 0;
-   for(int i = 0; i < algoParameters_.size(); i++){
+   for(unsigned i = 0; i < algoParameters_.size(); i++){
       if( algo == algoParameters_[i] ) count++;
    }
    if( count == 0 ) return false;
