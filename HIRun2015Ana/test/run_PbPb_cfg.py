@@ -12,7 +12,7 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('TrackingCode.HIRun2015Ana.HITrackCorrectionAnalyzer_cfi')
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(10)
+    input = cms.untracked.int32(-1)
 )
 
 process.options = cms.untracked.PSet(wantSummary = cms.untracked.bool(True))
@@ -35,8 +35,8 @@ process.load("SimTracker.TrackerHitAssociation.clusterTpAssociationProducer_cfi"
 process.source = cms.Source("PoolSource",
     duplicateCheckMode = cms.untracked.string("noDuplicateCheck"),
     fileNames =  cms.untracked.vstring(
-#'/store/user/dgulhan/PYTHIA_QCD_TuneCUETP8M1_cfi_GEN_SIM_5020GeV/Pythia8_Dijet80_pp_TuneCUETP8M1_Hydjet_MinBias_5020GeV_RECODEBUG_758_PrivMC/151217_175524/0000/step3_102.root'
-'/store/user/velicanu/Hydjet_Quenched_MinBias_5020GeV_750/Hydjet_Quenched_MinBias_5020GeV_750_RECODEBUG_v0/151117_112112/0000/step3_102.root'
+'/store/user/dgulhan/PYTHIA_QCD_TuneCUETP8M1_cfi_GEN_SIM_5020GeV/Pythia8_Dijet80_pp_TuneCUETP8M1_Hydjet_MinBias_5020GeV_RECODEBUG_758_PrivMC/151217_175524/0000/step3_102.root'
+#'/store/user/velicanu/Hydjet_Quenched_MinBias_5020GeV_750/Hydjet_Quenched_MinBias_5020GeV_750_RECODEBUG_v0/151117_112112/0000/step3_102.root'
 )
 )
 ### centrality ###
@@ -51,6 +51,7 @@ process.HITrackCorrections.centralitySrc = cms.InputTag("centralityBin","HFtower
 process.HITrackCorrections.trackSrc = cms.InputTag("hiGeneralTracks")
 process.HITrackCorrections.qualityString = cms.string("highPurity")
 process.HITrackCorrections.pfCandSrc = cms.untracked.InputTag("particleFlowTmp")
+process.HITrackCorrections.jetSrc = cms.InputTag("akPu4CaloJets")
 # options
 process.HITrackCorrections.useCentrality = False
 process.HITrackCorrections.applyTrackCuts = True
@@ -65,6 +66,7 @@ process.HITrackCorrections.ptErrMax = 0.1
 process.HITrackCorrections.nhitsMin = 10
 process.HITrackCorrections.chi2nMax = 0.15
 process.HITrackCorrections.reso = 0.2
+process.HITrackCorrections.crossSection = 1.0 #1.0 is not reweight
 #algo 
 process.HITrackCorrections.algoParameters = cms.vint32(4,5,6,7)
 # vertex reweight parameters
