@@ -66,7 +66,7 @@ process.HITrackCorrections.ptErrMax = 0.1
 process.HITrackCorrections.nhitsMin = 10
 process.HITrackCorrections.chi2nMax = 0.15
 process.HITrackCorrections.reso = 0.2
-process.HITrackCorrections.crossSection = 1.0 #1.0 is no reweigh
+#process.HITrackCorrections.crossSection = 1.0 #1.0 is no reweigh
 #algo 
 process.HITrackCorrections.algoParameters = cms.vint32(4,5,6,7)
 # vertex reweight parameters

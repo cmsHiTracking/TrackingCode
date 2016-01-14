@@ -61,7 +61,7 @@ process.HITrackCorrections.ptErrMax = 0.3 #track trigger 0.1
 process.HITrackCorrections.nhitsMin = 0 # track trigger 10
 process.HITrackCorrections.chi2nMax = 9999.9 # track trigger 0.15
 process.HITrackCorrections.reso = 0.2
-process.HITrackCorrections.crossSection = 1.0 #1.0 is no reweigh
+#process.HITrackCorrections.crossSection = 1.0 #1.0 is no reweigh
 # vertex reweight parameters
 #pp 5TeV
 process.HITrackCorrections.vtxWeightParameters = cms.vdouble(0.0028637,0.225207,5.61457,0.00296148,0.640783,5.41939)
