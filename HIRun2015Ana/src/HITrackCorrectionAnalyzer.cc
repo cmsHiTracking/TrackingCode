@@ -41,6 +41,11 @@
 #include "DataFormats/ParticleFlowReco/interface/PFBlock.h"
 #include "DataFormats/ParticleFlowReco/interface/PFCluster.h"
 #include "DataFormats/ParticleFlowReco/interface/PFClusterFwd.h"
+// RecoJets
+#include "DataFormats/JetReco/interface/PFJet.h"
+#include "DataFormats/JetReco/interface/PFJetCollection.h"
+#include "DataFormats/JetReco/interface/CaloJet.h"
+#include "DataFormats/JetReco/interface/CaloJetCollection.h"
 
 #include "TrackingCode/HIRun2015Ana/interface/HITrackCorrectionTreeHelper.h"
 
@@ -67,6 +72,7 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       std::map<std::string,TH3F*> trkCorr3D_;
       TH3F * momRes_;
       TH1F * vtxZ_;
+      TH1F * pthat_;
       TF1 * vtxWeightFunc_;
 
       HITrackCorrectionTreeHelper treeHelper_;
@@ -79,6 +85,7 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       edm::EDGetTokenT<reco::SimToRecoCollection> associatorMapSTR_;
 
       edm::InputTag pfCandSrc_;
+      edm::InputTag jetSrc_;
 
       std::vector<double> ptBins_;
       std::vector<double> etaBins_;
@@ -86,6 +93,7 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
 
       bool doCaloMatched_;
       double reso_;
+      double crossSection_;
       
       std::vector<double> vtxWeightParameters_;
       std::vector<int> algoParameters_;
@@ -124,6 +132,7 @@ etaBins_(iConfig.getParameter<std::vector<double> >("etaBins")),
 occBins_(iConfig.getParameter<std::vector<double> >("occBins")),
 doCaloMatched_(iConfig.getParameter<bool>("doCaloMatched")),
 reso_(iConfig.getParameter<double>("reso")),
+crossSection_(iConfig.getParameter<double>("crossSection")),
 vtxWeightParameters_(iConfig.getParameter<std::vector<double> >("vtxWeightParameters")),
 algoParameters_(iConfig.getParameter<std::vector<int> >("algoParameters")),
 doVtxReweighting_(iConfig.getParameter<bool>("doVtxReweighting")),
@@ -143,6 +152,7 @@ centralitySrc_(consumes<int>(iConfig.getParameter<edm::InputTag>("centralitySrc"
 {
 
    pfCandSrc_ = iConfig.getUntrackedParameter<edm::InputTag>("pfCandSrc");
+   jetSrc_ = iConfig.getParameter<edm::InputTag>("jetSrc");
 
    edm::Service<TFileService> fs;
    initHistos(fs);
@@ -190,6 +200,19 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
    iEvent.getByToken(associatorMapRTS_,recotosimCollectionH);
    recSimColl= *(recotosimCollectionH.product());
 
+   //calo jets
+   Handle<reco::CaloJetCollection> JetCollection;
+   iEvent.getByLabel(jetSrc_, JetCollection);
+   if( !JetCollection.isValid() ) return; 
+
+   double leadingJet = 0.;
+   for(unsigned irecojet = 0; irecojet < JetCollection->size(); irecojet++ ){
+      const reco::CaloJet & JetCand = (*JetCollection)[irecojet];
+      if( JetCand.pt() > leadingJet ) leadingJet = JetCand.pt();//finding leading pT jets
+   }
+
+   pthat_->Fill( leadingJet, crossSection_ );
+
    // obtain reconstructed tracks
    Handle<edm::View<reco::Track> > tcol;
    iEvent.getByToken(trackSrc_, tcol);
@@ -213,6 +236,7 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
 
    // determine vertex reweighting factor
    double w = 1.0;
+   w = w * crossSection_;
    if ( doVtxReweighting_ )
      w *= vtxWeightFunc_->Eval(vsorted[0].z());
 
@@ -437,6 +461,7 @@ HITrackCorrectionAnalyzer::initHistos(const edm::Service<TFileService> & fs)
 
 
   vtxZ_ = fs->make<TH1F>("vtxZ","Vertex z position",100,-30,30);
+  pthat_ = fs->make<TH1F>("pthat", "p_{T}(GeV)", 8000,0,800);
 
   std::vector<double> ptBinsFine;
   for( unsigned int bin = 0; bin<ptBins_.size()-1; bin++)
