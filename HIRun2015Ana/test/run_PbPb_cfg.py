@@ -12,7 +12,7 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('TrackingCode.HIRun2015Ana.HITrackCorrectionAnalyzer_cfi')
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(-1)
+    input = cms.untracked.int32(10)
 )
 
 process.options = cms.untracked.PSet(wantSummary = cms.untracked.bool(True))
@@ -66,7 +66,7 @@ process.HITrackCorrections.ptErrMax = 0.1
 process.HITrackCorrections.nhitsMin = 10
 process.HITrackCorrections.chi2nMax = 0.15
 process.HITrackCorrections.reso = 0.2
-process.HITrackCorrections.crossSection = 1.0 #1.0 is not reweight
+process.HITrackCorrections.crossSection = 1.0 #1.0 is no reweigh
 #algo 
 process.HITrackCorrections.algoParameters = cms.vint32(4,5,6,7)
 # vertex reweight parameters

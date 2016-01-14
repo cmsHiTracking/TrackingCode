@@ -204,7 +204,6 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
    Handle<reco::CaloJetCollection> JetCollection;
    iEvent.getByLabel(jetSrc_, JetCollection);
    if( !JetCollection.isValid() ) return; 
-
    double leadingJet = 0.;
    for(unsigned irecojet = 0; irecojet < JetCollection->size(); irecojet++ ){
       const reco::CaloJet & JetCand = (*JetCollection)[irecojet];
