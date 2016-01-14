@@ -88,6 +88,7 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       double reso_;
       
       std::vector<double> vtxWeightParameters_;
+      std::vector<int> algoParameters_;
       bool doVtxReweighting_;
 
       bool applyVertexZCut_;
@@ -124,6 +125,7 @@ occBins_(iConfig.getParameter<std::vector<double> >("occBins")),
 doCaloMatched_(iConfig.getParameter<bool>("doCaloMatched")),
 reso_(iConfig.getParameter<double>("reso")),
 vtxWeightParameters_(iConfig.getParameter<std::vector<double> >("vtxWeightParameters")),
+algoParameters_(iConfig.getParameter<std::vector<int> >("algoParameters")),
 doVtxReweighting_(iConfig.getParameter<bool>("doVtxReweighting")),
 applyVertexZCut_(iConfig.getParameter<bool>("applyVertexZCut")),
 vertexZMax_(iConfig.getParameter<double>("vertexZMax")),
@@ -355,7 +357,11 @@ HITrackCorrectionAnalyzer::passesTrackCuts(const reco::Track & track, const reco
    if(fabs(dz/dzsigma) > dzErrMax_) return false;
    if(fabs(track.ptError()) / track.pt() > ptErrMax_) return false;
    if(nhits < nhitsMin_ ) return false;
-   if(algo != 4 && algo != 5 && algo != 6 && algo != 7) return false;
+   int count = 0;
+   for(int i = 0; i < algoParameters_.size(); i++){
+      if( algo == algoParameters_[i] ) count++;
+   }
+   if( count == 0 ) return false;
    if(chi2n > chi2nMax_ ) return false;  
 
    return true;
