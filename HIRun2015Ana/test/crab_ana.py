@@ -10,7 +10,7 @@ config.General.transferLogs = True
 config.JobType.allowUndistributedCMSSW = True
 
 config.JobType.pluginName = 'Analysis'
-config.JobType.psetName = 'run_TrackPerformance_cfg.py'
+config.JobType.psetName = 'run_PbPb_cfg.py'
 
 config.Data.inputDBS = 'phys03'
 config.Data.inputDataset = '/Hydjet_Quenched_MinBias_5020GeV_750/velicanu-Hydjet_Quenched_MinBias_5020GeV_750_RECODEBUG_v0-eb8cf5655150b59e96d879ea397567ad/USER'
