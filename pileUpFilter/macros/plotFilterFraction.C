@@ -5,15 +5,19 @@ using namespace std;
 void plotFilterFraction(){
 	
 	TFile* file1 = new TFile("../rootfile/pileUpFilterEfficiency_MC_1.root");
-	TFile* file2 = new TFile("../rootfile/pileUpFilterEfficiency_MC_2.root");
+	TFile* file2 = new TFile("../rootfile/pileUpFilterEfficiency_updateMC_2.root");
+	TFile* file3 = new TFile("../rootfile/pileUpFilterEfficiency_updateMC_3.root");
+
 
 	vector<TH1D*> hist1 = loadingHistogram(file1, "ana_PbPb","/leadingPt", 4);
 	vector<TH1D*> hist2 = loadingHistogram(file2, "ana_PbPb","/leadingPt", 4);
+	vector<TH1D*> hist3 = loadingHistogram(file3, "ana_PbPb","/leadingPt", 4);
 
 	TCanvas* c1 = makeMultiCanvas("c1","Filter Fraction", 2,2);
 
 	TH1D* base1 = makeHist("base1", "PYTHIA MB","leading p_{T}","Fraction accepted", 200, 0,30, kBlack);
 	TH1D* base2 = makeHist("base2", "PYTHIA PU = 2","leading p_{T}","Fraction accepted", 200, 0,30, kBlack);
+	TH1D* base3 = makeHist("base3", "PYTHIA PU = 3","leading p_{T}","Fraction accepted", 200, 0,30, kBlack);
 	
 
 	c1->cd(1);
@@ -83,8 +87,37 @@ void plotFilterFraction(){
 	gr2[2]->SetMarkerColor(4);
 	gr2[2]->Draw("same");
 
-	c1->SaveAs("../files/pileUpFilterEfficiency_MC_pT.png");
-	c1->SaveAs("../files/pileUpFilterEfficiency_MC_pT.pdf");
+	c1->cd(3);
+
+	TGraphAsymmErrors * gr3[5];
+	gPad->SetTicks();
+	gPad->SetLeftMargin(0.15);
+	gPad->SetBottomMargin(0.13);
+
+	base3->Draw();
+	gr3[0] = new TGraphAsymmErrors();
+	gr3[0]->Divide(hist3[1], hist3[0], "cp");
+	gr3[0]->SetMarkerStyle(20);
+	gr3[0]->SetLineColor(1);
+	gr3[0]->SetMarkerColor(1);
+	gr3[0]->Draw("same");
+
+	gr3[1] = new TGraphAsymmErrors();
+	gr3[1]->Divide(hist3[2], hist3[0], "cp");
+	gr3[1]->SetMarkerStyle(20);
+	gr3[1]->SetLineColor(2);
+	gr3[1]->SetMarkerColor(2);
+	gr3[1]->Draw("same");
+
+	gr3[2] = new TGraphAsymmErrors();
+	gr3[2]->Divide(hist3[3], hist3[0], "cp");
+	gr3[2]->SetMarkerStyle(20);
+	gr3[2]->SetLineColor(4);
+	gr3[2]->SetMarkerColor(4);
+	gr3[2]->Draw("same");
+
+	//c1->SaveAs("../files/pileUpFilterEfficiency_MC_pT.png");
+	//c1->SaveAs("../files/pileUpFilterEfficiency_MC_pT.pdf");
 
 
 }
