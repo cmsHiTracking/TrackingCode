@@ -10,7 +10,7 @@ void plotFilterFraction(){
 	vector<TH1D*> hist1 = loadingHistogram(file1, "ana_PbPb","/leadingPt", 4);
 	vector<TH1D*> hist2 = loadingHistogram(file2, "ana_PbPb","/leadingPt", 4);
 
-	TCanvas* c1 = makeMultiCanvas("c1","Filter Fraction", 2,1);
+	TCanvas* c1 = makeMultiCanvas("c1","Filter Fraction", 2,2);
 
 	TH1D* base1 = makeHist("base1", "PYTHIA MB","leading p_{T}","Fraction accepted", 200, 0,30, kBlack);
 	TH1D* base2 = makeHist("base2", "PYTHIA PU = 2","leading p_{T}","Fraction accepted", 200, 0,30, kBlack);
