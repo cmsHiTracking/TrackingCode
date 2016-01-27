@@ -39,7 +39,7 @@ void plotPileUp(){
 	TFile* file1 = new TFile("../rootfile/pileUpFilterEfficiency_MC_1.root");
 	TFile* file2 = new TFile("../rootfile/pileUpFilterEfficiency_updateMC_2.root");
 	TFile* file3 = new TFile("../rootfile/pileUpFilterEfficiency_updateMC_3.root");
-	TFile* file4 = new TFile("../rootfile/pileUpFilterEfficiency_Data_272274.root");
+	TFile* file4 = new TFile("../rootfile/pileUpFilterEfficiency_updateData_272274.root");
 
 	vector<TH1D*> vertex1 = loadingHistogram(file1, "ana_PbPb","/numberOfVertices", 4);
 	vector<TH1D*> vertex2 = loadingHistogram(file2, "ana_PbPb","/numberOfVertices", 4);
