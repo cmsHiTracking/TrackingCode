@@ -9,15 +9,15 @@ void plotFilterFraction(){
 	TFile* file3 = new TFile("../rootfile/pileUpFilterEfficiency_updateMC_3.root");
 
 
-	vector<TH1D*> hist1 = loadingHistogram(file1, "ana_PbPb","/leadingPt", 4);
-	vector<TH1D*> hist2 = loadingHistogram(file2, "ana_PbPb","/leadingPt", 4);
-	vector<TH1D*> hist3 = loadingHistogram(file3, "ana_PbPb","/leadingPt", 4);
+	vector<TH1D*> hist1 = loadingHistogram(file1, "ana_PbPb","/Ntrk", 4);
+	vector<TH1D*> hist2 = loadingHistogram(file2, "ana_PbPb","/Ntrk", 4);
+	vector<TH1D*> hist3 = loadingHistogram(file3, "ana_PbPb","/Ntrk", 4);
 
 	TCanvas* c1 = makeMultiCanvas("c1","Filter Fraction", 2,2);
 
-	TH1D* base1 = makeHist("base1", "PYTHIA MB","leading p_{T}","Fraction accepted", 200, 0,30, kBlack);
-	TH1D* base2 = makeHist("base2", "PYTHIA PU = 2","leading p_{T}","Fraction accepted", 200, 0,30, kBlack);
-	TH1D* base3 = makeHist("base3", "PYTHIA PU = 3","leading p_{T}","Fraction accepted", 200, 0,30, kBlack);
+	TH1D* base1 = makeHist("base1", "PYTHIA MB","N^{offline}_{trk}","Fraction accepted", 200, 0,100, kBlack);
+	TH1D* base2 = makeHist("base2", "PYTHIA PU = 2","N^{offline}_{trk}","Fraction accepted", 200, 0,100, kBlack);
+	TH1D* base3 = makeHist("base3", "PYTHIA PU = 3","N^{offline}_{trk}","Fraction accepted", 200, 0,100, kBlack);
 	
 
 	c1->cd(1);
@@ -116,8 +116,8 @@ void plotFilterFraction(){
 	gr3[2]->SetMarkerColor(4);
 	gr3[2]->Draw("same");
 
-	//c1->SaveAs("../files/pileUpFilterEfficiency_MC_pT.png");
-	//c1->SaveAs("../files/pileUpFilterEfficiency_MC_pT.pdf");
+	c1->SaveAs("../files/pileUpFilterEfficiency_MC.png");
+	c1->SaveAs("../files/pileUpFilterEfficiency_MC.pdf");
 
 
 }
