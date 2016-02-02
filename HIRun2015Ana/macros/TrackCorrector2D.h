@@ -126,7 +126,7 @@ TrackCorrector2D::~TrackCorrector2D()
 }
 
 double
-TrackCorrector2D::getWeight(double pT, double eta, double occ, string option = "" ) 
+TrackCorrector2D::getWeight(double pT, double eta, double occ, string option ) 
 {
 
   double eff = reff2D->GetBinContent(
