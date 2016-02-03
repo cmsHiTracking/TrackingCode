@@ -92,7 +92,7 @@ TrackCorrector3D::~TrackCorrector3D()
 }
 
 double
-TrackCorrector3D::getWeight(double pT, double eta, double occ, string option = "") 
+TrackCorrector3D::getWeight(double pT, double eta, double occ, string option ) 
 {
 
   double eff = reff3D->GetBinContent(
