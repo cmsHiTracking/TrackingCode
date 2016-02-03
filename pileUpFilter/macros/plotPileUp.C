@@ -61,25 +61,54 @@ void plotPileUp(){
 	base3->GetXaxis()->SetTitleColor(kBlack);
 	base4->GetXaxis()->SetTitleColor(kBlack);
 
+	TLatex * t1[4];
+	TLatex * t2[4];
+	TLatex * t3[4];
+	TLatex * t4[4];
+
+	t1[0] = new TLatex(0.4,0.3,"x0");
+	t1[1] = new TLatex(1.4,0.9,"x1");
+	t1[2] = new TLatex(2.4,0.1,"x2");
+	t1[3] = new TLatex(3.4,0.1,"x3");
+
+	t2[0] = new TLatex(0.4,0.1,"y0");
+	t2[1] = new TLatex(1.4,0.4,"y1");
+	t2[2] = new TLatex(2.4,0.7,"y2");
+	t2[3] = new TLatex(3.4,0.1,"y3");
+
+	t3[0] = new TLatex(0.4,0.1,"z0");
+	t3[1] = new TLatex(1.4,0.2,"z1");
+	t3[2] = new TLatex(2.4,0.5,"z2");
+	t3[3] = new TLatex(3.4,0.6,"z3");
+
+	t4[0] = new TLatex(0.4,0.5,"d0");
+	t4[1] = new TLatex(1.4,0.5,"d1");
+	t4[2] = new TLatex(2.4,0.2,"d2");
+	t4[3] = new TLatex(3.4,0.1,"d3");
+
 
 	TCanvas* c1 = makeMultiCanvas("c1","",2,2);
 	c1->cd(1);
 	gPad->SetBottomMargin(0.13);
 	base1->Draw();
+	for(int i = 0; i < 4; i++){ t1[i]->Draw("same");};
 	vertex1[0]->SetMarkerStyle(20);
-	vertex1[0]->Draw("Simplesame");
+	vertex1[0]->Draw("same");
 	c1->cd(2);
 	gPad->SetBottomMargin(0.13);
 	base2->Draw();
-	vertex2[0]->Draw("Histsame");
+	for(int i = 0; i < 4; i++){ t2[i]->Draw("same");};
+	vertex2[0]->Draw("same");
 	c1->cd(3);
 	gPad->SetBottomMargin(0.13);
 	base3->Draw();
-	vertex3[0]->Draw("Histsame");
+	for(int i = 0; i < 4; i++){ t3[i]->Draw("same");};
+	vertex3[0]->Draw("same");
 	c1->cd(4);
 	gPad->SetBottomMargin(0.13);
 	base4->Draw();
-	vertexall[0]->Draw("Histsame");
+	for(int i = 0; i < 4; i++){ t4[i]->Draw("same");};
+	vertexall[0]->Draw("same");
 
 	
 	vector<double> q, x, y, z, d;
