@@ -2,7 +2,7 @@
 
 using namespace std;
 
-const int MAX = 3;
+const int MAX = 4;
 
 double determ(double a[MAX][MAX],int n) {
   double det=0, p, h, k, i, j, temp[MAX][MAX];
@@ -36,10 +36,10 @@ double determ(double a[MAX][MAX],int n) {
 
 void plotPileUp(){
 
-	TFile* file1 = new TFile("../rootfile/pileUpFilterEfficiency_MC_1.root");
-	TFile* file2 = new TFile("../rootfile/pileUpFilterEfficiency_updateMC_2.root");
-	TFile* file3 = new TFile("../rootfile/pileUpFilterEfficiency_updateMC_3.root");
-	TFile* file4 = new TFile("../rootfile/pileUpFilterEfficiency_updateData_272274.root");
+	TFile* file1 = new TFile("../rootfile/pileUpFilterEfficiency_updateMC1_v2.root");
+	TFile* file2 = new TFile("../rootfile/pileUpFilterEfficiency_updateMC2_v2.root");
+	TFile* file3 = new TFile("../rootfile/pileUpFilterEfficiency_updateMC3_v2.root");
+	TFile* file4 = new TFile("../rootfile/pileUpFilterEfficiency_updateData_272274_v2.root");
 
 	vector<TH1D*> vertex1 = loadingHistogram(file1, "ana_PbPb","/numberOfVertices", 4);
 	vector<TH1D*> vertex2 = loadingHistogram(file2, "ana_PbPb","/numberOfVertices", 4);
@@ -66,25 +66,26 @@ void plotPileUp(){
 	c1->cd(1);
 	gPad->SetBottomMargin(0.13);
 	base1->Draw();
-	vertex1[0]->Draw("Psame");
+	vertex1[0]->SetMarkerStyle(20);
+	vertex1[0]->Draw("Simplesame");
 	c1->cd(2);
 	gPad->SetBottomMargin(0.13);
 	base2->Draw();
-	vertex2[0]->Draw("Psame");
+	vertex2[0]->Draw("Histsame");
 	c1->cd(3);
 	gPad->SetBottomMargin(0.13);
 	base3->Draw();
-	vertex3[0]->Draw("Psame");
+	vertex3[0]->Draw("Histsame");
 	c1->cd(4);
 	gPad->SetBottomMargin(0.13);
 	base4->Draw();
-	vertexall[0]->Draw("Psame");
+	vertexall[0]->Draw("Histsame");
 
 	
 	vector<double> q, x, y, z, d;
 	q.push_back(1.0); q.push_back(0.); q.push_back(0.); q.push_back(0.);
 
-	for(int i = 2; i < 5 ; i++){
+	for(int i = 1; i < 5 ; i++){
 
 		x.push_back( vertex1[0]->GetBinContent(i) );
 		y.push_back( vertex2[0]->GetBinContent(i) );
@@ -93,65 +94,80 @@ void plotPileUp(){
 
 	}
 
+	for(int i = 0; i < 4; i++){
 
-	double DD[3][3];
-	for(int i = 0; i < 3; i++){
-		for(int j = 0; j < 3; j++){
+		cout << "q_" << i << " is " << q[i] << endl;
+		cout << "x_" << i << " is " << x[i] << endl;
+		cout << "y_" << i << " is " << y[i] << endl;
+		cout << "z_" << i << " is " << z[i] << endl;
+		cout << "d_" << i << " is " << d[i] << endl;
+	}
 
-			if(i == 0 ) DD[i][j] = x[j];
-			if(i == 1 ) DD[i][j] = y[j];
-			if(i == 2 ) DD[i][j] = z[j];
+
+	double DD[4][4];
+	for(int i = 0; i < 4; i++){
+		for(int j = 0; j < 4; j++){
+
+			if(i == 0 ) DD[j][i] = q[j];
+			if(i == 1 ) DD[j][i] = x[j];
+			if(i == 2 ) DD[j][i] = y[j];
+			if(i == 3 ) DD[j][i] = z[j];
 		}
 	}
 
-	double D0[3][3];
-	for(int i = 0; i < 3; i++){
-		for(int j = 0; j < 3; j++){
+	double D0[4][4];
+	for(int i = 0; i < 4; i++){
+		for(int j = 0; j < 4; j++){
 
-			if(i == 0 ) D0[i][j] = d[j];
-			if(i == 1 ) D0[i][j] = y[j];
-			if(i == 2 ) D0[i][j] = z[j];
+			if(i == 0 ) D0[j][i] = d[j];
+			if(i == 1 ) D0[j][i] = x[j];
+			if(i == 2 ) D0[j][i] = y[j];
+			if(i == 3 ) D0[j][i] = z[j];
 		}
 	}
-	double D1[3][3];
-	for(int i = 0; i < 3; i++){
-		for(int j = 0; j < 3; j++){
+	double D1[4][4];
+	for(int i = 0; i < 4; i++){
+		for(int j = 0; j < 4; j++){
 
-			if(i == 0 ) D1[i][j] = x[j];
-			if(i == 1 ) D1[i][j] = d[j];
-			if(i == 2 ) D1[i][j] = z[j];
+			if(i == 0 ) D1[j][i] = q[j];
+			if(i == 1 ) D1[j][i] = d[j];
+			if(i == 2 ) D1[j][i] = y[j];
+			if(i == 3 ) D1[j][i] = z[j];
 		}
 	}
-	double D2[3][3];
-	for(int i = 0; i < 3; i++){
-		for(int j = 0; j < 3; j++){
+	double D2[4][4];
+	for(int i = 0; i < 4; i++){
+		for(int j = 0; j < 4; j++){
 
-			if(i == 0 ) D2[i][j] = x[j];
-			if(i == 1 ) D2[i][j] = y[j];
-			if(i == 2 ) D2[i][j] = d[j];
+			if(i == 0 ) D2[j][i] = q[j];
+			if(i == 1 ) D2[j][i] = x[j];
+			if(i == 2 ) D2[j][i] = d[j];
+			if(i == 3 ) D2[j][i] = z[j];
 		}
 	}
-	// double D3[3][3];
-	// for(int i = 0; i < 4; i++){
-	// 	for(int j = 0; j < 4; j++){
 
-	// 		if(i == 0 ) D3[i][j] = q[j];
-	// 		if(i == 1 ) D3[i][j] = x[j];
-	// 		if(i == 2 ) D3[i][j] = y[j];
-	// 		if(i == 3 ) D3[i][j] = d[j];
-	// 	}
-	// }
+	double D3[4][4];
+	for(int i = 0; i < 4; i++){
+		for(int j = 0; j < 4; j++){
+
+			if(i == 0 ) D3[j][i] = q[j];
+			if(i == 1 ) D3[j][i] = x[j];
+			if(i == 2 ) D3[j][i] = y[j];
+			if(i == 3 ) D3[j][i] = d[j];
+		}
+	}
 
 
-	double DDD =  determ(DD, 3);
-	double D00 =  determ(D0, 3);
-	double D11 =  determ(D1, 3);
-	double D22 =  determ(D2, 3);
-
+	double DDD =  determ(DD, 4);
+	double D00 =  determ(D0, 4);
+	double D11 =  determ(D1, 4);
+	double D22 =  determ(D2, 4);
+	double D33 =  determ(D3, 4);
 
 	cout << "c0 = " << D00/DDD << endl;
 	cout << "c1 = " << D11/DDD << endl;
 	cout << "c2 = " << D22/DDD << endl;
+	cout << "c3 = " << D33/DDD << endl;
 
 
 
