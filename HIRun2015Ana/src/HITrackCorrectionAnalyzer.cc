@@ -77,7 +77,7 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
 
       HITrackCorrectionTreeHelper treeHelper_;
 
-      //edm::EDGetTokenT<reco::CaloJetCollection> jetSrc_;
+      edm::EDGetTokenT<reco::CaloJetCollection> jetSrc_;
       edm::EDGetTokenT<reco::VertexCollection> vertexSrc_;
       edm::EDGetTokenT<edm::View<reco::Track> > trackSrc_;
       edm::EDGetTokenT<TrackingParticleCollection> tpFakSrc_;
@@ -125,7 +125,7 @@ treeHelper_(),
 vertexSrc_(consumes<reco::VertexCollection>(iConfig.getParameter<edm::InputTag>("vertexSrc"))),
 trackSrc_(consumes<edm::View<reco::Track> >(iConfig.getParameter<edm::InputTag>("trackSrc"))),
 //pfCandSrc_(consumes<reco::PFCandidateCollection>(iConfig.getParameter<edm::InputTag>("pfCandSrc"))),
-//jetSrc_(consumes<reco::CaloJetCollection>(iConfig.getParameter<edm::InputTag>("jetSrc"))),
+jetSrc_(consumes<reco::CaloJetCollection>(iConfig.getParameter<edm::InputTag>("jetSrc"))),
 tpFakSrc_(consumes<TrackingParticleCollection>(iConfig.getParameter<edm::InputTag>("tpFakSrc"))),
 tpEffSrc_(consumes<TrackingParticleCollection>(iConfig.getParameter<edm::InputTag>("tpEffSrc"))),
 associatorMapRTS_(consumes<reco::RecoToSimCollection>(iConfig.getParameter<edm::InputTag>("associatorMap"))),
@@ -201,9 +201,9 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
    recSimColl= *(recotosimCollectionH.product());
 
    //calo jets
-   // Handle<reco::CaloJetCollection> JetCollection;
-   // iEvent.getByToken(jetSrc_, JetCollection);
-   // if( !JetCollection.isValid() ) return; 
+   Handle<reco::CaloJetCollection> JetCollection;
+   iEvent.getByToken(jetSrc_, JetCollection);
+   if( !JetCollection.isValid() ) return; 
    // double leadingJet = 0.;
    // for(unsigned irecojet = 0; irecojet < JetCollection->size(); irecojet++ ){
    //    const reco::CaloJet & JetCand = (*JetCollection)[irecojet];
