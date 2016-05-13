@@ -77,7 +77,8 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
 
       HITrackCorrectionTreeHelper treeHelper_;
 
-      edm::EDGetTokenT<reco::CaloJetCollection> jetSrc_;
+      edm::EDGetTokenT<reco::CaloJetCollection> jetSrc1_;
+
       edm::EDGetTokenT<reco::VertexCollection> vertexSrc_;
       edm::EDGetTokenT<edm::View<reco::Track> > trackSrc_;
       edm::EDGetTokenT<TrackingParticleCollection> tpFakSrc_;
@@ -151,7 +152,7 @@ doMomRes_(iConfig.getParameter<bool>("doMomRes")),
 fillNTuples_(iConfig.getParameter<bool>("fillNTuples")),
 useCentrality_(iConfig.getParameter<bool>("useCentrality")),
 centralitySrc_(consumes<int>(iConfig.getParameter<edm::InputTag>("centralitySrc"))),
-jetSrc_(consumes<reco::CaloJetCollection>(iConfig.getParameter<edm::InputTag>("jetSrc")))
+jetSrc1_(consumes<reco::CaloJetCollection>(iConfig.getParameter<edm::InputTag>("jetSrc1")))
 
 {
 
@@ -203,7 +204,7 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
 
    //calo jets
    Handle<reco::CaloJetCollection> JetCollection;
-   iEvent.getByToken(jetSrc_, JetCollection);
+   iEvent.getByToken(jetSrc1_, JetCollection);
    if( !JetCollection.isValid() ) return; 
    // double leadingJet = 0.;
    // for(unsigned irecojet = 0; irecojet < JetCollection->size(); irecojet++ ){
