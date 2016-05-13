@@ -149,7 +149,7 @@ chi2nMax_(iConfig.getParameter<double>("chi2nMax")),
 doMomRes_(iConfig.getParameter<bool>("doMomRes")),
 fillNTuples_(iConfig.getParameter<bool>("fillNTuples")),
 useCentrality_(iConfig.getParameter<bool>("useCentrality")),
-centralitySrc_(consumes<int>(iConfig.getParameter<edm::InputTag>("centralitySrc"))),
+centralitySrc_(consumes<int>(iConfig.getParameter<edm::InputTag>("centralitySrc")))
 {
 
    edm::Service<TFileService> fs;
