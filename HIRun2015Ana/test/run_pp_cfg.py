@@ -45,7 +45,7 @@ process.HITrackCorrections.centralitySrc = cms.InputTag("centralityBin","HFtower
 process.HITrackCorrections.trackSrc = cms.InputTag("generalTracks")
 process.HITrackCorrections.vertexSrc = cms.InputTag("offlinePrimaryVertices")
 process.HITrackCorrections.qualityString = cms.string("highPurity")
-process.HITrackCorrections.pfCandSrc = cms.untracked.InputTag("particleFlow")
+process.HITrackCorrections.pfCandSrc = cms.InputTag("particleFlow")
 process.HITrackCorrections.jetSrc = cms.InputTag("ak4CaloJets")
 # options
 process.HITrackCorrections.useCentrality = False
