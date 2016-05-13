@@ -395,6 +395,8 @@ HITrackCorrectionAnalyzer::caloMatched( const reco::Track & track, const edm::Ev
 {
   if( ! doCaloMatched_ ) return true;
 
+  return false;
+
   // // obtain pf candidates
   // edm::Handle<reco::PFCandidateCollection> pfCandidates;
   // iEvent.getByToken(pfCandSrc_, pfCandidates);
