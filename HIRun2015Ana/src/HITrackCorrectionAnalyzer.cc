@@ -84,7 +84,8 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       edm::EDGetTokenT<TrackingParticleCollection> tpEffSrc_;
       edm::EDGetTokenT<reco::RecoToSimCollection> associatorMapRTS_;
       edm::EDGetTokenT<reco::SimToRecoCollection> associatorMapSTR_;
-      edm::EDGetTokenT<reco::PFCandidateCollection> pfCandSrc_;
+      
+      //edm::EDGetTokenT<reco::PFCandidateCollection> pfCandSrc_;
       
 
       std::vector<double> ptBins_;
@@ -123,7 +124,7 @@ HITrackCorrectionAnalyzer::HITrackCorrectionAnalyzer(const edm::ParameterSet& iC
 treeHelper_(),
 vertexSrc_(consumes<reco::VertexCollection>(iConfig.getParameter<edm::InputTag>("vertexSrc"))),
 trackSrc_(consumes<edm::View<reco::Track> >(iConfig.getParameter<edm::InputTag>("trackSrc"))),
-pfCandSrc_(consumes<reco::PFCandidateCollection>(iConfig.getParameter<edm::InputTag>("pfCandSrc"))),
+//pfCandSrc_(consumes<reco::PFCandidateCollection>(iConfig.getParameter<edm::InputTag>("pfCandSrc"))),
 //jetSrc_(consumes<reco::CaloJetCollection>(iConfig.getParameter<edm::InputTag>("jetSrc"))),
 tpFakSrc_(consumes<TrackingParticleCollection>(iConfig.getParameter<edm::InputTag>("tpFakSrc"))),
 tpEffSrc_(consumes<TrackingParticleCollection>(iConfig.getParameter<edm::InputTag>("tpEffSrc"))),
@@ -394,40 +395,40 @@ HITrackCorrectionAnalyzer::caloMatched( const reco::Track & track, const edm::Ev
 {
   if( ! doCaloMatched_ ) return true;
 
-  // obtain pf candidates
-  edm::Handle<reco::PFCandidateCollection> pfCandidates;
-  iEvent.getByToken(pfCandSrc_, pfCandidates);
-  if( !pfCandidates.isValid() ) return false;
+  // // obtain pf candidates
+  // edm::Handle<reco::PFCandidateCollection> pfCandidates;
+  // iEvent.getByToken(pfCandSrc_, pfCandidates);
+  // if( !pfCandidates.isValid() ) return false;
 
-  double ecalEnergy = 0.;
-  double hcalEnergy = 0.;
+  // double ecalEnergy = 0.;
+  // double hcalEnergy = 0.;
 
-  for( unsigned ic = 0; ic < pfCandidates->size(); ic++ ) {//calo matching loops
+  // for( unsigned ic = 0; ic < pfCandidates->size(); ic++ ) {//calo matching loops
 
-      const reco::PFCandidate& cand = (*pfCandidates)[ic];
+  //     const reco::PFCandidate& cand = (*pfCandidates)[ic];
 
-      int type = cand.particleId();
+  //     int type = cand.particleId();
 
-      // only charged hadrons and leptons can be asscociated with a track
-      if(!(type == reco::PFCandidate::h ||     //type1
-      type == reco::PFCandidate::e ||     //type2
-      type == reco::PFCandidate::mu      //type3
-      )) continue;
+  //     // only charged hadrons and leptons can be asscociated with a track
+  //     if(!(type == reco::PFCandidate::h ||     //type1
+  //     type == reco::PFCandidate::e ||     //type2
+  //     type == reco::PFCandidate::mu      //type3
+  //     )) continue;
 
-      reco::TrackRef trackRef = cand.trackRef();
-      if( it == trackRef.key() ) {
-        // cand_index = ic;
-        ecalEnergy = cand.ecalEnergy();
-        hcalEnergy = cand.hcalEnergy();              
-        break;
-      } 
-  }
+  //     reco::TrackRef trackRef = cand.trackRef();
+  //     if( it == trackRef.key() ) {
+  //       // cand_index = ic;
+  //       ecalEnergy = cand.ecalEnergy();
+  //       hcalEnergy = cand.hcalEnergy();              
+  //       break;
+  //     } 
+  // }
 
-  //if((track.pt()-reso_*track.ptError())*TMath::CosH( track.eta() )>15 && (track.pt()-reso_*track.ptError())*TMath::CosH( track.eta() ) > hcalEnergy+ecalEnergy ) return false;
-  if( track.pt() < 20 || ( (hcalEnergy+ecalEnergy)/( track.pt()*TMath::CosH(track.eta() ) ) > reso_ && (hcalEnergy+ecalEnergy)/(TMath::CosH(track.eta())) > (track.pt() - 80.0) )  ) return true;
-  else {
-    return false;
-  }
+  // //if((track.pt()-reso_*track.ptError())*TMath::CosH( track.eta() )>15 && (track.pt()-reso_*track.ptError())*TMath::CosH( track.eta() ) > hcalEnergy+ecalEnergy ) return false;
+  // if( track.pt() < 20 || ( (hcalEnergy+ecalEnergy)/( track.pt()*TMath::CosH(track.eta() ) ) > reso_ && (hcalEnergy+ecalEnergy)/(TMath::CosH(track.eta())) > (track.pt() - 80.0) )  ) return true;
+  // else {
+  //   return false;
+  // }
 }
 
 
