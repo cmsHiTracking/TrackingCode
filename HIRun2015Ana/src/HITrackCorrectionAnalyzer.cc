@@ -84,7 +84,7 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       edm::EDGetTokenT<reco::RecoToSimCollection> associatorMapRTS_;
       edm::EDGetTokenT<reco::SimToRecoCollection> associatorMapSTR_;
       edm::EDGetTokenT<reco::PFCandidateCollection> pfCandSrc_;
-      edm::EDGetTokenT<reco::JetCollection> jetSrc_;
+      edm::EDGetTokenT<reco::CaloJetCollection> jetSrc_;
 
       std::vector<double> ptBins_;
       std::vector<double> etaBins_;
@@ -123,7 +123,7 @@ treeHelper_(),
 vertexSrc_(consumes<reco::VertexCollection>(iConfig.getParameter<edm::InputTag>("vertexSrc"))),
 trackSrc_(consumes<edm::View<reco::Track> >(iConfig.getParameter<edm::InputTag>("trackSrc"))),
 pfCandSrc_(consumes<reco::PFCandidateCollection>(iConfig.getParameter<edm::InputTag>("pfCandSrc"))),
-jetSrc_(consumes<reco::JetCollection>(iConfig.getParameter<edm::InputTag>("jetSrc"))),
+jetSrc_(consumes<reco::CaloJetCollection>(iConfig.getParameter<edm::InputTag>("jetSrc"))),
 tpFakSrc_(consumes<TrackingParticleCollection>(iConfig.getParameter<edm::InputTag>("tpFakSrc"))),
 tpEffSrc_(consumes<TrackingParticleCollection>(iConfig.getParameter<edm::InputTag>("tpEffSrc"))),
 associatorMapRTS_(consumes<reco::RecoToSimCollection>(iConfig.getParameter<edm::InputTag>("associatorMap"))),
