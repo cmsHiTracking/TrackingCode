@@ -76,7 +76,8 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       TF1 * vtxWeightFunc_;
 
       HITrackCorrectionTreeHelper treeHelper_;
-
+      
+      edm::EDGetTokenT<reco::CaloJetCollection> jetSrc_;
       edm::EDGetTokenT<reco::VertexCollection> vertexSrc_;
       edm::EDGetTokenT<edm::View<reco::Track> > trackSrc_;
       edm::EDGetTokenT<TrackingParticleCollection> tpFakSrc_;
@@ -84,7 +85,7 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       edm::EDGetTokenT<reco::RecoToSimCollection> associatorMapRTS_;
       edm::EDGetTokenT<reco::SimToRecoCollection> associatorMapSTR_;
       edm::EDGetTokenT<reco::PFCandidateCollection> pfCandSrc_;
-      edm::EDGetTokenT<reco::CaloJetCollection> jetSrc_;
+      
 
       std::vector<double> ptBins_;
       std::vector<double> etaBins_;
