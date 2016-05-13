@@ -84,7 +84,7 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       edm::EDGetTokenT<TrackingParticleCollection> tpEffSrc_;
       edm::EDGetTokenT<reco::RecoToSimCollection> associatorMapRTS_;
       edm::EDGetTokenT<reco::SimToRecoCollection> associatorMapSTR_;
-      edm::EDGetTokenT<reco::CaloJetCollection> jetSrc1_;
+      edm::EDGetTokenT<reco::CaloJetCollection> jetSrc_;
   
       //edm::EDGetTokenT<reco::PFCandidateCollection> pfCandSrc_;
       
@@ -152,9 +152,10 @@ doMomRes_(iConfig.getParameter<bool>("doMomRes")),
 fillNTuples_(iConfig.getParameter<bool>("fillNTuples")),
 useCentrality_(iConfig.getParameter<bool>("useCentrality")),
 centralitySrc_(consumes<int>(iConfig.getParameter<edm::InputTag>("centralitySrc"))),
+jetSrc_ = consumes<reco::CaloJetCollection>(iConfig.getParameter<edm::InputTag>("jetSrc"));
+
 {
   
-   jetSrc1_ = consumes<reco::CaloJetCollection>(iConfig.getParameter<edm::InputTag>("jetSrc1"));
 
    edm::Service<TFileService> fs;
    initHistos(fs);
@@ -204,7 +205,7 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
 
    //calo jets
    Handle<reco::CaloJetCollection> JetCollection;
-   iEvent.getByToken(jetSrc1_, JetCollection);
+   iEvent.getByToken(jetSrc_, JetCollection);
    if( !JetCollection.isValid() ) return; 
    // double leadingJet = 0.;
    // for(unsigned irecojet = 0; irecojet < JetCollection->size(); irecojet++ ){
