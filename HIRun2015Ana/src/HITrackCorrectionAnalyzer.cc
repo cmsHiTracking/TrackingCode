@@ -125,7 +125,6 @@ treeHelper_(),
 vertexSrc_(consumes<reco::VertexCollection>(iConfig.getParameter<edm::InputTag>("vertexSrc"))),
 trackSrc_(consumes<edm::View<reco::Track> >(iConfig.getParameter<edm::InputTag>("trackSrc"))),
 //pfCandSrc_(consumes<reco::PFCandidateCollection>(iConfig.getParameter<edm::InputTag>("pfCandSrc"))),
-jetSrc_(consumes<reco::CaloJetCollection>(iConfig.getParameter<edm::InputTag>("jetSrc"))),
 tpFakSrc_(consumes<TrackingParticleCollection>(iConfig.getParameter<edm::InputTag>("tpFakSrc"))),
 tpEffSrc_(consumes<TrackingParticleCollection>(iConfig.getParameter<edm::InputTag>("tpEffSrc"))),
 associatorMapRTS_(consumes<reco::RecoToSimCollection>(iConfig.getParameter<edm::InputTag>("associatorMap"))),
@@ -151,7 +150,9 @@ chi2nMax_(iConfig.getParameter<double>("chi2nMax")),
 doMomRes_(iConfig.getParameter<bool>("doMomRes")),
 fillNTuples_(iConfig.getParameter<bool>("fillNTuples")),
 useCentrality_(iConfig.getParameter<bool>("useCentrality")),
-centralitySrc_(consumes<int>(iConfig.getParameter<edm::InputTag>("centralitySrc")))
+centralitySrc_(consumes<int>(iConfig.getParameter<edm::InputTag>("centralitySrc"))),
+jetSrc_(consumes<reco::CaloJetCollection>(iConfig.getParameter<edm::InputTag>("jetSrc")))
+
 {
 
    edm::Service<TFileService> fs;
