@@ -83,12 +83,7 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       edm::EDGetTokenT<TrackingParticleCollection> tpFakSrc_;
       edm::EDGetTokenT<TrackingParticleCollection> tpEffSrc_;
       edm::EDGetTokenT<reco::RecoToSimCollection> associatorMapRTS_;
-      edm::EDGetTokenT<reco::SimToRecoCollection> associatorMapSTR_;
-      edm::EDGetTokenT<int> centralitySrc_;
-      edm::EDGetTokenT<reco::CaloJetCollection> jetSrc_;
-  
-      //edm::EDGetTokenT<reco::PFCandidateCollection> pfCandSrc_;
-      
+      edm::EDGetTokenT<reco::SimToRecoCollection> associatorMapSTR_;      
 
       std::vector<double> ptBins_;
       std::vector<double> etaBins_;
@@ -118,7 +113,10 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       bool fillNTuples_;
 
       bool useCentrality_;
-      
+      edm::EDGetTokenT<int> centralitySrc_;
+      edm::EDGetTokenT<reco::CaloJetCollection> jetSrc_;
+      edm::EDGetTokenT<reco::PFCandidateCollection> pfCandSrc_;
+
 
 };
 
@@ -126,7 +124,6 @@ HITrackCorrectionAnalyzer::HITrackCorrectionAnalyzer(const edm::ParameterSet& iC
 treeHelper_(),
 vertexSrc_(consumes<reco::VertexCollection>(iConfig.getParameter<edm::InputTag>("vertexSrc"))),
 trackSrc_(consumes<edm::View<reco::Track> >(iConfig.getParameter<edm::InputTag>("trackSrc"))),
-//pfCandSrc_(consumes<reco::PFCandidateCollection>(iConfig.getParameter<edm::InputTag>("pfCandSrc"))),
 tpFakSrc_(consumes<TrackingParticleCollection>(iConfig.getParameter<edm::InputTag>("tpFakSrc"))),
 tpEffSrc_(consumes<TrackingParticleCollection>(iConfig.getParameter<edm::InputTag>("tpEffSrc"))),
 associatorMapRTS_(consumes<reco::RecoToSimCollection>(iConfig.getParameter<edm::InputTag>("associatorMap"))),
@@ -153,8 +150,8 @@ doMomRes_(iConfig.getParameter<bool>("doMomRes")),
 fillNTuples_(iConfig.getParameter<bool>("fillNTuples")),
 useCentrality_(iConfig.getParameter<bool>("useCentrality")),
 centralitySrc_(consumes<int>(iConfig.getParameter<edm::InputTag>("centralitySrc"))),
-jetSrc_(consumes<reco::CaloJetCollection>(iConfig.getParameter<edm::InputTag>("jetSrc")))
-
+jetSrc_(consumes<reco::CaloJetCollection>(iConfig.getParameter<edm::InputTag>("jetSrc"))),
+pfCandSrc_(consumes<reco::PFCandidateCollection>(iConfig.getParameter<edm::InputTag>("pfCandSrc")))
 {
   
 
@@ -208,13 +205,13 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
    Handle<reco::CaloJetCollection> JetCollection;
    iEvent.getByToken(jetSrc_, JetCollection);
    if( !JetCollection.isValid() ) return; 
-   // double leadingJet = 0.;
-   // for(unsigned irecojet = 0; irecojet < JetCollection->size(); irecojet++ ){
-   //    const reco::CaloJet & JetCand = (*JetCollection)[irecojet];
-   //    if( JetCand.pt() > leadingJet ) leadingJet = JetCand.pt();//finding leading pT jets
-   // }
+   double leadingJet = 0.;
+   for(unsigned irecojet = 0; irecojet < JetCollection->size(); irecojet++ ){
+      const reco::CaloJet & JetCand = (*JetCollection)[irecojet];
+      if( JetCand.pt() > leadingJet ) leadingJet = JetCand.pt();//finding leading pT jets
+   }
 
-   // pthat_->Fill( leadingJet, crossSection_ );
+   pthat_->Fill( leadingJet, crossSection_ );
 
    // obtain reconstructed tracks
    Handle<edm::View<reco::Track> > tcol;
@@ -398,43 +395,41 @@ bool
 HITrackCorrectionAnalyzer::caloMatched( const reco::Track & track, const edm::Event& iEvent, unsigned it )
 {
   if( ! doCaloMatched_ ) return true;
+  
+  // obtain pf candidates
+  edm::Handle<reco::PFCandidateCollection> pfCandidates;
+  iEvent.getByToken(pfCandSrc_, pfCandidates);
+  if( !pfCandidates.isValid() ) return false;
 
-  return false;
+  double ecalEnergy = 0.;
+  double hcalEnergy = 0.;
 
-  // // obtain pf candidates
-  // edm::Handle<reco::PFCandidateCollection> pfCandidates;
-  // iEvent.getByToken(pfCandSrc_, pfCandidates);
-  // if( !pfCandidates.isValid() ) return false;
+  for( unsigned ic = 0; ic < pfCandidates->size(); ic++ ) {//calo matching loops
 
-  // double ecalEnergy = 0.;
-  // double hcalEnergy = 0.;
+      const reco::PFCandidate& cand = (*pfCandidates)[ic];
 
-  // for( unsigned ic = 0; ic < pfCandidates->size(); ic++ ) {//calo matching loops
+      int type = cand.particleId();
 
-  //     const reco::PFCandidate& cand = (*pfCandidates)[ic];
+      // only charged hadrons and leptons can be asscociated with a track
+      if(!(type == reco::PFCandidate::h ||     //type1
+      type == reco::PFCandidate::e ||     //type2
+      type == reco::PFCandidate::mu      //type3
+      )) continue;
 
-  //     int type = cand.particleId();
+      reco::TrackRef trackRef = cand.trackRef();
+      if( it == trackRef.key() ) {
+        // cand_index = ic;
+        ecalEnergy = cand.ecalEnergy();
+        hcalEnergy = cand.hcalEnergy();              
+        break;
+      } 
+  }
 
-  //     // only charged hadrons and leptons can be asscociated with a track
-  //     if(!(type == reco::PFCandidate::h ||     //type1
-  //     type == reco::PFCandidate::e ||     //type2
-  //     type == reco::PFCandidate::mu      //type3
-  //     )) continue;
-
-  //     reco::TrackRef trackRef = cand.trackRef();
-  //     if( it == trackRef.key() ) {
-  //       // cand_index = ic;
-  //       ecalEnergy = cand.ecalEnergy();
-  //       hcalEnergy = cand.hcalEnergy();              
-  //       break;
-  //     } 
-  // }
-
-  // //if((track.pt()-reso_*track.ptError())*TMath::CosH( track.eta() )>15 && (track.pt()-reso_*track.ptError())*TMath::CosH( track.eta() ) > hcalEnergy+ecalEnergy ) return false;
-  // if( track.pt() < 20 || ( (hcalEnergy+ecalEnergy)/( track.pt()*TMath::CosH(track.eta() ) ) > reso_ && (hcalEnergy+ecalEnergy)/(TMath::CosH(track.eta())) > (track.pt() - 80.0) )  ) return true;
-  // else {
-  //   return false;
-  // }
+  //if((track.pt()-reso_*track.ptError())*TMath::CosH( track.eta() )>15 && (track.pt()-reso_*track.ptError())*TMath::CosH( track.eta() ) > hcalEnergy+ecalEnergy ) return false;
+  if( track.pt() < 20 || ( (hcalEnergy+ecalEnergy)/( track.pt()*TMath::CosH(track.eta() ) ) > reso_ && (hcalEnergy+ecalEnergy)/(TMath::CosH(track.eta())) > (track.pt() - 80.0) )  ) return true;
+  else {
+    return false;
+  }
 }
 
 
