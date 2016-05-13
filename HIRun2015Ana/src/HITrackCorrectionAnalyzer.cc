@@ -200,16 +200,16 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
    recSimColl= *(recotosimCollectionH.product());
 
    //calo jets
-   Handle<reco::CaloJetCollection> JetCollection;
-   iEvent.getByToken(jetSrc_, JetCollection);
-   if( !JetCollection.isValid() ) return; 
-   double leadingJet = 0.;
-   for(unsigned irecojet = 0; irecojet < JetCollection->size(); irecojet++ ){
-      const reco::CaloJet & JetCand = (*JetCollection)[irecojet];
-      if( JetCand.pt() > leadingJet ) leadingJet = JetCand.pt();//finding leading pT jets
-   }
+   // Handle<reco::CaloJetCollection> JetCollection;
+   // iEvent.getByToken(jetSrc_, JetCollection);
+   // if( !JetCollection.isValid() ) return; 
+   // double leadingJet = 0.;
+   // for(unsigned irecojet = 0; irecojet < JetCollection->size(); irecojet++ ){
+   //    const reco::CaloJet & JetCand = (*JetCollection)[irecojet];
+   //    if( JetCand.pt() > leadingJet ) leadingJet = JetCand.pt();//finding leading pT jets
+   // }
 
-   pthat_->Fill( leadingJet, crossSection_ );
+   // pthat_->Fill( leadingJet, crossSection_ );
 
    // obtain reconstructed tracks
    Handle<edm::View<reco::Track> > tcol;
