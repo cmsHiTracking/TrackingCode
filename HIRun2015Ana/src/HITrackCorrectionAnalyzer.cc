@@ -83,9 +83,8 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       edm::EDGetTokenT<TrackingParticleCollection> tpEffSrc_;
       edm::EDGetTokenT<reco::RecoToSimCollection> associatorMapRTS_;
       edm::EDGetTokenT<reco::SimToRecoCollection> associatorMapSTR_;
-
-      edm::InputTag pfCandSrc_;
-      edm::InputTag jetSrc_;
+      edm::EDGetTokenT<reco::PFCandidateCollection> pfCandSrc_;
+      edm::EDGetTokenT<reco::JetCollection> jetSrc_;
 
       std::vector<double> ptBins_;
       std::vector<double> etaBins_;
@@ -123,6 +122,8 @@ HITrackCorrectionAnalyzer::HITrackCorrectionAnalyzer(const edm::ParameterSet& iC
 treeHelper_(),
 vertexSrc_(consumes<reco::VertexCollection>(iConfig.getParameter<edm::InputTag>("vertexSrc"))),
 trackSrc_(consumes<edm::View<reco::Track> >(iConfig.getParameter<edm::InputTag>("trackSrc"))),
+pfCandSrc_(consumes<reco::PFCandidateCollection>(iConfig.getParameter<edm::InputTag>("pfCandSrc"))),
+jetSrc_(consumes<reco::JetCollection>(iConfig.getParameter<edm::InputTag>("jetSrc"))),
 tpFakSrc_(consumes<TrackingParticleCollection>(iConfig.getParameter<edm::InputTag>("tpFakSrc"))),
 tpEffSrc_(consumes<TrackingParticleCollection>(iConfig.getParameter<edm::InputTag>("tpEffSrc"))),
 associatorMapRTS_(consumes<reco::RecoToSimCollection>(iConfig.getParameter<edm::InputTag>("associatorMap"))),
@@ -148,11 +149,8 @@ chi2nMax_(iConfig.getParameter<double>("chi2nMax")),
 doMomRes_(iConfig.getParameter<bool>("doMomRes")),
 fillNTuples_(iConfig.getParameter<bool>("fillNTuples")),
 useCentrality_(iConfig.getParameter<bool>("useCentrality")),
-centralitySrc_(consumes<int>(iConfig.getParameter<edm::InputTag>("centralitySrc")))
+centralitySrc_(consumes<int>(iConfig.getParameter<edm::InputTag>("centralitySrc"))),
 {
-
-   pfCandSrc_ = iConfig.getUntrackedParameter<edm::InputTag>("pfCandSrc");
-   jetSrc_ = iConfig.getParameter<edm::InputTag>("jetSrc");
 
    edm::Service<TFileService> fs;
    initHistos(fs);
@@ -202,7 +200,7 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
 
    //calo jets
    Handle<reco::CaloJetCollection> JetCollection;
-   iEvent.getByLabel(jetSrc_, JetCollection);
+   iEvent.getByToken(jetSrc_, JetCollection);
    if( !JetCollection.isValid() ) return; 
    double leadingJet = 0.;
    for(unsigned irecojet = 0; irecojet < JetCollection->size(); irecojet++ ){
@@ -397,7 +395,7 @@ HITrackCorrectionAnalyzer::caloMatched( const reco::Track & track, const edm::Ev
 
   // obtain pf candidates
   edm::Handle<reco::PFCandidateCollection> pfCandidates;
-  iEvent.getByLabel(pfCandSrc_, pfCandidates);
+  iEvent.getByToken(pfCandSrc_, pfCandidates);
   if( !pfCandidates.isValid() ) return false;
 
   double ecalEnergy = 0.;
