@@ -84,7 +84,8 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       edm::EDGetTokenT<TrackingParticleCollection> tpEffSrc_;
       edm::EDGetTokenT<reco::RecoToSimCollection> associatorMapRTS_;
       edm::EDGetTokenT<reco::SimToRecoCollection> associatorMapSTR_;
-      
+      edm::EDGetTokenT<int> centralitySrc_;
+      edm::EDGetTokenT<reco::CaloJetCollection> jetSrc_;
   
       //edm::EDGetTokenT<reco::PFCandidateCollection> pfCandSrc_;
       
@@ -117,8 +118,7 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       bool fillNTuples_;
 
       bool useCentrality_;
-      edm::EDGetTokenT<int> centralitySrc_;
-      edm::EDGetTokenT<reco::CaloJetCollection> jetSrc_;
+      
 
 };
 
