@@ -152,9 +152,9 @@ doMomRes_(iConfig.getParameter<bool>("doMomRes")),
 fillNTuples_(iConfig.getParameter<bool>("fillNTuples")),
 useCentrality_(iConfig.getParameter<bool>("useCentrality")),
 centralitySrc_(consumes<int>(iConfig.getParameter<edm::InputTag>("centralitySrc"))),
-jetSrc1_(consumes<reco::CaloJetCollection>(iConfig.getParameter<edm::InputTag>("jetSrc1")))
-
 {
+  
+   jetSrc1_ = consumes<reco::CaloJetCollection>(iConfig.getParameter<edm::InputTag>("jetSrc1"));
 
    edm::Service<TFileService> fs;
    initHistos(fs);
