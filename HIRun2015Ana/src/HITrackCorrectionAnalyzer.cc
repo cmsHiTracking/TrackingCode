@@ -61,6 +61,7 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       virtual void analyze(const edm::Event&, const edm::EventSetup&);
       virtual void endJob() ;
       void initHistos(const edm::Service<TFileService> & fs);
+      bool multCuts(const reco::Track & track, const reco::Vertex & vertex);
       bool passesTrackCuts(const reco::Track & track, const reco::Vertex & vertex);
       bool caloMatched(const reco::Track & track, const edm::Event& iEvent, unsigned it );
 
@@ -247,7 +248,7 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
    for(edm::View<reco::Track>::size_type i=0; i<tcol->size(); ++i){
      edm::RefToBase<reco::Track> track(tcol, i);
      reco::Track* tr=const_cast<reco::Track*>(track.get());
-     if( passesTrackCuts(*tr, vsorted[0]) ) 
+     if( multCuts(*tr, vsorted[0]) )
        multiplicity++;
    }
 
@@ -349,6 +350,33 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
      if(nrec>1) trkCorr3D_["hmul3D"]->Fill(tp->eta(),tp->pt(), occ, w);
      if( fillNTuples_) trkTree_["sim"]->Fill(); 
    }
+}
+
+bool
+HITrackCorrectionAnalyzer::multCuts(const reco::Track & track, const reco::Vertex & vertex)
+{
+
+   math::XYZPoint vtxPoint(0.0,0.0,0.0);
+   double vzErr =0.0, vxErr=0.0, vyErr=0.0;
+   vtxPoint=vertex.position();
+   vzErr=vertex.zError();
+   vxErr=vertex.xError();
+   vyErr=vertex.yError();
+
+   double dxy=0.0, dz=0.0, dxysigma=0.0, dzsigma=0.0;
+   dxy = track.dxy(vtxPoint);
+   dz = track.dz(vtxPoint);
+   dxysigma = sqrt(track.d0Error()*track.d0Error()+vxErr*vyErr);
+   dzsigma = sqrt(track.dzError()*track.dzError()+vzErr*vzErr);
+
+   if(track.quality(reco::TrackBase::qualityByName(qualityString_)) != 1) return false;
+   if(fabs(dxy/dxysigma) > 3.0) return false;
+   if(fabs(dz/dzsigma) > 3.0) return false;
+   if(fabs(track.ptError()) / track.pt() > 0.1) return false;
+   if( track.pt() < 0.4 || fabs(track.eta()) > 2.4 ) return false;
+
+   return true;
+
 }
 
 bool
