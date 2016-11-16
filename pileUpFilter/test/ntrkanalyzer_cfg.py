@@ -8,7 +8,7 @@ process.load("TrackingCode.pileUpFilter.pileUpFilter_cff")
 
 process.ana_PbPb = cms.EDAnalyzer('NtrkAnalyzer',
                       
-                		  vertexSrc = cms.string('offlinePrimaryVertices'),
+                		  vertexSrc = cms.InputTag('offlinePrimaryVertices'),
                 		  trackSrc = cms.InputTag('generalTracks'),             
 				
 				  offlineDCA = cms.untracked.double(3.0),
@@ -34,7 +34,8 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
-'/store/data/Run2015E/MinimumBias3/AOD/PromptReco-v1/000/262/167/00000/1274C672-2494-E511-9096-02163E014661.root'
+#'/store/data/Run2015E/MinimumBias3/AOD/PromptReco-v1/000/262/167/00000/1274C672-2494-E511-9096-02163E014661.root'
+'/store/user/gsfs/ReggeGribovPartonMC_EposLHC_pPb_4080_4080/EPOS_pileup1_pPb_RECODEBUG_11102016/161110_214657/0000/step3_EPOS_pileup1_pPb_RAW2DIGI_L1Reco_RECO_1.root'
 )
 )
 
