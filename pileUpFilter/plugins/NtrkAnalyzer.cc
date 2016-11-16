@@ -169,8 +169,8 @@ private:
 
   // ----------member data ---------------------------
 
-  edm::InputTag trackSrc_;//track collection: hiGeneralAndRegitTracks
-  std::string vertexSrc_; // vertex collection: hiSelectedVertex
+  edm::EDGetTokenT<edm::View<reco::Track> > trackSrc_;//track collection: hiGeneralAndRegitTracks
+  edm::EDGetTokenT<reco::VertexCollection> vertexSrc_;// vertex collection: hiSelectedVertex
 
   double offlineptErr_;
   double offlineDCA_;
@@ -197,8 +197,8 @@ private:
 NtrkAnalyzer::NtrkAnalyzer(const edm::ParameterSet& iConfig)
  
 {
-  trackSrc_ = iConfig.getParameter<edm::InputTag>("trackSrc");
-  vertexSrc_ = iConfig.getParameter<std::string>("vertexSrc");
+  trackSrc_ = consumes<edm::View<reco::Track> >(iConfig.getParameter<edm::InputTag>("trackSrc"));
+  vertexSrc_ = consumes<reco::VertexCollection>(iConfig.getParameter<edm::InputTag>("vertexSrc"));
 
   offlineptErr_ = iConfig.getUntrackedParameter<double>("offlineptErr", 0.0);
   offlineDCA_ = iConfig.getUntrackedParameter<double>("offlineDCA", 0.0);
@@ -226,7 +226,7 @@ NtrkAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
   using namespace std;
 	
   edm::Handle<reco::VertexCollection> vertices;
-  iEvent.getByLabel(vertexSrc_,vertices);
+  iEvent.getByToken(vertexSrc_,vertices);
   double bestvz=-999.9, bestvx=-999.9, bestvy=-999.9;
   double bestvzError=-999.9, bestvxError=-999.9, bestvyError=-999.9;
   const reco::Vertex & vtx = (*vertices)[0];
@@ -242,7 +242,7 @@ NtrkAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
   if( vtx.tracksSize() < 1 ) return;
 
   Handle<reco::TrackCollection> tracks;
-  iEvent.getByLabel(trackSrc_, tracks);
+  iEvent.getByToken(trackSrc_, tracks);
 
   int count = 0;
   double max_pt = 0.0;

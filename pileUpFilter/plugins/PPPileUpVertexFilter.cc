@@ -33,7 +33,7 @@ public:
     virtual void endJob() ;
     virtual bool filter(edm::Event&, const edm::EventSetup&);
 private:
-    edm::InputTag vtxSrc_;
+    edm::EDGetTokenT<reco::VertexCollection> vtxSrc_;
     bool doDzNtrkCut_;
     bool doDxyDzCut_;
     bool doSurfaceCut_;
@@ -49,7 +49,8 @@ private:
     TF2* func2D_;
 };
 PPPileUpVertexFilter::PPPileUpVertexFilter(const edm::ParameterSet& iConfig) :
-vtxSrc_(iConfig.getParameter<edm::InputTag>("vtxSrc")),
+
+//vtxSrc_(iConfig.getParameter<edm::InputTag>("vtxSrc")),
 doDzNtrkCut_(iConfig.getParameter<bool>("doDzNtrkCut")),
 doDxyDzCut_(iConfig.getParameter<bool>("doDxyDzCut")),
 doSurfaceCut_(iConfig.getParameter<bool>("doSurfaceCut")),
@@ -63,6 +64,9 @@ dzCutByNtrk_(iConfig.getParameter<std::vector<double> >("dzCutByNtrk")),
 surfaceFunctionString_(iConfig.getParameter<std::string>("surfaceFunctionString")),
 surfaceCutParameters_(iConfig.getParameter<std::vector<double> >("surfaceCutParameters"))
 {
+
+    vtxSrc_ = consumes<reco::VertexCollection>(iConfig.getParameter<edm::InputTag>("vtxSrc"));
+
     func2D_ = new TF2("func2D",surfaceFunctionString_.c_str(),0,50.0,0,500);
     if( (int)surfaceCutParameters_.size() == func2D_->GetNpar())
     {
@@ -87,7 +91,7 @@ PPPileUpVertexFilter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup)
     using namespace edm;
     bool accepted = true;
     Handle<std::vector<reco::Vertex> > vcol;
-    iEvent.getByLabel(vtxSrc_, vcol);
+    iEvent.getByToken(vtxSrc_, vcol);
     std::vector<reco::Vertex> vsorted = *vcol;
     // sort the vertcies by number of tracks in descending order
     std::sort( vsorted.begin(), vsorted.end(), PPwayToSort);
