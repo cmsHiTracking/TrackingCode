@@ -63,5 +63,5 @@ process.TFileService = cms.Service("TFileService",fileName = cms.string("Ntrk.ro
 
 process.p = cms.Path( process.ana_PbPb0*process.pPbPileup )
 process.p1 = cms.Path( process.pPbPileup*process.pileUpFilter_vtx1*process.ana_PbPb1 )
-process.p2 = cms.Path( rocess.pPbPileup*process.pileUpFilter_Gplus*process.ana_PbPb2 )
-process.p3 = cms.Path( rocess.pPbPileup*process.olvFilter_dz1p0*process.ana_PbPb3 )
+process.p2 = cms.Path( process.pPbPileup*process.pileUpFilter_Gplus*process.ana_PbPb2 )
+process.p3 = cms.Path( process.pPbPileup*process.olvFilter_dz1p0*process.ana_PbPb3 )
