@@ -15,7 +15,7 @@ process.ana_PbPb = cms.EDAnalyzer('NtrkAnalyzer',
 				  offlineptErr = cms.untracked.double(0.1)
 )
 
-pPbPileup = cms.EDAnalyzer('ppPileupFilter',
+process.pPbPileup = cms.EDAnalyzer('ppPileupFilter',
     trackSrc = cms.InputTag("generalTracks"),
     vertexSrc = cms.InputTag("offlinePrimaryVertices"),
     vertexZMax = cms.double(15.0),
