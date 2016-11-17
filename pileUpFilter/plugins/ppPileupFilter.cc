@@ -135,7 +135,7 @@ void
 ppPileupFilter::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 {
    using namespace edm;
-   Handle<reco::TrackCollection> tcol;
+   Handle<edm::View<reco::Track>> tcol;
    iEvent.getByToken(trackSrc_, tcol);
    
    Handle<std::vector<reco::Vertex>> vertex;
