@@ -50,7 +50,8 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
 #'/store/data/Run2015E/MinimumBias3/AOD/PromptReco-v1/000/262/167/00000/1274C672-2494-E511-9096-02163E014661.root'
-'/store/user/gsfs/ReggeGribovPartonMC_EposLHC_pPb_4080_4080/EPOS_pileup1_pPb_RECODEBUG_11102016/161110_214657/0000/step3_EPOS_pileup1_pPb_RAW2DIGI_L1Reco_RECO_1.root'
+#'/store/user/gsfs/ReggeGribovPartonMC_EposLHC_pPb_4080_4080/EPOS_pileup1_pPb_RECODEBUG_11102016/161110_214657/0000/step3_EPOS_pileup1_pPb_RAW2DIGI_L1Reco_RECO_1.root'
+'/store/express/PARun2016C/ExpressPhysicsPA/FEVT/Express-v1/000/285/480/00000/00D0A34F-5BAD-E611-9B86-02163E0134CD.root'
 )
 )
 
@@ -62,6 +63,6 @@ process.ana_PbPb3 = process.ana_PbPb.clone()
 process.TFileService = cms.Service("TFileService",fileName = cms.string("Ntrk.root"))
 
 process.p = cms.Path( process.ana_PbPb0*process.pPbPileup )
-process.p1 = cms.Path( process.pPbPileup*process.pileUpFilter_pPb8TeV_vtx1*process.ana_PbPb1 )
-process.p2 = cms.Path( process.pPbPileup*process.pileUpFilter_pPb8TeV_Gplus*process.ana_PbPb2 )
-process.p3 = cms.Path( process.pPbPileup*process.olvFilter_pPb8TeV_dz1p0*process.ana_PbPb3 )
+process.p1 = cms.Path( process.pileUpFilter_pPb8TeV_vtx1*process.ana_PbPb1 )
+process.p2 = cms.Path( process.pileUpFilter_pPb8TeV_Gplus*process.ana_PbPb2 )
+process.p3 = cms.Path( process.olvFilter_pPb8TeV_dz1p0*process.ana_PbPb3 )
