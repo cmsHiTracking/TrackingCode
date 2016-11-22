@@ -6,7 +6,7 @@ pileUpFilter_default = TrackingCode.pileUpFilter.pileUpFilter_cfi.pileupVertexFi
 
 ### define your own filter ###
 
-pileUpFilter_vtx1 = pileUpFilter_default.clone(
+pileUpFilter_pp5TeV_vtx1 = pileUpFilter_default.clone(
                                                            dzCutByNtrk = cms.vdouble(
                                                                                      999.,0.0,0.0,0.0,0.0
                                                                                     ),
@@ -14,7 +14,7 @@ pileUpFilter_vtx1 = pileUpFilter_default.clone(
                                                 )    
 
 
-pileUpFilter_Gplus = pileUpFilter_default.clone(
+pileUpFilter_pp5TeV_Gplus = pileUpFilter_default.clone(
                                                            dzCutByNtrk = cms.vdouble(
                                                                                     999.,999.,4.0,1.5,1.0,
                                                                                      0.6, 0.5,0.4,0.3,0.3,
@@ -24,7 +24,7 @@ pileUpFilter_Gplus = pileUpFilter_default.clone(
                                                                                     )
                                                        )
 # OLVfilter stands for overlapping vertex filter
-olvFilter_dz1p0 = pileUpFilter_default.clone(
+olvFilter_pp5TeV_dz1p0 = pileUpFilter_default.clone(
                                                            dzCutByNtrk = cms.vdouble(
                                                                                     999.,999.,4.0,1.5,1.0,
                                                                                      0.6, 0.5,0.4,0.3,0.3,
@@ -35,7 +35,35 @@ olvFilter_dz1p0 = pileUpFilter_default.clone(
                                                            dzTolerance = cms.double(1.0)
                                               )  
 
-                                  
+                          
+pileUpFilter_pPb8TeV_vtx1 = pileUpFilter_default.clone(
+                                                           dzCutByNtrk = cms.vdouble(
+                                                                                     999.,0.0,0.0,0.0,0.0
+                                                                                    ),
+                                                           dzTolerance = cms.double(9999.0)
+                                                )    
+
+
+pileUpFilter_pPb8TeV_Gplus = pileUpFilter_default.clone(
+                                                           dzCutByNtrk = cms.vdouble(
+                                                                                    999.,999.,4.0,1.5,1.0,
+                                                                                     0.8, 0.6,0.5,0.4,0.3,
+                                                                                     0.2, 0.2,0.2,0.2,0.1,
+                                                                                     0.1, 0.1,0.1,0.1,0.1,
+                                                                                     0.0, 0.0,0.0,0.0
+                                                                                    )
+                                                       )
+# OLVfilter stands for overlapping vertex filter
+olvFilter_pPb8TeV_dz1p0 = pileUpFilter_default.clone(
+                                                           dzCutByNtrk = cms.vdouble(
+                                                                                    999.,999.,4.0,1.5,1.0,
+                                                                                     0.8, 0.6,0.5,0.4,0.3,
+                                                                                     0.2, 0.2,0.2,0.2,0.1,
+                                                                                     0.1, 0.1,0.1,0.1,0.1,
+                                                                                     0.0, 0.0,0.0,0.0
+                                                                                    ),
+                                                           dzTolerance = cms.double(1.0)
+                                              )         
 
 
 
