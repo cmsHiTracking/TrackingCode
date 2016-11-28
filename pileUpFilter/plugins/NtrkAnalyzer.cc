@@ -171,6 +171,7 @@ private:
 
   edm::EDGetTokenT<edm::View<reco::Track> > trackSrc_;//track collection: hiGeneralAndRegitTracks
   edm::EDGetTokenT<reco::VertexCollection> vertexSrc_;// vertex collection: hiSelectedVertex
+  edm::EDGetTokenT<CaloTowerCollection> towerSrc_;
 
   double offlineptErr_;
   double offlineDCA_;
@@ -199,6 +200,7 @@ NtrkAnalyzer::NtrkAnalyzer(const edm::ParameterSet& iConfig)
 {
   trackSrc_ = consumes<edm::View<reco::Track> >(iConfig.getParameter<edm::InputTag>("trackSrc"));
   vertexSrc_ = consumes<reco::VertexCollection>(iConfig.getParameter<edm::InputTag>("vertexSrc"));
+  towerSrc_ = consumes<CaloTowerCollection>("towerSrc");
 
   offlineptErr_ = iConfig.getUntrackedParameter<double>("offlineptErr", 0.0);
   offlineDCA_ = iConfig.getUntrackedParameter<double>("offlineDCA", 0.0);
@@ -274,6 +276,22 @@ NtrkAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
   Ntrk->Fill( count );
   leadingPt->Fill( max_pt );
 
+  edm::Handle<CaloTowerCollection> towers;
+  iEvent.getByToken(towerSrc_, towers);
+
+  double energy = 0.;
+  double sumEt = 0.;
+  for(unsigned i = 0; i < towers->size(); ++i){
+
+        const CaloTower & hit= (*towers)[i];
+        if( fabs(hit.eta()) > 5.0 || fabs(hit.eta()) < 3.0  ) continue;
+        energy += (hit.hadEnergy() + hit.emEnergy());
+        sumEt += (hit.hadEt()+hit.emEt());
+  }
+  
+  HFsum->Fill( energy );
+  HFsumEt->Fill( sumEt );
+
 }
 // ------------ method called once each job just before starting event loop  ------------
 void 
@@ -283,9 +301,11 @@ NtrkAnalyzer::beginJob()
     
   TH3D::SetDefaultSumw2();
 
-  Ntrk = fs->make<TH1D>("Ntrk",";Ntrk",300,0,300);
+  Ntrk = fs->make<TH1D>("Ntrk",";Ntrk",500,0,500);
   leadingPt = fs->make<TH1D>("leadingPt",";p_{T} (GeV)",1000,0,200);
   vertexZ = fs->make<TH1D>("vertexZ",";vertexZ",1000,-1,1);
+  HFsum = fs->make<TH1D>("HFsum", ";HFsum", 1000, 0, 10000);
+  HFsumEt = fs->make<TH1D>("HFsumEt", ";HFsumEt", 1000, 0, 10000);
 }
 
 // ------------ method called once each job just after ending the event loop  ------------
