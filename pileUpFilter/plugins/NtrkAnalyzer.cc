@@ -200,7 +200,7 @@ NtrkAnalyzer::NtrkAnalyzer(const edm::ParameterSet& iConfig)
 {
   trackSrc_ = consumes<edm::View<reco::Track> >(iConfig.getParameter<edm::InputTag>("trackSrc"));
   vertexSrc_ = consumes<reco::VertexCollection>(iConfig.getParameter<edm::InputTag>("vertexSrc"));
-  towerSrc_ = consumes<CaloTowerCollection>("towerSrc");
+  towerSrc_ = consumes<CaloTowerCollection>(iConfig.getParameter<edm::InputTag>("towerSrc"));
 
   offlineptErr_ = iConfig.getUntrackedParameter<double>("offlineptErr", 0.0);
   offlineDCA_ = iConfig.getUntrackedParameter<double>("offlineDCA", 0.0);
