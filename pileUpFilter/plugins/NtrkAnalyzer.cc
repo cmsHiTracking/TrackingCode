@@ -179,6 +179,8 @@ private:
   TH1D* Ntrk;
   TH1D* leadingPt;
   TH1D* vertexZ;
+  TH1D* HFsum;
+  TH1D* HFsumEt;
 
 
   };
