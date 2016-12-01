@@ -173,11 +173,10 @@ ppPileupFilter::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
        
        count++;   
    }
-   
+   if( count < 150 ) return;
    hNtrkOffline->Fill(count);
 
-   if( count < 150 ) return;
-   
+  
    //fill evt perf histos
    int lumi = iEvent.getLuminosityBlock().luminosityBlock();
    evtPerf_["evtRaw"]->Fill(0.5);
