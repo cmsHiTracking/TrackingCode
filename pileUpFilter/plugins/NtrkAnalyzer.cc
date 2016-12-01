@@ -281,10 +281,10 @@ NtrkAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       
   } 
 
+  if( count < Nmin_ || count >= Nmax_ ) return;
+
   Ntrk->Fill( count );
   leadingPt->Fill( max_pt );
-
-  if( count < Nmin_ || count >= Nmax_ ) return;
 
   edm::Handle<CaloTowerCollection> towers;
   iEvent.getByToken(towerSrc_, towers);
