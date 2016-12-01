@@ -176,6 +176,9 @@ private:
   double offlineptErr_;
   double offlineDCA_;
 
+  int Nmin_;
+  int Nmax_;
+
   TH1D* Ntrk;
   TH1D* leadingPt;
   TH1D* vertexZ;
@@ -203,6 +206,9 @@ NtrkAnalyzer::NtrkAnalyzer(const edm::ParameterSet& iConfig)
   trackSrc_ = consumes<edm::View<reco::Track> >(iConfig.getParameter<edm::InputTag>("trackSrc"));
   vertexSrc_ = consumes<reco::VertexCollection>(iConfig.getParameter<edm::InputTag>("vertexSrc"));
   towerSrc_ = consumes<CaloTowerCollection>(iConfig.getParameter<edm::InputTag>("towerSrc"));
+  
+  Nmin_ = iConfig.getUntrackedParameter<int>("Nmin");
+  Nmax_ = iConfig.getUntrackedParameter<int>("Nmax");
 
   offlineptErr_ = iConfig.getUntrackedParameter<double>("offlineptErr", 0.0);
   offlineDCA_ = iConfig.getUntrackedParameter<double>("offlineDCA", 0.0);
@@ -277,6 +283,8 @@ NtrkAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
   Ntrk->Fill( count );
   leadingPt->Fill( max_pt );
+
+  if( count < Nmin_ || count >= Nmax_ ) return;
 
   edm::Handle<CaloTowerCollection> towers;
   iEvent.getByToken(towerSrc_, towers);
