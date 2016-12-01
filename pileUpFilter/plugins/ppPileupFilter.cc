@@ -148,6 +148,9 @@ ppPileupFilter::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
    if(vsorted[0].tracksSize() < 2) return;
    if(fabs(vsorted[0].z()) > vertexZMax_) return;
 
+   int bx=iEvent.eventAuxiliary().bunchCrossing();
+   if( bx < 150 ) return;
+
    //fill evt perf histos
    int lumi = iEvent.getLuminosityBlock().luminosityBlock();
    evtPerf_["evtRaw"]->Fill(0.5);
