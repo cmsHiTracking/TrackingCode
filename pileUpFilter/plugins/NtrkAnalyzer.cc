@@ -251,8 +251,8 @@ NtrkAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
   if(bestvz < -15.0 || bestvz > 15.0) return;
   if( vtx.tracksSize() < 1 ) return;
 
-  int bx=iEvent.eventAuxiliary().bunchCrossing();
-   if( bx < 150 ) return;
+  // int bx=iEvent.eventAuxiliary().bunchCrossing();
+  //  if( bx < 150 ) return;
 
   edm::Handle<edm::View<reco::Track>> tracks;
   iEvent.getByToken(trackSrc_, tracks);
