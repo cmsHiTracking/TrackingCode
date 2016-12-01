@@ -254,7 +254,7 @@ ppPileupFilter::initHistos(const edm::Service<TFileService> & fs)
     vtxPerf_["assocVtxDxy"] = fs->make<TH1F>("assocVtxDxy","Rho Distance from first PV; dxy (cm)",200,0,4);
     vtxPerf2D_["Ntrk2D"] = fs->make<TH2F>("vtxNtrk2D","Tracks per vertex;vertex (sorted by Ntrk);Ntrk",10,0,10,200,0,200);
     vtxPerf2D_["assocVtxDzNtrk"] = fs->make<TH2F>("assocVtxDzNtrk","Z Distance from first PV vs Ntrk of assoc; dz (cm); Ntrk",200,0,20,100,0,100);
-    vtxPerf2D_["assocVtxDzNtrk_ratio"] = fs->make<TH2F>("assocVtxDzNtrk_ratio","Z Distance from first PV vs Ntrk/Ntrk1 of assoc; dz (cm); Ntrk",200,0,20,1000,0,100);
+    vtxPerf2D_["assocVtxDzNtrk_ratio"] = fs->make<TH2F>("assocVtxDzNtrk_ratio","Z Distance from first PV vs Ntrk/Ntrk1 of assoc; dz (cm); Ntrk",200,0,20,1000,0,1);
     vtxPerf2D_["assocVtxDxyNtrk"] = fs->make<TH2F>("assocVtxDxyNtrk","Rho Distance from first PV vs Ntrk of assoc; dxy (cm); Ntrk",200,0,2,100,0,100);
     vtxPerf2D_["assocVtxDxyDz"] = fs->make<TH2F>("assocVtxDxyDz","Rho Distance from frist PV vs Rho Distance from assoc;dxy(cm); dz",200,0,2,200,0,20);
     trkPerf_["Nhit"] = fs->make<TH1F>("trkNhit","Tracks by Number of Valid Hits;N hits",35,0,35);
