@@ -147,10 +147,37 @@ ppPileupFilter::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
    if(vsorted.size() == 0) return;
    if(vsorted[0].tracksSize() < 2) return;
    if(fabs(vsorted[0].z()) > vertexZMax_) return;
+   // int bx=iEvent.eventAuxiliary().bunchCrossing();
+   // if( bx < 150 ) return;
 
-   int bx=iEvent.eventAuxiliary().bunchCrossing();
-   if( bx < 150 ) return;
+   //find Ntrkoffline and get trkDCAz distribution
+   math::XYZPoint pvPoint(0.,0.,0.);
+   pvPoint = vsorted[0].position(); 
 
+   int count = 0;
+   for(auto &track : *tcol)
+   {
+       double trkdz = track.dz(pvPoint);
+       htrkDz_notrkcut->Fill(trkdz);          
+ 
+       if(!passesTrackCuts(track, vsorted[0])) continue;
+       htrkDz_wtrkcut->Fill(trkdz);
+
+       trkPerf_["Nhit"]->Fill(track.numberOfValidHits());
+       trkPerf_["pt"]->Fill(track.pt());      
+       trkPerf_["eta"]->Fill(track.eta());
+       trkPerf_["phi"]->Fill(track.phi());
+       trkPerf_["chi2"]->Fill(track.normalizedChi2());
+
+       if ( fabs(track.eta()) > 2.4 || track.pt() < 0.4  ) continue;
+       
+       count++;   
+   }
+   
+   hNtrkOffline->Fill(count);
+
+   if( count < 150 ) return;
+   
    //fill evt perf histos
    int lumi = iEvent.getLuminosityBlock().luminosityBlock();
    evtPerf_["evtRaw"]->Fill(0.5);
@@ -185,32 +212,6 @@ ppPileupFilter::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
        vtxPerf2D_["assocVtxDzNtrk_ratio"]->Fill(dz, double(vsorted[i].tracksSize() )/double(vsorted[0].tracksSize()) );
        vtxPerf2D_["assocVtxDxyDz"]->Fill(dxy,dz);
    }
-
-  //find Ntrkoffline and get trkDCAz distribution
-   math::XYZPoint pvPoint(0.,0.,0.);
-   pvPoint = vsorted[0].position(); 
-
-   int count = 0;
-   for(auto &track : *tcol)
-   {
-       double trkdz = track.dz(pvPoint);
-       htrkDz_notrkcut->Fill(trkdz);          
- 
-       if(!passesTrackCuts(track, vsorted[0])) continue;
-       htrkDz_wtrkcut->Fill(trkdz);
-
-       trkPerf_["Nhit"]->Fill(track.numberOfValidHits());
-       trkPerf_["pt"]->Fill(track.pt());      
-       trkPerf_["eta"]->Fill(track.eta());
-       trkPerf_["phi"]->Fill(track.phi());
-       trkPerf_["chi2"]->Fill(track.normalizedChi2());
-
-       if ( fabs(track.eta()) > 2.4 || track.pt() < 0.4  ) continue;
-       
-       count++;   
-   }
-   
-   hNtrkOffline->Fill(count);
   
 }
 
