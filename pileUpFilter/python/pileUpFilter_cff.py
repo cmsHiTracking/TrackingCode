@@ -87,10 +87,10 @@ pileUpFilter_pPb8TeV_Gplus_3 = pileUpFilter_default.clone(
 # OLVfilter stands for overlapping vertex filter
 olvFilter_pPb8TeV_dz1p0 = pileUpFilter_default.clone(
                                                            dzCutByNtrk = cms.vdouble(
-                                                                                    999.,999.,4.0,1.5,1.0,
-                                                                                     0.8, 0.6,0.5,0.4,0.3,
-                                                                                     0.2, 0.2,0.2,0.2,0.1,
-                                                                                     0.1, 0.1,0.1,0.1,0.1,
+                                                                                    999.,999.,999.,999.,999.0,
+                                                                                     4.0, 1.5,1.0,0.8,0.6,
+                                                                                     0.5, 0.4,0.3,0.2,0.2,
+                                                                                     0.2, 0.2,0.1,0.1,0.1,
                                                                                      0.0, 0.0,0.0,0.0
                                                                                     ),
                                                            dzTolerance = cms.double(1.0)
