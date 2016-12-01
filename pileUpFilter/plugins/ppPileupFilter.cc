@@ -179,7 +179,7 @@ ppPileupFilter::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
        vtxPerf_["assocVtxDxy"]->Fill(dxy);
        vtxPerf2D_["assocVtxDxyNtrk"]->Fill(dxy,vsorted[i].tracksSize());
        vtxPerf2D_["assocVtxDzNtrk"]->Fill(dz,vsorted[i].tracksSize());
-       vtxPerf2D_["assocVtxDzNtrk_ratio"]->Fill(dz, vsorted[i].tracksSize()/vsorted[0].tracksSize() );
+       vtxPerf2D_["assocVtxDzNtrk_ratio"]->Fill(dz, double(vsorted[i].tracksSize() )/double(vsorted[0].tracksSize()) );
        vtxPerf2D_["assocVtxDxyDz"]->Fill(dxy,dz);
    }
 
