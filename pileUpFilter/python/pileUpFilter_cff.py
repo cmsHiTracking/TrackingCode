@@ -46,33 +46,6 @@ pileUpFilter_pPb8TeV_vtx1 = pileUpFilter_default.clone(
 
 pileUpFilter_pPb8TeV_Gplus = pileUpFilter_default.clone(
                                                            dzCutByNtrk = cms.vdouble(
-                                                                                    999.,999.,4.0,1.5,1.0,
-                                                                                     0.8, 0.6,0.5,0.4,0.3,
-                                                                                     0.2, 0.2,0.2,0.2,0.1,
-                                                                                     0.1, 0.1,0.1,0.1,0.1,
-                                                                                     0.0, 0.0,0.0,0.0
-                                                                                    )
-                                                       )
-pileUpFilter_pPb8TeV_Gplus_1 = pileUpFilter_default.clone(
-                                                           dzCutByNtrk = cms.vdouble(
-                                                                                    999.,999.,999.,4.0,1.5,
-                                                                                     1.0, 0.8,0.6,0.5,0.4,
-                                                                                     0.3, 0.2,0.2,0.2,0.2,
-                                                                                     0.1, 0.1,0.1,0.1,0.1,
-                                                                                     0.0, 0.0,0.0,0.0
-                                                                                    )
-                                                       )
-pileUpFilter_pPb8TeV_Gplus_2 = pileUpFilter_default.clone(
-                                                          dzCutByNtrk = cms.vdouble(
-                                                                                    999.,999.,999.,999.,4.0,
-                                                                                     1.5, 1.0,0.8,0.6,0.5,
-                                                                                     0.4, 0.3,0.2,0.2,0.2,
-                                                                                     0.2, 0.1,0.1,0.1,0.1,
-                                                                                     0.0, 0.0,0.0,0.0
-                                                                                    )
-                                                       )
-pileUpFilter_pPb8TeV_Gplus_3 = pileUpFilter_default.clone(
-                                                           dzCutByNtrk = cms.vdouble(
                                                                                     999.,999.,999.,999.,999.0,
                                                                                      4.0, 1.5,1.0,0.8,0.6,
                                                                                      0.5, 0.4,0.3,0.2,0.2,
@@ -80,10 +53,6 @@ pileUpFilter_pPb8TeV_Gplus_3 = pileUpFilter_default.clone(
                                                                                      0.0, 0.0,0.0,0.0
                                                                                     )
                                                        )
-
-
-
-
 # OLVfilter stands for overlapping vertex filter
 olvFilter_pPb8TeV_dz1p0 = pileUpFilter_default.clone(
                                                            dzCutByNtrk = cms.vdouble(
