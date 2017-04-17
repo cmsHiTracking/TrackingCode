@@ -34,7 +34,7 @@ cout << "Welcome to Rice Heavy Ion group!! " << endl;
 
 //make Canvas
 
-TCanvas* makeCanvas(const char* name, const char *title, bool doLogx == false, bool doLogy == true ){
+TCanvas* makeCanvas(const char* name, const char *title, bool doLogx = false, bool doLogy = true ){
 	
 	// Start with a canvas
 	TCanvas *canvas = new TCanvas(name,title, 1, 1 ,600 ,600 );
@@ -115,7 +115,7 @@ void initSubPad(TPad* pad, int i)
   //printf("Pad: %p, index: %d\n",pad,i);
 
   pad->cd(i);
-  TPad *tmpPad = pad->GetPad(i);
+  TPad *tmpPad = (TPad*)pad->GetPad(i);
   tmpPad->SetLeftMargin  (0.20);
   tmpPad->SetTopMargin   (0.06);
   tmpPad->SetRightMargin (0.08);
@@ -240,7 +240,7 @@ vector<TPad*> makeMultiPad(const int num){//we only have 4,6,8 options for now
 		pad[7]->SetBottomMargin(0.30);
 	}
 
-	for( i = 0; i < num; i++){
+	for( int i = 0; i < num; i++){
 
 		temp.push_back( pad[i] );
 	}
@@ -395,7 +395,7 @@ TLegend* makeLegend(){
 
 }
 
-TGraphAsymmErrors* makeEfficiency(TH1D* hist1, TH1D* hist2, const char*Draw == "cp", EColor color = kBlack  ){
+TGraphAsymmErrors* makeEfficiency(TH1D* hist1, TH1D* hist2, const char*Draw = "cp", EColor color = kBlack  ){
 
 	TGraphAsymmErrors* temp = new TGraphAsymmErrors();
 	temp->Divide( hist1, hist2, Draw );
@@ -415,4 +415,3 @@ TLatex* makeLatex(const char* txt,  double x, double y){
 	return r;
 
 }
-	

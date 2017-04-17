@@ -29,7 +29,7 @@ process.tpRecoAssocGeneralTracks.label_tr = cms.InputTag("hiGeneralTracks")
 process.load("SimTracker.TrackAssociatorProducers.quickTrackAssociatorByHits_cfi")
 process.quickTrackAssociatorByHits.SimToRecoDenominator = cms.string('reco')
 
-process.load("SimTracker.TrackerHitAssociation.clusterTpAssociationProducer_cfi")
+process.load("SimTracker.TrackerHitAssociation.tpClusterProducer_cfi")
 
 # Input source
 process.source = cms.Source("PoolSource",
@@ -50,15 +50,15 @@ process.centralityBin.nonDefaultGlauberModel = cms.string("HydjetDrum5")
 process.HITrackCorrections.centralitySrc = cms.InputTag("centralityBin","HFtowers")
 process.HITrackCorrections.trackSrc = cms.InputTag("hiGeneralTracks")
 process.HITrackCorrections.qualityString = cms.string("highPurity")
-process.HITrackCorrections.pfCandSrc = cms.untracked.InputTag("particleFlowTmp")
+process.HITrackCorrections.pfCandSrc = cms.InputTag("particleFlowTmp")
 process.HITrackCorrections.jetSrc = cms.InputTag("akPu4CaloJets")
 # options
 process.HITrackCorrections.useCentrality = False
-process.HITrackCorrections.applyTrackCuts = True
+process.HITrackCorrections.applyTrackCuts = False
 process.HITrackCorrections.fillNTuples = False
-process.HITrackCorrections.applyVertexZCut = True
+process.HITrackCorrections.applyVertexZCut = False
 process.HITrackCorrections.doVtxReweighting = False
-process.HITrackCorrections.doCaloMatched = True
+process.HITrackCorrections.doCaloMatched = False
 # cut values
 process.HITrackCorrections.dxyErrMax = 3.0
 process.HITrackCorrections.dzErrMax = 3.0
@@ -73,12 +73,11 @@ process.HITrackCorrections.algoParameters = cms.vint32(4,5,6,7)
 process.HITrackCorrections.vtxWeightParameters = cms.vdouble(0.0306789, 0.427748, 5.16555, 0.0228019, -0.02049, 7.01258 )
 ###
 from Configuration.AlCa.GlobalTag import GlobalTag
-process.GlobalTag = GlobalTag(process.GlobalTag, '75X_mcRun2_HeavyIon_v11', '')
+process.GlobalTag = GlobalTag(process.GlobalTag, '90X_upgrade2017_realistic_v6', '')
 ###
 process.p = cms.Path(
                       process.tpClusterProducer *
                       process.quickTrackAssociatorByHits *
                       process.tpRecoAssocGeneralTracks *
-                      process.centralityBin *
                       process.HITrackCorrections
 )
