@@ -239,9 +239,9 @@ void plotHist2D() {
 
   //TCanvas *c9 = new TCanvas("c9","Fake Fraction",900,500);
   TCanvas* c9 = makeMultiCanvas("c9", "Fake Fraction", 2,1);
-  hDumEtaFak=(TH1F*) hDumEta2->Clone("hDumEtaMul"); fixedFontHist1D(hDumEtaFak, 1.05,1.2); hDumEtaFak->GetYaxis()->SetRangeUser(0.,0.09);
+  TH1F* hDumEtaFak=(TH1F*) hDumEta2->Clone("hDumEtaMul"); fixedFontHist1D(hDumEtaFak, 1.05,1.2); hDumEtaFak->GetYaxis()->SetRangeUser(0.,0.09);
   hDumEtaFak->GetYaxis()->SetTitle("Fake Reconstruction Fraction");
-  hDumPtFak=(TH1F*) hDumPt2->Clone("hDumPtMul"); fixedFontHist1D(hDumPtFak, 1.05,1.2); hDumPtFak->GetYaxis()->SetRangeUser(0,1);
+  TH1F* hDumPtFak=(TH1F*) hDumPt2->Clone("hDumPtMul"); fixedFontHist1D(hDumPtFak, 1.05,1.2); hDumPtFak->GetYaxis()->SetRangeUser(0,1);
   hDumPtFak->GetYaxis()->SetTitle("Fake Reconstruction Fraction");
   c9->cd(1); hDumEtaFak->Draw(); gFakEta->Draw("pc"); gFakEta2->Draw("pc"); legEta2->Draw();
   gPad->SetTicks(); gPad->SetLeftMargin(0.12); gPad->SetBottomMargin(0.13);
@@ -278,9 +278,9 @@ void plotHist2D() {
   gSecPt2->SetMarkerColor(2);
 
   TCanvas* c10 = makeMultiCanvas("c10", "Secondary Fraction", 2, 1);
-  hDumEtaSec=(TH1F*) hDumEta2->Clone("hDumEtaMul"); fixedFontHist1D(hDumEtaSec, 1.05,1.3); hDumEtaSec->GetYaxis()->SetRangeUser(0.,0.012);
+  TH1F* hDumEtaSec=(TH1F*) hDumEta2->Clone("hDumEtaMul"); fixedFontHist1D(hDumEtaSec, 1.05,1.3); hDumEtaSec->GetYaxis()->SetRangeUser(0.,0.012);
   hDumEtaSec->GetYaxis()->SetTitle("Non-Primary Reconstruction Fraction");
-  hDumPtSec=(TH1F*) hDumPt2->Clone("hDumPtMul"); fixedFontHist1D(hDumPtSec, 1.05, 1.3);hDumPtSec->GetYaxis()->SetRangeUser(0.,0.1);
+  TH1F* hDumPtSec=(TH1F*) hDumPt2->Clone("hDumPtMul"); fixedFontHist1D(hDumPtSec, 1.05, 1.3);hDumPtSec->GetYaxis()->SetRangeUser(0.,0.1);
   hDumPtSec->GetYaxis()->SetTitle("Non-Primary Reconstruction Fraction");
   c10->cd(1); hDumEtaSec->Draw(); gSecEta->Draw("pc"); gSecEta2->Draw("pc"); legEta2->Draw();
   gPad->SetTicks(); gPad->SetLeftMargin(0.15); gPad->SetBottomMargin(0.13); 
