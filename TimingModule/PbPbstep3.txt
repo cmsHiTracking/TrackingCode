@@ -1,0 +1,2633 @@
+L1TRawToDigi Sequence configured for Stage-2 (2016) trigger. 
+ ##################################################################### 
+ # WARNING: the module CondCore.DBCommon.CondDBSetup is deprecated.  # 
+ # Please import CondCore.CondDB.CondDB_cfi                          # 
+ ##################################################################### 
+17-Apr-2017 22:39:44 CEST  Initiating request to open file file:/afs/cern.ch/user/a/abaty/work/public/2017_Phase1_Tracking_Samples/Feb_20_2017/QCD_80_120_DIGIRAW.root
+17-Apr-2017 22:39:45 CEST  Successfully opened file file:/afs/cern.ch/user/a/abaty/work/public/2017_Phase1_Tracking_Samples/Feb_20_2017/QCD_80_120_DIGIRAW.root
+%MSG-w UnusedProductsForCanDeleteEarly:  AfterModConstruction  17-Apr-2017 22:40:03 CEST pre-events
+The following products in the 'canDeleteEarly' list are not used in this job and will be ignored.
+ If possible, remove the producer from the job or add the product to the producer's own 'mightGet' list.
+ IntermediateHitTriplets_hiDetachedQuadStepTracksHitTriplets__RECO
+ IntermediateHitTriplets_hiLowPtQuadStepTracksHitTriplets__RECO
+ IntermediateHitTriplets_hiPixel3PrimTracksHitTriplets__RECO
+ RegionsSeedingHitSets_hiDetachedQuadStepTracksHitTriplets__RECO
+ RegionsSeedingHitSets_hiLowPtQuadStepTracksHitTriplets__RECO
+ RegionsSeedingHitSets_hiPixel3PrimTracksHitTriplets__RECO
+%MSG
+TimeReport> Report activated
+TimeReport> Report columns headings for events: eventnum runnum timetaken
+TimeReport> Report columns headings for modules: eventnum runnum modulelabel modulename timetakeni
+TimeReport> JobTime=1.49246e+09 JobCPU=29.0496
+
+Begin processing the 1st record. Run 1, Event 1, LumiSection 1 at 17-Apr-2017 22:40:17.574 CEST
+TimeModule> 1 1 siPixelDigis SiPixelRawToDigi 0.037421
+TimeModule> 1 1 siPixelClustersPreSplitting SiPixelClusterProducer 9.20765
+TimeModule> 1 1 siPixelRecHitsPreSplitting SiPixelRecHitConverter 0.010952
+in filling An exception of category 'InvalidReference' occurred.
+Exception Message:
+Trie::insert called with a key already in collection;
+key value: 
+
+304091140 1
+TimeModule> 1 1 PixelLayerTripletsPreSplitting SeedingLayersEDProducer 0.413557
+TimeModule> 1 1 hiPixelClusterVertexPreSplitting HIPixelClusterVtxProducer 0.00223589
+TimeModule> 1 1 pixelFitterByHelixProjections PixelFitterByHelixProjectionsProducer 0.000132084
+TimeModule> 1 1 offlineBeamSpot BeamSpotProducer 0.00352597
+TimeModule> 1 1 hiPixel3ProtoTracksTrackingRegionsPreSplitting HITrackingRegionForPrimaryVtxEDProducer 0.00161505
+TimeModule> 1 1 hiPixel3PRotoTracksHitDoubletsPreSplitting HitPairEDProducer 0.047703
+TimeModule> 1 1 hiPixel3ProtoTracksHitTripletsPreSplitting PixelTripletHLTEDProducer 0.00480914
+TimeModule> 1 1 hiProtoTrackFilterPreSplitting HIProtoTrackFilterProducer 0.000252962
+TimeModule> 1 1 hiPixel3ProtoTracksPreSplitting PixelTrackProducer 0.00286508
+TimeModule> 1 1 hiPixelMedianVertexPreSplitting HIPixelMedianVtxProducer 0.063488
+TimeModule> 1 1 hiSelectedProtoTracksPreSplitting HIProtoTrackSelection 0.000366926
+TimeModule> 1 1 hiPixelAdaptiveVertexPreSplitting PrimaryVertexProducer 0.00775504
+TimeModule> 1 1 hiBestAdaptiveVertexPreSplitting HIBestVertexSelection 0.00022006
+TimeModule> 1 1 bunchSpacingProducer BunchSpacingProducer 0.000372171
+TimeModule> 1 1 ecalDigis EcalRawToDigi 0.0325718
+TimeModule> 1 1 ecalMultiFitUncalibRecHit EcalUncalibRecHitProducer 0.656221
+TimeModule> 1 1 ecalDetIdToBeRecovered EcalDetIdToBeRecoveredProducer 0.00168896
+TimeModule> 1 1 ecalRecHit EcalRecHitProducer 0.0718939
+TimeModule> 1 1 hcalDigis HcalRawToDigi 1.01338
+TimeModule> 1 1 hbhereco HBHEPhase1Reconstructor 0.0426941
+TimeModule> 1 1 horeco HcalHitReconstructor 0.00131416
+TimeModule> 1 1 hfprereco HFPreReconstructor 0.00445104
+TimeModule> 1 1 hfreco HFPhase1Reconstructor 0.00189018
+TimeModule> 1 1 hiCaloTowerForTrkPreSplitting CaloTowersCreator 0.012917
+TimeModule> 1 1 hiSelectedVertexPreSplitting HIBestVertexProducer 0.000448942
+TimeModule> 1 1 hiAkPu4CaloJetsForTrkPreSplitting FastjetJetProducer 0.050308
+TimeModule> 1 1 hiAkPu4CaloJetsCorrectedPreSplitting CaloJetCorrectionProducer 0.0174701
+TimeModule> 1 1 hiAkPu4CaloJetsSelectedPreSplitting LargestEtCaloJetSelector 0.000355959
+TimeModule> 1 1 hiJetsForCoreTrackingPreSplitting CandPtrSelector 0.00657821
+TimeModule> 1 1 siPixelClusters JetCoreClusterSplitter 0.00175285
+TimeModule> 1 1 siPixelRecHits SiPixelRecHitConverter 0.000706196
+TimeModule> 1 1 PixelLayerTriplets SeedingLayersEDProducer 0.000166893
+TimeModule> 1 1 hiPixelClusterVertex HIPixelClusterVtxProducer 0.00183296
+TimeModule> 1 1 hiTrackingRegionFromClusterVtx HITrackingRegionForPrimaryVtxEDProducer 5.50747e-05
+TimeModule> 1 1 hiPixel3ProtoTracksHitDoublets HitPairEDProducer 0.000401974
+TimeModule> 1 1 hiPixel3ProtoTracksHitTriplets PixelTripletHLTEDProducer 0.00274491
+TimeModule> 1 1 hiProtoTrackFilter HIProtoTrackFilterProducer 6.19888e-05
+TimeModule> 1 1 hiPixel3ProtoTracks PixelTrackProducer 0.00304222
+TimeModule> 1 1 hiPixelMedianVertex HIPixelMedianVtxProducer 0.00309396
+TimeModule> 1 1 hiSelectedProtoTracks HIProtoTrackSelection 0.000227928
+TimeModule> 1 1 hiPixelAdaptiveVertex PrimaryVertexProducer 0.00380182
+TimeModule> 1 1 hiBestAdaptiveVertex HIBestVertexSelection 8.70228e-05
+TimeModule> 1 1 hiCaloTowerForTrk CaloTowersCreator 0.00642705
+TimeModule> 1 1 hiSelectedVertex HIBestVertexProducer 0.000113964
+TimeModule> 1 1 akPu4CaloJetsForTrk FastjetJetProducer 0.0436449
+TimeModule> 1 1 akPu4CaloJetsCorrected CaloJetCorrectionProducer 9.98974e-05
+TimeModule> 1 1 akPu4CaloJetsSelected LargestEtCaloJetSelector 4.00543e-05
+TimeModule> 1 1 hiJetsForCoreTracking CandPtrSelector 0.000133991
+TimeModule> 1 1 hiFirstStepGoodPrimaryVertices PrimaryVertexObjectFilter 0.000231981
+TimeModule> 1 1 hiRegitMuClusterCheck ClusterCheckerEDProducer 0.000326872
+TimeModule> 1 1 muonRPCDigis RPCUnpackingModule 0.00276089
+TimeModule> 1 1 rpcRecHits RPCRecHitProducer 0.00257707
+TimeModule> 1 1 muonCSCDigis CSCDCCUnpacker 0.01476
+TimeModule> 1 1 csc2DRecHits CSCRecHitDProducer 0.541122
+TimeModule> 1 1 cscSegments CSCSegmentProducer 0.00127888
+TimeModule> 1 1 muonDTDigis DTUnpackingModule 0.00768018
+TimeModule> 1 1 dt1DRecHits DTRecHitProducer 0.0751021
+TimeModule> 1 1 dt4DSegments DTRecSegment4DProducer 0.000535965
+TimeModule> 1 1 ancientMuonSeed MuonSeedGenerator 0.0102401
+TimeModule> 1 1 standAloneMuons StandAloneMuonProducer 0.00416303
+TimeModule> 1 1 hiRegitMuInitialStepTrackingRegions HIMuonTrackingRegionEDProducer 0.000457048
+TimeModule> 1 1 hiRegitMuPixelPairStepTrackingRegions HIMuonTrackingRegionEDProducer 0.000204086
+TimeModule> 1 1 hiRegitMuMixedTripletStepTrackingRegionsA HIMuonTrackingRegionEDProducer 0.000172853
+TimeModule> 1 1 hiRegitMuMixedTripletStepTrackingRegionsB HIMuonTrackingRegionEDProducer 0.000257015
+TimeModule> 1 1 hiRegitMuPixelLessStepTrackingRegions HIMuonTrackingRegionEDProducer 0.00018096
+TimeModule> 1 1 hiRegitMuDetachedTripletStepTrackingRegions HIMuonTrackingRegionEDProducer 0.000203848
+TimeModule> 1 1 hiRegitMuInitialStepSeedLayers SeedingLayersEDProducer 6.8903e-05
+TimeModule> 1 1 hiRegitMuInitialStepHitDoublets HitPairEDProducer 0.000158072
+TimeModule> 1 1 hiMixedTripletStepTrackingRegionsB GlobalTrackingRegionWithVerticesEDProducer 0.00041008
+TimeModule> 1 1 hiMixedTripletStepTrackingRegionsA GlobalTrackingRegionWithVerticesEDProducer 3.09944e-05
+TimeModule> 1 1 hiLowPtTripletStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 2.59876e-05
+TimeModule> 1 1 hiDetachedTripletStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 8.29697e-05
+TimeModule> 1 1 hiDetachedQuadStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 4.91142e-05
+TimeModule> 1 1 hiHighPtTripletStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 6.41346e-05
+TimeModule> 1 1 hiLowPtQuadStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 3.48091e-05
+TimeModule> 1 1 ecalPreshowerDigis ESRawToDigi 0.00297093
+TimeModule> 1 1 ecalPreshowerRecHit ESRecHitProducer 0.0813742
+TimeModule> 1 1 particleFlowRecHitPS PFRecHitProducer 0.00148821
+TimeModule> 1 1 particleFlowClusterPS PFClusterProducer 0.00188303
+TimeModule> 1 1 particleFlowRecHitECAL PFRecHitProducer 0.000566006
+TimeModule> 1 1 particleFlowClusterECALUncorrected PFClusterProducer 0.000773907
+TimeModule> 1 1 particleFlowClusterECAL CorrectedECALPFClusterProducer 0.264429
+TimeModule> 1 1 particleFlowSuperClusterECAL PFECALSuperClusterProducer 0.00624609
+TimeModule> 1 1 towerMaker CaloTowersCreator 0.00693488
+TimeModule> 1 1 iterativeConePu5CaloJets FastjetJetProducer 0.048454
+TimeModule> 1 1 siPixelClusterShapeCache SiPixelClusterShapeCacheProducer 0.00078392
+TimeModule> 1 1 hiFilter HIPixelTrackFilterProducer 0.00693393
+TimeModule> 1 1 hiLowPtQuadStepPixelTracksFilter HIPixelTrackFilterProducer 5.6982e-05
+TimeModule> 1 1 hiHighPtTripletStepPixelTracksFilter HIPixelTrackFilterProducer 4.50611e-05
+TimeModule> 1 1 hiDetachedQuadStepPixelTracksFilter HIPixelTrackFilterProducer 4.1008e-05
+TimeModule> 1 1 hiDetachedTripletStepPixelTracksFilter HIPixelTrackFilterProducer 3.79086e-05
+TimeModule> 1 1 hiLowPtTripletStepPixelTracksFilter HIPixelTrackFilterProducer 3.79086e-05
+TimeModule> 1 1 hiRegitMuInitialStepHitTriplets PixelTripletHLTEDProducer 3.19481e-05
+TimeModule> 1 1 hiRegitMuInitialStepSeeds SeedCreatorFromRegionConsecutiveHitsEDProducer 0.000462055
+TimeModule> 1 1 hiTrackingRegionWithVertex GlobalTrackingRegionWithVerticesEDProducer 3.69549e-05
+TimeModule> 1 1 hiPixelLayerQuadruplets SeedingLayersEDProducer 8.29697e-05
+TimeModule> 1 1 hiPixel3PrimTracksHitDoubletsCA HitPairEDProducer 0.000503063
+TimeModule> 1 1 hiPixel3PrimTracksHitQuadrupletsCA CAHitQuadrupletEDProducer 0.00200319
+TimeModule> 1 1 hiPixel3PrimTracks PixelTrackProducer 0.00127292
+TimeModule> 1 1 hiPixelTrackSeeds SeedGeneratorFromProtoTracksEDProducer 0.00155306
+TimeModule> 1 1 siStripDigis SiStripRawToDigiModule 0.00772405
+TimeModule> 1 1 siStripZeroSuppression SiStripZeroSuppression 0.430696
+TimeModule> 1 1 siStripClusters SiStripClusterizer 0.0672009
+TimeModule> 1 1 siStripMatchedRecHits SiStripRecHitConverter 0.00500083
+TimeModule> 1 1 hiJetCoreRegionalStepSeedLayers SeedingLayersEDProducer 0.000198126
+TimeModule> 1 1 hiJetCoreRegionalStepSeeds SeedGeneratorFromRegionHitsEDProducer 0.000257015
+TimeModule> 1 1 MeasurementTrackerEvent MeasurementTrackerEventProducer 0.0212409
+TimeModule> 1 1 ecalDrivenElectronSeeds ElectronSeedProducer 0.005651
+TimeModule> 1 1 electronCkfTrackCandidates CkfTrackCandidateMaker 0.00676918
+TimeModule> 1 1 electronGsfTracks GsfTrackProducer 0.00335002
+TimeModule> 1 1 hiPrimTrackCandidates CkfTrackCandidateMaker 0.014312
+TimeModule> 1 1 hiGlobalPrimTracks TrackProducer 0.00684905
+TimeModule> 1 1 hiInitialStepSelector HIMultiTrackSelector 0.007411
+TimeModule> 1 1 hiLowPtQuadStepClusters HITrackClusterRemover 0.000850201
+TimeModule> 1 1 hiLowPtQuadStepSeedLayers SeedingLayersEDProducer 0.000158072
+TimeModule> 1 1 hiLowPtQuadStepTracksHitDoubletsCA HitPairEDProducer 0.000435114
+TimeModule> 1 1 hiLowPtQuadStepTracksHitQuadrupletsCA CAHitQuadrupletEDProducer 0.000573874
+TimeModule> 1 1 hiLowPtQuadStepPixelTracks PixelTrackProducer 0.000428915
+TimeModule> 1 1 hiLowPtQuadStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000411034
+TimeModule> 1 1 hiLowPtQuadStepTrackCandidates CkfTrackCandidateMaker 0.00981212
+TimeModule> 1 1 hiLowPtQuadStepTracks TrackProducer 0.00639391
+TimeModule> 1 1 hiLowPtQuadStepSelector HIMultiTrackSelector 0.010309
+TimeModule> 1 1 hiHighPtTripletStepClusters HITrackClusterRemover 0.000371933
+TimeModule> 1 1 hiHighPtTripletStepSeedLayers SeedingLayersEDProducer 8.60691e-05
+TimeModule> 1 1 hiHighPtTripletStepTracksHitDoubletsCA HitPairEDProducer 0.000537872
+TimeModule> 1 1 hiHighPtTripletStepTracksHitTripletsCA CAHitTripletEDProducer 0.000978947
+TimeModule> 1 1 hiHighPtTripletStepPixelTracks PixelTrackProducer 0.000839949
+TimeModule> 1 1 hiHighPtTripletStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.00040102
+TimeModule> 1 1 hiHighPtTripletStepTrackCandidates CkfTrackCandidateMaker 0.00719905
+TimeModule> 1 1 hiHighPtTripletStepTracks TrackProducer 0.0052309
+TimeModule> 1 1 hiHighPtTripletStepSelector HIMultiTrackSelector 0.00613213
+TimeModule> 1 1 hiDetachedQuadStepClusters HITrackClusterRemover 8.39233e-05
+TimeModule> 1 1 hiDetachedQuadStepSeedLayers SeedingLayersEDProducer 8.2016e-05
+TimeModule> 1 1 hiDetachedQuadStepTracksHitDoubletsCA HitPairEDProducer 0.000389814
+TimeModule> 1 1 hiDetachedQuadStepTracksHitQuadrupletsCA CAHitQuadrupletEDProducer 0.000224113
+TimeModule> 1 1 hiDetachedQuadStepPixelTracks PixelTrackProducer 0.000180006
+TimeModule> 1 1 hiDetachedQuadStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000212908
+TimeModule> 1 1 hiDetachedQuadStepTrackCandidates CkfTrackCandidateMaker 0.00176287
+TimeModule> 1 1 hiDetachedQuadStepTracks TrackProducer 0.00147796
+TimeModule> 1 1 hiDetachedQuadStepSelector HIMultiTrackSelector 0.006042
+TimeModule> 1 1 hiDetachedTripletStepClusters HITrackClusterRemover 0.000119925
+TimeModule> 1 1 hiDetachedTripletStepSeedLayers SeedingLayersEDProducer 0.000100851
+TimeModule> 1 1 hiDetachedTripletStepTracksHitDoubletsCA HitPairEDProducer 0.000394821
+TimeModule> 1 1 hiDetachedTripletStepTracksHitTripletsCA CAHitTripletEDProducer 0.000153065
+TimeModule> 1 1 hiDetachedTripletStepPixelTracks PixelTrackProducer 0.000283957
+TimeModule> 1 1 hiDetachedTripletStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000216961
+TimeModule> 1 1 hiDetachedTripletStepTrackCandidates CkfTrackCandidateMaker 0.00121999
+TimeModule> 1 1 hiDetachedTripletStepTracks TrackProducer 0.000654936
+TimeModule> 1 1 hiDetachedTripletStepSelector HIMultiTrackSelector 0.0059979
+TimeModule> 1 1 hiLowPtTripletStepClusters HITrackClusterRemover 0.000260115
+TimeModule> 1 1 hiLowPtTripletStepSeedLayers SeedingLayersEDProducer 7.20024e-05
+TimeModule> 1 1 hiLowPtTripletStepTracksHitDoubletsCA HitPairEDProducer 0.00103307
+TimeModule> 1 1 hiLowPtTripletStepTracksHitTripletsCA CAHitTripletEDProducer 0.000285149
+TimeModule> 1 1 hiLowPtTripletStepPixelTracks PixelTrackProducer 0.000478983
+TimeModule> 1 1 hiLowPtTripletStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000702858
+TimeModule> 1 1 hiLowPtTripletStepTrackCandidates CkfTrackCandidateMaker 0.00737405
+TimeModule> 1 1 hiLowPtTripletStepTracks TrackProducer 0.0034821
+TimeModule> 1 1 hiLowPtTripletStepSelector HIMultiTrackSelector 0.00594306
+TimeModule> 1 1 hiPixelPairClusters HITrackClusterRemover 8.70228e-05
+TimeModule> 1 1 hiPixelPairSeedLayers SeedingLayersEDProducer 0.000135183
+TimeModule> 1 1 hiPixelPairSeeds SeedGeneratorFromRegionHitsEDProducer 0.00121307
+TimeModule> 1 1 hiPixelPairTrackCandidates CkfTrackCandidateMaker 0.00253081
+TimeModule> 1 1 hiPixelPairGlobalPrimTracks TrackProducer 0.000771046
+TimeModule> 1 1 hiPixelPairStepSelector HIMultiTrackSelector 0.00557995
+TimeModule> 1 1 hiMixedTripletStepClusters HITrackClusterRemover 4.88758e-05
+TimeModule> 1 1 hiMixedTripletStepSeedLayersA SeedingLayersEDProducer 5.88894e-05
+TimeModule> 1 1 hiMixedTripletStepHitDoubletsA HitPairEDProducer 0.000104904
+TimeModule> 1 1 hiMixedTripletStepHitTripletsA PixelTripletLargeTipEDProducer 0.000765085
+TimeModule> 1 1 hiMixedTripletStepSeedsA SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 0.00200105
+TimeModule> 1 1 hiMixedTripletStepSeedLayersB SeedingLayersEDProducer 0.000157118
+TimeModule> 1 1 hiMixedTripletStepHitDoubletsB HitPairEDProducer 0.000125885
+TimeModule> 1 1 hiMixedTripletStepHitTripletsB PixelTripletLargeTipEDProducer 0.000299931
+TimeModule> 1 1 hiMixedTripletStepSeedsB SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 0.000538111
+TimeModule> 1 1 hiMixedTripletStepSeeds SeedCombiner 0.000340939
+TimeModule> 1 1 hiMixedTripletStepTrackCandidates CkfTrackCandidateMaker 0.00854897
+TimeModule> 1 1 hiMixedTripletStepTracks TrackProducer 0.00674605
+TimeModule> 1 1 hiMixedTripletStepSelector HIMultiTrackSelector 0.00553083
+TimeModule> 1 1 hiJetCoreRegionalStepTrackCandidates CkfTrackCandidateMaker 7.20024e-05
+TimeModule> 1 1 hiJetCoreRegionalStepTracks TrackProducer 8.39233e-05
+TimeModule> 1 1 hiJetCoreRegionalStepSelector HIMultiTrackSelector 5.19753e-05
+TimeModule> 1 1 hiRegitMuInitialStepTrackCandidates CkfTrackCandidateMaker 0.0001719
+TimeModule> 1 1 hiRegitMuInitialStepTracks TrackProducer 9.10759e-05
+TimeModule> 1 1 hiRegitMuInitialStepSelector HIMultiTrackSelector 8.79765e-05
+TimeModule> 1 1 hiRegitMuPixelPairStepClusters TrackClusterRemover 6.50883e-05
+TimeModule> 1 1 hiRegitMuPixelPairStepSeedLayers SeedingLayersEDProducer 7.00951e-05
+TimeModule> 1 1 hiRegitMuPixelPairStepHitDoublets HitPairEDProducer 0.000277996
+TimeModule> 1 1 hiRegitMuPixelPairStepSeeds SeedCreatorFromRegionConsecutiveHitsEDProducer 3.31402e-05
+TimeModule> 1 1 hiRegitMuPixelPairStepTrackCandidates CkfTrackCandidateMaker 9.08375e-05
+TimeModule> 1 1 hiRegitMuPixelPairStepTracks TrackProducer 7.98702e-05
+TimeModule> 1 1 hiRegitMuPixelPairStepSelector HIMultiTrackSelector 5.00679e-05
+TimeModule> 1 1 hiRegitMuMixedTripletStepClusters TrackClusterRemover 4.60148e-05
+TimeModule> 1 1 hiRegitMuMixedTripletStepSeedLayersA SeedingLayersEDProducer 5.07832e-05
+TimeModule> 1 1 hiRegitMuMixedTripletStepHitDoubletsA HitPairEDProducer 2.90871e-05
+TimeModule> 1 1 hiRegitMuMixedTripletStepHitTripletsA PixelTripletLargeTipEDProducer 2.5034e-05
+TimeModule> 1 1 hiRegitMuMixedTripletStepSeedsA SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 0.00188684
+TimeModule> 1 1 hiRegitMuMixedTripletStepSeedLayersB SeedingLayersEDProducer 6.91414e-05
+TimeModule> 1 1 hiRegitMuMixedTripletStepHitDoubletsB HitPairEDProducer 4.19617e-05
+TimeModule> 1 1 hiRegitMuMixedTripletStepHitTripletsB PixelTripletLargeTipEDProducer 3.79086e-05
+TimeModule> 1 1 hiRegitMuMixedTripletStepSeedsB SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 4.50611e-05
+TimeModule> 1 1 hiRegitMuMixedTripletStepSeeds SeedCombiner 2.47955e-05
+TimeModule> 1 1 hiRegitMuMixedTripletStepTrackCandidates CkfTrackCandidateMaker 0.000141144
+TimeModule> 1 1 hiRegitMuMixedTripletStepTracks TrackProducer 7.51019e-05
+TimeModule> 1 1 hiRegitMuMixedTripletStepSelector HIMultiTrackSelector 6.29425e-05
+TimeModule> 1 1 hiRegitMuPixelLessStepClusters TrackClusterRemover 4.31538e-05
+TimeModule> 1 1 hiRegitMuPixelLessStepSeedLayers SeedingLayersEDProducer 0.000285864
+TimeModule> 1 1 hiRegitMuPixelLessStepHitDoublets HitPairEDProducer 3.29018e-05
+TimeModule> 1 1 hiRegitMuPixelLessStepHitTriplets MultiHitFromChi2EDProducer 0.000223875
+TimeModule> 1 1 hiRegitMuPixelLessStepSeeds SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 0.00155282
+TimeModule> 1 1 hiRegitMuPixelLessStepTrackCandidates CkfTrackCandidateMaker 9.29832e-05
+TimeModule> 1 1 hiRegitMuPixelLessStepTracks TrackProducer 7.41482e-05
+TimeModule> 1 1 hiRegitMuPixelLessStepSelector HIMultiTrackSelector 7.00951e-05
+TimeModule> 1 1 hiRegitMuDetachedTripletStepClusters TrackClusterRemover 3.98159e-05
+TimeModule> 1 1 hiRegitMuDetachedTripletStepSeedLayers SeedingLayersEDProducer 7.82013e-05
+TimeModule> 1 1 hiRegitMuDetachedTripletStepHitDoublets HitPairEDProducer 3.00407e-05
+TimeModule> 1 1 hiRegitMuDetachedTripletStepHitTriplets PixelTripletLargeTipEDProducer 2.69413e-05
+TimeModule> 1 1 hiRegitMuDetachedTripletStepSeeds SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 3.09944e-05
+TimeModule> 1 1 hiRegitMuDetachedTripletStepTrackCandidates CkfTrackCandidateMaker 0.000104904
+TimeModule> 1 1 hiRegitMuDetachedTripletStepTracks TrackProducer 7.60555e-05
+TimeModule> 1 1 hiRegitMuDetachedTripletStepSelector HIMultiTrackSelector 6.69956e-05
+TimeModule> 1 1 hiEarlyGeneralTracks TrackListMerger 0.00152898
+TimeModule> 1 1 hiEarlyMuons MuonIdProducer 0.596331
+TimeModule> 1 1 hiRegitMuonSeededSeedsOutIn OutsideInMuonSeeder 0.000524044
+TimeModule> 1 1 hiRegitMuonSeededTrackCandidatesOutIn CkfTrackCandidateMaker 9.41753e-05
+TimeModule> 1 1 hiRegitMuonSeededTracksOutIn TrackProducer 0.000118017
+TimeModule> 1 1 hiRegitMuonSeededTracksOutInSelector HIMultiTrackSelector 6.79493e-05
+TimeModule> 1 1 hiRegitMuonSeededSeedsInOut MuonReSeeder 0.000972033
+TimeModule> 1 1 hiRegitMuonSeededTrackCandidatesInOut CkfTrackCandidateMaker 5.91278e-05
+TimeModule> 1 1 hiRegitMuonSeededTracksInOut TrackProducer 8.01086e-05
+TimeModule> 1 1 hiRegitMuonSeededTracksInOutSelector HIMultiTrackSelector 0.000151873
+TimeModule> 1 1 hiGeneralTracks TrackListMerger 0.00103092
+TimeModule> 1 1 globalMuons GlobalMuonProducer 0.0014751
+TimeModule> 1 1 glbTrackQual GlobalTrackQualityProducer 0.000945091
+TimeModule> 1 1 tevMuons TevMuonProducer 0.00104594
+TimeModule> 1 1 hiMuons1stStep MuonIdProducer 0.016573
+TimeModule> 1 1 pfTrack PFTrackProducer 0.00317907
+TimeModule> 1 1 pfTrackElec PFElecTkProducer 0.000765085
+TimeModule> 1 1 ecalDrivenGsfElectronCores GsfElectronCoreEcalDrivenProducer 0.000677109
+TimeModule> 1 1 ecalDrivenGsfElectrons GsfElectronEcalDrivenProducer 0.00373483
+TimeModule> 1 1 electronsWithPresel GsfElectronSelector 0.000130892
+TimeModule> 1 1 mvaElectrons ElectronIdMVABased 0.000142097
+TimeModule> 1 1 TriggerResults TriggerResultInserter 4.00543e-05
+TimeModule> 1 1 hiClusterCompatibility ClusterCompatibilityProducer 0.00183105
+TimeModule> 1 1 caloTowers CaloTowerCandidateCreator 0.000447035
+TimeModule> 1 1 multi5x5BasicClustersUncleaned Multi5x5ClusterProducer 0.00437808
+TimeModule> 1 1 multi5x5BasicClustersCleaned Multi5x5ClusterProducer 0.00166917
+TimeModule> 1 1 multi5x5SuperClustersCleaned Multi5x5SuperClusterProducer 0.000487089
+TimeModule> 1 1 multi5x5SuperClustersUncleaned Multi5x5SuperClusterProducer 3.29018e-05
+TimeModule> 1 1 multi5x5SuperClusters UnifiedSCCollectionProducer 0.000771046
+TimeModule> 1 1 multi5x5SuperClustersWithPreshower PreshowerPhiClusterProducer 0.00256085
+TimeModule> 1 1 correctedMulti5x5SuperClustersWithPreshower EgammaSCCorrectionMaker 6.79493e-05
+TimeModule> 1 1 multi5x5PreshowerClusterShape PreshowerClusterShapeProducer 0.000375986
+TimeModule> 1 1 islandBasicClusters IslandClusterProducer 0.00528693
+TimeModule> 1 1 islandSuperClusters HiSuperClusterProducer 0.00107288
+TimeModule> 1 1 correctedIslandBarrelSuperClusters HiEgammaSCCorrectionMaker 0.000949144
+TimeModule> 1 1 correctedIslandEndcapSuperClusters HiEgammaSCCorrectionMaker 4.50611e-05
+TimeModule> 1 1 photonCore PhotonCoreProducer 0.00146484
+TimeModule> 1 1 photons PhotonProducer 0.0127642
+TimeModule> 1 1 photonIsolationHIProducer photonIsolationHIProducer 0.00289297
+TimeModule> 1 1 uncleanedHybridSuperClusters HybridClusterProducer 0.00168395
+TimeModule> 1 1 cleanedHybridSuperClusters HybridClusterProducer 0.000330925
+TimeModule> 1 1 hybridSuperClusters UnifiedSCCollectionProducer 0.000200987
+TimeModule> 1 1 correctedHybridSuperClusters EgammaSCCorrectionMaker 0.00208712
+TimeModule> 1 1 gmtStage2Digis L1TRawToDigi 0.00276303
+TimeModule> 1 1 caloStage2Digis L1TRawToDigi 0.00248003
+TimeModule> 1 1 caloStage1Digis L1TRawToDigi 0.000460148
+TimeModule> 1 1 caloStage1LegacyFormatDigis L1TCaloUpgradeToGCTConverter 0.00250983
+TimeModule> 1 1 tcdsDigis TcdsRawToDigi 0.000540972
+TimeModule> 1 1 hiLowPtTripletStepQual TrackListMerger 0.000182867
+TimeModule> 1 1 hiDetachedTripletStepQual TrackListMerger 7.60555e-05
+TimeModule> 1 1 akPu5CaloJets FastjetJetProducer 0.034889
+TimeModule> 1 1 akPu4CaloJets FastjetJetProducer 0.0333819
+TimeModule> 1 1 akPu3CaloJets FastjetJetProducer 0.032285
+TimeModule> 1 1 refittedStandAloneMuons StandAloneMuonProducer 0.000354052
+TimeModule> 1 1 displacedMuonSeeds CosmicMuonSeedGenerator 0.00116992
+TimeModule> 1 1 displacedStandAloneMuons StandAloneMuonProducer 0.000235081
+TimeModule> 1 1 totemTriggerRawToDigi TotemTriggerRawToDigi 0.000239849
+TimeModule> 1 1 totemRPRawToDigi TotemVFATRawToDigi 0.0280681
+TimeModule> 1 1 gtDigis L1GlobalTriggerRawToDigi 0.0101161
+TimeModule> 1 1 l1extraParticles L1ExtraParticlesProd 0.0126319
+TimeModule> 1 1 gctDigis GctRawToDigi 0.00207901
+TimeModule> 1 1 hcalnoise HcalNoiseInfoProducer 0.00459719
+TimeModule> 1 1 gtStage2Digis L1TRawToDigi 0.00174713
+TimeModule> 1 1 ecalTPSkim EcalTPSkimmer 0.00284481
+TimeModule> 1 1 ecalCompactTrigPrim EcalCompactTrigPrimProducer 0.000329971
+TimeModule> 1 1 dt1DCosmicRecHits DTRecHitProducer 0.00292397
+TimeModule> 1 1 dt4DCosmicSegments DTRecSegment4DProducer 6.79493e-05
+TimeModule> 1 1 clusterSummaryProducer ClusterSummaryProducer 0.00068903
+TimeModule> 1 1 castorDigis CastorRawToDigi 0.0225
+TimeModule> 1 1 castorreco CastorSimpleReconstructor 0.00366187
+TimeModule> 1 1 CastorTowerReco CastorTowerProducer 0.000782013
+TimeModule> 1 1 ak5CastorJets FastjetJetProducer 0.000571966
+TimeModule> 1 1 ak5CastorJetID CastorJetIDProducer 0.000917196
+TimeModule> 1 1 ak7CastorJets FastjetJetProducer 5.00679e-05
+TimeModule> 1 1 ak7CastorJetID CastorJetIDProducer 4.88758e-05
+TimeModule> 1 1 zdcreco ZdcHitReconstructor 0.000530958
+TimeModule> 1 1 hiCentrality CentralityProducer 0.00116611
+TimeModule> 1 1 particleFlowRecHitHF PFRecHitProducer 0.00191188
+TimeModule> 1 1 particleFlowClusterHF PFClusterProducer 0.000627041
+TimeModule> 1 1 particleFlowRecHitHO PFRecHitProducer 0.000157118
+TimeModule> 1 1 particleFlowClusterHO PFClusterProducer 2.59876e-05
+TimeModule> 1 1 particleFlowRecHitHBHE PFRecHitProducer 0.000454903
+TimeModule> 1 1 particleFlowClusterHBHE PFClusterProducer 7.60555e-05
+TimeModule> 1 1 particleFlowClusterHCAL PFMultiDepthClusterProducer 0.000357151
+TimeModule> 1 1 particleFlowBlock PFBlockProducer 0.00645304
+TimeModule> 1 1 particleFlowEGamma PFEGammaProducer 0.00806904
+TimeModule> 1 1 gedGsfElectronCores GEDGsfElectronCoreProducer 0.000257969
+TimeModule> 1 1 gedGsfElectronsTmp GEDGsfElectronProducer 0.062983
+TimeModule> 1 1 gedPhotonCore GEDPhotonCoreProducer 0.000262976
+TimeModule> 1 1 gedPhotonsTmp GEDPhotonProducer 0.00343084
+TimeModule> 1 1 particleFlowTmp PFProducer 0.00554991
+TimeModule> 1 1 PFTowers ParticleTowerProducer 0.00275588
+TimeModule> 1 1 akPu3PFJets FastjetJetProducer 0.032562
+TimeModule> 1 1 akPu4PFJets FastjetJetProducer 0.032475
+TimeModule> 1 1 akPu5PFJets FastjetJetProducer 0.0333731
+TimeModule> 1 1 muons MuonProducer 0.00107598
+TimeModule> 1 1 photonIsolationHIProducerGED photonIsolationHIProducer 0.00119805
+TimeModule> 1 1 ctppsDiamondRawToDigi TotemVFATRawToDigi 0.00486398
+TimeModule> 1 1 scalersRawToDigi ScalersRawToDigi 0.000799179
+TimeModule> 1 1 RECOSIMoutput PoolOutputModule 0.864726
+TimeEvent> 1 1 15.6076
+%MSG-w MemoryCheck:  source 17-Apr-2017 22:40:33 CEST PostProcessEvent
+MemoryCheck: module source:source VSIZE 2007.15 0 RSS 1302.44 0.0507812
+%MSG
+Begin processing the 2nd record. Run 1, Event 2, LumiSection 1 at 17-Apr-2017 22:40:33.188 CEST
+%MSG-w MemoryCheck:  SiPixelRawToDigi:siPixelDigis 17-Apr-2017 22:40:33 CEST  Run: 1 Event: 2
+MemoryCheck: module SiPixelRawToDigi:siPixelDigis VSIZE 2007.15 0 RSS 1302.46 0.015625
+%MSG
+TimeModule> 2 1 siPixelDigis SiPixelRawToDigi 0.000828981
+TimeModule> 2 1 siPixelClustersPreSplitting SiPixelClusterProducer 0.001652
+%MSG-w MemoryCheck:  SiPixelRecHitConverter:siPixelRecHitsPreSplitting  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module SiPixelRecHitConverter:siPixelRecHitsPreSplitting VSIZE 2007.15 0 RSS 1302.46 0.00390625
+%MSG
+TimeModule> 2 1 siPixelRecHitsPreSplitting SiPixelRecHitConverter 0.000782967
+TimeModule> 2 1 PixelLayerTripletsPreSplitting SeedingLayersEDProducer 6.60419e-05
+TimeModule> 2 1 hiPixelClusterVertexPreSplitting HIPixelClusterVtxProducer 0.00222206
+TimeModule> 2 1 pixelFitterByHelixProjections PixelFitterByHelixProjectionsProducer 2.59876e-05
+TimeModule> 2 1 offlineBeamSpot BeamSpotProducer 3.60012e-05
+TimeModule> 2 1 hiPixel3ProtoTracksTrackingRegionsPreSplitting HITrackingRegionForPrimaryVtxEDProducer 3.29018e-05
+TimeModule> 2 1 hiPixel3PRotoTracksHitDoubletsPreSplitting HitPairEDProducer 0.000549078
+TimeModule> 2 1 hiPixel3ProtoTracksHitTripletsPreSplitting PixelTripletHLTEDProducer 0.00263882
+TimeModule> 2 1 hiProtoTrackFilterPreSplitting HIProtoTrackFilterProducer 8.79765e-05
+%MSG-w MemoryCheck:  PixelTrackProducer:hiPixel3ProtoTracksPreSplitting  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module PixelTrackProducer:hiPixel3ProtoTracksPreSplitting VSIZE 2007.15 0 RSS 1302.48 0.015625
+%MSG
+TimeModule> 2 1 hiPixel3ProtoTracksPreSplitting PixelTrackProducer 0.00239515
+TimeModule> 2 1 hiPixelMedianVertexPreSplitting HIPixelMedianVtxProducer 0.00118899
+TimeModule> 2 1 hiSelectedProtoTracksPreSplitting HIProtoTrackSelection 7.79629e-05
+TimeModule> 2 1 hiPixelAdaptiveVertexPreSplitting PrimaryVertexProducer 0.00149393
+TimeModule> 2 1 hiBestAdaptiveVertexPreSplitting HIBestVertexSelection 2.59876e-05
+TimeModule> 2 1 bunchSpacingProducer BunchSpacingProducer 2.59876e-05
+%MSG-w MemoryCheck:  EcalRawToDigi:ecalDigis 17-Apr-2017 22:40:33 CEST  Run: 1 Event: 2
+MemoryCheck: module EcalRawToDigi:ecalDigis VSIZE 2007.15 0 RSS 1302.48 0.00390625
+%MSG
+TimeModule> 2 1 ecalDigis EcalRawToDigi 0.00206614
+%MSG-w MemoryCheck:  EcalUncalibRecHitProducer:ecalMultiFitUncalibRecHit  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module EcalUncalibRecHitProducer:ecalMultiFitUncalibRecHit VSIZE 2007.15 0 RSS 1302.49 0.0078125
+%MSG
+TimeModule> 2 1 ecalMultiFitUncalibRecHit EcalUncalibRecHitProducer 0.0183029
+TimeModule> 2 1 ecalDetIdToBeRecovered EcalDetIdToBeRecoveredProducer 0.000190973
+TimeModule> 2 1 ecalRecHit EcalRecHitProducer 0.000675917
+TimeModule> 2 1 hcalDigis HcalRawToDigi 0.00207114
+%MSG-w MemoryCheck:  HBHEPhase1Reconstructor:hbhereco 17-Apr-2017 22:40:33 CEST  Run: 1 Event: 2
+MemoryCheck: module HBHEPhase1Reconstructor:hbhereco VSIZE 2007.15 0 RSS 1302.5 0.0078125
+%MSG
+TimeModule> 2 1 hbhereco HBHEPhase1Reconstructor 0.0279682
+TimeModule> 2 1 horeco HcalHitReconstructor 0.000528812
+TimeModule> 2 1 hfprereco HFPreReconstructor 0.00269008
+TimeModule> 2 1 hfreco HFPhase1Reconstructor 0.000863075
+TimeModule> 2 1 hiCaloTowerForTrkPreSplitting CaloTowersCreator 0.001158
+TimeModule> 2 1 hiSelectedVertexPreSplitting HIBestVertexProducer 6.98566e-05
+%MSG-w MemoryCheck:  FastjetJetProducer:hiAkPu4CaloJetsForTrkPreSplitting  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module FastjetJetProducer:hiAkPu4CaloJetsForTrkPreSplitting VSIZE 2007.15 0 RSS 1308.5 6
+%MSG
+TimeModule> 2 1 hiAkPu4CaloJetsForTrkPreSplitting FastjetJetProducer 0.0348699
+TimeModule> 2 1 hiAkPu4CaloJetsCorrectedPreSplitting CaloJetCorrectionProducer 8.60691e-05
+TimeModule> 2 1 hiAkPu4CaloJetsSelectedPreSplitting LargestEtCaloJetSelector 3.09944e-05
+TimeModule> 2 1 hiJetsForCoreTrackingPreSplitting CandPtrSelector 6.58035e-05
+%MSG-w MemoryCheck:  JetCoreClusterSplitter:siPixelClusters  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module JetCoreClusterSplitter:siPixelClusters VSIZE 2007.15 0 RSS 1308.52 0.0234375
+%MSG
+TimeModule> 2 1 siPixelClusters JetCoreClusterSplitter 0.00233698
+TimeModule> 2 1 siPixelRecHits SiPixelRecHitConverter 0.000597
+TimeModule> 2 1 PixelLayerTriplets SeedingLayersEDProducer 6.38962e-05
+TimeModule> 2 1 hiPixelClusterVertex HIPixelClusterVtxProducer 0.00210595
+TimeModule> 2 1 hiTrackingRegionFromClusterVtx HITrackingRegionForPrimaryVtxEDProducer 3.31402e-05
+TimeModule> 2 1 hiPixel3ProtoTracksHitDoublets HitPairEDProducer 0.000448942
+TimeModule> 2 1 hiPixel3ProtoTracksHitTriplets PixelTripletHLTEDProducer 0.00258613
+TimeModule> 2 1 hiProtoTrackFilter HIProtoTrackFilterProducer 4.60148e-05
+TimeModule> 2 1 hiPixel3ProtoTracks PixelTrackProducer 0.00227284
+TimeModule> 2 1 hiPixelMedianVertex HIPixelMedianVtxProducer 0.00137901
+TimeModule> 2 1 hiSelectedProtoTracks HIProtoTrackSelection 8.60691e-05
+TimeModule> 2 1 hiPixelAdaptiveVertex PrimaryVertexProducer 0.00314307
+TimeModule> 2 1 hiBestAdaptiveVertex HIBestVertexSelection 2.81334e-05
+%MSG-w MemoryCheck:  CaloTowersCreator:hiCaloTowerForTrk  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module CaloTowersCreator:hiCaloTowerForTrk VSIZE 2007.15 0 RSS 1308.52 0.00390625
+%MSG
+TimeModule> 2 1 hiCaloTowerForTrk CaloTowersCreator 0.00153422
+TimeModule> 2 1 hiSelectedVertex HIBestVertexProducer 7.82013e-05
+%MSG-w MemoryCheck:  FastjetJetProducer:akPu4CaloJetsForTrk  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module FastjetJetProducer:akPu4CaloJetsForTrk VSIZE 2007.15 0 RSS 1308.55 0.0273438
+%MSG
+TimeModule> 2 1 akPu4CaloJetsForTrk FastjetJetProducer 0.0333071
+TimeModule> 2 1 akPu4CaloJetsCorrected CaloJetCorrectionProducer 6.79493e-05
+TimeModule> 2 1 akPu4CaloJetsSelected LargestEtCaloJetSelector 2.90871e-05
+TimeModule> 2 1 hiJetsForCoreTracking CandPtrSelector 0.000102997
+TimeModule> 2 1 hiFirstStepGoodPrimaryVertices PrimaryVertexObjectFilter 3.09944e-05
+TimeModule> 2 1 hiRegitMuClusterCheck ClusterCheckerEDProducer 2.7895e-05
+TimeModule> 2 1 muonRPCDigis RPCUnpackingModule 8.01086e-05
+TimeModule> 2 1 rpcRecHits RPCRecHitProducer 5.48363e-05
+%MSG-w MemoryCheck:  CSCDCCUnpacker:muonCSCDigis 17-Apr-2017 22:40:33 CEST  Run: 1 Event: 2
+MemoryCheck: module CSCDCCUnpacker:muonCSCDigis VSIZE 2007.15 0 RSS 1308.55 0.00390625
+%MSG
+TimeModule> 2 1 muonCSCDigis CSCDCCUnpacker 0.000267029
+TimeModule> 2 1 csc2DRecHits CSCRecHitDProducer 4.88758e-05
+TimeModule> 2 1 cscSegments CSCSegmentProducer 2.5034e-05
+TimeModule> 2 1 muonDTDigis DTUnpackingModule 3.29018e-05
+TimeModule> 2 1 dt1DRecHits DTRecHitProducer 5.00679e-05
+TimeModule> 2 1 dt4DSegments DTRecSegment4DProducer 3.21865e-05
+TimeModule> 2 1 ancientMuonSeed MuonSeedGenerator 0.000166178
+TimeModule> 2 1 standAloneMuons StandAloneMuonProducer 7.82013e-05
+TimeModule> 2 1 hiRegitMuInitialStepTrackingRegions HIMuonTrackingRegionEDProducer 2.40803e-05
+TimeModule> 2 1 hiRegitMuPixelPairStepTrackingRegions HIMuonTrackingRegionEDProducer 1.69277e-05
+TimeModule> 2 1 hiRegitMuMixedTripletStepTrackingRegionsA HIMuonTrackingRegionEDProducer 1.5974e-05
+TimeModule> 2 1 hiRegitMuMixedTripletStepTrackingRegionsB HIMuonTrackingRegionEDProducer 1.5974e-05
+TimeModule> 2 1 hiRegitMuPixelLessStepTrackingRegions HIMuonTrackingRegionEDProducer 1.62125e-05
+TimeModule> 2 1 hiRegitMuDetachedTripletStepTrackingRegions HIMuonTrackingRegionEDProducer 1.5974e-05
+TimeModule> 2 1 hiRegitMuInitialStepSeedLayers SeedingLayersEDProducer 5.60284e-05
+TimeModule> 2 1 hiRegitMuInitialStepHitDoublets HitPairEDProducer 2.59876e-05
+TimeModule> 2 1 hiMixedTripletStepTrackingRegionsB GlobalTrackingRegionWithVerticesEDProducer 3.50475e-05
+TimeModule> 2 1 hiMixedTripletStepTrackingRegionsA GlobalTrackingRegionWithVerticesEDProducer 3.19481e-05
+TimeModule> 2 1 hiLowPtTripletStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 1.69277e-05
+TimeModule> 2 1 hiDetachedTripletStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 1.71661e-05
+TimeModule> 2 1 hiDetachedQuadStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 1.81198e-05
+TimeModule> 2 1 hiHighPtTripletStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 1.5974e-05
+TimeModule> 2 1 hiLowPtQuadStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 2.69413e-05
+TimeModule> 2 1 ecalPreshowerDigis ESRawToDigi 0.000172138
+TimeModule> 2 1 ecalPreshowerRecHit ESRecHitProducer 0.000244856
+TimeModule> 2 1 particleFlowRecHitPS PFRecHitProducer 0.000244856
+TimeModule> 2 1 particleFlowClusterPS PFClusterProducer 0.000456095
+TimeModule> 2 1 particleFlowRecHitECAL PFRecHitProducer 0.000584126
+TimeModule> 2 1 particleFlowClusterECALUncorrected PFClusterProducer 0.00145507
+TimeModule> 2 1 particleFlowClusterECAL CorrectedECALPFClusterProducer 0.00216603
+%MSG-w MemoryCheck:  PFECALSuperClusterProducer:particleFlowSuperClusterECAL  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module PFECALSuperClusterProducer:particleFlowSuperClusterECAL VSIZE 2007.15 0 RSS 1308.56 0.0078125
+%MSG
+TimeModule> 2 1 particleFlowSuperClusterECAL PFECALSuperClusterProducer 0.00179195
+TimeModule> 2 1 towerMaker CaloTowersCreator 0.00125098
+%MSG-w MemoryCheck:  FastjetJetProducer:iterativeConePu5CaloJets  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module FastjetJetProducer:iterativeConePu5CaloJets VSIZE 2007.15 0 RSS 1308.57 0.00390625
+%MSG
+TimeModule> 2 1 iterativeConePu5CaloJets FastjetJetProducer 0.050133
+TimeModule> 2 1 siPixelClusterShapeCache SiPixelClusterShapeCacheProducer 0.000498056
+TimeModule> 2 1 hiFilter HIPixelTrackFilterProducer 5.60284e-05
+TimeModule> 2 1 hiLowPtQuadStepPixelTracksFilter HIPixelTrackFilterProducer 5.4121e-05
+TimeModule> 2 1 hiHighPtTripletStepPixelTracksFilter HIPixelTrackFilterProducer 3.21865e-05
+TimeModule> 2 1 hiDetachedQuadStepPixelTracksFilter HIPixelTrackFilterProducer 3.09944e-05
+TimeModule> 2 1 hiDetachedTripletStepPixelTracksFilter HIPixelTrackFilterProducer 3.29018e-05
+TimeModule> 2 1 hiLowPtTripletStepPixelTracksFilter HIPixelTrackFilterProducer 2.90871e-05
+TimeModule> 2 1 hiRegitMuInitialStepHitTriplets PixelTripletHLTEDProducer 3.60012e-05
+TimeModule> 2 1 hiRegitMuInitialStepSeeds SeedCreatorFromRegionConsecutiveHitsEDProducer 2.40803e-05
+TimeModule> 2 1 hiTrackingRegionWithVertex GlobalTrackingRegionWithVerticesEDProducer 4.19617e-05
+TimeModule> 2 1 hiPixelLayerQuadruplets SeedingLayersEDProducer 6.29425e-05
+TimeModule> 2 1 hiPixel3PrimTracksHitDoubletsCA HitPairEDProducer 0.000505924
+TimeModule> 2 1 hiPixel3PrimTracksHitQuadrupletsCA CAHitQuadrupletEDProducer 0.000268936
+TimeModule> 2 1 hiPixel3PrimTracks PixelTrackProducer 0.000370979
+TimeModule> 2 1 hiPixelTrackSeeds SeedGeneratorFromProtoTracksEDProducer 0.000345945
+TimeModule> 2 1 siStripDigis SiStripRawToDigiModule 0.00486016
+TimeModule> 2 1 siStripZeroSuppression SiStripZeroSuppression 0.000113964
+TimeModule> 2 1 siStripClusters SiStripClusterizer 0.0047121
+%MSG-w MemoryCheck:  SiStripRecHitConverter:siStripMatchedRecHits  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module SiStripRecHitConverter:siStripMatchedRecHits VSIZE 2007.15 0 RSS 1308.59 0.0273438
+%MSG
+TimeModule> 2 1 siStripMatchedRecHits SiStripRecHitConverter 0.00441289
+TimeModule> 2 1 hiJetCoreRegionalStepSeedLayers SeedingLayersEDProducer 7.29561e-05
+%MSG-w MemoryCheck:   SeedGeneratorFromRegionHitsEDProducer:hiJetCoreRegionalStepSeeds  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module SeedGeneratorFromRegionHitsEDProducer:hiJetCoreRegionalStepSeeds VSIZE 2007.15 0 RSS 1308.61 0.0195312
+%MSG
+TimeModule> 2 1 hiJetCoreRegionalStepSeeds SeedGeneratorFromRegionHitsEDProducer 0.00137997
+TimeModule> 2 1 MeasurementTrackerEvent MeasurementTrackerEventProducer 0.000160933
+TimeModule> 2 1 ecalDrivenElectronSeeds ElectronSeedProducer 0.000236988
+TimeModule> 2 1 electronCkfTrackCandidates CkfTrackCandidateMaker 5.00679e-05
+%MSG-w MemoryCheck:  GsfTrackProducer:electronGsfTracks  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module GsfTrackProducer:electronGsfTracks VSIZE 2007.15 0 RSS 1308.62 0.00390625
+%MSG
+TimeModule> 2 1 electronGsfTracks GsfTrackProducer 0.00018692
+TimeModule> 2 1 hiPrimTrackCandidates CkfTrackCandidateMaker 0.00541115
+TimeModule> 2 1 hiGlobalPrimTracks TrackProducer 0.00358701
+TimeModule> 2 1 hiInitialStepSelector HIMultiTrackSelector 0.000337839
+TimeModule> 2 1 hiLowPtQuadStepClusters HITrackClusterRemover 6.31809e-05
+TimeModule> 2 1 hiLowPtQuadStepSeedLayers SeedingLayersEDProducer 6.29425e-05
+TimeModule> 2 1 hiLowPtQuadStepTracksHitDoubletsCA HitPairEDProducer 0.000479221
+TimeModule> 2 1 hiLowPtQuadStepTracksHitQuadrupletsCA CAHitQuadrupletEDProducer 0.000392914
+TimeModule> 2 1 hiLowPtQuadStepPixelTracks PixelTrackProducer 0.00049901
+TimeModule> 2 1 hiLowPtQuadStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000436068
+TimeModule> 2 1 hiLowPtQuadStepTrackCandidates CkfTrackCandidateMaker 0.00970507
+TimeModule> 2 1 hiLowPtQuadStepTracks TrackProducer 0.00637698
+TimeModule> 2 1 hiLowPtQuadStepSelector HIMultiTrackSelector 0.00047183
+TimeModule> 2 1 hiHighPtTripletStepClusters HITrackClusterRemover 6.69956e-05
+TimeModule> 2 1 hiHighPtTripletStepSeedLayers SeedingLayersEDProducer 7.70092e-05
+TimeModule> 2 1 hiHighPtTripletStepTracksHitDoubletsCA HitPairEDProducer 0.000648975
+TimeModule> 2 1 hiHighPtTripletStepTracksHitTripletsCA CAHitTripletEDProducer 0.000355959
+TimeModule> 2 1 hiHighPtTripletStepPixelTracks PixelTrackProducer 0.00070715
+TimeModule> 2 1 hiHighPtTripletStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000343084
+TimeModule> 2 1 hiHighPtTripletStepTrackCandidates CkfTrackCandidateMaker 0.00582695
+TimeModule> 2 1 hiHighPtTripletStepTracks TrackProducer 0.00322294
+TimeModule> 2 1 hiHighPtTripletStepSelector HIMultiTrackSelector 0.00031805
+TimeModule> 2 1 hiDetachedQuadStepClusters HITrackClusterRemover 6.50883e-05
+TimeModule> 2 1 hiDetachedQuadStepSeedLayers SeedingLayersEDProducer 6.91414e-05
+TimeModule> 2 1 hiDetachedQuadStepTracksHitDoubletsCA HitPairEDProducer 0.000480175
+TimeModule> 2 1 hiDetachedQuadStepTracksHitQuadrupletsCA CAHitQuadrupletEDProducer 0.000259161
+TimeModule> 2 1 hiDetachedQuadStepPixelTracks PixelTrackProducer 0.000248909
+TimeModule> 2 1 hiDetachedQuadStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000231981
+TimeModule> 2 1 hiDetachedQuadStepTrackCandidates CkfTrackCandidateMaker 0.00206494
+TimeModule> 2 1 hiDetachedQuadStepTracks TrackProducer 0.00185013
+TimeModule> 2 1 hiDetachedQuadStepSelector HIMultiTrackSelector 0.000215054
+TimeModule> 2 1 hiDetachedTripletStepClusters HITrackClusterRemover 8.29697e-05
+TimeModule> 2 1 hiDetachedTripletStepSeedLayers SeedingLayersEDProducer 7.10487e-05
+TimeModule> 2 1 hiDetachedTripletStepTracksHitDoubletsCA HitPairEDProducer 0.000527859
+TimeModule> 2 1 hiDetachedTripletStepTracksHitTripletsCA CAHitTripletEDProducer 0.000219107
+TimeModule> 2 1 hiDetachedTripletStepPixelTracks PixelTrackProducer 0.000391006
+TimeModule> 2 1 hiDetachedTripletStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000217915
+TimeModule> 2 1 hiDetachedTripletStepTrackCandidates CkfTrackCandidateMaker 0.00223613
+TimeModule> 2 1 hiDetachedTripletStepTracks TrackProducer 0.001369
+TimeModule> 2 1 hiDetachedTripletStepSelector HIMultiTrackSelector 0.000180006
+TimeModule> 2 1 hiLowPtTripletStepClusters HITrackClusterRemover 5.91278e-05
+TimeModule> 2 1 hiLowPtTripletStepSeedLayers SeedingLayersEDProducer 9.5129e-05
+TimeModule> 2 1 hiLowPtTripletStepTracksHitDoubletsCA HitPairEDProducer 0.000478983
+TimeModule> 2 1 hiLowPtTripletStepTracksHitTripletsCA CAHitTripletEDProducer 0.000242949
+TimeModule> 2 1 hiLowPtTripletStepPixelTracks PixelTrackProducer 0.000604153
+TimeModule> 2 1 hiLowPtTripletStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.00048995
+TimeModule> 2 1 hiLowPtTripletStepTrackCandidates CkfTrackCandidateMaker 0.00964284
+TimeModule> 2 1 hiLowPtTripletStepTracks TrackProducer 0.00415087
+TimeModule> 2 1 hiLowPtTripletStepSelector HIMultiTrackSelector 0.000293016
+TimeModule> 2 1 hiPixelPairClusters HITrackClusterRemover 7.79629e-05
+TimeModule> 2 1 hiPixelPairSeedLayers SeedingLayersEDProducer 0.000106096
+TimeModule> 2 1 hiPixelPairSeeds SeedGeneratorFromRegionHitsEDProducer 0.00069809
+TimeModule> 2 1 hiPixelPairTrackCandidates CkfTrackCandidateMaker 0.00236011
+TimeModule> 2 1 hiPixelPairGlobalPrimTracks TrackProducer 0.000288963
+TimeModule> 2 1 hiPixelPairStepSelector HIMultiTrackSelector 8.2016e-05
+TimeModule> 2 1 hiMixedTripletStepClusters HITrackClusterRemover 4.60148e-05
+TimeModule> 2 1 hiMixedTripletStepSeedLayersA SeedingLayersEDProducer 4.41074e-05
+TimeModule> 2 1 hiMixedTripletStepHitDoubletsA HitPairEDProducer 0.000102997
+TimeModule> 2 1 hiMixedTripletStepHitTripletsA PixelTripletLargeTipEDProducer 0.000140905
+TimeModule> 2 1 hiMixedTripletStepSeedsA SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 0.000169992
+TimeModule> 2 1 hiMixedTripletStepSeedLayersB SeedingLayersEDProducer 6.69956e-05
+TimeModule> 2 1 hiMixedTripletStepHitDoubletsB HitPairEDProducer 0.000146151
+TimeModule> 2 1 hiMixedTripletStepHitTripletsB PixelTripletLargeTipEDProducer 0.000587225
+%MSG-w MemoryCheck:   SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer:hiMixedTripletStepSeedsB  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer:hiMixedTripletStepSeedsB VSIZE 2007.15 0 RSS 1308.62 0.00390625
+%MSG
+TimeModule> 2 1 hiMixedTripletStepSeedsB SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 0.00161505
+TimeModule> 2 1 hiMixedTripletStepSeeds SeedCombiner 8.58307e-05
+%MSG-w MemoryCheck:  CkfTrackCandidateMaker:hiMixedTripletStepTrackCandidates  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module CkfTrackCandidateMaker:hiMixedTripletStepTrackCandidates VSIZE 2007.15 0 RSS 1308.63 0.0117188
+%MSG
+TimeModule> 2 1 hiMixedTripletStepTrackCandidates CkfTrackCandidateMaker 0.0209179
+TimeModule> 2 1 hiMixedTripletStepTracks TrackProducer 0.0064981
+TimeModule> 2 1 hiMixedTripletStepSelector HIMultiTrackSelector 0.000520945
+TimeModule> 2 1 hiJetCoreRegionalStepTrackCandidates CkfTrackCandidateMaker 0.039588
+TimeModule> 2 1 hiJetCoreRegionalStepTracks TrackProducer 0.00205898
+TimeModule> 2 1 hiJetCoreRegionalStepSelector HIMultiTrackSelector 8.89301e-05
+TimeModule> 2 1 hiRegitMuInitialStepTrackCandidates CkfTrackCandidateMaker 5.50747e-05
+TimeModule> 2 1 hiRegitMuInitialStepTracks TrackProducer 5.38826e-05
+TimeModule> 2 1 hiRegitMuInitialStepSelector HIMultiTrackSelector 6.19888e-05
+TimeModule> 2 1 hiRegitMuPixelPairStepClusters TrackClusterRemover 4.29153e-05
+TimeModule> 2 1 hiRegitMuPixelPairStepSeedLayers SeedingLayersEDProducer 7.10487e-05
+TimeModule> 2 1 hiRegitMuPixelPairStepHitDoublets HitPairEDProducer 2.7895e-05
+TimeModule> 2 1 hiRegitMuPixelPairStepSeeds SeedCreatorFromRegionConsecutiveHitsEDProducer 3.79086e-05
+TimeModule> 2 1 hiRegitMuPixelPairStepTrackCandidates CkfTrackCandidateMaker 5.00679e-05
+TimeModule> 2 1 hiRegitMuPixelPairStepTracks TrackProducer 6.29425e-05
+TimeModule> 2 1 hiRegitMuPixelPairStepSelector HIMultiTrackSelector 4.1008e-05
+TimeModule> 2 1 hiRegitMuMixedTripletStepClusters TrackClusterRemover 5.10216e-05
+TimeModule> 2 1 hiRegitMuMixedTripletStepSeedLayersA SeedingLayersEDProducer 4.22001e-05
+TimeModule> 2 1 hiRegitMuMixedTripletStepHitDoubletsA HitPairEDProducer 2.40803e-05
+TimeModule> 2 1 hiRegitMuMixedTripletStepHitTripletsA PixelTripletLargeTipEDProducer 2.00272e-05
+TimeModule> 2 1 hiRegitMuMixedTripletStepSeedsA SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 2.19345e-05
+TimeModule> 2 1 hiRegitMuMixedTripletStepSeedLayersB SeedingLayersEDProducer 7.20024e-05
+TimeModule> 2 1 hiRegitMuMixedTripletStepHitDoubletsB HitPairEDProducer 1.90735e-05
+TimeModule> 2 1 hiRegitMuMixedTripletStepHitTripletsB PixelTripletLargeTipEDProducer 1.71661e-05
+TimeModule> 2 1 hiRegitMuMixedTripletStepSeedsB SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 2.09808e-05
+TimeModule> 2 1 hiRegitMuMixedTripletStepSeeds SeedCombiner 1.88351e-05
+TimeModule> 2 1 hiRegitMuMixedTripletStepTrackCandidates CkfTrackCandidateMaker 4.69685e-05
+TimeModule> 2 1 hiRegitMuMixedTripletStepTracks TrackProducer 5.29289e-05
+TimeModule> 2 1 hiRegitMuMixedTripletStepSelector HIMultiTrackSelector 4.1008e-05
+TimeModule> 2 1 hiRegitMuPixelLessStepClusters TrackClusterRemover 3.50475e-05
+TimeModule> 2 1 hiRegitMuPixelLessStepSeedLayers SeedingLayersEDProducer 0.000221014
+TimeModule> 2 1 hiRegitMuPixelLessStepHitDoublets HitPairEDProducer 2.19345e-05
+TimeModule> 2 1 hiRegitMuPixelLessStepHitTriplets MultiHitFromChi2EDProducer 1.69277e-05
+TimeModule> 2 1 hiRegitMuPixelLessStepSeeds SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 2.7895e-05
+TimeModule> 2 1 hiRegitMuPixelLessStepTrackCandidates CkfTrackCandidateMaker 5.79357e-05
+TimeModule> 2 1 hiRegitMuPixelLessStepTracks TrackProducer 6.38962e-05
+TimeModule> 2 1 hiRegitMuPixelLessStepSelector HIMultiTrackSelector 4.19617e-05
+TimeModule> 2 1 hiRegitMuDetachedTripletStepClusters TrackClusterRemover 2.59876e-05
+TimeModule> 2 1 hiRegitMuDetachedTripletStepSeedLayers SeedingLayersEDProducer 5.57899e-05
+TimeModule> 2 1 hiRegitMuDetachedTripletStepHitDoublets HitPairEDProducer 3.31402e-05
+TimeModule> 2 1 hiRegitMuDetachedTripletStepHitTriplets PixelTripletLargeTipEDProducer 1.78814e-05
+TimeModule> 2 1 hiRegitMuDetachedTripletStepSeeds SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 2.09808e-05
+TimeModule> 2 1 hiRegitMuDetachedTripletStepTrackCandidates CkfTrackCandidateMaker 4.79221e-05
+TimeModule> 2 1 hiRegitMuDetachedTripletStepTracks TrackProducer 5.29289e-05
+TimeModule> 2 1 hiRegitMuDetachedTripletStepSelector HIMultiTrackSelector 5.31673e-05
+TimeModule> 2 1 hiEarlyGeneralTracks TrackListMerger 0.000334978
+TimeModule> 2 1 hiEarlyMuons MuonIdProducer 0.013767
+TimeModule> 2 1 hiRegitMuonSeededSeedsOutIn OutsideInMuonSeeder 4.1008e-05
+TimeModule> 2 1 hiRegitMuonSeededTrackCandidatesOutIn CkfTrackCandidateMaker 5.88894e-05
+TimeModule> 2 1 hiRegitMuonSeededTracksOutIn TrackProducer 8.10623e-05
+TimeModule> 2 1 hiRegitMuonSeededTracksOutInSelector HIMultiTrackSelector 4.69685e-05
+TimeModule> 2 1 hiRegitMuonSeededSeedsInOut MuonReSeeder 0.000154018
+TimeModule> 2 1 hiRegitMuonSeededTrackCandidatesInOut CkfTrackCandidateMaker 3.50475e-05
+TimeModule> 2 1 hiRegitMuonSeededTracksInOut TrackProducer 6.58035e-05
+TimeModule> 2 1 hiRegitMuonSeededTracksInOutSelector HIMultiTrackSelector 4.31538e-05
+TimeModule> 2 1 hiGeneralTracks TrackListMerger 0.000658989
+TimeModule> 2 1 globalMuons GlobalMuonProducer 9.20296e-05
+TimeModule> 2 1 glbTrackQual GlobalTrackQualityProducer 3.79086e-05
+TimeModule> 2 1 tevMuons TevMuonProducer 0.000115871
+TimeModule> 2 1 hiMuons1stStep MuonIdProducer 0.0254052
+TimeModule> 2 1 pfTrack PFTrackProducer 0.000504017
+TimeModule> 2 1 pfTrackElec PFElecTkProducer 3.29018e-05
+TimeModule> 2 1 ecalDrivenGsfElectronCores GsfElectronCoreEcalDrivenProducer 2.5034e-05
+TimeModule> 2 1 ecalDrivenGsfElectrons GsfElectronEcalDrivenProducer 8.79765e-05
+TimeModule> 2 1 electronsWithPresel GsfElectronSelector 2.19345e-05
+TimeModule> 2 1 mvaElectrons ElectronIdMVABased 2.09808e-05
+TimeModule> 2 1 TriggerResults TriggerResultInserter 3.60012e-05
+TimeModule> 2 1 hiClusterCompatibility ClusterCompatibilityProducer 0.00230598
+TimeModule> 2 1 caloTowers CaloTowerCandidateCreator 0.000240088
+TimeModule> 2 1 multi5x5BasicClustersUncleaned Multi5x5ClusterProducer 9.29832e-05
+TimeModule> 2 1 multi5x5BasicClustersCleaned Multi5x5ClusterProducer 5.29289e-05
+%MSG-w MemoryCheck:  Multi5x5SuperClusterProducer:multi5x5SuperClustersCleaned  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module Multi5x5SuperClusterProducer:multi5x5SuperClustersCleaned VSIZE 2007.15 0 RSS 1308.64 0.00390625
+%MSG
+TimeModule> 2 1 multi5x5SuperClustersCleaned Multi5x5SuperClusterProducer 0.000221014
+TimeModule> 2 1 multi5x5SuperClustersUncleaned Multi5x5SuperClusterProducer 4.41074e-05
+TimeModule> 2 1 multi5x5SuperClusters UnifiedSCCollectionProducer 8.01086e-05
+%MSG-w MemoryCheck:   PreshowerPhiClusterProducer:multi5x5SuperClustersWithPreshower  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module PreshowerPhiClusterProducer:multi5x5SuperClustersWithPreshower VSIZE 2007.15 0 RSS 1308.64 0.00390625
+%MSG
+TimeModule> 2 1 multi5x5SuperClustersWithPreshower PreshowerPhiClusterProducer 0.000900984
+TimeModule> 2 1 correctedMulti5x5SuperClustersWithPreshower EgammaSCCorrectionMaker 0.000137806
+TimeModule> 2 1 multi5x5PreshowerClusterShape PreshowerClusterShapeProducer 0.000530005
+TimeModule> 2 1 islandBasicClusters IslandClusterProducer 0.000854969
+TimeModule> 2 1 islandSuperClusters HiSuperClusterProducer 0.000109911
+TimeModule> 2 1 correctedIslandBarrelSuperClusters HiEgammaSCCorrectionMaker 0.000144005
+TimeModule> 2 1 correctedIslandEndcapSuperClusters HiEgammaSCCorrectionMaker 4.00543e-05
+TimeModule> 2 1 photonCore PhotonCoreProducer 5.60284e-05
+TimeModule> 2 1 photons PhotonProducer 0.00464511
+TimeModule> 2 1 photonIsolationHIProducer photonIsolationHIProducer 0.00119996
+TimeModule> 2 1 uncleanedHybridSuperClusters HybridClusterProducer 0.000599861
+TimeModule> 2 1 cleanedHybridSuperClusters HybridClusterProducer 0.00037694
+TimeModule> 2 1 hybridSuperClusters UnifiedSCCollectionProducer 7.58171e-05
+TimeModule> 2 1 correctedHybridSuperClusters EgammaSCCorrectionMaker 0.000201941
+TimeModule> 2 1 gmtStage2Digis L1TRawToDigi 9.39369e-05
+TimeModule> 2 1 caloStage2Digis L1TRawToDigi 0.000102043
+TimeModule> 2 1 caloStage1Digis L1TRawToDigi 5.38826e-05
+TimeModule> 2 1 caloStage1LegacyFormatDigis L1TCaloUpgradeToGCTConverter 7.70092e-05
+TimeModule> 2 1 tcdsDigis TcdsRawToDigi 2.71797e-05
+TimeModule> 2 1 hiLowPtTripletStepQual TrackListMerger 0.00014782
+TimeModule> 2 1 hiDetachedTripletStepQual TrackListMerger 8.70228e-05
+%MSG-w MemoryCheck:  FastjetJetProducer:akPu5CaloJets 17-Apr-2017 22:40:33 CEST  Run: 1 Event: 2
+MemoryCheck: module FastjetJetProducer:akPu5CaloJets VSIZE 2007.15 0 RSS 1308.68 0.0429688
+%MSG
+TimeModule> 2 1 akPu5CaloJets FastjetJetProducer 0.0375051
+%MSG-w MemoryCheck:  FastjetJetProducer:akPu4CaloJets 17-Apr-2017 22:40:33 CEST  Run: 1 Event: 2
+MemoryCheck: module FastjetJetProducer:akPu4CaloJets VSIZE 2007.15 0 RSS 1308.69 0.00390625
+%MSG
+TimeModule> 2 1 akPu4CaloJets FastjetJetProducer 0.032578
+TimeModule> 2 1 akPu3CaloJets FastjetJetProducer 0.031323
+TimeModule> 2 1 refittedStandAloneMuons StandAloneMuonProducer 0.000118017
+TimeModule> 2 1 displacedMuonSeeds CosmicMuonSeedGenerator 0.000102997
+TimeModule> 2 1 displacedStandAloneMuons StandAloneMuonProducer 5.19753e-05
+TimeModule> 2 1 totemTriggerRawToDigi TotemTriggerRawToDigi 3.88622e-05
+TimeModule> 2 1 totemRPRawToDigi TotemVFATRawToDigi 0.000280142
+TimeModule> 2 1 gtDigis L1GlobalTriggerRawToDigi 9.799e-05
+TimeModule> 2 1 l1extraParticles L1ExtraParticlesProd 9.5129e-05
+TimeModule> 2 1 gctDigis GctRawToDigi 8.2016e-05
+%MSG-w MemoryCheck:  HcalNoiseInfoProducer:hcalnoise 17-Apr-2017 22:40:33 CEST  Run: 1 Event: 2
+MemoryCheck: module HcalNoiseInfoProducer:hcalnoise VSIZE 2007.15 0 RSS 1308.71 0.0273438
+%MSG
+TimeModule> 2 1 hcalnoise HcalNoiseInfoProducer 0.00198603
+TimeModule> 2 1 gtStage2Digis L1TRawToDigi 0.000159979
+TimeModule> 2 1 ecalTPSkim EcalTPSkimmer 0.00113487
+TimeModule> 2 1 ecalCompactTrigPrim EcalCompactTrigPrimProducer 8.98838e-05
+TimeModule> 2 1 dt1DCosmicRecHits DTRecHitProducer 3.91006e-05
+TimeModule> 2 1 dt4DCosmicSegments DTRecSegment4DProducer 4.1008e-05
+%MSG-w MemoryCheck:  ClusterSummaryProducer:clusterSummaryProducer  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module ClusterSummaryProducer:clusterSummaryProducer VSIZE 2007.15 0 RSS 1308.74 0.0234375
+%MSG
+TimeModule> 2 1 clusterSummaryProducer ClusterSummaryProducer 0.00061202
+TimeModule> 2 1 castorDigis CastorRawToDigi 0.000113964
+TimeModule> 2 1 castorreco CastorSimpleReconstructor 0.000109196
+TimeModule> 2 1 CastorTowerReco CastorTowerProducer 9.70364e-05
+%MSG-w MemoryCheck:  FastjetJetProducer:ak5CastorJets 17-Apr-2017 22:40:33 CEST  Run: 1 Event: 2
+MemoryCheck: module FastjetJetProducer:ak5CastorJets VSIZE 2007.15 0 RSS 1308.75 0.0078125
+%MSG
+TimeModule> 2 1 ak5CastorJets FastjetJetProducer 0.000225067
+TimeModule> 2 1 ak5CastorJetID CastorJetIDProducer 4.79221e-05
+TimeModule> 2 1 ak7CastorJets FastjetJetProducer 5.79357e-05
+TimeModule> 2 1 ak7CastorJetID CastorJetIDProducer 2.31266e-05
+TimeModule> 2 1 zdcreco ZdcHitReconstructor 3.98159e-05
+TimeModule> 2 1 hiCentrality CentralityProducer 0.000708103
+TimeModule> 2 1 particleFlowRecHitHF PFRecHitProducer 0.00116181
+TimeModule> 2 1 particleFlowClusterHF PFClusterProducer 0.000437975
+TimeModule> 2 1 particleFlowRecHitHO PFRecHitProducer 9.20296e-05
+TimeModule> 2 1 particleFlowClusterHO PFClusterProducer 2.00272e-05
+TimeModule> 2 1 particleFlowRecHitHBHE PFRecHitProducer 0.000365019
+TimeModule> 2 1 particleFlowClusterHBHE PFClusterProducer 0.000150919
+TimeModule> 2 1 particleFlowClusterHCAL PFMultiDepthClusterProducer 0.000429153
+%MSG-w MemoryCheck:  PFBlockProducer:particleFlowBlock  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module PFBlockProducer:particleFlowBlock VSIZE 2007.15 0 RSS 1308.75 0.00390625
+%MSG
+TimeModule> 2 1 particleFlowBlock PFBlockProducer 0.00136781
+%MSG-w MemoryCheck:  PFEGammaProducer:particleFlowEGamma  17-Apr-2017 22:40:33 CEST Run: 1 Event: 2
+MemoryCheck: module PFEGammaProducer:particleFlowEGamma VSIZE 2007.15 0 RSS 1308.76 0.0078125
+%MSG
+TimeModule> 2 1 particleFlowEGamma PFEGammaProducer 0.00116301
+TimeModule> 2 1 gedGsfElectronCores GEDGsfElectronCoreProducer 3.29018e-05
+TimeModule> 2 1 gedGsfElectronsTmp GEDGsfElectronProducer 0.000115871
+TimeModule> 2 1 gedPhotonCore GEDPhotonCoreProducer 4.1008e-05
+TimeModule> 2 1 gedPhotonsTmp GEDPhotonProducer 0.00627398
+%MSG-w MemoryCheck:  PFProducer:particleFlowTmp 17-Apr-2017 22:40:33 CEST  Run: 1 Event: 2
+MemoryCheck: module PFProducer:particleFlowTmp VSIZE 2007.15 0 RSS 1308.77 0.0078125
+%MSG
+TimeModule> 2 1 particleFlowTmp PFProducer 0.0013411
+TimeModule> 2 1 PFTowers ParticleTowerProducer 0.00179482
+%MSG-w MemoryCheck:  FastjetJetProducer:akPu3PFJets 17-Apr-2017 22:40:33 CEST  Run: 1 Event: 2
+MemoryCheck: module FastjetJetProducer:akPu3PFJets VSIZE 2007.15 0 RSS 1310.77 2
+%MSG
+TimeModule> 2 1 akPu3PFJets FastjetJetProducer 0.03704
+TimeModule> 2 1 akPu4PFJets FastjetJetProducer 0.0389199
+TimeModule> 2 1 akPu5PFJets FastjetJetProducer 0.042382
+TimeModule> 2 1 muons MuonProducer 7.70092e-05
+TimeModule> 2 1 photonIsolationHIProducerGED photonIsolationHIProducer 0.00161099
+TimeModule> 2 1 ctppsDiamondRawToDigi TotemVFATRawToDigi 5.29289e-05
+TimeModule> 2 1 scalersRawToDigi ScalersRawToDigi 4.69685e-05
+TimeModule> 2 1 RECOSIMoutput PoolOutputModule 0.141839
+TimeEvent> 2 1 0.862308
+Begin processing the 3rd record. Run 1, Event 3, LumiSection 1 at 17-Apr-2017 22:40:34.057 CEST
+%MSG-w MemoryCheck:  SiPixelRawToDigi:siPixelDigis 17-Apr-2017 22:40:34 CEST  Run: 1 Event: 3
+MemoryCheck: module SiPixelRawToDigi:siPixelDigis VSIZE 2007.15 0 RSS 1310.85 0.0820312
+%MSG
+TimeModule> 3 1 siPixelDigis SiPixelRawToDigi 0.00128007
+TimeModule> 3 1 siPixelClustersPreSplitting SiPixelClusterProducer 0.00215697
+TimeModule> 3 1 siPixelRecHitsPreSplitting SiPixelRecHitConverter 0.00090003
+TimeModule> 3 1 PixelLayerTripletsPreSplitting SeedingLayersEDProducer 8.89301e-05
+TimeModule> 3 1 hiPixelClusterVertexPreSplitting HIPixelClusterVtxProducer 0.00277805
+TimeModule> 3 1 pixelFitterByHelixProjections PixelFitterByHelixProjectionsProducer 2.90871e-05
+TimeModule> 3 1 offlineBeamSpot BeamSpotProducer 4.29153e-05
+TimeModule> 3 1 hiPixel3ProtoTracksTrackingRegionsPreSplitting HITrackingRegionForPrimaryVtxEDProducer 3.50475e-05
+TimeModule> 3 1 hiPixel3PRotoTracksHitDoubletsPreSplitting HitPairEDProducer 0.000604153
+TimeModule> 3 1 hiPixel3ProtoTracksHitTripletsPreSplitting PixelTripletHLTEDProducer 0.00514984
+TimeModule> 3 1 hiProtoTrackFilterPreSplitting HIProtoTrackFilterProducer 7.41482e-05
+TimeModule> 3 1 hiPixel3ProtoTracksPreSplitting PixelTrackProducer 0.00470996
+TimeModule> 3 1 hiPixelMedianVertexPreSplitting HIPixelMedianVtxProducer 0.00211
+TimeModule> 3 1 hiSelectedProtoTracksPreSplitting HIProtoTrackSelection 7.89165e-05
+TimeModule> 3 1 hiPixelAdaptiveVertexPreSplitting PrimaryVertexProducer 0.00198817
+TimeModule> 3 1 hiBestAdaptiveVertexPreSplitting HIBestVertexSelection 4.1008e-05
+TimeModule> 3 1 bunchSpacingProducer BunchSpacingProducer 5.31673e-05
+TimeModule> 3 1 ecalDigis EcalRawToDigi 0.00263214
+TimeModule> 3 1 ecalMultiFitUncalibRecHit EcalUncalibRecHitProducer 0.028743
+TimeModule> 3 1 ecalDetIdToBeRecovered EcalDetIdToBeRecoveredProducer 0.000356913
+TimeModule> 3 1 ecalRecHit EcalRecHitProducer 0.00102401
+%MSG-w MemoryCheck:  HcalRawToDigi:hcalDigis 17-Apr-2017 22:40:34 CEST  Run: 1 Event: 3
+MemoryCheck: module HcalRawToDigi:hcalDigis VSIZE 2007.15 0 RSS 1310.85 0.00390625
+%MSG
+TimeModule> 3 1 hcalDigis HcalRawToDigi 0.00213599
+%MSG-w MemoryCheck:  HBHEPhase1Reconstructor:hbhereco 17-Apr-2017 22:40:34 CEST  Run: 1 Event: 3
+MemoryCheck: module HBHEPhase1Reconstructor:hbhereco VSIZE 2007.15 0 RSS 1310.86 0.00390625
+%MSG
+TimeModule> 3 1 hbhereco HBHEPhase1Reconstructor 0.041172
+TimeModule> 3 1 horeco HcalHitReconstructor 0.00062108
+TimeModule> 3 1 hfprereco HFPreReconstructor 0.00294399
+TimeModule> 3 1 hfreco HFPhase1Reconstructor 0.000976086
+TimeModule> 3 1 hiCaloTowerForTrkPreSplitting CaloTowersCreator 0.00161004
+TimeModule> 3 1 hiSelectedVertexPreSplitting HIBestVertexProducer 7.51019e-05
+%MSG-w MemoryCheck:  FastjetJetProducer:hiAkPu4CaloJetsForTrkPreSplitting  17-Apr-2017 22:40:34 CEST Run: 1 Event: 3
+MemoryCheck: module FastjetJetProducer:hiAkPu4CaloJetsForTrkPreSplitting VSIZE 2007.15 0 RSS 1310.97 0.113281
+%MSG
+TimeModule> 3 1 hiAkPu4CaloJetsForTrkPreSplitting FastjetJetProducer 0.0433719
+TimeModule> 3 1 hiAkPu4CaloJetsCorrectedPreSplitting CaloJetCorrectionProducer 7.60555e-05
+TimeModule> 3 1 hiAkPu4CaloJetsSelectedPreSplitting LargestEtCaloJetSelector 3.29018e-05
+TimeModule> 3 1 hiJetsForCoreTrackingPreSplitting CandPtrSelector 6.60419e-05
+TimeModule> 3 1 siPixelClusters JetCoreClusterSplitter 0.029444
+%MSG-w MemoryCheck:  SiPixelRecHitConverter:siPixelRecHits  17-Apr-2017 22:40:34 CEST Run: 1 Event: 3
+MemoryCheck: module SiPixelRecHitConverter:siPixelRecHits VSIZE 2007.15 0 RSS 1310.97 0.00390625
+%MSG
+TimeModule> 3 1 siPixelRecHits SiPixelRecHitConverter 0.00112104
+TimeModule> 3 1 PixelLayerTriplets SeedingLayersEDProducer 8.41618e-05
+TimeModule> 3 1 hiPixelClusterVertex HIPixelClusterVtxProducer 0.00285101
+TimeModule> 3 1 hiTrackingRegionFromClusterVtx HITrackingRegionForPrimaryVtxEDProducer 3.79086e-05
+TimeModule> 3 1 hiPixel3ProtoTracksHitDoublets HitPairEDProducer 0.000677109
+%MSG-w MemoryCheck:  PixelTripletHLTEDProducer:hiPixel3ProtoTracksHitTriplets  17-Apr-2017 22:40:34 CEST Run: 1 Event: 3
+MemoryCheck: module PixelTripletHLTEDProducer:hiPixel3ProtoTracksHitTriplets VSIZE 2007.15 0 RSS 1310.98 0.00390625
+%MSG
+TimeModule> 3 1 hiPixel3ProtoTracksHitTriplets PixelTripletHLTEDProducer 0.00925207
+TimeModule> 3 1 hiProtoTrackFilter HIProtoTrackFilterProducer 5.6982e-05
+TimeModule> 3 1 hiPixel3ProtoTracks PixelTrackProducer 0.012459
+TimeModule> 3 1 hiPixelMedianVertex HIPixelMedianVtxProducer 0.00207901
+TimeModule> 3 1 hiSelectedProtoTracks HIProtoTrackSelection 8.01086e-05
+TimeModule> 3 1 hiPixelAdaptiveVertex PrimaryVertexProducer 0.00183606
+TimeModule> 3 1 hiBestAdaptiveVertex HIBestVertexSelection 2.40803e-05
+TimeModule> 3 1 hiCaloTowerForTrk CaloTowersCreator 0.00139618
+TimeModule> 3 1 hiSelectedVertex HIBestVertexProducer 5.79357e-05
+TimeModule> 3 1 akPu4CaloJetsForTrk FastjetJetProducer 0.040307
+TimeModule> 3 1 akPu4CaloJetsCorrected CaloJetCorrectionProducer 9.89437e-05
+TimeModule> 3 1 akPu4CaloJetsSelected LargestEtCaloJetSelector 6.10352e-05
+TimeModule> 3 1 hiJetsForCoreTracking CandPtrSelector 8.70228e-05
+TimeModule> 3 1 hiFirstStepGoodPrimaryVertices PrimaryVertexObjectFilter 3.69549e-05
+TimeModule> 3 1 hiRegitMuClusterCheck ClusterCheckerEDProducer 6.19888e-05
+TimeModule> 3 1 muonRPCDigis RPCUnpackingModule 0.000310183
+TimeModule> 3 1 rpcRecHits RPCRecHitProducer 8.10623e-05
+TimeModule> 3 1 muonCSCDigis CSCDCCUnpacker 0.000198841
+TimeModule> 3 1 csc2DRecHits CSCRecHitDProducer 5.00679e-05
+TimeModule> 3 1 cscSegments CSCSegmentProducer 2.40803e-05
+TimeModule> 3 1 muonDTDigis DTUnpackingModule 3.79086e-05
+TimeModule> 3 1 dt1DRecHits DTRecHitProducer 4.00543e-05
+TimeModule> 3 1 dt4DSegments DTRecSegment4DProducer 4.41074e-05
+TimeModule> 3 1 ancientMuonSeed MuonSeedGenerator 0.00016284
+TimeModule> 3 1 standAloneMuons StandAloneMuonProducer 8.08239e-05
+TimeModule> 3 1 hiRegitMuInitialStepTrackingRegions HIMuonTrackingRegionEDProducer 2.69413e-05
+TimeModule> 3 1 hiRegitMuPixelPairStepTrackingRegions HIMuonTrackingRegionEDProducer 2.00272e-05
+TimeModule> 3 1 hiRegitMuMixedTripletStepTrackingRegionsA HIMuonTrackingRegionEDProducer 1.78814e-05
+TimeModule> 3 1 hiRegitMuMixedTripletStepTrackingRegionsB HIMuonTrackingRegionEDProducer 1.78814e-05
+TimeModule> 3 1 hiRegitMuPixelLessStepTrackingRegions HIMuonTrackingRegionEDProducer 1.90735e-05
+TimeModule> 3 1 hiRegitMuDetachedTripletStepTrackingRegions HIMuonTrackingRegionEDProducer 5.29289e-05
+TimeModule> 3 1 hiRegitMuInitialStepSeedLayers SeedingLayersEDProducer 0.000238895
+TimeModule> 3 1 hiRegitMuInitialStepHitDoublets HitPairEDProducer 3.60012e-05
+TimeModule> 3 1 hiMixedTripletStepTrackingRegionsB GlobalTrackingRegionWithVerticesEDProducer 3.00407e-05
+TimeModule> 3 1 hiMixedTripletStepTrackingRegionsA GlobalTrackingRegionWithVerticesEDProducer 3.09944e-05
+TimeModule> 3 1 hiLowPtTripletStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 2.28882e-05
+TimeModule> 3 1 hiDetachedTripletStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 1.78814e-05
+TimeModule> 3 1 hiDetachedQuadStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 1.97887e-05
+TimeModule> 3 1 hiHighPtTripletStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 1.71661e-05
+TimeModule> 3 1 hiLowPtQuadStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 1.69277e-05
+%MSG-w MemoryCheck:  ESRawToDigi:ecalPreshowerDigis 17-Apr-2017 22:40:34 CEST  Run: 1 Event: 3
+MemoryCheck: module ESRawToDigi:ecalPreshowerDigis VSIZE 2007.15 0 RSS 1310.98 0.00390625
+%MSG
+TimeModule> 3 1 ecalPreshowerDigis ESRawToDigi 0.00030899
+TimeModule> 3 1 ecalPreshowerRecHit ESRecHitProducer 0.000464916
+TimeModule> 3 1 particleFlowRecHitPS PFRecHitProducer 0.000380039
+TimeModule> 3 1 particleFlowClusterPS PFClusterProducer 0.00166702
+TimeModule> 3 1 particleFlowRecHitECAL PFRecHitProducer 0.000748158
+TimeModule> 3 1 particleFlowClusterECALUncorrected PFClusterProducer 0.00216794
+TimeModule> 3 1 particleFlowClusterECAL CorrectedECALPFClusterProducer 0.00372601
+%MSG-w MemoryCheck:  PFECALSuperClusterProducer:particleFlowSuperClusterECAL  17-Apr-2017 22:40:34 CEST Run: 1 Event: 3
+MemoryCheck: module PFECALSuperClusterProducer:particleFlowSuperClusterECAL VSIZE 2007.15 0 RSS 1310.98 0.00390625
+%MSG
+TimeModule> 3 1 particleFlowSuperClusterECAL PFECALSuperClusterProducer 0.00406218
+TimeModule> 3 1 towerMaker CaloTowersCreator 0.00212002
+%MSG-w MemoryCheck:  FastjetJetProducer:iterativeConePu5CaloJets  17-Apr-2017 22:40:34 CEST Run: 1 Event: 3
+MemoryCheck: module FastjetJetProducer:iterativeConePu5CaloJets VSIZE 2007.15 0 RSS 1312.98 2
+%MSG
+TimeModule> 3 1 iterativeConePu5CaloJets FastjetJetProducer 0.088233
+TimeModule> 3 1 siPixelClusterShapeCache SiPixelClusterShapeCacheProducer 0.000864029
+TimeModule> 3 1 hiFilter HIPixelTrackFilterProducer 0.000102997
+TimeModule> 3 1 hiLowPtQuadStepPixelTracksFilter HIPixelTrackFilterProducer 7.70092e-05
+TimeModule> 3 1 hiHighPtTripletStepPixelTracksFilter HIPixelTrackFilterProducer 9.60827e-05
+TimeModule> 3 1 hiDetachedQuadStepPixelTracksFilter HIPixelTrackFilterProducer 7.89165e-05
+TimeModule> 3 1 hiDetachedTripletStepPixelTracksFilter HIPixelTrackFilterProducer 4.50611e-05
+TimeModule> 3 1 hiLowPtTripletStepPixelTracksFilter HIPixelTrackFilterProducer 3.50475e-05
+TimeModule> 3 1 hiRegitMuInitialStepHitTriplets PixelTripletHLTEDProducer 6.8903e-05
+TimeModule> 3 1 hiRegitMuInitialStepSeeds SeedCreatorFromRegionConsecutiveHitsEDProducer 5.91278e-05
+TimeModule> 3 1 hiTrackingRegionWithVertex GlobalTrackingRegionWithVerticesEDProducer 4.1008e-05
+TimeModule> 3 1 hiPixelLayerQuadruplets SeedingLayersEDProducer 7.98702e-05
+TimeModule> 3 1 hiPixel3PrimTracksHitDoubletsCA HitPairEDProducer 0.00091815
+TimeModule> 3 1 hiPixel3PrimTracksHitQuadrupletsCA CAHitQuadrupletEDProducer 0.000372887
+TimeModule> 3 1 hiPixel3PrimTracks PixelTrackProducer 0.000528097
+TimeModule> 3 1 hiPixelTrackSeeds SeedGeneratorFromProtoTracksEDProducer 0.000549793
+TimeModule> 3 1 siStripDigis SiStripRawToDigiModule 0.00553608
+TimeModule> 3 1 siStripZeroSuppression SiStripZeroSuppression 7.00951e-05
+TimeModule> 3 1 siStripClusters SiStripClusterizer 0.00660396
+%MSG-w MemoryCheck:  SiStripRecHitConverter:siStripMatchedRecHits  17-Apr-2017 22:40:34 CEST Run: 1 Event: 3
+MemoryCheck: module SiStripRecHitConverter:siStripMatchedRecHits VSIZE 2007.15 0 RSS 1313 0.0195312
+%MSG
+TimeModule> 3 1 siStripMatchedRecHits SiStripRecHitConverter 0.00649595
+TimeModule> 3 1 hiJetCoreRegionalStepSeedLayers SeedingLayersEDProducer 0.000160933
+TimeModule> 3 1 hiJetCoreRegionalStepSeeds SeedGeneratorFromRegionHitsEDProducer 0.00137615
+TimeModule> 3 1 MeasurementTrackerEvent MeasurementTrackerEventProducer 0.000188112
+%MSG-w MemoryCheck:  ElectronSeedProducer:ecalDrivenElectronSeeds  17-Apr-2017 22:40:34 CEST Run: 1 Event: 3
+MemoryCheck: module ElectronSeedProducer:ecalDrivenElectronSeeds VSIZE 2007.15 0 RSS 1313.02 0.0195312
+%MSG
+TimeModule> 3 1 ecalDrivenElectronSeeds ElectronSeedProducer 0.00115299
+TimeModule> 3 1 electronCkfTrackCandidates CkfTrackCandidateMaker 0.00128007
+%MSG-w MemoryCheck:  GsfTrackProducer:electronGsfTracks  17-Apr-2017 22:40:34 CEST Run: 1 Event: 3
+MemoryCheck: module GsfTrackProducer:electronGsfTracks VSIZE 2007.15 0 RSS 1313.23 0.203125
+%MSG
+TimeModule> 3 1 electronGsfTracks GsfTrackProducer 0.0163419
+TimeModule> 3 1 hiPrimTrackCandidates CkfTrackCandidateMaker 0.00896096
+TimeModule> 3 1 hiGlobalPrimTracks TrackProducer 0.00586104
+TimeModule> 3 1 hiInitialStepSelector HIMultiTrackSelector 0.000686884
+TimeModule> 3 1 hiLowPtQuadStepClusters HITrackClusterRemover 0.000113964
+TimeModule> 3 1 hiLowPtQuadStepSeedLayers SeedingLayersEDProducer 9.17912e-05
+TimeModule> 3 1 hiLowPtQuadStepTracksHitDoubletsCA HitPairEDProducer 0.00067091
+TimeModule> 3 1 hiLowPtQuadStepTracksHitQuadrupletsCA CAHitQuadrupletEDProducer 0.000830889
+TimeModule> 3 1 hiLowPtQuadStepPixelTracks PixelTrackProducer 0.0009799
+TimeModule> 3 1 hiLowPtQuadStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000982046
+TimeModule> 3 1 hiLowPtQuadStepTrackCandidates CkfTrackCandidateMaker 0.0216231
+TimeModule> 3 1 hiLowPtQuadStepTracks TrackProducer 0.00919509
+TimeModule> 3 1 hiLowPtQuadStepSelector HIMultiTrackSelector 0.000672102
+TimeModule> 3 1 hiHighPtTripletStepClusters HITrackClusterRemover 0.000100851
+TimeModule> 3 1 hiHighPtTripletStepSeedLayers SeedingLayersEDProducer 9.89437e-05
+TimeModule> 3 1 hiHighPtTripletStepTracksHitDoubletsCA HitPairEDProducer 0.000891924
+TimeModule> 3 1 hiHighPtTripletStepTracksHitTripletsCA CAHitTripletEDProducer 0.000711918
+TimeModule> 3 1 hiHighPtTripletStepPixelTracks PixelTrackProducer 0.00101995
+TimeModule> 3 1 hiHighPtTripletStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000588179
+TimeModule> 3 1 hiHighPtTripletStepTrackCandidates CkfTrackCandidateMaker 0.0141008
+TimeModule> 3 1 hiHighPtTripletStepTracks TrackProducer 0.00689697
+TimeModule> 3 1 hiHighPtTripletStepSelector HIMultiTrackSelector 0.000681877
+TimeModule> 3 1 hiDetachedQuadStepClusters HITrackClusterRemover 8.89301e-05
+TimeModule> 3 1 hiDetachedQuadStepSeedLayers SeedingLayersEDProducer 0.000103951
+TimeModule> 3 1 hiDetachedQuadStepTracksHitDoubletsCA HitPairEDProducer 0.000715017
+TimeModule> 3 1 hiDetachedQuadStepTracksHitQuadrupletsCA CAHitQuadrupletEDProducer 0.000483036
+TimeModule> 3 1 hiDetachedQuadStepPixelTracks PixelTrackProducer 0.000244856
+TimeModule> 3 1 hiDetachedQuadStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000337124
+TimeModule> 3 1 hiDetachedQuadStepTrackCandidates CkfTrackCandidateMaker 0.00211906
+TimeModule> 3 1 hiDetachedQuadStepTracks TrackProducer 0.00201702
+TimeModule> 3 1 hiDetachedQuadStepSelector HIMultiTrackSelector 0.000204086
+TimeModule> 3 1 hiDetachedTripletStepClusters HITrackClusterRemover 0.000121117
+TimeModule> 3 1 hiDetachedTripletStepSeedLayers SeedingLayersEDProducer 7.20024e-05
+TimeModule> 3 1 hiDetachedTripletStepTracksHitDoubletsCA HitPairEDProducer 0.000721216
+TimeModule> 3 1 hiDetachedTripletStepTracksHitTripletsCA CAHitTripletEDProducer 0.000394821
+TimeModule> 3 1 hiDetachedTripletStepPixelTracks PixelTrackProducer 0.0006001
+TimeModule> 3 1 hiDetachedTripletStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000313997
+TimeModule> 3 1 hiDetachedTripletStepTrackCandidates CkfTrackCandidateMaker 0.00347495
+TimeModule> 3 1 hiDetachedTripletStepTracks TrackProducer 0.00205994
+TimeModule> 3 1 hiDetachedTripletStepSelector HIMultiTrackSelector 0.000200987
+TimeModule> 3 1 hiLowPtTripletStepClusters HITrackClusterRemover 7.29561e-05
+TimeModule> 3 1 hiLowPtTripletStepSeedLayers SeedingLayersEDProducer 7.20024e-05
+TimeModule> 3 1 hiLowPtTripletStepTracksHitDoubletsCA HitPairEDProducer 0.000613928
+TimeModule> 3 1 hiLowPtTripletStepTracksHitTripletsCA CAHitTripletEDProducer 0.000375032
+TimeModule> 3 1 hiLowPtTripletStepPixelTracks PixelTrackProducer 0.000835896
+TimeModule> 3 1 hiLowPtTripletStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000595093
+TimeModule> 3 1 hiLowPtTripletStepTrackCandidates CkfTrackCandidateMaker 0.0190208
+TimeModule> 3 1 hiLowPtTripletStepTracks TrackProducer 0.00990415
+TimeModule> 3 1 hiLowPtTripletStepSelector HIMultiTrackSelector 0.00069809
+TimeModule> 3 1 hiPixelPairClusters HITrackClusterRemover 0.0001719
+TimeModule> 3 1 hiPixelPairSeedLayers SeedingLayersEDProducer 0.000120163
+TimeModule> 3 1 hiPixelPairSeeds SeedGeneratorFromRegionHitsEDProducer 0.00165796
+TimeModule> 3 1 hiPixelPairTrackCandidates CkfTrackCandidateMaker 0.00812197
+TimeModule> 3 1 hiPixelPairGlobalPrimTracks TrackProducer 0.00111604
+TimeModule> 3 1 hiPixelPairStepSelector HIMultiTrackSelector 0.000185013
+TimeModule> 3 1 hiMixedTripletStepClusters HITrackClusterRemover 6.10352e-05
+TimeModule> 3 1 hiMixedTripletStepSeedLayersA SeedingLayersEDProducer 7.60555e-05
+TimeModule> 3 1 hiMixedTripletStepHitDoubletsA HitPairEDProducer 0.000135183
+TimeModule> 3 1 hiMixedTripletStepHitTripletsA PixelTripletLargeTipEDProducer 0.000166893
+TimeModule> 3 1 hiMixedTripletStepSeedsA SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 0.000143051
+TimeModule> 3 1 hiMixedTripletStepSeedLayersB SeedingLayersEDProducer 7.51019e-05
+TimeModule> 3 1 hiMixedTripletStepHitDoubletsB HitPairEDProducer 0.000197887
+TimeModule> 3 1 hiMixedTripletStepHitTripletsB PixelTripletLargeTipEDProducer 0.00213504
+TimeModule> 3 1 hiMixedTripletStepSeedsB SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 0.00634098
+TimeModule> 3 1 hiMixedTripletStepSeeds SeedCombiner 0.000227928
+TimeModule> 3 1 hiMixedTripletStepTrackCandidates CkfTrackCandidateMaker 0.061501
+TimeModule> 3 1 hiMixedTripletStepTracks TrackProducer 0.0104909
+TimeModule> 3 1 hiMixedTripletStepSelector HIMultiTrackSelector 0.000687122
+TimeModule> 3 1 hiJetCoreRegionalStepTrackCandidates CkfTrackCandidateMaker 0.00127411
+TimeModule> 3 1 hiJetCoreRegionalStepTracks TrackProducer 0.000341177
+TimeModule> 3 1 hiJetCoreRegionalStepSelector HIMultiTrackSelector 7.00951e-05
+TimeModule> 3 1 hiRegitMuInitialStepTrackCandidates CkfTrackCandidateMaker 0.000158072
+TimeModule> 3 1 hiRegitMuInitialStepTracks TrackProducer 6.29425e-05
+TimeModule> 3 1 hiRegitMuInitialStepSelector HIMultiTrackSelector 5.00679e-05
+TimeModule> 3 1 hiRegitMuPixelPairStepClusters TrackClusterRemover 0.000105143
+TimeModule> 3 1 hiRegitMuPixelPairStepSeedLayers SeedingLayersEDProducer 8.98838e-05
+TimeModule> 3 1 hiRegitMuPixelPairStepHitDoublets HitPairEDProducer 3.00407e-05
+TimeModule> 3 1 hiRegitMuPixelPairStepSeeds SeedCreatorFromRegionConsecutiveHitsEDProducer 2.69413e-05
+TimeModule> 3 1 hiRegitMuPixelPairStepTrackCandidates CkfTrackCandidateMaker 5.48363e-05
+TimeModule> 3 1 hiRegitMuPixelPairStepTracks TrackProducer 8.39233e-05
+TimeModule> 3 1 hiRegitMuPixelPairStepSelector HIMultiTrackSelector 6.38962e-05
+TimeModule> 3 1 hiRegitMuMixedTripletStepClusters TrackClusterRemover 4.41074e-05
+TimeModule> 3 1 hiRegitMuMixedTripletStepSeedLayersA SeedingLayersEDProducer 6.91414e-05
+TimeModule> 3 1 hiRegitMuMixedTripletStepHitDoubletsA HitPairEDProducer 2.5034e-05
+TimeModule> 3 1 hiRegitMuMixedTripletStepHitTripletsA PixelTripletLargeTipEDProducer 1.90735e-05
+TimeModule> 3 1 hiRegitMuMixedTripletStepSeedsA SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 2.19345e-05
+TimeModule> 3 1 hiRegitMuMixedTripletStepSeedLayersB SeedingLayersEDProducer 0.000104904
+TimeModule> 3 1 hiRegitMuMixedTripletStepHitDoubletsB HitPairEDProducer 2.09808e-05
+TimeModule> 3 1 hiRegitMuMixedTripletStepHitTripletsB PixelTripletLargeTipEDProducer 6.98566e-05
+TimeModule> 3 1 hiRegitMuMixedTripletStepSeedsB SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 2.31266e-05
+TimeModule> 3 1 hiRegitMuMixedTripletStepSeeds SeedCombiner 1.81198e-05
+TimeModule> 3 1 hiRegitMuMixedTripletStepTrackCandidates CkfTrackCandidateMaker 6.48499e-05
+TimeModule> 3 1 hiRegitMuMixedTripletStepTracks TrackProducer 5.10216e-05
+TimeModule> 3 1 hiRegitMuMixedTripletStepSelector HIMultiTrackSelector 4.00543e-05
+TimeModule> 3 1 hiRegitMuPixelLessStepClusters TrackClusterRemover 4.1008e-05
+TimeModule> 3 1 hiRegitMuPixelLessStepSeedLayers SeedingLayersEDProducer 0.000327826
+TimeModule> 3 1 hiRegitMuPixelLessStepHitDoublets HitPairEDProducer 2.40803e-05
+TimeModule> 3 1 hiRegitMuPixelLessStepHitTriplets MultiHitFromChi2EDProducer 2.81334e-05
+TimeModule> 3 1 hiRegitMuPixelLessStepSeeds SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 2.59876e-05
+TimeModule> 3 1 hiRegitMuPixelLessStepTrackCandidates CkfTrackCandidateMaker 5.31673e-05
+TimeModule> 3 1 hiRegitMuPixelLessStepTracks TrackProducer 6.29425e-05
+TimeModule> 3 1 hiRegitMuPixelLessStepSelector HIMultiTrackSelector 4.91142e-05
+TimeModule> 3 1 hiRegitMuDetachedTripletStepClusters TrackClusterRemover 2.69413e-05
+TimeModule> 3 1 hiRegitMuDetachedTripletStepSeedLayers SeedingLayersEDProducer 0.000149965
+TimeModule> 3 1 hiRegitMuDetachedTripletStepHitDoublets HitPairEDProducer 3.79086e-05
+TimeModule> 3 1 hiRegitMuDetachedTripletStepHitTriplets PixelTripletLargeTipEDProducer 1.90735e-05
+TimeModule> 3 1 hiRegitMuDetachedTripletStepSeeds SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 2.28882e-05
+TimeModule> 3 1 hiRegitMuDetachedTripletStepTrackCandidates CkfTrackCandidateMaker 5.29289e-05
+TimeModule> 3 1 hiRegitMuDetachedTripletStepTracks TrackProducer 5.19753e-05
+TimeModule> 3 1 hiRegitMuDetachedTripletStepSelector HIMultiTrackSelector 4.00543e-05
+TimeModule> 3 1 hiEarlyGeneralTracks TrackListMerger 0.000567198
+TimeModule> 3 1 hiEarlyMuons MuonIdProducer 0.0207419
+TimeModule> 3 1 hiRegitMuonSeededSeedsOutIn OutsideInMuonSeeder 8.70228e-05
+TimeModule> 3 1 hiRegitMuonSeededTrackCandidatesOutIn CkfTrackCandidateMaker 6.19888e-05
+TimeModule> 3 1 hiRegitMuonSeededTracksOutIn TrackProducer 0.00011611
+TimeModule> 3 1 hiRegitMuonSeededTracksOutInSelector HIMultiTrackSelector 0.000323057
+TimeModule> 3 1 hiRegitMuonSeededSeedsInOut MuonReSeeder 0.000149965
+TimeModule> 3 1 hiRegitMuonSeededTrackCandidatesInOut CkfTrackCandidateMaker 5.29289e-05
+TimeModule> 3 1 hiRegitMuonSeededTracksInOut TrackProducer 5.79357e-05
+TimeModule> 3 1 hiRegitMuonSeededTracksInOutSelector HIMultiTrackSelector 4.29153e-05
+TimeModule> 3 1 hiGeneralTracks TrackListMerger 0.00281596
+TimeModule> 3 1 globalMuons GlobalMuonProducer 0.000105858
+TimeModule> 3 1 glbTrackQual GlobalTrackQualityProducer 8.29697e-05
+TimeModule> 3 1 tevMuons TevMuonProducer 0.000127077
+TimeModule> 3 1 hiMuons1stStep MuonIdProducer 0.0417869
+%MSG-w MemoryCheck:  PFTrackProducer:pfTrack 17-Apr-2017 22:40:34 CEST  Run: 1 Event: 3
+MemoryCheck: module PFTrackProducer:pfTrack VSIZE 2007.15 0 RSS 1313.23 0.00390625
+%MSG
+TimeModule> 3 1 pfTrack PFTrackProducer 0.000867128
+%MSG-w MemoryCheck:  PFElecTkProducer:pfTrackElec 17-Apr-2017 22:40:34 CEST  Run: 1 Event: 3
+MemoryCheck: module PFElecTkProducer:pfTrackElec VSIZE 2007.15 0 RSS 1313.3 0.0703125
+%MSG
+TimeModule> 3 1 pfTrackElec PFElecTkProducer 0.00270796
+%MSG-w MemoryCheck:   GsfElectronCoreEcalDrivenProducer:ecalDrivenGsfElectronCores  17-Apr-2017 22:40:34 CEST Run: 1 Event: 3
+MemoryCheck: module GsfElectronCoreEcalDrivenProducer:ecalDrivenGsfElectronCores VSIZE 2007.15 0 RSS 1313.31 0.0117188
+%MSG
+TimeModule> 3 1 ecalDrivenGsfElectronCores GsfElectronCoreEcalDrivenProducer 0.000941992
+%MSG-w MemoryCheck:  GsfElectronEcalDrivenProducer:ecalDrivenGsfElectrons  17-Apr-2017 22:40:34 CEST Run: 1 Event: 3
+MemoryCheck: module GsfElectronEcalDrivenProducer:ecalDrivenGsfElectrons VSIZE 2007.15 0 RSS 1313.43 0.117188
+%MSG
+TimeModule> 3 1 ecalDrivenGsfElectrons GsfElectronEcalDrivenProducer 0.00808406
+%MSG-w MemoryCheck:  GsfElectronSelector:electronsWithPresel  17-Apr-2017 22:40:34 CEST Run: 1 Event: 3
+MemoryCheck: module GsfElectronSelector:electronsWithPresel VSIZE 2007.15 0 RSS 1313.44 0.0117188
+%MSG
+TimeModule> 3 1 electronsWithPresel GsfElectronSelector 0.000468969
+%MSG-w MemoryCheck:  ElectronIdMVABased:mvaElectrons 17-Apr-2017 22:40:34 CEST  Run: 1 Event: 3
+MemoryCheck: module ElectronIdMVABased:mvaElectrons VSIZE 2007.15 0 RSS 1313.45 0.00390625
+%MSG
+TimeModule> 3 1 mvaElectrons ElectronIdMVABased 0.000617027
+TimeModule> 3 1 TriggerResults TriggerResultInserter 3.50475e-05
+TimeModule> 3 1 hiClusterCompatibility ClusterCompatibilityProducer 0.00233603
+TimeModule> 3 1 caloTowers CaloTowerCandidateCreator 0.00030899
+TimeModule> 3 1 multi5x5BasicClustersUncleaned Multi5x5ClusterProducer 0.0008111
+TimeModule> 3 1 multi5x5BasicClustersCleaned Multi5x5ClusterProducer 0.0003438
+TimeModule> 3 1 multi5x5SuperClustersCleaned Multi5x5SuperClusterProducer 7.31945e-05
+TimeModule> 3 1 multi5x5SuperClustersUncleaned Multi5x5SuperClusterProducer 5.29289e-05
+TimeModule> 3 1 multi5x5SuperClusters UnifiedSCCollectionProducer 7.70092e-05
+TimeModule> 3 1 multi5x5SuperClustersWithPreshower PreshowerPhiClusterProducer 0.000898838
+TimeModule> 3 1 correctedMulti5x5SuperClustersWithPreshower EgammaSCCorrectionMaker 0.000111103
+TimeModule> 3 1 multi5x5PreshowerClusterShape PreshowerClusterShapeProducer 0.000218868
+TimeModule> 3 1 islandBasicClusters IslandClusterProducer 0.00143409
+TimeModule> 3 1 islandSuperClusters HiSuperClusterProducer 0.000179052
+TimeModule> 3 1 correctedIslandBarrelSuperClusters HiEgammaSCCorrectionMaker 0.000211
+TimeModule> 3 1 correctedIslandEndcapSuperClusters HiEgammaSCCorrectionMaker 9.58443e-05
+TimeModule> 3 1 photonCore PhotonCoreProducer 4.79221e-05
+TimeModule> 3 1 photons PhotonProducer 0.00476408
+TimeModule> 3 1 photonIsolationHIProducer photonIsolationHIProducer 0.00543594
+TimeModule> 3 1 uncleanedHybridSuperClusters HybridClusterProducer 0.000590801
+TimeModule> 3 1 cleanedHybridSuperClusters HybridClusterProducer 0.000678062
+TimeModule> 3 1 hybridSuperClusters UnifiedSCCollectionProducer 9.41753e-05
+TimeModule> 3 1 correctedHybridSuperClusters EgammaSCCorrectionMaker 0.000433922
+TimeModule> 3 1 gmtStage2Digis L1TRawToDigi 0.000206947
+TimeModule> 3 1 caloStage2Digis L1TRawToDigi 0.000237942
+TimeModule> 3 1 caloStage1Digis L1TRawToDigi 0.000222921
+TimeModule> 3 1 caloStage1LegacyFormatDigis L1TCaloUpgradeToGCTConverter 0.000130892
+TimeModule> 3 1 tcdsDigis TcdsRawToDigi 5.38826e-05
+TimeModule> 3 1 hiLowPtTripletStepQual TrackListMerger 0.000324965
+TimeModule> 3 1 hiDetachedTripletStepQual TrackListMerger 8.70228e-05
+TimeModule> 3 1 akPu5CaloJets FastjetJetProducer 0.0384059
+TimeModule> 3 1 akPu4CaloJets FastjetJetProducer 0.0523281
+TimeModule> 3 1 akPu3CaloJets FastjetJetProducer 0.043241
+TimeModule> 3 1 refittedStandAloneMuons StandAloneMuonProducer 0.000123978
+TimeModule> 3 1 displacedMuonSeeds CosmicMuonSeedGenerator 0.000127077
+TimeModule> 3 1 displacedStandAloneMuons StandAloneMuonProducer 7.39098e-05
+TimeModule> 3 1 totemTriggerRawToDigi TotemTriggerRawToDigi 3.38554e-05
+TimeModule> 3 1 totemRPRawToDigi TotemVFATRawToDigi 0.000271082
+TimeModule> 3 1 gtDigis L1GlobalTriggerRawToDigi 0.000129938
+TimeModule> 3 1 l1extraParticles L1ExtraParticlesProd 0.000146866
+TimeModule> 3 1 gctDigis GctRawToDigi 9.29832e-05
+TimeModule> 3 1 hcalnoise HcalNoiseInfoProducer 0.00220585
+TimeModule> 3 1 gtStage2Digis L1TRawToDigi 0.000283957
+TimeModule> 3 1 ecalTPSkim EcalTPSkimmer 0.00128579
+TimeModule> 3 1 ecalCompactTrigPrim EcalCompactTrigPrimProducer 8.58307e-05
+TimeModule> 3 1 dt1DCosmicRecHits DTRecHitProducer 3.98159e-05
+TimeModule> 3 1 dt4DCosmicSegments DTRecSegment4DProducer 2.90871e-05
+TimeModule> 3 1 clusterSummaryProducer ClusterSummaryProducer 0.000645876
+TimeModule> 3 1 castorDigis CastorRawToDigi 0.000118017
+TimeModule> 3 1 castorreco CastorSimpleReconstructor 0.000113964
+TimeModule> 3 1 CastorTowerReco CastorTowerProducer 7.41482e-05
+TimeModule> 3 1 ak5CastorJets FastjetJetProducer 5.88894e-05
+TimeModule> 3 1 ak5CastorJetID CastorJetIDProducer 3.09944e-05
+TimeModule> 3 1 ak7CastorJets FastjetJetProducer 2.7895e-05
+TimeModule> 3 1 ak7CastorJetID CastorJetIDProducer 2.09808e-05
+TimeModule> 3 1 zdcreco ZdcHitReconstructor 0.000156879
+TimeModule> 3 1 hiCentrality CentralityProducer 0.000798941
+TimeModule> 3 1 particleFlowRecHitHF PFRecHitProducer 0.00106502
+TimeModule> 3 1 particleFlowClusterHF PFClusterProducer 0.000432968
+TimeModule> 3 1 particleFlowRecHitHO PFRecHitProducer 0.00011611
+TimeModule> 3 1 particleFlowClusterHO PFClusterProducer 2.71797e-05
+TimeModule> 3 1 particleFlowRecHitHBHE PFRecHitProducer 0.000466108
+TimeModule> 3 1 particleFlowClusterHBHE PFClusterProducer 0.000258923
+TimeModule> 3 1 particleFlowClusterHCAL PFMultiDepthClusterProducer 8.4877e-05
+%MSG-w MemoryCheck:  PFBlockProducer:particleFlowBlock  17-Apr-2017 22:40:34 CEST Run: 1 Event: 3
+MemoryCheck: module PFBlockProducer:particleFlowBlock VSIZE 2007.15 0 RSS 1313.45 0.0078125
+%MSG
+TimeModule> 3 1 particleFlowBlock PFBlockProducer 0.00394201
+%MSG-w MemoryCheck:  PFEGammaProducer:particleFlowEGamma  17-Apr-2017 22:40:34 CEST Run: 1 Event: 3
+MemoryCheck: module PFEGammaProducer:particleFlowEGamma VSIZE 2007.15 0 RSS 1313.46 0.00390625
+%MSG
+TimeModule> 3 1 particleFlowEGamma PFEGammaProducer 0.00316596
+TimeModule> 3 1 gedGsfElectronCores GEDGsfElectronCoreProducer 0.000170946
+%MSG-w MemoryCheck:  GEDGsfElectronProducer:gedGsfElectronsTmp  17-Apr-2017 22:40:34 CEST Run: 1 Event: 3
+MemoryCheck: module GEDGsfElectronProducer:gedGsfElectronsTmp VSIZE 2007.15 0 RSS 1313.47 0.015625
+%MSG
+TimeModule> 3 1 gedGsfElectronsTmp GEDGsfElectronProducer 0.00758696
+TimeModule> 3 1 gedPhotonCore GEDPhotonCoreProducer 5.60284e-05
+%MSG-w MemoryCheck:  GEDPhotonProducer:gedPhotonsTmp 17-Apr-2017 22:40:34 CEST  Run: 1 Event: 3
+MemoryCheck: module GEDPhotonProducer:gedPhotonsTmp VSIZE 2007.15 0 RSS 1313.48 0.00390625
+%MSG
+TimeModule> 3 1 gedPhotonsTmp GEDPhotonProducer 0.00272393
+%MSG-w MemoryCheck:  PFProducer:particleFlowTmp 17-Apr-2017 22:40:34 CEST  Run: 1 Event: 3
+MemoryCheck: module PFProducer:particleFlowTmp VSIZE 2007.15 0 RSS 1313.48 0.00390625
+%MSG
+TimeModule> 3 1 particleFlowTmp PFProducer 0.00207591
+%MSG-w MemoryCheck:  ParticleTowerProducer:PFTowers 17-Apr-2017 22:40:34 CEST  Run: 1 Event: 3
+MemoryCheck: module ParticleTowerProducer:PFTowers VSIZE 2007.15 0 RSS 1315.48 2
+%MSG
+TimeModule> 3 1 PFTowers ParticleTowerProducer 0.0024941
+%MSG-w MemoryCheck:  FastjetJetProducer:akPu3PFJets 17-Apr-2017 22:40:35 CEST  Run: 1 Event: 3
+MemoryCheck: module FastjetJetProducer:akPu3PFJets VSIZE 2007.15 0 RSS 1317.52 2.03516
+%MSG
+TimeModule> 3 1 akPu3PFJets FastjetJetProducer 0.0386
+TimeModule> 3 1 akPu4PFJets FastjetJetProducer 0.03546
+TimeModule> 3 1 akPu5PFJets FastjetJetProducer 0.035557
+TimeModule> 3 1 muons MuonProducer 6.50883e-05
+TimeModule> 3 1 photonIsolationHIProducerGED photonIsolationHIProducer 0.0014689
+TimeModule> 3 1 ctppsDiamondRawToDigi TotemVFATRawToDigi 5.88894e-05
+TimeModule> 3 1 scalersRawToDigi ScalersRawToDigi 4.72069e-05
+TimeModule> 3 1 RECOSIMoutput PoolOutputModule 0.193331
+TimeEvent> 3 1 1.2456
+Begin processing the 4th record. Run 1, Event 4, LumiSection 1 at 17-Apr-2017 22:40:35.310 CEST
+TimeModule> 4 1 siPixelDigis SiPixelRawToDigi 0.000303984
+TimeModule> 4 1 siPixelClustersPreSplitting SiPixelClusterProducer 0.00077486
+TimeModule> 4 1 siPixelRecHitsPreSplitting SiPixelRecHitConverter 0.000336885
+TimeModule> 4 1 PixelLayerTripletsPreSplitting SeedingLayersEDProducer 6.8903e-05
+TimeModule> 4 1 hiPixelClusterVertexPreSplitting HIPixelClusterVtxProducer 0.000954866
+TimeModule> 4 1 pixelFitterByHelixProjections PixelFitterByHelixProjectionsProducer 2.81334e-05
+TimeModule> 4 1 offlineBeamSpot BeamSpotProducer 3.60012e-05
+TimeModule> 4 1 hiPixel3ProtoTracksTrackingRegionsPreSplitting HITrackingRegionForPrimaryVtxEDProducer 3.29018e-05
+TimeModule> 4 1 hiPixel3PRotoTracksHitDoubletsPreSplitting HitPairEDProducer 0.000217199
+TimeModule> 4 1 hiPixel3ProtoTracksHitTripletsPreSplitting PixelTripletHLTEDProducer 0.00119495
+TimeModule> 4 1 hiProtoTrackFilterPreSplitting HIProtoTrackFilterProducer 4.48227e-05
+TimeModule> 4 1 hiPixel3ProtoTracksPreSplitting PixelTrackProducer 0.00139809
+TimeModule> 4 1 hiPixelMedianVertexPreSplitting HIPixelMedianVtxProducer 0.00148511
+TimeModule> 4 1 hiSelectedProtoTracksPreSplitting HIProtoTrackSelection 0.000101089
+TimeModule> 4 1 hiPixelAdaptiveVertexPreSplitting PrimaryVertexProducer 0.00121999
+TimeModule> 4 1 hiBestAdaptiveVertexPreSplitting HIBestVertexSelection 2.59876e-05
+TimeModule> 4 1 bunchSpacingProducer BunchSpacingProducer 2.47955e-05
+TimeModule> 4 1 ecalDigis EcalRawToDigi 0.00187612
+TimeModule> 4 1 ecalMultiFitUncalibRecHit EcalUncalibRecHitProducer 0.011764
+TimeModule> 4 1 ecalDetIdToBeRecovered EcalDetIdToBeRecoveredProducer 0.000105143
+TimeModule> 4 1 ecalRecHit EcalRecHitProducer 0.000420094
+TimeModule> 4 1 hcalDigis HcalRawToDigi 0.00188518
+TimeModule> 4 1 hbhereco HBHEPhase1Reconstructor 0.0287249
+TimeModule> 4 1 horeco HcalHitReconstructor 0.000519991
+TimeModule> 4 1 hfprereco HFPreReconstructor 0.00298691
+TimeModule> 4 1 hfreco HFPhase1Reconstructor 0.000885963
+TimeModule> 4 1 hiCaloTowerForTrkPreSplitting CaloTowersCreator 0.00116301
+TimeModule> 4 1 hiSelectedVertexPreSplitting HIBestVertexProducer 6.19888e-05
+TimeModule> 4 1 hiAkPu4CaloJetsForTrkPreSplitting FastjetJetProducer 0.034225
+TimeModule> 4 1 hiAkPu4CaloJetsCorrectedPreSplitting CaloJetCorrectionProducer 6.60419e-05
+TimeModule> 4 1 hiAkPu4CaloJetsSelectedPreSplitting LargestEtCaloJetSelector 4.79221e-05
+TimeModule> 4 1 hiJetsForCoreTrackingPreSplitting CandPtrSelector 6.29425e-05
+TimeModule> 4 1 siPixelClusters JetCoreClusterSplitter 0.000530958
+TimeModule> 4 1 siPixelRecHits SiPixelRecHitConverter 0.000349998
+TimeModule> 4 1 PixelLayerTriplets SeedingLayersEDProducer 5.81741e-05
+TimeModule> 4 1 hiPixelClusterVertex HIPixelClusterVtxProducer 0.000935793
+TimeModule> 4 1 hiTrackingRegionFromClusterVtx HITrackingRegionForPrimaryVtxEDProducer 3.38554e-05
+TimeModule> 4 1 hiPixel3ProtoTracksHitDoublets HitPairEDProducer 0.000224113
+TimeModule> 4 1 hiPixel3ProtoTracksHitTriplets PixelTripletHLTEDProducer 0.00123596
+TimeModule> 4 1 hiProtoTrackFilter HIProtoTrackFilterProducer 6.07967e-05
+TimeModule> 4 1 hiPixel3ProtoTracks PixelTrackProducer 0.00138402
+TimeModule> 4 1 hiPixelMedianVertex HIPixelMedianVtxProducer 0.00148702
+TimeModule> 4 1 hiSelectedProtoTracks HIProtoTrackSelection 6.79493e-05
+TimeModule> 4 1 hiPixelAdaptiveVertex PrimaryVertexProducer 0.00124907
+TimeModule> 4 1 hiBestAdaptiveVertex HIBestVertexSelection 3.40939e-05
+TimeModule> 4 1 hiCaloTowerForTrk CaloTowersCreator 0.0011611
+TimeModule> 4 1 hiSelectedVertex HIBestVertexProducer 6.31809e-05
+TimeModule> 4 1 akPu4CaloJetsForTrk FastjetJetProducer 0.032429
+TimeModule> 4 1 akPu4CaloJetsCorrected CaloJetCorrectionProducer 6.60419e-05
+TimeModule> 4 1 akPu4CaloJetsSelected LargestEtCaloJetSelector 4.1008e-05
+TimeModule> 4 1 hiJetsForCoreTracking CandPtrSelector 6.10352e-05
+TimeModule> 4 1 hiFirstStepGoodPrimaryVertices PrimaryVertexObjectFilter 5.31673e-05
+TimeModule> 4 1 hiRegitMuClusterCheck ClusterCheckerEDProducer 2.69413e-05
+TimeModule> 4 1 muonRPCDigis RPCUnpackingModule 0.00012207
+TimeModule> 4 1 rpcRecHits RPCRecHitProducer 9.29832e-05
+TimeModule> 4 1 muonCSCDigis CSCDCCUnpacker 0.000185966
+TimeModule> 4 1 csc2DRecHits CSCRecHitDProducer 6.00815e-05
+TimeModule> 4 1 cscSegments CSCSegmentProducer 2.47955e-05
+TimeModule> 4 1 muonDTDigis DTUnpackingModule 3.50475e-05
+TimeModule> 4 1 dt1DRecHits DTRecHitProducer 3.79086e-05
+TimeModule> 4 1 dt4DSegments DTRecSegment4DProducer 3.09944e-05
+TimeModule> 4 1 ancientMuonSeed MuonSeedGenerator 0.000172138
+TimeModule> 4 1 standAloneMuons StandAloneMuonProducer 8.2016e-05
+TimeModule> 4 1 hiRegitMuInitialStepTrackingRegions HIMuonTrackingRegionEDProducer 2.81334e-05
+TimeModule> 4 1 hiRegitMuPixelPairStepTrackingRegions HIMuonTrackingRegionEDProducer 1.88351e-05
+TimeModule> 4 1 hiRegitMuMixedTripletStepTrackingRegionsA HIMuonTrackingRegionEDProducer 2.09808e-05
+TimeModule> 4 1 hiRegitMuMixedTripletStepTrackingRegionsB HIMuonTrackingRegionEDProducer 2.98023e-05
+TimeModule> 4 1 hiRegitMuPixelLessStepTrackingRegions HIMuonTrackingRegionEDProducer 1.69277e-05
+TimeModule> 4 1 hiRegitMuDetachedTripletStepTrackingRegions HIMuonTrackingRegionEDProducer 1.69277e-05
+TimeModule> 4 1 hiRegitMuInitialStepSeedLayers SeedingLayersEDProducer 4.48227e-05
+TimeModule> 4 1 hiRegitMuInitialStepHitDoublets HitPairEDProducer 2.59876e-05
+TimeModule> 4 1 hiMixedTripletStepTrackingRegionsB GlobalTrackingRegionWithVerticesEDProducer 2.28882e-05
+TimeModule> 4 1 hiMixedTripletStepTrackingRegionsA GlobalTrackingRegionWithVerticesEDProducer 1.69277e-05
+TimeModule> 4 1 hiLowPtTripletStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 1.69277e-05
+TimeModule> 4 1 hiDetachedTripletStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 1.71661e-05
+TimeModule> 4 1 hiDetachedQuadStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 1.69277e-05
+TimeModule> 4 1 hiHighPtTripletStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 1.62125e-05
+TimeModule> 4 1 hiLowPtQuadStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 1.5974e-05
+TimeModule> 4 1 ecalPreshowerDigis ESRawToDigi 0.000193119
+TimeModule> 4 1 ecalPreshowerRecHit ESRecHitProducer 0.000227213
+TimeModule> 4 1 particleFlowRecHitPS PFRecHitProducer 0.000127077
+TimeModule> 4 1 particleFlowClusterPS PFClusterProducer 0.000283003
+TimeModule> 4 1 particleFlowRecHitECAL PFRecHitProducer 0.000302076
+TimeModule> 4 1 particleFlowClusterECALUncorrected PFClusterProducer 0.000308037
+TimeModule> 4 1 particleFlowClusterECAL CorrectedECALPFClusterProducer 0.000635147
+TimeModule> 4 1 particleFlowSuperClusterECAL PFECALSuperClusterProducer 0.000847816
+TimeModule> 4 1 towerMaker CaloTowersCreator 0.001091
+%MSG-w MemoryCheck:  FastjetJetProducer:iterativeConePu5CaloJets  17-Apr-2017 22:40:35 CEST Run: 1 Event: 4
+MemoryCheck: module FastjetJetProducer:iterativeConePu5CaloJets VSIZE 2007.15 0 RSS 1319.55 2.03516
+%MSG
+TimeModule> 4 1 iterativeConePu5CaloJets FastjetJetProducer 0.0548799
+TimeModule> 4 1 siPixelClusterShapeCache SiPixelClusterShapeCacheProducer 0.000249147
+TimeModule> 4 1 hiFilter HIPixelTrackFilterProducer 5.60284e-05
+TimeModule> 4 1 hiLowPtQuadStepPixelTracksFilter HIPixelTrackFilterProducer 3.31402e-05
+TimeModule> 4 1 hiHighPtTripletStepPixelTracksFilter HIPixelTrackFilterProducer 3.00407e-05
+TimeModule> 4 1 hiDetachedQuadStepPixelTracksFilter HIPixelTrackFilterProducer 4.31538e-05
+TimeModule> 4 1 hiDetachedTripletStepPixelTracksFilter HIPixelTrackFilterProducer 4.1008e-05
+TimeModule> 4 1 hiLowPtTripletStepPixelTracksFilter HIPixelTrackFilterProducer 3.31402e-05
+TimeModule> 4 1 hiRegitMuInitialStepHitTriplets PixelTripletHLTEDProducer 2.5034e-05
+TimeModule> 4 1 hiRegitMuInitialStepSeeds SeedCreatorFromRegionConsecutiveHitsEDProducer 2.59876e-05
+TimeModule> 4 1 hiTrackingRegionWithVertex GlobalTrackingRegionWithVerticesEDProducer 2.81334e-05
+TimeModule> 4 1 hiPixelLayerQuadruplets SeedingLayersEDProducer 5.19753e-05
+TimeModule> 4 1 hiPixel3PrimTracksHitDoubletsCA HitPairEDProducer 0.000267029
+TimeModule> 4 1 hiPixel3PrimTracksHitQuadrupletsCA CAHitQuadrupletEDProducer 0.000180006
+TimeModule> 4 1 hiPixel3PrimTracks PixelTrackProducer 0.000314951
+TimeModule> 4 1 hiPixelTrackSeeds SeedGeneratorFromProtoTracksEDProducer 0.00030899
+TimeModule> 4 1 siStripDigis SiStripRawToDigiModule 0.00436091
+TimeModule> 4 1 siStripZeroSuppression SiStripZeroSuppression 6.69956e-05
+TimeModule> 4 1 siStripClusters SiStripClusterizer 0.00311303
+TimeModule> 4 1 siStripMatchedRecHits SiStripRecHitConverter 0.00155187
+TimeModule> 4 1 hiJetCoreRegionalStepSeedLayers SeedingLayersEDProducer 5.88894e-05
+TimeModule> 4 1 hiJetCoreRegionalStepSeeds SeedGeneratorFromRegionHitsEDProducer 5.29289e-05
+TimeModule> 4 1 MeasurementTrackerEvent MeasurementTrackerEventProducer 0.00014019
+TimeModule> 4 1 ecalDrivenElectronSeeds ElectronSeedProducer 0.000120163
+TimeModule> 4 1 electronCkfTrackCandidates CkfTrackCandidateMaker 5.4121e-05
+TimeModule> 4 1 electronGsfTracks GsfTrackProducer 0.000104904
+TimeModule> 4 1 hiPrimTrackCandidates CkfTrackCandidateMaker 0.00474596
+TimeModule> 4 1 hiGlobalPrimTracks TrackProducer 0.00254512
+TimeModule> 4 1 hiInitialStepSelector HIMultiTrackSelector 0.000289202
+TimeModule> 4 1 hiLowPtQuadStepClusters HITrackClusterRemover 6.38962e-05
+TimeModule> 4 1 hiLowPtQuadStepSeedLayers SeedingLayersEDProducer 7.41482e-05
+TimeModule> 4 1 hiLowPtQuadStepTracksHitDoubletsCA HitPairEDProducer 0.000244141
+TimeModule> 4 1 hiLowPtQuadStepTracksHitQuadrupletsCA CAHitQuadrupletEDProducer 0.000209093
+TimeModule> 4 1 hiLowPtQuadStepPixelTracks PixelTrackProducer 0.000236034
+TimeModule> 4 1 hiLowPtQuadStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000211
+TimeModule> 4 1 hiLowPtQuadStepTrackCandidates CkfTrackCandidateMaker 0.00301695
+TimeModule> 4 1 hiLowPtQuadStepTracks TrackProducer 0.00157785
+TimeModule> 4 1 hiLowPtQuadStepSelector HIMultiTrackSelector 0.00022006
+TimeModule> 4 1 hiHighPtTripletStepClusters HITrackClusterRemover 4.88758e-05
+TimeModule> 4 1 hiHighPtTripletStepSeedLayers SeedingLayersEDProducer 6.29425e-05
+TimeModule> 4 1 hiHighPtTripletStepTracksHitDoubletsCA HitPairEDProducer 0.000286102
+TimeModule> 4 1 hiHighPtTripletStepTracksHitTripletsCA CAHitTripletEDProducer 0.000215054
+TimeModule> 4 1 hiHighPtTripletStepPixelTracks PixelTrackProducer 0.000504017
+TimeModule> 4 1 hiHighPtTripletStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000336885
+TimeModule> 4 1 hiHighPtTripletStepTrackCandidates CkfTrackCandidateMaker 0.00530815
+TimeModule> 4 1 hiHighPtTripletStepTracks TrackProducer 0.00352001
+TimeModule> 4 1 hiHighPtTripletStepSelector HIMultiTrackSelector 0.000344992
+TimeModule> 4 1 hiDetachedQuadStepClusters HITrackClusterRemover 9.70364e-05
+TimeModule> 4 1 hiDetachedQuadStepSeedLayers SeedingLayersEDProducer 7.10487e-05
+TimeModule> 4 1 hiDetachedQuadStepTracksHitDoubletsCA HitPairEDProducer 0.000213861
+TimeModule> 4 1 hiDetachedQuadStepTracksHitQuadrupletsCA CAHitQuadrupletEDProducer 0.000165939
+TimeModule> 4 1 hiDetachedQuadStepPixelTracks PixelTrackProducer 0.000154972
+TimeModule> 4 1 hiDetachedQuadStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000114918
+TimeModule> 4 1 hiDetachedQuadStepTrackCandidates CkfTrackCandidateMaker 0.000985861
+TimeModule> 4 1 hiDetachedQuadStepTracks TrackProducer 0.000643015
+TimeModule> 4 1 hiDetachedQuadStepSelector HIMultiTrackSelector 0.000128031
+TimeModule> 4 1 hiDetachedTripletStepClusters HITrackClusterRemover 5.50747e-05
+TimeModule> 4 1 hiDetachedTripletStepSeedLayers SeedingLayersEDProducer 4.88758e-05
+TimeModule> 4 1 hiDetachedTripletStepTracksHitDoubletsCA HitPairEDProducer 0.00020504
+TimeModule> 4 1 hiDetachedTripletStepTracksHitTripletsCA CAHitTripletEDProducer 0.00011611
+TimeModule> 4 1 hiDetachedTripletStepPixelTracks PixelTrackProducer 0.00018096
+TimeModule> 4 1 hiDetachedTripletStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000130892
+TimeModule> 4 1 hiDetachedTripletStepTrackCandidates CkfTrackCandidateMaker 0.0012691
+TimeModule> 4 1 hiDetachedTripletStepTracks TrackProducer 0.000584841
+TimeModule> 4 1 hiDetachedTripletStepSelector HIMultiTrackSelector 0.000108957
+TimeModule> 4 1 hiLowPtTripletStepClusters HITrackClusterRemover 4.31538e-05
+TimeModule> 4 1 hiLowPtTripletStepSeedLayers SeedingLayersEDProducer 5.79357e-05
+TimeModule> 4 1 hiLowPtTripletStepTracksHitDoubletsCA HitPairEDProducer 0.00024581
+TimeModule> 4 1 hiLowPtTripletStepTracksHitTripletsCA CAHitTripletEDProducer 0.000157118
+TimeModule> 4 1 hiLowPtTripletStepPixelTracks PixelTrackProducer 0.000217915
+TimeModule> 4 1 hiLowPtTripletStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000200987
+TimeModule> 4 1 hiLowPtTripletStepTrackCandidates CkfTrackCandidateMaker 0.00321603
+TimeModule> 4 1 hiLowPtTripletStepTracks TrackProducer 0.0012238
+TimeModule> 4 1 hiLowPtTripletStepSelector HIMultiTrackSelector 0.000148058
+TimeModule> 4 1 hiPixelPairClusters HITrackClusterRemover 5.98431e-05
+TimeModule> 4 1 hiPixelPairSeedLayers SeedingLayersEDProducer 4.48227e-05
+TimeModule> 4 1 hiPixelPairSeeds SeedGeneratorFromRegionHitsEDProducer 0.000301123
+TimeModule> 4 1 hiPixelPairTrackCandidates CkfTrackCandidateMaker 0.00139093
+TimeModule> 4 1 hiPixelPairGlobalPrimTracks TrackProducer 7.39098e-05
+TimeModule> 4 1 hiPixelPairStepSelector HIMultiTrackSelector 5.10216e-05
+TimeModule> 4 1 hiMixedTripletStepClusters HITrackClusterRemover 3.40939e-05
+TimeModule> 4 1 hiMixedTripletStepSeedLayersA SeedingLayersEDProducer 6.10352e-05
+TimeModule> 4 1 hiMixedTripletStepHitDoubletsA HitPairEDProducer 7.29561e-05
+TimeModule> 4 1 hiMixedTripletStepHitTripletsA PixelTripletLargeTipEDProducer 9.29832e-05
+TimeModule> 4 1 hiMixedTripletStepSeedsA SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 3.60012e-05
+TimeModule> 4 1 hiMixedTripletStepSeedLayersB SeedingLayersEDProducer 5.60284e-05
+TimeModule> 4 1 hiMixedTripletStepHitDoubletsB HitPairEDProducer 6.60419e-05
+TimeModule> 4 1 hiMixedTripletStepHitTripletsB PixelTripletLargeTipEDProducer 0.000108957
+TimeModule> 4 1 hiMixedTripletStepSeedsB SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 0.000178099
+TimeModule> 4 1 hiMixedTripletStepSeeds SeedCombiner 2.59876e-05
+TimeModule> 4 1 hiMixedTripletStepTrackCandidates CkfTrackCandidateMaker 0.00238705
+TimeModule> 4 1 hiMixedTripletStepTracks TrackProducer 0.00131607
+TimeModule> 4 1 hiMixedTripletStepSelector HIMultiTrackSelector 0.000164986
+TimeModule> 4 1 hiJetCoreRegionalStepTrackCandidates CkfTrackCandidateMaker 4.1008e-05
+TimeModule> 4 1 hiJetCoreRegionalStepTracks TrackProducer 6.79493e-05
+TimeModule> 4 1 hiJetCoreRegionalStepSelector HIMultiTrackSelector 4.00543e-05
+TimeModule> 4 1 hiRegitMuInitialStepTrackCandidates CkfTrackCandidateMaker 4.48227e-05
+TimeModule> 4 1 hiRegitMuInitialStepTracks TrackProducer 4.81606e-05
+TimeModule> 4 1 hiRegitMuInitialStepSelector HIMultiTrackSelector 4.29153e-05
+TimeModule> 4 1 hiRegitMuPixelPairStepClusters TrackClusterRemover 5.00679e-05
+TimeModule> 4 1 hiRegitMuPixelPairStepSeedLayers SeedingLayersEDProducer 5.57899e-05
+TimeModule> 4 1 hiRegitMuPixelPairStepHitDoublets HitPairEDProducer 2.69413e-05
+TimeModule> 4 1 hiRegitMuPixelPairStepSeeds SeedCreatorFromRegionConsecutiveHitsEDProducer 2.59876e-05
+TimeModule> 4 1 hiRegitMuPixelPairStepTrackCandidates CkfTrackCandidateMaker 4.50611e-05
+TimeModule> 4 1 hiRegitMuPixelPairStepTracks TrackProducer 5.4121e-05
+TimeModule> 4 1 hiRegitMuPixelPairStepSelector HIMultiTrackSelector 6.29425e-05
+TimeModule> 4 1 hiRegitMuMixedTripletStepClusters TrackClusterRemover 2.88486e-05
+TimeModule> 4 1 hiRegitMuMixedTripletStepSeedLayersA SeedingLayersEDProducer 3.8147e-05
+TimeModule> 4 1 hiRegitMuMixedTripletStepHitDoubletsA HitPairEDProducer 2.00272e-05
+TimeModule> 4 1 hiRegitMuMixedTripletStepHitTripletsA PixelTripletLargeTipEDProducer 1.69277e-05
+TimeModule> 4 1 hiRegitMuMixedTripletStepSeedsA SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 2.19345e-05
+TimeModule> 4 1 hiRegitMuMixedTripletStepSeedLayersB SeedingLayersEDProducer 5.72205e-05
+TimeModule> 4 1 hiRegitMuMixedTripletStepHitDoubletsB HitPairEDProducer 2.00272e-05
+TimeModule> 4 1 hiRegitMuMixedTripletStepHitTripletsB PixelTripletLargeTipEDProducer 1.69277e-05
+TimeModule> 4 1 hiRegitMuMixedTripletStepSeedsB SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 2.40803e-05
+TimeModule> 4 1 hiRegitMuMixedTripletStepSeeds SeedCombiner 1.69277e-05
+TimeModule> 4 1 hiRegitMuMixedTripletStepTrackCandidates CkfTrackCandidateMaker 4.1008e-05
+TimeModule> 4 1 hiRegitMuMixedTripletStepTracks TrackProducer 5.10216e-05
+TimeModule> 4 1 hiRegitMuMixedTripletStepSelector HIMultiTrackSelector 3.91006e-05
+TimeModule> 4 1 hiRegitMuPixelLessStepClusters TrackClusterRemover 2.98023e-05
+TimeModule> 4 1 hiRegitMuPixelLessStepSeedLayers SeedingLayersEDProducer 0.000108957
+TimeModule> 4 1 hiRegitMuPixelLessStepHitDoublets HitPairEDProducer 2.19345e-05
+TimeModule> 4 1 hiRegitMuPixelLessStepHitTriplets MultiHitFromChi2EDProducer 1.71661e-05
+TimeModule> 4 1 hiRegitMuPixelLessStepSeeds SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 2.71797e-05
+TimeModule> 4 1 hiRegitMuPixelLessStepTrackCandidates CkfTrackCandidateMaker 5.38826e-05
+TimeModule> 4 1 hiRegitMuPixelLessStepTracks TrackProducer 5.29289e-05
+TimeModule> 4 1 hiRegitMuPixelLessStepSelector HIMultiTrackSelector 3.88622e-05
+TimeModule> 4 1 hiRegitMuDetachedTripletStepClusters TrackClusterRemover 2.38419e-05
+TimeModule> 4 1 hiRegitMuDetachedTripletStepSeedLayers SeedingLayersEDProducer 5.79357e-05
+TimeModule> 4 1 hiRegitMuDetachedTripletStepHitDoublets HitPairEDProducer 2.00272e-05
+TimeModule> 4 1 hiRegitMuDetachedTripletStepHitTriplets PixelTripletLargeTipEDProducer 1.69277e-05
+TimeModule> 4 1 hiRegitMuDetachedTripletStepSeeds SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 2.00272e-05
+TimeModule> 4 1 hiRegitMuDetachedTripletStepTrackCandidates CkfTrackCandidateMaker 5.00679e-05
+TimeModule> 4 1 hiRegitMuDetachedTripletStepTracks TrackProducer 5.19753e-05
+TimeModule> 4 1 hiRegitMuDetachedTripletStepSelector HIMultiTrackSelector 4.19617e-05
+TimeModule> 4 1 hiEarlyGeneralTracks TrackListMerger 0.000252008
+TimeModule> 4 1 hiEarlyMuons MuonIdProducer 0.0171001
+TimeModule> 4 1 hiRegitMuonSeededSeedsOutIn OutsideInMuonSeeder 5.00679e-05
+TimeModule> 4 1 hiRegitMuonSeededTrackCandidatesOutIn CkfTrackCandidateMaker 4.60148e-05
+TimeModule> 4 1 hiRegitMuonSeededTracksOutIn TrackProducer 9.20296e-05
+TimeModule> 4 1 hiRegitMuonSeededTracksOutInSelector HIMultiTrackSelector 8.91685e-05
+TimeModule> 4 1 hiRegitMuonSeededSeedsInOut MuonReSeeder 9.10759e-05
+TimeModule> 4 1 hiRegitMuonSeededTrackCandidatesInOut CkfTrackCandidateMaker 5.6982e-05
+TimeModule> 4 1 hiRegitMuonSeededTracksInOut TrackProducer 8.60691e-05
+TimeModule> 4 1 hiRegitMuonSeededTracksInOutSelector HIMultiTrackSelector 6.69956e-05
+TimeModule> 4 1 hiGeneralTracks TrackListMerger 0.000408173
+TimeModule> 4 1 globalMuons GlobalMuonProducer 9.32217e-05
+TimeModule> 4 1 glbTrackQual GlobalTrackQualityProducer 5.29289e-05
+TimeModule> 4 1 tevMuons TevMuonProducer 0.000123978
+TimeModule> 4 1 hiMuons1stStep MuonIdProducer 0.0222769
+TimeModule> 4 1 pfTrack PFTrackProducer 0.000313044
+TimeModule> 4 1 pfTrackElec PFElecTkProducer 4.60148e-05
+TimeModule> 4 1 ecalDrivenGsfElectronCores GsfElectronCoreEcalDrivenProducer 3.29018e-05
+TimeModule> 4 1 ecalDrivenGsfElectrons GsfElectronEcalDrivenProducer 0.000118017
+TimeModule> 4 1 electronsWithPresel GsfElectronSelector 2.28882e-05
+TimeModule> 4 1 mvaElectrons ElectronIdMVABased 2.12193e-05
+TimeModule> 4 1 TriggerResults TriggerResultInserter 2.88486e-05
+TimeModule> 4 1 hiClusterCompatibility ClusterCompatibilityProducer 0.000766039
+TimeModule> 4 1 caloTowers CaloTowerCandidateCreator 0.000215054
+TimeModule> 4 1 multi5x5BasicClustersUncleaned Multi5x5ClusterProducer 0.000217199
+TimeModule> 4 1 multi5x5BasicClustersCleaned Multi5x5ClusterProducer 0.000180006
+TimeModule> 4 1 multi5x5SuperClustersCleaned Multi5x5SuperClusterProducer 6.79493e-05
+TimeModule> 4 1 multi5x5SuperClustersUncleaned Multi5x5SuperClusterProducer 5.10216e-05
+TimeModule> 4 1 multi5x5SuperClusters UnifiedSCCollectionProducer 6.69956e-05
+TimeModule> 4 1 multi5x5SuperClustersWithPreshower PreshowerPhiClusterProducer 0.000281096
+TimeModule> 4 1 correctedMulti5x5SuperClustersWithPreshower EgammaSCCorrectionMaker 7.39098e-05
+TimeModule> 4 1 multi5x5PreshowerClusterShape PreshowerClusterShapeProducer 9.70364e-05
+TimeModule> 4 1 islandBasicClusters IslandClusterProducer 0.000590086
+TimeModule> 4 1 islandSuperClusters HiSuperClusterProducer 6.91414e-05
+TimeModule> 4 1 correctedIslandBarrelSuperClusters HiEgammaSCCorrectionMaker 9.10759e-05
+TimeModule> 4 1 correctedIslandEndcapSuperClusters HiEgammaSCCorrectionMaker 7.20024e-05
+TimeModule> 4 1 photonCore PhotonCoreProducer 5.38826e-05
+TimeModule> 4 1 photons PhotonProducer 0.00176501
+TimeModule> 4 1 photonIsolationHIProducer photonIsolationHIProducer 0.0012629
+TimeModule> 4 1 uncleanedHybridSuperClusters HybridClusterProducer 0.000285864
+TimeModule> 4 1 cleanedHybridSuperClusters HybridClusterProducer 0.000254154
+TimeModule> 4 1 hybridSuperClusters UnifiedSCCollectionProducer 7.29561e-05
+TimeModule> 4 1 correctedHybridSuperClusters EgammaSCCorrectionMaker 0.000127077
+TimeModule> 4 1 gmtStage2Digis L1TRawToDigi 0.000100851
+TimeModule> 4 1 caloStage2Digis L1TRawToDigi 0.000108957
+TimeModule> 4 1 caloStage1Digis L1TRawToDigi 5.50747e-05
+TimeModule> 4 1 caloStage1LegacyFormatDigis L1TCaloUpgradeToGCTConverter 7.60555e-05
+TimeModule> 4 1 tcdsDigis TcdsRawToDigi 2.71797e-05
+TimeModule> 4 1 hiLowPtTripletStepQual TrackListMerger 0.00011301
+TimeModule> 4 1 hiDetachedTripletStepQual TrackListMerger 9.39369e-05
+TimeModule> 4 1 akPu5CaloJets FastjetJetProducer 0.0325382
+TimeModule> 4 1 akPu4CaloJets FastjetJetProducer 0.0313849
+TimeModule> 4 1 akPu3CaloJets FastjetJetProducer 0.0314221
+TimeModule> 4 1 refittedStandAloneMuons StandAloneMuonProducer 0.000119209
+TimeModule> 4 1 displacedMuonSeeds CosmicMuonSeedGenerator 0.000100851
+TimeModule> 4 1 displacedStandAloneMuons StandAloneMuonProducer 5.50747e-05
+TimeModule> 4 1 totemTriggerRawToDigi TotemTriggerRawToDigi 2.69413e-05
+TimeModule> 4 1 totemRPRawToDigi TotemVFATRawToDigi 0.00026989
+TimeModule> 4 1 gtDigis L1GlobalTriggerRawToDigi 9.799e-05
+TimeModule> 4 1 l1extraParticles L1ExtraParticlesProd 0.000144958
+TimeModule> 4 1 gctDigis GctRawToDigi 8.10623e-05
+TimeModule> 4 1 hcalnoise HcalNoiseInfoProducer 0.00153899
+TimeModule> 4 1 gtStage2Digis L1TRawToDigi 0.000242949
+TimeModule> 4 1 ecalTPSkim EcalTPSkimmer 0.00127506
+TimeModule> 4 1 ecalCompactTrigPrim EcalCompactTrigPrimProducer 8.01086e-05
+TimeModule> 4 1 dt1DCosmicRecHits DTRecHitProducer 3.91006e-05
+TimeModule> 4 1 dt4DCosmicSegments DTRecSegment4DProducer 4.29153e-05
+TimeModule> 4 1 clusterSummaryProducer ClusterSummaryProducer 0.000179052
+TimeModule> 4 1 castorDigis CastorRawToDigi 0.00010705
+TimeModule> 4 1 castorreco CastorSimpleReconstructor 0.000121832
+TimeModule> 4 1 CastorTowerReco CastorTowerProducer 8.79765e-05
+TimeModule> 4 1 ak5CastorJets FastjetJetProducer 6.00815e-05
+TimeModule> 4 1 ak5CastorJetID CastorJetIDProducer 4.19617e-05
+TimeModule> 4 1 ak7CastorJets FastjetJetProducer 4.00543e-05
+TimeModule> 4 1 ak7CastorJetID CastorJetIDProducer 2.88486e-05
+TimeModule> 4 1 zdcreco ZdcHitReconstructor 4.1008e-05
+TimeModule> 4 1 hiCentrality CentralityProducer 0.000378132
+TimeModule> 4 1 particleFlowRecHitHF PFRecHitProducer 0.000859022
+TimeModule> 4 1 particleFlowClusterHF PFClusterProducer 0.000195026
+TimeModule> 4 1 particleFlowRecHitHO PFRecHitProducer 8.91685e-05
+TimeModule> 4 1 particleFlowClusterHO PFClusterProducer 1.90735e-05
+TimeModule> 4 1 particleFlowRecHitHBHE PFRecHitProducer 0.000499964
+TimeModule> 4 1 particleFlowClusterHBHE PFClusterProducer 0.000411034
+TimeModule> 4 1 particleFlowClusterHCAL PFMultiDepthClusterProducer 6.98566e-05
+TimeModule> 4 1 particleFlowBlock PFBlockProducer 0.000948191
+%MSG-w MemoryCheck:  PFEGammaProducer:particleFlowEGamma  17-Apr-2017 22:40:35 CEST Run: 1 Event: 4
+MemoryCheck: module PFEGammaProducer:particleFlowEGamma VSIZE 2007.15 0 RSS 1319.56 0.0117188
+%MSG
+TimeModule> 4 1 particleFlowEGamma PFEGammaProducer 0.00039506
+TimeModule> 4 1 gedGsfElectronCores GEDGsfElectronCoreProducer 4.69685e-05
+TimeModule> 4 1 gedGsfElectronsTmp GEDGsfElectronProducer 0.000126123
+TimeModule> 4 1 gedPhotonCore GEDPhotonCoreProducer 6.00815e-05
+TimeModule> 4 1 gedPhotonsTmp GEDPhotonProducer 0.00179696
+TimeModule> 4 1 particleFlowTmp PFProducer 0.000566959
+TimeModule> 4 1 PFTowers ParticleTowerProducer 0.00193
+TimeModule> 4 1 akPu3PFJets FastjetJetProducer 0.0316219
+TimeModule> 4 1 akPu4PFJets FastjetJetProducer 0.0341399
+TimeModule> 4 1 akPu5PFJets FastjetJetProducer 0.0351009
+TimeModule> 4 1 muons MuonProducer 6.7234e-05
+TimeModule> 4 1 photonIsolationHIProducerGED photonIsolationHIProducer 6.91414e-05
+TimeModule> 4 1 ctppsDiamondRawToDigi TotemVFATRawToDigi 4.31538e-05
+TimeModule> 4 1 scalersRawToDigi ScalersRawToDigi 4.31538e-05
+TimeModule> 4 1 RECOSIMoutput PoolOutputModule 0.0666311
+TimeEvent> 4 1 0.604873
+Begin processing the 5th record. Run 1, Event 5, LumiSection 1 at 17-Apr-2017 22:40:35.919 CEST
+TimeModule> 5 1 siPixelDigis SiPixelRawToDigi 0.00100088
+TimeModule> 5 1 siPixelClustersPreSplitting SiPixelClusterProducer 0.00205302
+TimeModule> 5 1 siPixelRecHitsPreSplitting SiPixelRecHitConverter 0.000828981
+TimeModule> 5 1 PixelLayerTripletsPreSplitting SeedingLayersEDProducer 7.60555e-05
+TimeModule> 5 1 hiPixelClusterVertexPreSplitting HIPixelClusterVtxProducer 0.00203395
+TimeModule> 5 1 pixelFitterByHelixProjections PixelFitterByHelixProjectionsProducer 4.31538e-05
+TimeModule> 5 1 offlineBeamSpot BeamSpotProducer 4.69685e-05
+TimeModule> 5 1 hiPixel3ProtoTracksTrackingRegionsPreSplitting HITrackingRegionForPrimaryVtxEDProducer 3.60012e-05
+TimeModule> 5 1 hiPixel3PRotoTracksHitDoubletsPreSplitting HitPairEDProducer 0.000533819
+TimeModule> 5 1 hiPixel3ProtoTracksHitTripletsPreSplitting PixelTripletHLTEDProducer 0.00391102
+TimeModule> 5 1 hiProtoTrackFilterPreSplitting HIProtoTrackFilterProducer 5.60284e-05
+TimeModule> 5 1 hiPixel3ProtoTracksPreSplitting PixelTrackProducer 0.003721
+TimeModule> 5 1 hiPixelMedianVertexPreSplitting HIPixelMedianVtxProducer 0.00180888
+TimeModule> 5 1 hiSelectedProtoTracksPreSplitting HIProtoTrackSelection 0.000108004
+TimeModule> 5 1 hiPixelAdaptiveVertexPreSplitting PrimaryVertexProducer 0.00170398
+TimeModule> 5 1 hiBestAdaptiveVertexPreSplitting HIBestVertexSelection 2.5034e-05
+TimeModule> 5 1 bunchSpacingProducer BunchSpacingProducer 3.91006e-05
+TimeModule> 5 1 ecalDigis EcalRawToDigi 0.00181007
+TimeModule> 5 1 ecalMultiFitUncalibRecHit EcalUncalibRecHitProducer 0.010108
+TimeModule> 5 1 ecalDetIdToBeRecovered EcalDetIdToBeRecoveredProducer 9.01222e-05
+TimeModule> 5 1 ecalRecHit EcalRecHitProducer 0.000390053
+TimeModule> 5 1 hcalDigis HcalRawToDigi 0.00191402
+TimeModule> 5 1 hbhereco HBHEPhase1Reconstructor 0.045862
+TimeModule> 5 1 horeco HcalHitReconstructor 0.000658989
+TimeModule> 5 1 hfprereco HFPreReconstructor 0.00338292
+TimeModule> 5 1 hfreco HFPhase1Reconstructor 0.00126696
+TimeModule> 5 1 hiCaloTowerForTrkPreSplitting CaloTowersCreator 0.00140405
+TimeModule> 5 1 hiSelectedVertexPreSplitting HIBestVertexProducer 6.79493e-05
+%MSG-w MemoryCheck:  FastjetJetProducer:hiAkPu4CaloJetsForTrkPreSplitting  17-Apr-2017 22:40:36 CEST Run: 1 Event: 5
+MemoryCheck: module FastjetJetProducer:hiAkPu4CaloJetsForTrkPreSplitting VSIZE 2007.15 0 RSS 1321.56 2
+%MSG
+TimeModule> 5 1 hiAkPu4CaloJetsForTrkPreSplitting FastjetJetProducer 0.0377569
+TimeModule> 5 1 hiAkPu4CaloJetsCorrectedPreSplitting CaloJetCorrectionProducer 8.70228e-05
+TimeModule> 5 1 hiAkPu4CaloJetsSelectedPreSplitting LargestEtCaloJetSelector 3.31402e-05
+TimeModule> 5 1 hiJetsForCoreTrackingPreSplitting CandPtrSelector 9.60827e-05
+TimeModule> 5 1 siPixelClusters JetCoreClusterSplitter 0.00128007
+TimeModule> 5 1 siPixelRecHits SiPixelRecHitConverter 0.000732899
+TimeModule> 5 1 PixelLayerTriplets SeedingLayersEDProducer 8.17776e-05
+TimeModule> 5 1 hiPixelClusterVertex HIPixelClusterVtxProducer 0.00204802
+TimeModule> 5 1 hiTrackingRegionFromClusterVtx HITrackingRegionForPrimaryVtxEDProducer 4.41074e-05
+TimeModule> 5 1 hiPixel3ProtoTracksHitDoublets HitPairEDProducer 0.00057888
+TimeModule> 5 1 hiPixel3ProtoTracksHitTriplets PixelTripletHLTEDProducer 0.00392818
+TimeModule> 5 1 hiProtoTrackFilter HIProtoTrackFilterProducer 8.2016e-05
+TimeModule> 5 1 hiPixel3ProtoTracks PixelTrackProducer 0.00388789
+TimeModule> 5 1 hiPixelMedianVertex HIPixelMedianVtxProducer 0.00181198
+TimeModule> 5 1 hiSelectedProtoTracks HIProtoTrackSelection 8.39233e-05
+TimeModule> 5 1 hiPixelAdaptiveVertex PrimaryVertexProducer 0.00193191
+TimeModule> 5 1 hiBestAdaptiveVertex HIBestVertexSelection 3.19481e-05
+TimeModule> 5 1 hiCaloTowerForTrk CaloTowersCreator 0.001436
+TimeModule> 5 1 hiSelectedVertex HIBestVertexProducer 8.89301e-05
+TimeModule> 5 1 akPu4CaloJetsForTrk FastjetJetProducer 0.04001
+TimeModule> 5 1 akPu4CaloJetsCorrected CaloJetCorrectionProducer 8.89301e-05
+TimeModule> 5 1 akPu4CaloJetsSelected LargestEtCaloJetSelector 3.29018e-05
+TimeModule> 5 1 hiJetsForCoreTracking CandPtrSelector 7.20024e-05
+TimeModule> 5 1 hiFirstStepGoodPrimaryVertices PrimaryVertexObjectFilter 4.22001e-05
+TimeModule> 5 1 hiRegitMuClusterCheck ClusterCheckerEDProducer 3.79086e-05
+TimeModule> 5 1 muonRPCDigis RPCUnpackingModule 0.00011301
+TimeModule> 5 1 rpcRecHits RPCRecHitProducer 7.70092e-05
+%MSG-w MemoryCheck:  CSCDCCUnpacker:muonCSCDigis 17-Apr-2017 22:40:36 CEST  Run: 1 Event: 5
+MemoryCheck: module CSCDCCUnpacker:muonCSCDigis VSIZE 2007.15 0 RSS 1321.71 0.148438
+%MSG
+TimeModule> 5 1 muonCSCDigis CSCDCCUnpacker 0.0105209
+%MSG-w MemoryCheck:  CSCRecHitDProducer:csc2DRecHits 17-Apr-2017 22:40:36 CEST  Run: 1 Event: 5
+MemoryCheck: module CSCRecHitDProducer:csc2DRecHits VSIZE 2007.15 0 RSS 1321.79 0.0742188
+%MSG
+TimeModule> 5 1 csc2DRecHits CSCRecHitDProducer 0.00590491
+%MSG-w MemoryCheck:  CSCSegmentProducer:cscSegments 17-Apr-2017 22:40:36 CEST  Run: 1 Event: 5
+MemoryCheck: module CSCSegmentProducer:cscSegments VSIZE 2007.15 0 RSS 1321.89 0.109375
+%MSG
+TimeModule> 5 1 cscSegments CSCSegmentProducer 0.00261712
+TimeModule> 5 1 muonDTDigis DTUnpackingModule 5.6982e-05
+TimeModule> 5 1 dt1DRecHits DTRecHitProducer 5.60284e-05
+TimeModule> 5 1 dt4DSegments DTRecSegment4DProducer 3.19481e-05
+%MSG-w MemoryCheck:  MuonSeedGenerator:ancientMuonSeed  17-Apr-2017 22:40:36 CEST Run: 1 Event: 5
+MemoryCheck: module MuonSeedGenerator:ancientMuonSeed VSIZE 2007.15 0 RSS 1322 0.101562
+%MSG
+TimeModule> 5 1 ancientMuonSeed MuonSeedGenerator 0.00212312
+TimeModule> 5 1 standAloneMuons StandAloneMuonProducer 8.89301e-05
+TimeModule> 5 1 hiRegitMuInitialStepTrackingRegions HIMuonTrackingRegionEDProducer 2.7895e-05
+TimeModule> 5 1 hiRegitMuPixelPairStepTrackingRegions HIMuonTrackingRegionEDProducer 2.00272e-05
+TimeModule> 5 1 hiRegitMuMixedTripletStepTrackingRegionsA HIMuonTrackingRegionEDProducer 1.81198e-05
+TimeModule> 5 1 hiRegitMuMixedTripletStepTrackingRegionsB HIMuonTrackingRegionEDProducer 1.81198e-05
+TimeModule> 5 1 hiRegitMuPixelLessStepTrackingRegions HIMuonTrackingRegionEDProducer 1.69277e-05
+TimeModule> 5 1 hiRegitMuDetachedTripletStepTrackingRegions HIMuonTrackingRegionEDProducer 2.5034e-05
+TimeModule> 5 1 hiRegitMuInitialStepSeedLayers SeedingLayersEDProducer 6.10352e-05
+TimeModule> 5 1 hiRegitMuInitialStepHitDoublets HitPairEDProducer 3.09944e-05
+TimeModule> 5 1 hiMixedTripletStepTrackingRegionsB GlobalTrackingRegionWithVerticesEDProducer 2.40803e-05
+TimeModule> 5 1 hiMixedTripletStepTrackingRegionsA GlobalTrackingRegionWithVerticesEDProducer 3.09944e-05
+TimeModule> 5 1 hiLowPtTripletStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 3.00407e-05
+TimeModule> 5 1 hiDetachedTripletStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 1.78814e-05
+TimeModule> 5 1 hiDetachedQuadStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 1.78814e-05
+TimeModule> 5 1 hiHighPtTripletStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 1.69277e-05
+TimeModule> 5 1 hiLowPtQuadStepTrackingRegions GlobalTrackingRegionWithVerticesEDProducer 1.69277e-05
+TimeModule> 5 1 ecalPreshowerDigis ESRawToDigi 0.000231028
+TimeModule> 5 1 ecalPreshowerRecHit ESRecHitProducer 0.00039506
+TimeModule> 5 1 particleFlowRecHitPS PFRecHitProducer 0.00050807
+TimeModule> 5 1 particleFlowClusterPS PFClusterProducer 0.00124598
+TimeModule> 5 1 particleFlowRecHitECAL PFRecHitProducer 0.000324965
+TimeModule> 5 1 particleFlowClusterECALUncorrected PFClusterProducer 0.000370026
+TimeModule> 5 1 particleFlowClusterECAL CorrectedECALPFClusterProducer 0.00120306
+TimeModule> 5 1 particleFlowSuperClusterECAL PFECALSuperClusterProducer 0.00107908
+TimeModule> 5 1 towerMaker CaloTowersCreator 0.00138879
+%MSG-w MemoryCheck:  FastjetJetProducer:iterativeConePu5CaloJets  17-Apr-2017 22:40:36 CEST Run: 1 Event: 5
+MemoryCheck: module FastjetJetProducer:iterativeConePu5CaloJets VSIZE 2007.15 0 RSS 1322 0.0078125
+%MSG
+TimeModule> 5 1 iterativeConePu5CaloJets FastjetJetProducer 0.0574338
+TimeModule> 5 1 siPixelClusterShapeCache SiPixelClusterShapeCacheProducer 0.000496149
+TimeModule> 5 1 hiFilter HIPixelTrackFilterProducer 7.58171e-05
+TimeModule> 5 1 hiLowPtQuadStepPixelTracksFilter HIPixelTrackFilterProducer 3.50475e-05
+TimeModule> 5 1 hiHighPtTripletStepPixelTracksFilter HIPixelTrackFilterProducer 3.19481e-05
+TimeModule> 5 1 hiDetachedQuadStepPixelTracksFilter HIPixelTrackFilterProducer 3.09944e-05
+TimeModule> 5 1 hiDetachedTripletStepPixelTracksFilter HIPixelTrackFilterProducer 2.88486e-05
+TimeModule> 5 1 hiLowPtTripletStepPixelTracksFilter HIPixelTrackFilterProducer 2.98023e-05
+TimeModule> 5 1 hiRegitMuInitialStepHitTriplets PixelTripletHLTEDProducer 2.5034e-05
+TimeModule> 5 1 hiRegitMuInitialStepSeeds SeedCreatorFromRegionConsecutiveHitsEDProducer 2.5034e-05
+TimeModule> 5 1 hiTrackingRegionWithVertex GlobalTrackingRegionWithVerticesEDProducer 2.81334e-05
+TimeModule> 5 1 hiPixelLayerQuadruplets SeedingLayersEDProducer 6.58035e-05
+TimeModule> 5 1 hiPixel3PrimTracksHitDoubletsCA HitPairEDProducer 0.000612974
+TimeModule> 5 1 hiPixel3PrimTracksHitQuadrupletsCA CAHitQuadrupletEDProducer 0.000308037
+TimeModule> 5 1 hiPixel3PrimTracks PixelTrackProducer 0.000611067
+TimeModule> 5 1 hiPixelTrackSeeds SeedGeneratorFromProtoTracksEDProducer 0.000635862
+TimeModule> 5 1 siStripDigis SiStripRawToDigiModule 0.00490117
+TimeModule> 5 1 siStripZeroSuppression SiStripZeroSuppression 6.00815e-05
+TimeModule> 5 1 siStripClusters SiStripClusterizer 0.004637
+TimeModule> 5 1 siStripMatchedRecHits SiStripRecHitConverter 0.00472283
+TimeModule> 5 1 hiJetCoreRegionalStepSeedLayers SeedingLayersEDProducer 8.10623e-05
+TimeModule> 5 1 hiJetCoreRegionalStepSeeds SeedGeneratorFromRegionHitsEDProducer 4.00543e-05
+TimeModule> 5 1 MeasurementTrackerEvent MeasurementTrackerEventProducer 0.000176191
+TimeModule> 5 1 ecalDrivenElectronSeeds ElectronSeedProducer 0.000120878
+TimeModule> 5 1 electronCkfTrackCandidates CkfTrackCandidateMaker 5.29289e-05
+TimeModule> 5 1 electronGsfTracks GsfTrackProducer 8.60691e-05
+%MSG-w MemoryCheck:  CkfTrackCandidateMaker:hiPrimTrackCandidates  17-Apr-2017 22:40:36 CEST Run: 1 Event: 5
+MemoryCheck: module CkfTrackCandidateMaker:hiPrimTrackCandidates VSIZE 2007.15 0 RSS 1322.01 0.00390625
+%MSG
+TimeModule> 5 1 hiPrimTrackCandidates CkfTrackCandidateMaker 0.0126319
+TimeModule> 5 1 hiGlobalPrimTracks TrackProducer 0.00674701
+TimeModule> 5 1 hiInitialStepSelector HIMultiTrackSelector 0.000579119
+TimeModule> 5 1 hiLowPtQuadStepClusters HITrackClusterRemover 9.01222e-05
+TimeModule> 5 1 hiLowPtQuadStepSeedLayers SeedingLayersEDProducer 9.39369e-05
+TimeModule> 5 1 hiLowPtQuadStepTracksHitDoubletsCA HitPairEDProducer 0.000535965
+TimeModule> 5 1 hiLowPtQuadStepTracksHitQuadrupletsCA CAHitQuadrupletEDProducer 0.000460148
+TimeModule> 5 1 hiLowPtQuadStepPixelTracks PixelTrackProducer 0.000779867
+TimeModule> 5 1 hiLowPtQuadStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000735998
+TimeModule> 5 1 hiLowPtQuadStepTrackCandidates CkfTrackCandidateMaker 0.0163379
+TimeModule> 5 1 hiLowPtQuadStepTracks TrackProducer 0.00834012
+TimeModule> 5 1 hiLowPtQuadStepSelector HIMultiTrackSelector 0.000761986
+TimeModule> 5 1 hiHighPtTripletStepClusters HITrackClusterRemover 8.51154e-05
+TimeModule> 5 1 hiHighPtTripletStepSeedLayers SeedingLayersEDProducer 0.000115156
+TimeModule> 5 1 hiHighPtTripletStepTracksHitDoubletsCA HitPairEDProducer 0.000828028
+TimeModule> 5 1 hiHighPtTripletStepTracksHitTripletsCA CAHitTripletEDProducer 0.00062418
+TimeModule> 5 1 hiHighPtTripletStepPixelTracks PixelTrackProducer 0.00124717
+TimeModule> 5 1 hiHighPtTripletStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000720024
+TimeModule> 5 1 hiHighPtTripletStepTrackCandidates CkfTrackCandidateMaker 0.0145731
+TimeModule> 5 1 hiHighPtTripletStepTracks TrackProducer 0.00787306
+TimeModule> 5 1 hiHighPtTripletStepSelector HIMultiTrackSelector 0.000636101
+TimeModule> 5 1 hiDetachedQuadStepClusters HITrackClusterRemover 9.29832e-05
+TimeModule> 5 1 hiDetachedQuadStepSeedLayers SeedingLayersEDProducer 8.01086e-05
+TimeModule> 5 1 hiDetachedQuadStepTracksHitDoubletsCA HitPairEDProducer 0.000620842
+TimeModule> 5 1 hiDetachedQuadStepTracksHitQuadrupletsCA CAHitQuadrupletEDProducer 0.000389099
+TimeModule> 5 1 hiDetachedQuadStepPixelTracks PixelTrackProducer 0.000198126
+TimeModule> 5 1 hiDetachedQuadStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000216961
+TimeModule> 5 1 hiDetachedQuadStepTrackCandidates CkfTrackCandidateMaker 0.00249696
+TimeModule> 5 1 hiDetachedQuadStepTracks TrackProducer 0.001966
+TimeModule> 5 1 hiDetachedQuadStepSelector HIMultiTrackSelector 0.000166178
+TimeModule> 5 1 hiDetachedTripletStepClusters HITrackClusterRemover 7.41482e-05
+TimeModule> 5 1 hiDetachedTripletStepSeedLayers SeedingLayersEDProducer 7.70092e-05
+TimeModule> 5 1 hiDetachedTripletStepTracksHitDoubletsCA HitPairEDProducer 0.000546932
+TimeModule> 5 1 hiDetachedTripletStepTracksHitTripletsCA CAHitTripletEDProducer 0.00022912
+TimeModule> 5 1 hiDetachedTripletStepPixelTracks PixelTrackProducer 0.000486135
+TimeModule> 5 1 hiDetachedTripletStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.00022912
+TimeModule> 5 1 hiDetachedTripletStepTrackCandidates CkfTrackCandidateMaker 0.0032959
+TimeModule> 5 1 hiDetachedTripletStepTracks TrackProducer 0.00216603
+TimeModule> 5 1 hiDetachedTripletStepSelector HIMultiTrackSelector 0.000226974
+TimeModule> 5 1 hiLowPtTripletStepClusters HITrackClusterRemover 6.10352e-05
+TimeModule> 5 1 hiLowPtTripletStepSeedLayers SeedingLayersEDProducer 8.98838e-05
+TimeModule> 5 1 hiLowPtTripletStepTracksHitDoubletsCA HitPairEDProducer 0.000525951
+TimeModule> 5 1 hiLowPtTripletStepTracksHitTripletsCA CAHitTripletEDProducer 0.000319958
+TimeModule> 5 1 hiLowPtTripletStepPixelTracks PixelTrackProducer 0.000664949
+TimeModule> 5 1 hiLowPtTripletStepSeeds SeedGeneratorFromProtoTracksEDProducer 0.000628948
+TimeModule> 5 1 hiLowPtTripletStepTrackCandidates CkfTrackCandidateMaker 0.0144839
+TimeModule> 5 1 hiLowPtTripletStepTracks TrackProducer 0.006109
+TimeModule> 5 1 hiLowPtTripletStepSelector HIMultiTrackSelector 0.000470877
+TimeModule> 5 1 hiPixelPairClusters HITrackClusterRemover 7.60555e-05
+TimeModule> 5 1 hiPixelPairSeedLayers SeedingLayersEDProducer 6.58035e-05
+TimeModule> 5 1 hiPixelPairSeeds SeedGeneratorFromRegionHitsEDProducer 0.000683784
+TimeModule> 5 1 hiPixelPairTrackCandidates CkfTrackCandidateMaker 0.00378895
+TimeModule> 5 1 hiPixelPairGlobalPrimTracks TrackProducer 0.00118804
+TimeModule> 5 1 hiPixelPairStepSelector HIMultiTrackSelector 0.000150919
+TimeModule> 5 1 hiMixedTripletStepClusters HITrackClusterRemover 4.79221e-05
+TimeModule> 5 1 hiMixedTripletStepSeedLayersA SeedingLayersEDProducer 6.41346e-05
+TimeModule> 5 1 hiMixedTripletStepHitDoubletsA HitPairEDProducer 0.000170946
+TimeModule> 5 1 hiMixedTripletStepHitTripletsA PixelTripletLargeTipEDProducer 0.000292063
+TimeModule> 5 1 hiMixedTripletStepSeedsA SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 0.000512838
+TimeModule> 5 1 hiMixedTripletStepSeedLayersB SeedingLayersEDProducer 6.60419e-05
+TimeModule> 5 1 hiMixedTripletStepHitDoubletsB HitPairEDProducer 0.000128031
+TimeModule> 5 1 hiMixedTripletStepHitTripletsB PixelTripletLargeTipEDProducer 0.000674963
+TimeModule> 5 1 hiMixedTripletStepSeedsB SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 0.00121593
+TimeModule> 5 1 hiMixedTripletStepSeeds SeedCombiner 0.000110149
+TimeModule> 5 1 hiMixedTripletStepTrackCandidates CkfTrackCandidateMaker 0.025511
+TimeModule> 5 1 hiMixedTripletStepTracks TrackProducer 0.00957298
+TimeModule> 5 1 hiMixedTripletStepSelector HIMultiTrackSelector 0.000681877
+TimeModule> 5 1 hiJetCoreRegionalStepTrackCandidates CkfTrackCandidateMaker 7.9155e-05
+TimeModule> 5 1 hiJetCoreRegionalStepTracks TrackProducer 7.10487e-05
+TimeModule> 5 1 hiJetCoreRegionalStepSelector HIMultiTrackSelector 5.50747e-05
+TimeModule> 5 1 hiRegitMuInitialStepTrackCandidates CkfTrackCandidateMaker 5.07832e-05
+TimeModule> 5 1 hiRegitMuInitialStepTracks TrackProducer 5.50747e-05
+TimeModule> 5 1 hiRegitMuInitialStepSelector HIMultiTrackSelector 5.88894e-05
+TimeModule> 5 1 hiRegitMuPixelPairStepClusters TrackClusterRemover 4.1008e-05
+TimeModule> 5 1 hiRegitMuPixelPairStepSeedLayers SeedingLayersEDProducer 7.9155e-05
+TimeModule> 5 1 hiRegitMuPixelPairStepHitDoublets HitPairEDProducer 5.50747e-05
+TimeModule> 5 1 hiRegitMuPixelPairStepSeeds SeedCreatorFromRegionConsecutiveHitsEDProducer 3.21865e-05
+TimeModule> 5 1 hiRegitMuPixelPairStepTrackCandidates CkfTrackCandidateMaker 6.60419e-05
+TimeModule> 5 1 hiRegitMuPixelPairStepTracks TrackProducer 5.50747e-05
+TimeModule> 5 1 hiRegitMuPixelPairStepSelector HIMultiTrackSelector 4.19617e-05
+TimeModule> 5 1 hiRegitMuMixedTripletStepClusters TrackClusterRemover 4.19617e-05
+TimeModule> 5 1 hiRegitMuMixedTripletStepSeedLayersA SeedingLayersEDProducer 4.60148e-05
+TimeModule> 5 1 hiRegitMuMixedTripletStepHitDoubletsA HitPairEDProducer 2.40803e-05
+TimeModule> 5 1 hiRegitMuMixedTripletStepHitTripletsA PixelTripletLargeTipEDProducer 2.09808e-05
+TimeModule> 5 1 hiRegitMuMixedTripletStepSeedsA SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 2.21729e-05
+TimeModule> 5 1 hiRegitMuMixedTripletStepSeedLayersB SeedingLayersEDProducer 5.6982e-05
+TimeModule> 5 1 hiRegitMuMixedTripletStepHitDoubletsB HitPairEDProducer 1.90735e-05
+TimeModule> 5 1 hiRegitMuMixedTripletStepHitTripletsB PixelTripletLargeTipEDProducer 2.00272e-05
+TimeModule> 5 1 hiRegitMuMixedTripletStepSeedsB SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 2.28882e-05
+TimeModule> 5 1 hiRegitMuMixedTripletStepSeeds SeedCombiner 1.90735e-05
+TimeModule> 5 1 hiRegitMuMixedTripletStepTrackCandidates CkfTrackCandidateMaker 5.29289e-05
+TimeModule> 5 1 hiRegitMuMixedTripletStepTracks TrackProducer 5.50747e-05
+TimeModule> 5 1 hiRegitMuMixedTripletStepSelector HIMultiTrackSelector 4.19617e-05
+TimeModule> 5 1 hiRegitMuPixelLessStepClusters TrackClusterRemover 5.10216e-05
+TimeModule> 5 1 hiRegitMuPixelLessStepSeedLayers SeedingLayersEDProducer 0.000255823
+TimeModule> 5 1 hiRegitMuPixelLessStepHitDoublets HitPairEDProducer 4.19617e-05
+TimeModule> 5 1 hiRegitMuPixelLessStepHitTriplets MultiHitFromChi2EDProducer 3.29018e-05
+TimeModule> 5 1 hiRegitMuPixelLessStepSeeds SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 3.09944e-05
+TimeModule> 5 1 hiRegitMuPixelLessStepTrackCandidates CkfTrackCandidateMaker 5.31673e-05
+TimeModule> 5 1 hiRegitMuPixelLessStepTracks TrackProducer 6.69956e-05
+TimeModule> 5 1 hiRegitMuPixelLessStepSelector HIMultiTrackSelector 4.50611e-05
+TimeModule> 5 1 hiRegitMuDetachedTripletStepClusters TrackClusterRemover 2.59876e-05
+TimeModule> 5 1 hiRegitMuDetachedTripletStepSeedLayers SeedingLayersEDProducer 7.41482e-05
+TimeModule> 5 1 hiRegitMuDetachedTripletStepHitDoublets HitPairEDProducer 2.47955e-05
+TimeModule> 5 1 hiRegitMuDetachedTripletStepHitTriplets PixelTripletLargeTipEDProducer 1.88351e-05
+TimeModule> 5 1 hiRegitMuDetachedTripletStepSeeds SeedCreatorFromRegionConsecutiveHitsTripletOnlyEDProducer 2.31266e-05
+TimeModule> 5 1 hiRegitMuDetachedTripletStepTrackCandidates CkfTrackCandidateMaker 5.10216e-05
+TimeModule> 5 1 hiRegitMuDetachedTripletStepTracks TrackProducer 6.29425e-05
+TimeModule> 5 1 hiRegitMuDetachedTripletStepSelector HIMultiTrackSelector 4.41074e-05
+TimeModule> 5 1 hiEarlyGeneralTracks TrackListMerger 0.000601053
+TimeModule> 5 1 hiEarlyMuons MuonIdProducer 0.0388222
+TimeModule> 5 1 hiRegitMuonSeededSeedsOutIn OutsideInMuonSeeder 5.10216e-05
+TimeModule> 5 1 hiRegitMuonSeededTrackCandidatesOutIn CkfTrackCandidateMaker 7.20024e-05
+TimeModule> 5 1 hiRegitMuonSeededTracksOutIn TrackProducer 9.799e-05
+TimeModule> 5 1 hiRegitMuonSeededTracksOutInSelector HIMultiTrackSelector 8.4877e-05
+TimeModule> 5 1 hiRegitMuonSeededSeedsInOut MuonReSeeder 6.50883e-05
+TimeModule> 5 1 hiRegitMuonSeededTrackCandidatesInOut CkfTrackCandidateMaker 6.19888e-05
+TimeModule> 5 1 hiRegitMuonSeededTracksInOut TrackProducer 6.48499e-05
+TimeModule> 5 1 hiRegitMuonSeededTracksInOutSelector HIMultiTrackSelector 7.20024e-05
+TimeModule> 5 1 hiGeneralTracks TrackListMerger 0.00151801
+TimeModule> 5 1 globalMuons GlobalMuonProducer 0.000113964
+TimeModule> 5 1 glbTrackQual GlobalTrackQualityProducer 5.19753e-05
+TimeModule> 5 1 tevMuons TevMuonProducer 0.000146866
+TimeModule> 5 1 hiMuons1stStep MuonIdProducer 0.0716472
+TimeModule> 5 1 pfTrack PFTrackProducer 0.000573874
+TimeModule> 5 1 pfTrackElec PFElecTkProducer 3.29018e-05
+TimeModule> 5 1 ecalDrivenGsfElectronCores GsfElectronCoreEcalDrivenProducer 2.38419e-05
+TimeModule> 5 1 ecalDrivenGsfElectrons GsfElectronEcalDrivenProducer 8.2016e-05
+TimeModule> 5 1 electronsWithPresel GsfElectronSelector 2.00272e-05
+TimeModule> 5 1 mvaElectrons ElectronIdMVABased 1.97887e-05
+TimeModule> 5 1 TriggerResults TriggerResultInserter 4.60148e-05
+TimeModule> 5 1 hiClusterCompatibility ClusterCompatibilityProducer 0.00144291
+TimeModule> 5 1 caloTowers CaloTowerCandidateCreator 0.000294924
+TimeModule> 5 1 multi5x5BasicClustersUncleaned Multi5x5ClusterProducer 0.000309944
+TimeModule> 5 1 multi5x5BasicClustersCleaned Multi5x5ClusterProducer 0.000272036
+TimeModule> 5 1 multi5x5SuperClustersCleaned Multi5x5SuperClusterProducer 6.48499e-05
+TimeModule> 5 1 multi5x5SuperClustersUncleaned Multi5x5SuperClusterProducer 4.69685e-05
+TimeModule> 5 1 multi5x5SuperClusters UnifiedSCCollectionProducer 0.000103951
+TimeModule> 5 1 multi5x5SuperClustersWithPreshower PreshowerPhiClusterProducer 0.00062108
+TimeModule> 5 1 correctedMulti5x5SuperClustersWithPreshower EgammaSCCorrectionMaker 8.89301e-05
+TimeModule> 5 1 multi5x5PreshowerClusterShape PreshowerClusterShapeProducer 0.000126123
+TimeModule> 5 1 islandBasicClusters IslandClusterProducer 0.000571012
+TimeModule> 5 1 islandSuperClusters HiSuperClusterProducer 9.39369e-05
+TimeModule> 5 1 correctedIslandBarrelSuperClusters HiEgammaSCCorrectionMaker 7.10487e-05
+TimeModule> 5 1 correctedIslandEndcapSuperClusters HiEgammaSCCorrectionMaker 9.98974e-05
+TimeModule> 5 1 photonCore PhotonCoreProducer 7.48634e-05
+TimeModule> 5 1 photons PhotonProducer 0.00307512
+TimeModule> 5 1 photonIsolationHIProducer photonIsolationHIProducer 0.00149584
+TimeModule> 5 1 uncleanedHybridSuperClusters HybridClusterProducer 0.00014019
+TimeModule> 5 1 cleanedHybridSuperClusters HybridClusterProducer 0.000118971
+TimeModule> 5 1 hybridSuperClusters UnifiedSCCollectionProducer 5.00679e-05
+TimeModule> 5 1 correctedHybridSuperClusters EgammaSCCorrectionMaker 7.70092e-05
+TimeModule> 5 1 gmtStage2Digis L1TRawToDigi 0.00011611
+TimeModule> 5 1 caloStage2Digis L1TRawToDigi 0.000149012
+TimeModule> 5 1 caloStage1Digis L1TRawToDigi 7.10487e-05
+TimeModule> 5 1 caloStage1LegacyFormatDigis L1TCaloUpgradeToGCTConverter 8.89301e-05
+TimeModule> 5 1 tcdsDigis TcdsRawToDigi 3.69549e-05
+TimeModule> 5 1 hiLowPtTripletStepQual TrackListMerger 0.000237942
+TimeModule> 5 1 hiDetachedTripletStepQual TrackListMerger 9.48906e-05
+TimeModule> 5 1 akPu5CaloJets FastjetJetProducer 0.037076
+TimeModule> 5 1 akPu4CaloJets FastjetJetProducer 0.0360391
+TimeModule> 5 1 akPu3CaloJets FastjetJetProducer 0.036154
+TimeModule> 5 1 refittedStandAloneMuons StandAloneMuonProducer 0.000150919
+TimeModule> 5 1 displacedMuonSeeds CosmicMuonSeedGenerator 0.000133038
+TimeModule> 5 1 displacedStandAloneMuons StandAloneMuonProducer 5.29289e-05
+TimeModule> 5 1 totemTriggerRawToDigi TotemTriggerRawToDigi 2.5034e-05
+TimeModule> 5 1 totemRPRawToDigi TotemVFATRawToDigi 0.000272036
+TimeModule> 5 1 gtDigis L1GlobalTriggerRawToDigi 0.000111818
+TimeModule> 5 1 l1extraParticles L1ExtraParticlesProd 0.000102997
+TimeModule> 5 1 gctDigis GctRawToDigi 9.48906e-05
+TimeModule> 5 1 hcalnoise HcalNoiseInfoProducer 0.00214696
+TimeModule> 5 1 gtStage2Digis L1TRawToDigi 0.000221014
+TimeModule> 5 1 ecalTPSkim EcalTPSkimmer 0.00128198
+TimeModule> 5 1 ecalCompactTrigPrim EcalCompactTrigPrimProducer 0.000112057
+TimeModule> 5 1 dt1DCosmicRecHits DTRecHitProducer 6.69956e-05
+TimeModule> 5 1 dt4DCosmicSegments DTRecSegment4DProducer 3.50475e-05
+TimeModule> 5 1 clusterSummaryProducer ClusterSummaryProducer 0.000547886
+TimeModule> 5 1 castorDigis CastorRawToDigi 0.000158072
+TimeModule> 5 1 castorreco CastorSimpleReconstructor 0.000147104
+TimeModule> 5 1 CastorTowerReco CastorTowerProducer 9.10759e-05
+TimeModule> 5 1 ak5CastorJets FastjetJetProducer 0.000110865
+TimeModule> 5 1 ak5CastorJetID CastorJetIDProducer 4.3869e-05
+TimeModule> 5 1 ak7CastorJets FastjetJetProducer 5.29289e-05
+TimeModule> 5 1 ak7CastorJetID CastorJetIDProducer 3.50475e-05
+TimeModule> 5 1 zdcreco ZdcHitReconstructor 5.38826e-05
+TimeModule> 5 1 hiCentrality CentralityProducer 0.000674009
+TimeModule> 5 1 particleFlowRecHitHF PFRecHitProducer 0.00116587
+TimeModule> 5 1 particleFlowClusterHF PFClusterProducer 0.000553846
+TimeModule> 5 1 particleFlowRecHitHO PFRecHitProducer 0.000127077
+TimeModule> 5 1 particleFlowClusterHO PFClusterProducer 2.19345e-05
+TimeModule> 5 1 particleFlowRecHitHBHE PFRecHitProducer 0.000742197
+TimeModule> 5 1 particleFlowClusterHBHE PFClusterProducer 0.000338793
+TimeModule> 5 1 particleFlowClusterHCAL PFMultiDepthClusterProducer 7.51019e-05
+TimeModule> 5 1 particleFlowBlock PFBlockProducer 0.00247002
+TimeModule> 5 1 particleFlowEGamma PFEGammaProducer 0.000546932
+TimeModule> 5 1 gedGsfElectronCores GEDGsfElectronCoreProducer 4.50611e-05
+TimeModule> 5 1 gedGsfElectronsTmp GEDGsfElectronProducer 0.000119925
+TimeModule> 5 1 gedPhotonCore GEDPhotonCoreProducer 5.91278e-05
+TimeModule> 5 1 gedPhotonsTmp GEDPhotonProducer 0.004951
+TimeModule> 5 1 particleFlowTmp PFProducer 0.00117612
+TimeModule> 5 1 PFTowers ParticleTowerProducer 0.00218201
+TimeModule> 5 1 akPu3PFJets FastjetJetProducer 0.035264
+TimeModule> 5 1 akPu4PFJets FastjetJetProducer 0.0368772
+TimeModule> 5 1 akPu5PFJets FastjetJetProducer 0.034837
+TimeModule> 5 1 muons MuonProducer 6.58035e-05
+TimeModule> 5 1 photonIsolationHIProducerGED photonIsolationHIProducer 0.0018301
+TimeModule> 5 1 ctppsDiamondRawToDigi TotemVFATRawToDigi 6.19888e-05
+TimeModule> 5 1 scalersRawToDigi ScalersRawToDigi 7.70092e-05
+TimeModule> 5 1 RECOSIMoutput PoolOutputModule 0.15587
+TimeEvent> 5 1 1.01359
+17-Apr-2017 22:40:36 CEST  Closed file file:/afs/cern.ch/user/a/abaty/work/public/2017_Phase1_Tracking_Samples/Feb_20_2017/QCD_80_120_DIGIRAW.root
+MemoryReport> Peak virtual size 2007.15 Mbytes
+ Key events increasing vsize: 
+[0] run: 0 lumi: 0 event: 0  vsize = 0 deltaVsize = 0 rss = 0 delta = 0
+[0] run: 0 lumi: 0 event: 0  vsize = 0 deltaVsize = 0 rss = 0 delta = 0
+[1] run: 1 lumi: 1 event: 1  vsize = 2007.15 deltaVsize = 0 rss = 1302.39 delta = 0
+[0] run: 0 lumi: 0 event: 0  vsize = 0 deltaVsize = 0 rss = 0 delta = 0
+[0] run: 0 lumi: 0 event: 0  vsize = 0 deltaVsize = 0 rss = 0 delta = 0
+[3] run: 1 lumi: 1 event: 3  vsize = 2007.15 deltaVsize = 0 rss = 1317.52 delta = 15.125
+[2] run: 1 lumi: 1 event: 2  vsize = 2007.15 deltaVsize = 0 rss = 1310.77 delta = 8.375
+[1] run: 1 lumi: 1 event: 1  vsize = 2007.15 deltaVsize = 0 rss = 1302.39 delta = 0
+TimeReport> Time report complete in 31.8845 seconds
+ Time Summary: 
+ - Min event:   0.604873
+ - Max event:   15.6076
+ - Avg event:   3.8668
+ - Total loop:  31.0568
+ - Total job:   31.8845
+ Event Throughput: 0.160995 ev/s
+ CPU Summary: 
+ - Total loop:  26.7099
+ - Total job:   27.4598
+
+
+=============================================
+
+MessageLogger Summary
+
+ type     category        sev    module        subroutine        count    total
+ ---- -------------------- -- ---------------- ----------------  -----    -----
+    1 MemoryCheck          -w CSCDCCUnpacker:m                       2        2
+    2 MemoryCheck          -w CSCRecHitDProduc                       1        1
+    3 MemoryCheck          -w CSCSegmentProduc                       1        1
+    4 MemoryCheck          -w CaloTowersCreato                       1        1
+    5 MemoryCheck          -w CkfTrackCandidat                       1        1
+    6 MemoryCheck          -w CkfTrackCandidat                       1        1
+    7 MemoryCheck          -w ClusterSummaryPr                       1        1
+    8 MemoryCheck          -w ESRawToDigi:ecal                       1        1
+    9 MemoryCheck          -w EcalRawToDigi:ec                       1        1
+   10 MemoryCheck          -w EcalUncalibRecHi                       1        1
+   11 MemoryCheck          -w ElectronIdMVABas                       1        1
+   12 MemoryCheck          -w ElectronSeedProd                       1        1
+   13 MemoryCheck          -w FastjetJetProduc                       1        1
+   14 MemoryCheck          -w FastjetJetProduc                       2        2
+   15 MemoryCheck          -w FastjetJetProduc                       1        1
+   16 MemoryCheck          -w FastjetJetProduc                       1        1
+   17 MemoryCheck          -w FastjetJetProduc                       1        1
+   18 MemoryCheck          -w FastjetJetProduc                       3        3
+   19 MemoryCheck          -w FastjetJetProduc                       4        4
+   20 MemoryCheck          -w GEDGsfElectronPr                       1        1
+   21 MemoryCheck          -w GEDPhotonProduce                       1        1
+   22 MemoryCheck          -w GsfElectronCoreE                       1        1
+   23 MemoryCheck          -w GsfElectronEcalD                       1        1
+   24 MemoryCheck          -w GsfElectronSelec                       1        1
+   25 MemoryCheck          -w GsfTrackProducer                       2        2
+   26 MemoryCheck          -w HBHEPhase1Recons                       2        2
+   27 MemoryCheck          -w HcalNoiseInfoPro                       1        1
+   28 MemoryCheck          -w HcalRawToDigi:hc                       1        1
+   29 MemoryCheck          -w JetCoreClusterSp                       1        1
+   30 MemoryCheck          -w Multi5x5SuperClu                       1        1
+   31 MemoryCheck          -w MuonSeedGenerato                       1        1
+   32 MemoryCheck          -w PFBlockProducer:                       2        2
+   33 MemoryCheck          -w PFECALSuperClust                       2        2
+   34 MemoryCheck          -w PFEGammaProducer                       3        3
+   35 MemoryCheck          -w PFElecTkProducer                       1        1
+   36 MemoryCheck          -w PFProducer:parti                       2        2
+   37 MemoryCheck          -w PFTrackProducer:                       1        1
+   38 MemoryCheck          -w ParticleTowerPro                       1        1
+   39 MemoryCheck          -w PixelTrackProduc                       1        1
+   40 MemoryCheck          -w PixelTripletHLTE                       1        1
+   41 MemoryCheck          -w PreshowerPhiClus                       1        1
+   42 MemoryCheck          -w SeedCreatorFromR                       1        1
+   43 MemoryCheck          -w SeedGeneratorFro                       1        1
+   44 MemoryCheck          -w SiPixelRawToDigi                       2        2
+   45 MemoryCheck          -w SiPixelRecHitCon                       1        1
+   46 MemoryCheck          -w SiPixelRecHitCon                       1        1
+   47 MemoryCheck          -w SiStripRecHitCon                       2        2
+   48 MemoryCheck          -w source                                 1        1
+   49 TimeEvent            -w PostProcessPath                        5        5
+   50 TimeModule           -w BeamSpotProducer                       5        5
+   51 TimeModule           -w BunchSpacingProd                       5        5
+   52 TimeModule           -w CAHitQuadrupletE                       5        5
+   53 TimeModule           -w CAHitQuadrupletE                       5        5
+   54 TimeModule           -w CAHitQuadrupletE                       5        5
+   55 TimeModule           -w CAHitTripletEDPr                       5        5
+   56 TimeModule           -w CAHitTripletEDPr                       5        5
+   57 TimeModule           -w CAHitTripletEDPr                       5        5
+   58 TimeModule           -w CSCDCCUnpacker:m                       5        5
+   59 TimeModule           -w CSCRecHitDProduc                       5        5
+   60 TimeModule           -w CSCSegmentProduc                       5        5
+   61 TimeModule           -w CaloJetCorrectio                       5        5
+   62 TimeModule           -w CaloJetCorrectio                       5        5
+   63 TimeModule           -w CaloTowerCandida                       5        5
+   64 TimeModule           -w CaloTowersCreato                       5        5
+   65 TimeModule           -w CaloTowersCreato                       5        5
+   66 TimeModule           -w CaloTowersCreato                       5        5
+   67 TimeModule           -w CandPtrSelector:                       5        5
+   68 TimeModule           -w CandPtrSelector:                       5        5
+   69 TimeModule           -w CastorJetIDProdu                       5        5
+   70 TimeModule           -w CastorJetIDProdu                       5        5
+   71 TimeModule           -w CastorRawToDigi:                       5        5
+   72 TimeModule           -w CastorSimpleReco                       5        5
+   73 TimeModule           -w CastorTowerProdu                       5        5
+   74 TimeModule           -w CentralityProduc                       5        5
+   75 TimeModule           -w CkfTrackCandidat                       5        5
+   76 TimeModule           -w CkfTrackCandidat                       5        5
+   77 TimeModule           -w CkfTrackCandidat                       5        5
+   78 TimeModule           -w CkfTrackCandidat                       5        5
+   79 TimeModule           -w CkfTrackCandidat                       5        5
+   80 TimeModule           -w CkfTrackCandidat                       5        5
+   81 TimeModule           -w CkfTrackCandidat                       5        5
+   82 TimeModule           -w CkfTrackCandidat                       5        5
+   83 TimeModule           -w CkfTrackCandidat                       5        5
+   84 TimeModule           -w CkfTrackCandidat                       5        5
+   85 TimeModule           -w CkfTrackCandidat                       5        5
+   86 TimeModule           -w CkfTrackCandidat                       5        5
+   87 TimeModule           -w CkfTrackCandidat                       5        5
+   88 TimeModule           -w CkfTrackCandidat                       5        5
+   89 TimeModule           -w CkfTrackCandidat                       5        5
+   90 TimeModule           -w CkfTrackCandidat                       5        5
+   91 TimeModule           -w CkfTrackCandidat                       5        5
+   92 TimeModule           -w ClusterCheckerED                       5        5
+   93 TimeModule           -w ClusterCompatibi                       5        5
+   94 TimeModule           -w ClusterSummaryPr                       5        5
+   95 TimeModule           -w CorrectedECALPFC                       5        5
+   96 TimeModule           -w CosmicMuonSeedGe                       5        5
+   97 TimeModule           -w DTRecHitProducer                       5        5
+   98 TimeModule           -w DTRecHitProducer                       5        5
+   99 TimeModule           -w DTRecSegment4DPr                       5        5
+  100 TimeModule           -w DTRecSegment4DPr                       5        5
+  101 TimeModule           -w DTUnpackingModul                       5        5
+  102 TimeModule           -w ESRawToDigi:ecal                       5        5
+  103 TimeModule           -w ESRecHitProducer                       5        5
+  104 TimeModule           -w EcalCompactTrigP                       5        5
+  105 TimeModule           -w EcalDetIdToBeRec                       5        5
+  106 TimeModule           -w EcalRawToDigi:ec                       5        5
+  107 TimeModule           -w EcalRecHitProduc                       5        5
+  108 TimeModule           -w EcalTPSkimmer:ec                       5        5
+  109 TimeModule           -w EcalUncalibRecHi                       5        5
+  110 TimeModule           -w EgammaSCCorrecti                       5        5
+  111 TimeModule           -w EgammaSCCorrecti                       5        5
+  112 TimeModule           -w ElectronIdMVABas                       5        5
+  113 TimeModule           -w ElectronSeedProd                       5        5
+  114 TimeModule           -w FastjetJetProduc                       5        5
+  115 TimeModule           -w FastjetJetProduc                       5        5
+  116 TimeModule           -w FastjetJetProduc                       5        5
+  117 TimeModule           -w FastjetJetProduc                       5        5
+  118 TimeModule           -w FastjetJetProduc                       5        5
+  119 TimeModule           -w FastjetJetProduc                       5        5
+  120 TimeModule           -w FastjetJetProduc                       5        5
+  121 TimeModule           -w FastjetJetProduc                       5        5
+  122 TimeModule           -w FastjetJetProduc                       5        5
+  123 TimeModule           -w FastjetJetProduc                       5        5
+  124 TimeModule           -w FastjetJetProduc                       5        5
+  125 TimeModule           -w GEDGsfElectronCo                       5        5
+  126 TimeModule           -w GEDGsfElectronPr                       5        5
+  127 TimeModule           -w GEDPhotonCorePro                       5        5
+  128 TimeModule           -w GEDPhotonProduce                       5        5
+  129 TimeModule           -w GctRawToDigi:gct                       5        5
+  130 TimeModule           -w GlobalMuonProduc                       5        5
+  131 TimeModule           -w GlobalTrackQuali                       5        5
+  132 TimeModule           -w GlobalTrackingRe                       5        5
+  133 TimeModule           -w GlobalTrackingRe                       5        5
+  134 TimeModule           -w GlobalTrackingRe                       5        5
+  135 TimeModule           -w GlobalTrackingRe                       5        5
+  136 TimeModule           -w GlobalTrackingRe                       5        5
+  137 TimeModule           -w GlobalTrackingRe                       5        5
+  138 TimeModule           -w GlobalTrackingRe                       5        5
+  139 TimeModule           -w GlobalTrackingRe                       5        5
+  140 TimeModule           -w GsfElectronCoreE                       5        5
+  141 TimeModule           -w GsfElectronEcalD                       5        5
+  142 TimeModule           -w GsfElectronSelec                       5        5
+  143 TimeModule           -w GsfTrackProducer                       5        5
+  144 TimeModule           -w HBHEPhase1Recons                       5        5
+  145 TimeModule           -w HFPhase1Reconstr                       5        5
+  146 TimeModule           -w HFPreReconstruct                       5        5
+  147 TimeModule           -w HIBestVertexProd                       5        5
+  148 TimeModule           -w HIBestVertexProd                       5        5
+  149 TimeModule           -w HIBestVertexSele                       5        5
+  150 TimeModule           -w HIBestVertexSele                       5        5
+  151 TimeModule           -w HIMultiTrackSele                       5        5
+  152 TimeModule           -w HIMultiTrackSele                       5        5
+  153 TimeModule           -w HIMultiTrackSele                       5        5
+  154 TimeModule           -w HIMultiTrackSele                       5        5
+  155 TimeModule           -w HIMultiTrackSele                       5        5
+  156 TimeModule           -w HIMultiTrackSele                       5        5
+  157 TimeModule           -w HIMultiTrackSele                       5        5
+  158 TimeModule           -w HIMultiTrackSele                       5        5
+  159 TimeModule           -w HIMultiTrackSele                       5        5
+  160 TimeModule           -w HIMultiTrackSele                       5        5
+  161 TimeModule           -w HIMultiTrackSele                       5        5
+  162 TimeModule           -w HIMultiTrackSele                       5        5
+  163 TimeModule           -w HIMultiTrackSele                       5        5
+  164 TimeModule           -w HIMultiTrackSele                       5        5
+  165 TimeModule           -w HIMultiTrackSele                       5        5
+  166 TimeModule           -w HIMultiTrackSele                       5        5
+  167 TimeModule           -w HIMuonTrackingRe                       5        5
+  168 TimeModule           -w HIMuonTrackingRe                       5        5
+  169 TimeModule           -w HIMuonTrackingRe                       5        5
+  170 TimeModule           -w HIMuonTrackingRe                       5        5
+  171 TimeModule           -w HIMuonTrackingRe                       5        5
+  172 TimeModule           -w HIMuonTrackingRe                       5        5
+  173 TimeModule           -w HIPixelClusterVt                       5        5
+  174 TimeModule           -w HIPixelClusterVt                       5        5
+  175 TimeModule           -w HIPixelMedianVtx                       5        5
+  176 TimeModule           -w HIPixelMedianVtx                       5        5
+  177 TimeModule           -w HIPixelTrackFilt                       5        5
+  178 TimeModule           -w HIPixelTrackFilt                       5        5
+  179 TimeModule           -w HIPixelTrackFilt                       5        5
+  180 TimeModule           -w HIPixelTrackFilt                       5        5
+  181 TimeModule           -w HIPixelTrackFilt                       5        5
+  182 TimeModule           -w HIPixelTrackFilt                       5        5
+  183 TimeModule           -w HIProtoTrackFilt                       5        5
+  184 TimeModule           -w HIProtoTrackFilt                       5        5
+  185 TimeModule           -w HIProtoTrackSele                       5        5
+  186 TimeModule           -w HIProtoTrackSele                       5        5
+  187 TimeModule           -w HITrackClusterRe                       5        5
+  188 TimeModule           -w HITrackClusterRe                       5        5
+  189 TimeModule           -w HITrackClusterRe                       5        5
+  190 TimeModule           -w HITrackClusterRe                       5        5
+  191 TimeModule           -w HITrackClusterRe                       5        5
+  192 TimeModule           -w HITrackClusterRe                       5        5
+  193 TimeModule           -w HITrackClusterRe                       5        5
+  194 TimeModule           -w HITrackingRegion                       5        5
+  195 TimeModule           -w HITrackingRegion                       5        5
+  196 TimeModule           -w HcalHitReconstru                       5        5
+  197 TimeModule           -w HcalNoiseInfoPro                       5        5
+  198 TimeModule           -w HcalRawToDigi:hc                       5        5
+  199 TimeModule           -w HiEgammaSCCorrec                       5        5
+  200 TimeModule           -w HiEgammaSCCorrec                       5        5
+  201 TimeModule           -w HiSuperClusterPr                       5        5
+  202 TimeModule           -w HitPairEDProduce                       5        5
+  203 TimeModule           -w HitPairEDProduce                       5        5
+  204 TimeModule           -w HitPairEDProduce                       5        5
+  205 TimeModule           -w HitPairEDProduce                       5        5
+  206 TimeModule           -w HitPairEDProduce                       5        5
+  207 TimeModule           -w HitPairEDProduce                       5        5
+  208 TimeModule           -w HitPairEDProduce                       5        5
+  209 TimeModule           -w HitPairEDProduce                       5        5
+  210 TimeModule           -w HitPairEDProduce                       5        5
+  211 TimeModule           -w HitPairEDProduce                       5        5
+  212 TimeModule           -w HitPairEDProduce                       5        5
+  213 TimeModule           -w HitPairEDProduce                       5        5
+  214 TimeModule           -w HitPairEDProduce                       5        5
+  215 TimeModule           -w HitPairEDProduce                       5        5
+  216 TimeModule           -w HitPairEDProduce                       5        5
+  217 TimeModule           -w HitPairEDProduce                       5        5
+  218 TimeModule           -w HybridClusterPro                       5        5
+  219 TimeModule           -w HybridClusterPro                       5        5
+  220 TimeModule           -w IslandClusterPro                       5        5
+  221 TimeModule           -w JetCoreClusterSp                       5        5
+  222 TimeModule           -w L1ExtraParticles                       5        5
+  223 TimeModule           -w L1GlobalTriggerR                       5        5
+  224 TimeModule           -w L1TCaloUpgradeTo                       5        5
+  225 TimeModule           -w L1TRawToDigi:cal                       5        5
+  226 TimeModule           -w L1TRawToDigi:cal                       5        5
+  227 TimeModule           -w L1TRawToDigi:gmt                       5        5
+  228 TimeModule           -w L1TRawToDigi:gtS                       5        5
+  229 TimeModule           -w LargestEtCaloJet                       5        5
+  230 TimeModule           -w LargestEtCaloJet                       5        5
+  231 TimeModule           -w MeasurementTrack                       5        5
+  232 TimeModule           -w Multi5x5ClusterP                       5        5
+  233 TimeModule           -w Multi5x5ClusterP                       5        5
+  234 TimeModule           -w Multi5x5SuperClu                       5        5
+  235 TimeModule           -w Multi5x5SuperClu                       5        5
+  236 TimeModule           -w MultiHitFromChi2                       5        5
+  237 TimeModule           -w MuonIdProducer:h                       5        5
+  238 TimeModule           -w MuonIdProducer:h                       5        5
+  239 TimeModule           -w MuonProducer:muo                       5        5
+  240 TimeModule           -w MuonReSeeder:hiR                       5        5
+  241 TimeModule           -w MuonSeedGenerato                       5        5
+  242 TimeModule           -w OutsideInMuonSee                       5        5
+  243 TimeModule           -w PFBlockProducer:                       5        5
+  244 TimeModule           -w PFClusterProduce                       5        5
+  245 TimeModule           -w PFClusterProduce                       5        5
+  246 TimeModule           -w PFClusterProduce                       5        5
+  247 TimeModule           -w PFClusterProduce                       5        5
+  248 TimeModule           -w PFClusterProduce                       5        5
+  249 TimeModule           -w PFECALSuperClust                       5        5
+  250 TimeModule           -w PFEGammaProducer                       5        5
+  251 TimeModule           -w PFElecTkProducer                       5        5
+  252 TimeModule           -w PFMultiDepthClus                       5        5
+  253 TimeModule           -w PFProducer:parti                       5        5
+  254 TimeModule           -w PFRecHitProducer                       5        5
+  255 TimeModule           -w PFRecHitProducer                       5        5
+  256 TimeModule           -w PFRecHitProducer                       5        5
+  257 TimeModule           -w PFRecHitProducer                       5        5
+  258 TimeModule           -w PFRecHitProducer                       5        5
+  259 TimeModule           -w PFTrackProducer:                       5        5
+  260 TimeModule           -w ParticleTowerPro                       5        5
+  261 TimeModule           -w PhotonCoreProduc                       5        5
+  262 TimeModule           -w PhotonProducer:p                       5        5
+  263 TimeModule           -w PixelFitterByHel                       5        5
+  264 TimeModule           -w PixelTrackProduc                       5        5
+  265 TimeModule           -w PixelTrackProduc                       5        5
+  266 TimeModule           -w PixelTrackProduc                       5        5
+  267 TimeModule           -w PixelTrackProduc                       5        5
+  268 TimeModule           -w PixelTrackProduc                       5        5
+  269 TimeModule           -w PixelTrackProduc                       5        5
+  270 TimeModule           -w PixelTrackProduc                       5        5
+  271 TimeModule           -w PixelTrackProduc                       5        5
+  272 TimeModule           -w PixelTripletHLTE                       5        5
+  273 TimeModule           -w PixelTripletHLTE                       5        5
+  274 TimeModule           -w PixelTripletHLTE                       5        5
+  275 TimeModule           -w PixelTripletLarg                       5        5
+  276 TimeModule           -w PixelTripletLarg                       5        5
+  277 TimeModule           -w PixelTripletLarg                       5        5
+  278 TimeModule           -w PixelTripletLarg                       5        5
+  279 TimeModule           -w PixelTripletLarg                       5        5
+  280 TimeModule           -w PoolOutputModule                       5        5
+  281 TimeModule           -w PreshowerCluster                       5        5
+  282 TimeModule           -w PreshowerPhiClus                       5        5
+  283 TimeModule           -w PrimaryVertexObj                       5        5
+  284 TimeModule           -w PrimaryVertexPro                       5        5
+  285 TimeModule           -w PrimaryVertexPro                       5        5
+  286 TimeModule           -w RPCRecHitProduce                       5        5
+  287 TimeModule           -w RPCUnpackingModu                       5        5
+  288 TimeModule           -w ScalersRawToDigi                       5        5
+  289 TimeModule           -w SeedCombiner:hiM                       5        5
+  290 TimeModule           -w SeedCombiner:hiR                       5        5
+  291 TimeModule           -w SeedCreatorFromR                       5        5
+  292 TimeModule           -w SeedCreatorFromR                       5        5
+  293 TimeModule           -w SeedCreatorFromR                       5        5
+  294 TimeModule           -w SeedCreatorFromR                       5        5
+  295 TimeModule           -w SeedCreatorFromR                       5        5
+  296 TimeModule           -w SeedCreatorFromR                       5        5
+  297 TimeModule           -w SeedCreatorFromR                       5        5
+  298 TimeModule           -w SeedCreatorFromR                       5        5
+  299 TimeModule           -w SeedGeneratorFro                       5        5
+  300 TimeModule           -w SeedGeneratorFro                       5        5
+  301 TimeModule           -w SeedGeneratorFro                       5        5
+  302 TimeModule           -w SeedGeneratorFro                       5        5
+  303 TimeModule           -w SeedGeneratorFro                       5        5
+  304 TimeModule           -w SeedGeneratorFro                       5        5
+  305 TimeModule           -w SeedGeneratorFro                       5        5
+  306 TimeModule           -w SeedGeneratorFro                       5        5
+  307 TimeModule           -w SeedingLayersEDP                       5        5
+  308 TimeModule           -w SeedingLayersEDP                       5        5
+  309 TimeModule           -w SeedingLayersEDP                       5        5
+  310 TimeModule           -w SeedingLayersEDP                       5        5
+  311 TimeModule           -w SeedingLayersEDP                       5        5
+  312 TimeModule           -w SeedingLayersEDP                       5        5
+  313 TimeModule           -w SeedingLayersEDP                       5        5
+  314 TimeModule           -w SeedingLayersEDP                       5        5
+  315 TimeModule           -w SeedingLayersEDP                       5        5
+  316 TimeModule           -w SeedingLayersEDP                       5        5
+  317 TimeModule           -w SeedingLayersEDP                       5        5
+  318 TimeModule           -w SeedingLayersEDP                       5        5
+  319 TimeModule           -w SeedingLayersEDP                       5        5
+  320 TimeModule           -w SeedingLayersEDP                       5        5
+  321 TimeModule           -w SeedingLayersEDP                       5        5
+  322 TimeModule           -w SeedingLayersEDP                       5        5
+  323 TimeModule           -w SeedingLayersEDP                       5        5
+  324 TimeModule           -w SeedingLayersEDP                       5        5
+  325 TimeModule           -w SiPixelClusterPr                       5        5
+  326 TimeModule           -w SiPixelClusterSh                       5        5
+  327 TimeModule           -w SiPixelRawToDigi                       5        5
+  328 TimeModule           -w SiPixelRecHitCon                       5        5
+  329 TimeModule           -w SiPixelRecHitCon                       5        5
+  330 TimeModule           -w SiStripClusteriz                       5        5
+  331 TimeModule           -w SiStripRawToDigi                       5        5
+  332 TimeModule           -w SiStripRecHitCon                       5        5
+  333 TimeModule           -w SiStripZeroSuppr                       5        5
+  334 TimeModule           -w StandAloneMuonPr                       5        5
+  335 TimeModule           -w StandAloneMuonPr                       5        5
+  336 TimeModule           -w StandAloneMuonPr                       5        5
+  337 TimeModule           -w TcdsRawToDigi:tc                       5        5
+  338 TimeModule           -w TevMuonProducer:                       5        5
+  339 TimeModule           -w TotemTriggerRawT                       5        5
+  340 TimeModule           -w TotemVFATRawToDi                       5        5
+  341 TimeModule           -w TotemVFATRawToDi                       5        5
+  342 TimeModule           -w TrackClusterRemo                       5        5
+  343 TimeModule           -w TrackClusterRemo                       5        5
+  344 TimeModule           -w TrackClusterRemo                       5        5
+  345 TimeModule           -w TrackClusterRemo                       5        5
+  346 TimeModule           -w TrackListMerger:                       5        5
+  347 TimeModule           -w TrackListMerger:                       5        5
+  348 TimeModule           -w TrackListMerger:                       5        5
+  349 TimeModule           -w TrackListMerger:                       5        5
+  350 TimeModule           -w TrackProducer:hi                       5        5
+  351 TimeModule           -w TrackProducer:hi                       5        5
+  352 TimeModule           -w TrackProducer:hi                       5        5
+  353 TimeModule           -w TrackProducer:hi                       5        5
+  354 TimeModule           -w TrackProducer:hi                       5        5
+  355 TimeModule           -w TrackProducer:hi                       5        5
+  356 TimeModule           -w TrackProducer:hi                       5        5
+  357 TimeModule           -w TrackProducer:hi                       5        5
+  358 TimeModule           -w TrackProducer:hi                       5        5
+  359 TimeModule           -w TrackProducer:hi                       5        5
+  360 TimeModule           -w TrackProducer:hi                       5        5
+  361 TimeModule           -w TrackProducer:hi                       5        5
+  362 TimeModule           -w TrackProducer:hi                       5        5
+  363 TimeModule           -w TrackProducer:hi                       5        5
+  364 TimeModule           -w TrackProducer:hi                       5        5
+  365 TimeModule           -w TrackProducer:hi                       5        5
+  366 TimeModule           -w TriggerResultIns                       5        5
+  367 TimeModule           -w UnifiedSCCollect                       5        5
+  368 TimeModule           -w UnifiedSCCollect                       5        5
+  369 TimeModule           -w ZdcHitReconstruc                       5        5
+  370 TimeModule           -w photonIsolationH                       5        5
+  371 TimeModule           -w photonIsolationH                       5        5
+  372 UnusedProductsForCan -w AfterModConstruc                       1        1
+  373 TimeReport           -e AfterBeginJob                          1        1
+  374 TimeReport           -e AfterModEndJob                         1        1
+  375 MemoryReport         -s AfterModEndJob                         1        1
+  376 fileAction           -s file_close                             1        1
+  377 fileAction           -s file_open                              2        2
+
+ type    category    Examples: run/evt        run/evt          run/evt
+ ---- -------------------- ---------------- ---------------- ----------------
+    1 MemoryCheck          1/2              1/5              
+    2 MemoryCheck          1/5                               
+    3 MemoryCheck          1/5                               
+    4 MemoryCheck          1/2                               
+    5 MemoryCheck          1/2                               
+    6 MemoryCheck          1/5                               
+    7 MemoryCheck          1/2                               
+    8 MemoryCheck          1/3                               
+    9 MemoryCheck          1/2                               
+   10 MemoryCheck          1/2                               
+   11 MemoryCheck          1/3                               
+   12 MemoryCheck          1/3                               
+   13 MemoryCheck          1/2                               
+   14 MemoryCheck          1/2              1/3              
+   15 MemoryCheck          1/2                               
+   16 MemoryCheck          1/2                               
+   17 MemoryCheck          1/2                               
+   18 MemoryCheck          1/2              1/3              1/5
+   19 MemoryCheck          1/2              1/3              1/5
+   20 MemoryCheck          1/3                               
+   21 MemoryCheck          1/3                               
+   22 MemoryCheck          1/3                               
+   23 MemoryCheck          1/3                               
+   24 MemoryCheck          1/3                               
+   25 MemoryCheck          1/2              1/3              
+   26 MemoryCheck          1/2              1/3              
+   27 MemoryCheck          1/2                               
+   28 MemoryCheck          1/3                               
+   29 MemoryCheck          1/2                               
+   30 MemoryCheck          1/2                               
+   31 MemoryCheck          1/5                               
+   32 MemoryCheck          1/2              1/3              
+   33 MemoryCheck          1/2              1/3              
+   34 MemoryCheck          1/2              1/3              1/4
+   35 MemoryCheck          1/3                               
+   36 MemoryCheck          1/2              1/3              
+   37 MemoryCheck          1/3                               
+   38 MemoryCheck          1/3                               
+   39 MemoryCheck          1/2                               
+   40 MemoryCheck          1/3                               
+   41 MemoryCheck          1/2                               
+   42 MemoryCheck          1/2                               
+   43 MemoryCheck          1/2                               
+   44 MemoryCheck          1/2              1/3              
+   45 MemoryCheck          1/3                               
+   46 MemoryCheck          1/2                               
+   47 MemoryCheck          1/2              1/3              
+   48 MemoryCheck          PostProcessEvent                  
+   49 TimeEvent            1/1              1/2              1/5
+   50 TimeModule           1/1              1/2              1/5
+   51 TimeModule           1/1              1/2              1/5
+   52 TimeModule           1/1              1/2              1/5
+   53 TimeModule           1/1              1/2              1/5
+   54 TimeModule           1/1              1/2              1/5
+   55 TimeModule           1/1              1/2              1/5
+   56 TimeModule           1/1              1/2              1/5
+   57 TimeModule           1/1              1/2              1/5
+   58 TimeModule           1/1              1/2              1/5
+   59 TimeModule           1/1              1/2              1/5
+   60 TimeModule           1/1              1/2              1/5
+   61 TimeModule           1/1              1/2              1/5
+   62 TimeModule           1/1              1/2              1/5
+   63 TimeModule           1/1              1/2              1/5
+   64 TimeModule           1/1              1/2              1/5
+   65 TimeModule           1/1              1/2              1/5
+   66 TimeModule           1/1              1/2              1/5
+   67 TimeModule           1/1              1/2              1/5
+   68 TimeModule           1/1              1/2              1/5
+   69 TimeModule           1/1              1/2              1/5
+   70 TimeModule           1/1              1/2              1/5
+   71 TimeModule           1/1              1/2              1/5
+   72 TimeModule           1/1              1/2              1/5
+   73 TimeModule           1/1              1/2              1/5
+   74 TimeModule           1/1              1/2              1/5
+   75 TimeModule           1/1              1/2              1/5
+   76 TimeModule           1/1              1/2              1/5
+   77 TimeModule           1/1              1/2              1/5
+   78 TimeModule           1/1              1/2              1/5
+   79 TimeModule           1/1              1/2              1/5
+   80 TimeModule           1/1              1/2              1/5
+   81 TimeModule           1/1              1/2              1/5
+   82 TimeModule           1/1              1/2              1/5
+   83 TimeModule           1/1              1/2              1/5
+   84 TimeModule           1/1              1/2              1/5
+   85 TimeModule           1/1              1/2              1/5
+   86 TimeModule           1/1              1/2              1/5
+   87 TimeModule           1/1              1/2              1/5
+   88 TimeModule           1/1              1/2              1/5
+   89 TimeModule           1/1              1/2              1/5
+   90 TimeModule           1/1              1/2              1/5
+   91 TimeModule           1/1              1/2              1/5
+   92 TimeModule           1/1              1/2              1/5
+   93 TimeModule           1/1              1/2              1/5
+   94 TimeModule           1/1              1/2              1/5
+   95 TimeModule           1/1              1/2              1/5
+   96 TimeModule           1/1              1/2              1/5
+   97 TimeModule           1/1              1/2              1/5
+   98 TimeModule           1/1              1/2              1/5
+   99 TimeModule           1/1              1/2              1/5
+  100 TimeModule           1/1              1/2              1/5
+  101 TimeModule           1/1              1/2              1/5
+  102 TimeModule           1/1              1/2              1/5
+  103 TimeModule           1/1              1/2              1/5
+  104 TimeModule           1/1              1/2              1/5
+  105 TimeModule           1/1              1/2              1/5
+  106 TimeModule           1/1              1/2              1/5
+  107 TimeModule           1/1              1/2              1/5
+  108 TimeModule           1/1              1/2              1/5
+  109 TimeModule           1/1              1/2              1/5
+  110 TimeModule           1/1              1/2              1/5
+  111 TimeModule           1/1              1/2              1/5
+  112 TimeModule           1/1              1/2              1/5
+  113 TimeModule           1/1              1/2              1/5
+  114 TimeModule           1/1              1/2              1/5
+  115 TimeModule           1/1              1/2              1/5
+  116 TimeModule           1/1              1/2              1/5
+  117 TimeModule           1/1              1/2              1/5
+  118 TimeModule           1/1              1/2              1/5
+  119 TimeModule           1/1              1/2              1/5
+  120 TimeModule           1/1              1/2              1/5
+  121 TimeModule           1/1              1/2              1/5
+  122 TimeModule           1/1              1/2              1/5
+  123 TimeModule           1/1              1/2              1/5
+  124 TimeModule           1/1              1/2              1/5
+  125 TimeModule           1/1              1/2              1/5
+  126 TimeModule           1/1              1/2              1/5
+  127 TimeModule           1/1              1/2              1/5
+  128 TimeModule           1/1              1/2              1/5
+  129 TimeModule           1/1              1/2              1/5
+  130 TimeModule           1/1              1/2              1/5
+  131 TimeModule           1/1              1/2              1/5
+  132 TimeModule           1/1              1/2              1/5
+  133 TimeModule           1/1              1/2              1/5
+  134 TimeModule           1/1              1/2              1/5
+  135 TimeModule           1/1              1/2              1/5
+  136 TimeModule           1/1              1/2              1/5
+  137 TimeModule           1/1              1/2              1/5
+  138 TimeModule           1/1              1/2              1/5
+  139 TimeModule           1/1              1/2              1/5
+  140 TimeModule           1/1              1/2              1/5
+  141 TimeModule           1/1              1/2              1/5
+  142 TimeModule           1/1              1/2              1/5
+  143 TimeModule           1/1              1/2              1/5
+  144 TimeModule           1/1              1/2              1/5
+  145 TimeModule           1/1              1/2              1/5
+  146 TimeModule           1/1              1/2              1/5
+  147 TimeModule           1/1              1/2              1/5
+  148 TimeModule           1/1              1/2              1/5
+  149 TimeModule           1/1              1/2              1/5
+  150 TimeModule           1/1              1/2              1/5
+  151 TimeModule           1/1              1/2              1/5
+  152 TimeModule           1/1              1/2              1/5
+  153 TimeModule           1/1              1/2              1/5
+  154 TimeModule           1/1              1/2              1/5
+  155 TimeModule           1/1              1/2              1/5
+  156 TimeModule           1/1              1/2              1/5
+  157 TimeModule           1/1              1/2              1/5
+  158 TimeModule           1/1              1/2              1/5
+  159 TimeModule           1/1              1/2              1/5
+  160 TimeModule           1/1              1/2              1/5
+  161 TimeModule           1/1              1/2              1/5
+  162 TimeModule           1/1              1/2              1/5
+  163 TimeModule           1/1              1/2              1/5
+  164 TimeModule           1/1              1/2              1/5
+  165 TimeModule           1/1              1/2              1/5
+  166 TimeModule           1/1              1/2              1/5
+  167 TimeModule           1/1              1/2              1/5
+  168 TimeModule           1/1              1/2              1/5
+  169 TimeModule           1/1              1/2              1/5
+  170 TimeModule           1/1              1/2              1/5
+  171 TimeModule           1/1              1/2              1/5
+  172 TimeModule           1/1              1/2              1/5
+  173 TimeModule           1/1              1/2              1/5
+  174 TimeModule           1/1              1/2              1/5
+  175 TimeModule           1/1              1/2              1/5
+  176 TimeModule           1/1              1/2              1/5
+  177 TimeModule           1/1              1/2              1/5
+  178 TimeModule           1/1              1/2              1/5
+  179 TimeModule           1/1              1/2              1/5
+  180 TimeModule           1/1              1/2              1/5
+  181 TimeModule           1/1              1/2              1/5
+  182 TimeModule           1/1              1/2              1/5
+  183 TimeModule           1/1              1/2              1/5
+  184 TimeModule           1/1              1/2              1/5
+  185 TimeModule           1/1              1/2              1/5
+  186 TimeModule           1/1              1/2              1/5
+  187 TimeModule           1/1              1/2              1/5
+  188 TimeModule           1/1              1/2              1/5
+  189 TimeModule           1/1              1/2              1/5
+  190 TimeModule           1/1              1/2              1/5
+  191 TimeModule           1/1              1/2              1/5
+  192 TimeModule           1/1              1/2              1/5
+  193 TimeModule           1/1              1/2              1/5
+  194 TimeModule           1/1              1/2              1/5
+  195 TimeModule           1/1              1/2              1/5
+  196 TimeModule           1/1              1/2              1/5
+  197 TimeModule           1/1              1/2              1/5
+  198 TimeModule           1/1              1/2              1/5
+  199 TimeModule           1/1              1/2              1/5
+  200 TimeModule           1/1              1/2              1/5
+  201 TimeModule           1/1              1/2              1/5
+  202 TimeModule           1/1              1/2              1/5
+  203 TimeModule           1/1              1/2              1/5
+  204 TimeModule           1/1              1/2              1/5
+  205 TimeModule           1/1              1/2              1/5
+  206 TimeModule           1/1              1/2              1/5
+  207 TimeModule           1/1              1/2              1/5
+  208 TimeModule           1/1              1/2              1/5
+  209 TimeModule           1/1              1/2              1/5
+  210 TimeModule           1/1              1/2              1/5
+  211 TimeModule           1/1              1/2              1/5
+  212 TimeModule           1/1              1/2              1/5
+  213 TimeModule           1/1              1/2              1/5
+  214 TimeModule           1/1              1/2              1/5
+  215 TimeModule           1/1              1/2              1/5
+  216 TimeModule           1/1              1/2              1/5
+  217 TimeModule           1/1              1/2              1/5
+  218 TimeModule           1/1              1/2              1/5
+  219 TimeModule           1/1              1/2              1/5
+  220 TimeModule           1/1              1/2              1/5
+  221 TimeModule           1/1              1/2              1/5
+  222 TimeModule           1/1              1/2              1/5
+  223 TimeModule           1/1              1/2              1/5
+  224 TimeModule           1/1              1/2              1/5
+  225 TimeModule           1/1              1/2              1/5
+  226 TimeModule           1/1              1/2              1/5
+  227 TimeModule           1/1              1/2              1/5
+  228 TimeModule           1/1              1/2              1/5
+  229 TimeModule           1/1              1/2              1/5
+  230 TimeModule           1/1              1/2              1/5
+  231 TimeModule           1/1              1/2              1/5
+  232 TimeModule           1/1              1/2              1/5
+  233 TimeModule           1/1              1/2              1/5
+  234 TimeModule           1/1              1/2              1/5
+  235 TimeModule           1/1              1/2              1/5
+  236 TimeModule           1/1              1/2              1/5
+  237 TimeModule           1/1              1/2              1/5
+  238 TimeModule           1/1              1/2              1/5
+  239 TimeModule           1/1              1/2              1/5
+  240 TimeModule           1/1              1/2              1/5
+  241 TimeModule           1/1              1/2              1/5
+  242 TimeModule           1/1              1/2              1/5
+  243 TimeModule           1/1              1/2              1/5
+  244 TimeModule           1/1              1/2              1/5
+  245 TimeModule           1/1              1/2              1/5
+  246 TimeModule           1/1              1/2              1/5
+  247 TimeModule           1/1              1/2              1/5
+  248 TimeModule           1/1              1/2              1/5
+  249 TimeModule           1/1              1/2              1/5
+  250 TimeModule           1/1              1/2              1/5
+  251 TimeModule           1/1              1/2              1/5
+  252 TimeModule           1/1              1/2              1/5
+  253 TimeModule           1/1              1/2              1/5
+  254 TimeModule           1/1              1/2              1/5
+  255 TimeModule           1/1              1/2              1/5
+  256 TimeModule           1/1              1/2              1/5
+  257 TimeModule           1/1              1/2              1/5
+  258 TimeModule           1/1              1/2              1/5
+  259 TimeModule           1/1              1/2              1/5
+  260 TimeModule           1/1              1/2              1/5
+  261 TimeModule           1/1              1/2              1/5
+  262 TimeModule           1/1              1/2              1/5
+  263 TimeModule           1/1              1/2              1/5
+  264 TimeModule           1/1              1/2              1/5
+  265 TimeModule           1/1              1/2              1/5
+  266 TimeModule           1/1              1/2              1/5
+  267 TimeModule           1/1              1/2              1/5
+  268 TimeModule           1/1              1/2              1/5
+  269 TimeModule           1/1              1/2              1/5
+  270 TimeModule           1/1              1/2              1/5
+  271 TimeModule           1/1              1/2              1/5
+  272 TimeModule           1/1              1/2              1/5
+  273 TimeModule           1/1              1/2              1/5
+  274 TimeModule           1/1              1/2              1/5
+  275 TimeModule           1/1              1/2              1/5
+  276 TimeModule           1/1              1/2              1/5
+  277 TimeModule           1/1              1/2              1/5
+  278 TimeModule           1/1              1/2              1/5
+  279 TimeModule           1/1              1/2              1/5
+  280 TimeModule           1/1              1/2              1/5
+  281 TimeModule           1/1              1/2              1/5
+  282 TimeModule           1/1              1/2              1/5
+  283 TimeModule           1/1              1/2              1/5
+  284 TimeModule           1/1              1/2              1/5
+  285 TimeModule           1/1              1/2              1/5
+  286 TimeModule           1/1              1/2              1/5
+  287 TimeModule           1/1              1/2              1/5
+  288 TimeModule           1/1              1/2              1/5
+  289 TimeModule           1/1              1/2              1/5
+  290 TimeModule           1/1              1/2              1/5
+  291 TimeModule           1/1              1/2              1/5
+  292 TimeModule           1/1              1/2              1/5
+  293 TimeModule           1/1              1/2              1/5
+  294 TimeModule           1/1              1/2              1/5
+  295 TimeModule           1/1              1/2              1/5
+  296 TimeModule           1/1              1/2              1/5
+  297 TimeModule           1/1              1/2              1/5
+  298 TimeModule           1/1              1/2              1/5
+  299 TimeModule           1/1              1/2              1/5
+  300 TimeModule           1/1              1/2              1/5
+  301 TimeModule           1/1              1/2              1/5
+  302 TimeModule           1/1              1/2              1/5
+  303 TimeModule           1/1              1/2              1/5
+  304 TimeModule           1/1              1/2              1/5
+  305 TimeModule           1/1              1/2              1/5
+  306 TimeModule           1/1              1/2              1/5
+  307 TimeModule           1/1              1/2              1/5
+  308 TimeModule           1/1              1/2              1/5
+  309 TimeModule           1/1              1/2              1/5
+  310 TimeModule           1/1              1/2              1/5
+  311 TimeModule           1/1              1/2              1/5
+  312 TimeModule           1/1              1/2              1/5
+  313 TimeModule           1/1              1/2              1/5
+  314 TimeModule           1/1              1/2              1/5
+  315 TimeModule           1/1              1/2              1/5
+  316 TimeModule           1/1              1/2              1/5
+  317 TimeModule           1/1              1/2              1/5
+  318 TimeModule           1/1              1/2              1/5
+  319 TimeModule           1/1              1/2              1/5
+  320 TimeModule           1/1              1/2              1/5
+  321 TimeModule           1/1              1/2              1/5
+  322 TimeModule           1/1              1/2              1/5
+  323 TimeModule           1/1              1/2              1/5
+  324 TimeModule           1/1              1/2              1/5
+  325 TimeModule           1/1              1/2              1/5
+  326 TimeModule           1/1              1/2              1/5
+  327 TimeModule           1/1              1/2              1/5
+  328 TimeModule           1/1              1/2              1/5
+  329 TimeModule           1/1              1/2              1/5
+  330 TimeModule           1/1              1/2              1/5
+  331 TimeModule           1/1              1/2              1/5
+  332 TimeModule           1/1              1/2              1/5
+  333 TimeModule           1/1              1/2              1/5
+  334 TimeModule           1/1              1/2              1/5
+  335 TimeModule           1/1              1/2              1/5
+  336 TimeModule           1/1              1/2              1/5
+  337 TimeModule           1/1              1/2              1/5
+  338 TimeModule           1/1              1/2              1/5
+  339 TimeModule           1/1              1/2              1/5
+  340 TimeModule           1/1              1/2              1/5
+  341 TimeModule           1/1              1/2              1/5
+  342 TimeModule           1/1              1/2              1/5
+  343 TimeModule           1/1              1/2              1/5
+  344 TimeModule           1/1              1/2              1/5
+  345 TimeModule           1/1              1/2              1/5
+  346 TimeModule           1/1              1/2              1/5
+  347 TimeModule           1/1              1/2              1/5
+  348 TimeModule           1/1              1/2              1/5
+  349 TimeModule           1/1              1/2              1/5
+  350 TimeModule           1/1              1/2              1/5
+  351 TimeModule           1/1              1/2              1/5
+  352 TimeModule           1/1              1/2              1/5
+  353 TimeModule           1/1              1/2              1/5
+  354 TimeModule           1/1              1/2              1/5
+  355 TimeModule           1/1              1/2              1/5
+  356 TimeModule           1/1              1/2              1/5
+  357 TimeModule           1/1              1/2              1/5
+  358 TimeModule           1/1              1/2              1/5
+  359 TimeModule           1/1              1/2              1/5
+  360 TimeModule           1/1              1/2              1/5
+  361 TimeModule           1/1              1/2              1/5
+  362 TimeModule           1/1              1/2              1/5
+  363 TimeModule           1/1              1/2              1/5
+  364 TimeModule           1/1              1/2              1/5
+  365 TimeModule           1/1              1/2              1/5
+  366 TimeModule           1/1              1/2              1/5
+  367 TimeModule           1/1              1/2              1/5
+  368 TimeModule           1/1              1/2              1/5
+  369 TimeModule           1/1              1/2              1/5
+  370 TimeModule           1/1              1/2              1/5
+  371 TimeModule           1/1              1/2              1/5
+  372 UnusedProductsForCanDeleteEarly pre-events                        
+  373 TimeReport           BeforeEvents                      
+  374 TimeReport           PostEndRun                        
+  375 MemoryReport         PostEndRun                        
+  376 fileAction           PostEndRun                        
+  377 fileAction           pre-events       pre-events       
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+Warning              1680                1680
+Error                   2                   2
+System                  4                   4
