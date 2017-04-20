@@ -8,6 +8,8 @@
 #include <sstream>
 #include <cstdlib>
 
+using namespace std;
+
 int main(int argc, char **argv) {
   // http://manpages.ubuntu.com/manpages/intrepid/fr/man3/getopt.html
 
@@ -63,6 +65,10 @@ int main(int argc, char **argv) {
   double timing;
   unsigned idummy1,evt;
 
+	unsigned evt_temp=0;
+
+	unsigned nevt=0;
+
   // If the machine is busy, the factor is not 100%.
   //  double factor = 0.995;
 
@@ -70,11 +76,15 @@ int main(int argc, char **argv) {
     while ( !myTimingFile.eof() ) { 
       myTimingFile >> dummy1 >> evt >> idummy1 >> label >> module >> timing ;
       // std::cout << evt << " " << module << " " << timing << std::endl;
-      timingPerEvent[evt] += timing * factor * 1000.;	
-      if ( evt != 1 ) {
-	timingPerModule[module] += timing * factor * 1000.;
-	timingPerLabel[module+":"+label] += timing * factor * 1000.;
-      }	
+//  		cout<<"dummy1 = "<< dummy1 <<" , evt = "<<evt<<" , idummy1 = "<<idummy1<<endl;
+			if(evt!=evt_temp){
+//			cout<<"evt = "<<evt<<" , evt_temp = "<<evt_temp<<" nevt(before) = "<<nevt<<endl;
+			nevt++;
+			evt_temp=evt;
+			}
+      timingPerEvent[evt] += timing * factor * 1.;	
+	timingPerModule[module] += timing * factor * 1.;
+	timingPerLabel[module+":"+label] += timing * factor * 1.;
     }
   } else {
     std::cout << "File " << file << " does not exist!" << std::endl;
@@ -88,13 +98,13 @@ int main(int argc, char **argv) {
   std::map<double,std::string> labelPerTiming;
 
   for ( ; modIt != modEnd; ++modIt ) {
-    double time = modIt->second/((double)evt-1.);
+    double time = modIt->second/((double)nevt);
     std::string name = modIt->first;
     modulePerTiming[time] = name;
   }
     
   for ( ; labIt != labEnd; ++labIt ) {
-    double time = labIt->second/((double)evt-1.);
+    double time = labIt->second/((double)nevt);
     std::string name = labIt->first;
     labelPerTiming[time] = name;
   }
@@ -123,8 +133,8 @@ int main(int argc, char **argv) {
     totalTime += timeIt->first;
     std::cout << oval << " " << std::setw(3) << i++ 
 	      << std::setw(60) << timeIt->second << " : " 
-	      << std::setw(7) << std::setprecision(3) << timeIt-> first << " ms/event"
-				<< std::setw(10) << timeIt-> first/totalTimePre << " \% "
+	      << std::setw(9) << std::setprecision(3) << timeIt-> first << " s/event"
+				<< std::setw(10) << timeIt-> first/totalTimePre*100 << " \% "
 	      << std::endl;
   }
   std::cout << "Total time = " << totalTime << " ms/event " << std::endl;
@@ -139,12 +149,12 @@ int main(int argc, char **argv) {
     totalTime += timeIt2->first;
     std::cout << oval << " " << std::setw(3) << i++ 
 	      << std::setw(100) << timeIt2->second << " : " 
-	      << std::setw(7) << std::setprecision(3) << timeIt2-> first << " ms/event"
-				<< std::setw(10) << timeIt2-> first/totalTimePre << " \% "
+	      << std::setw(9) << std::setprecision(3) << timeIt2-> first << " ms/event"
+				<< std::setw(10) << timeIt2-> first/totalTimePre*100 << " \% "
 	      << std::endl;
   }
   std::cout << "================= " << std::endl;
-  std::cout << "Total time = " << totalTime << " ms/event " << std::endl;
+  std::cout << "Total time = " << totalTime << " s/event " << std::endl;
 
   std::map<unsigned,double>::const_iterator eventIt = timingPerEvent.begin();
   std::map<unsigned,double>::const_iterator eventEnd = timingPerEvent.end();
@@ -162,11 +172,14 @@ int main(int argc, char **argv) {
     rms += timeEv*timeEv;    
   }
 
-  mean /= (double)evt-1.;
-  rms /= (double)evt-1.;
+  mean /= (double)nevt;
+  rms /= (double)nevt;
   rms = std::sqrt(rms-mean*mean);
-  std::cout << "Total time = " << mean << " +/- " << rms << " ms/event" << std::endl;
-  std::cout << "Min.  time = " << minEv << " ms/event" << std::endl;
-  std::cout << "Max.  time = " << maxEv << " ms/event" << std::endl;
+  std::cout << "Total time = " << mean << " +/- " << rms << " s/event" << std::endl;
+  std::cout << "Min.  time = " << minEv << " s/event" << std::endl;
+  std::cout << "Max.  time = " << maxEv << " s/event" << std::endl;
+
+	cout<<"number of events  = "<<nevt<<endl;
+
 }
 
