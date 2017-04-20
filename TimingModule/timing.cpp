@@ -82,9 +82,9 @@ int main(int argc, char **argv) {
 			nevt++;
 			evt_temp=evt;
 			}
-      timingPerEvent[evt] += timing * factor * 1.;	
-	timingPerModule[module] += timing * factor * 1.;
-	timingPerLabel[module+":"+label] += timing * factor * 1.;
+      timingPerEvent[evt] += timing * factor * 1000.;	
+	timingPerModule[module] += timing * factor * 1000.;
+	timingPerLabel[module+":"+label] += timing * factor * 1000.;
     }
   } else {
     std::cout << "File " << file << " does not exist!" << std::endl;
@@ -133,11 +133,11 @@ int main(int argc, char **argv) {
     totalTime += timeIt->first;
     std::cout << oval << " " << std::setw(3) << i++ 
 	      << std::setw(60) << timeIt->second << " : " 
-	      << std::setw(9) << std::setprecision(3) << timeIt-> first << " s/event"
+	      << std::setw(9) << std::setprecision(3) << timeIt-> first << " ms/event"
 				<< std::setw(10) << timeIt-> first/totalTimePre*100 << " \% "
 	      << std::endl;
   }
-  std::cout << "Total time = " << totalTime << " ms/event " << std::endl;
+  std::cout << "Total time = " << totalTime/1000. << " s/event " << std::endl;
 
   std::cout << "================= " << std::endl;
   std::cout << "Timing per label  " << std::endl;
@@ -154,7 +154,7 @@ int main(int argc, char **argv) {
 	      << std::endl;
   }
   std::cout << "================= " << std::endl;
-  std::cout << "Total time = " << totalTime << " s/event " << std::endl;
+  std::cout << "Total time = " << totalTime/1000. << " s/event " << std::endl;
 
   std::map<unsigned,double>::const_iterator eventIt = timingPerEvent.begin();
   std::map<unsigned,double>::const_iterator eventEnd = timingPerEvent.end();
@@ -163,11 +163,14 @@ int main(int argc, char **argv) {
   double rms = 0.;
   double mean = 0.;
   
+  unsigned maxEvIndex=0;
+	unsigned minEvIndex=0;
+
   for ( ; eventIt != eventEnd; ++eventIt ) { 
-    if ( eventIt->first == 1 ) continue;
+//    if ( eventIt->first == 1 ) continue;
     double timeEv = eventIt->second;
-    if ( eventIt->second > maxEv ) maxEv = timeEv;
-    if ( eventIt->second < minEv ) minEv = timeEv;
+    if ( eventIt->second > maxEv ) {maxEv = timeEv; maxEvIndex =  eventIt->first ;}
+    if ( eventIt->second < minEv ) {minEv = timeEv; minEvIndex =  eventIt->first ;}
     mean += timeEv;
     rms += timeEv*timeEv;    
   }
@@ -175,9 +178,9 @@ int main(int argc, char **argv) {
   mean /= (double)nevt;
   rms /= (double)nevt;
   rms = std::sqrt(rms-mean*mean);
-  std::cout << "Total time = " << mean << " +/- " << rms << " s/event" << std::endl;
-  std::cout << "Min.  time = " << minEv << " s/event" << std::endl;
-  std::cout << "Max.  time = " << maxEv << " s/event" << std::endl;
+  std::cout << "Total time = " << mean/1000. << " +/- " << rms/1000. << " s/event" << std::endl;
+  std::cout << "Min.  time = " << minEv/1000. << " s/event" <<" , (at event "<<minEvIndex<<"  )"<< std::endl;
+  std::cout << "Max.  time = " << maxEv/1000. << " s/event" <<" , (at event "<<maxEvIndex<<"  )"<< std::endl;
 
 	cout<<"number of events  = "<<nevt<<endl;
 
