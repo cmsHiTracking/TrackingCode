@@ -380,7 +380,7 @@ HITrackCorrectionAnalyzer::fillInnerLayer(const reco::Track & track, TH2F* hist,
   unsigned int id;
   if( doInner_ ) id = track.innerDetId();
   else id = track.outerDetId();
-  
+
   DetId detId(id);
   unsigned int subid = detId.subdetId();
   if( subid == 1){
@@ -396,8 +396,8 @@ HITrackCorrectionAnalyzer::fillInnerLayer(const reco::Track & track, TH2F* hist,
     hist->Fill(subid, disk);
   }
   if( subid == 3){
-    TIBDetId tibid(subid);
-    int layer = (int)tibid.layerNumber();
+    TIBDetId tibLayer(subid);
+    int layer = tibLayer();
     hist->Fill(subid, layer);
   }
   if( subid == 4){
@@ -406,8 +406,8 @@ HITrackCorrectionAnalyzer::fillInnerLayer(const reco::Track & track, TH2F* hist,
     hist->Fill(subid, wheel);
   }
   if( subid == 5){
-    TOBDetId tobid(subid);
-    int layer = (int)tobid.layerNumber();
+    TOBDetId tobLayer(subid);
+    int layer = tobLayer();
     hist->Fill(subid, layer); 
   }
   if( subid == 6){
