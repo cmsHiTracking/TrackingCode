@@ -299,7 +299,7 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
      {
        tp = recSimColl[track];
        mtp = tp.begin()->first.get(); 
-       fillInnerLayer(*tr, subdet_layer_RecoToGenMatched_ );
+       fillInnerLayer(*tr, subdet_layer_RecoToGenMatched_, true );
 
        if( fillNTuples_) treeHelper_.Set(*mtp, *tr, vsorted[0], tp.size(), cbin); 
        if( mtp->status() < 0 ) 
