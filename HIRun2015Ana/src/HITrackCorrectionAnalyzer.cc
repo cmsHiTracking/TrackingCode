@@ -379,8 +379,8 @@ HITrackCorrectionAnalyzer::fillInnerLayer(const reco::Track & track, TH2F* hist)
   }
   if( subid == 2){
     PXFDetId pxfid(subid);
-    int layer = (int)pxfid.layer();
-    hist->Fill(subid, layer);
+    int disk = (int)pxfid.disk();
+    hist->Fill(subid, disk);
   }
   if( subid == 3){
     TIBDetId tibid(subid);
@@ -394,13 +394,13 @@ HITrackCorrectionAnalyzer::fillInnerLayer(const reco::Track & track, TH2F* hist)
   }
   if( subid == 5){
     TIDDetId tidid(subid);
-    int layer = (int)tidid.layer();
-    hist->Fill(subid, layer);
+    int disk = (int)tidid.disk();
+    hist->Fill(subid, disk);
   }
   if( subid == 6){
     TECDetId tecid(subid);
-    int layer = (int)tecid.layer();
-    hist->Fill(subid, layer);
+    int disk = (int)tecid.disk();
+    hist->Fill(subid, disk);
   }
 }
 
