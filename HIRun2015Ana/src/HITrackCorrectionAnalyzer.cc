@@ -85,7 +85,7 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       TH1F * pthat_;
       TF1 * vtxWeightFunc_;
       
-      TH2F* subdet_layer_allReco_;
+      TH2F* subdet_layer_AllReco_;
       TH2F* subdet_layer_RecoToGenMatched_;
       TH2F* subdet_layer_RecoToGenFake_;
       TH2F* subdet_layer_GenToRecoMatched_;
