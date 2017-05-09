@@ -369,7 +369,7 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
 void
 HITrackCorrectionAnalyzer::fillInnerLayer(const reco::Track & track, TH2F* hist)
 {
-  unsigned int id = track->innerDetId();
+  unsigned int id = track.innerDetId();
   DetId detId(id);
   unsigned int subid = detId.subdetId();
   if( subid == 1){
