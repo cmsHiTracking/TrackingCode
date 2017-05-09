@@ -84,6 +84,7 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       TH1F * vtxZ_;
       TH1F * pthat_;
       TF1 * vtxWeightFunc_;
+      
       TH2F* subdet_layer_allReco_;
       TH2F* subdet_layer_RecoToGenMatched_;
       TH2F* subdet_layer_RecoToGenFake_;
@@ -103,8 +104,8 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       std::vector<double> etaBins_;
       std::vector<double> occBins_;
 
-      bool doInnerMostLayer_;
       bool doCaloMatched_;
+      bool doInnerMostLayer_;
       double reso_;
       double crossSection_;
 
