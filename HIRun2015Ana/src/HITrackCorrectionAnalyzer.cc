@@ -392,12 +392,12 @@ HITrackCorrectionAnalyzer::fillInnerLayer(const reco::Track & track, TH2F* hist,
   unsigned int subid = detId.subdetId();
   if( subid == 1){
     PXBDetId pxbid(id);
-    int layer = (int)pxbid.ladder();
+    int layer = (int)pxbid.layer();
     hist->Fill(subid, layer);
   }
   if( subid == 2){
     PXFDetId pxfid(id);
-    int disk = (int)pxfid.blade();
+    int disk = (int)pxfid.disk();
     hist->Fill(subid, disk);
   }
   if( subid == 3){
