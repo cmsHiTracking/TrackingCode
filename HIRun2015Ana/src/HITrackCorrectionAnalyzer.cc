@@ -73,7 +73,7 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       bool multCuts(const reco::Track & track, const reco::Vertex & vertex);
       bool passesTrackCuts(const reco::Track & track, const reco::Vertex & vertex);
       bool caloMatched(const reco::Track & track, const edm::Event& iEvent, unsigned it );
-      void fillInnerLayer(const reco::Track & track, TH2F* hist);
+      void fillInnerLayer(const reco::Track & track, TH2F* hist, bool doInner_);
       // ----------member data ---------------------------
 
 
@@ -367,9 +367,12 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
 }
 
 void
-HITrackCorrectionAnalyzer::fillInnerLayer(const reco::Track & track, TH2F* hist)
+HITrackCorrectionAnalyzer::fillInnerLayer(const reco::Track & track, TH2F* hist, bool doInner_)
 {
-  unsigned int id = track.innerDetId();
+  unsigned int id;
+  if( doInner_ ) id = track.innerDetId();
+  else id = track.outerDetId();
+  
   DetId detId(id);
   unsigned int subid = detId.subdetId();
   if( subid == 1){
