@@ -398,14 +398,14 @@ HITrackCorrectionAnalyzer::fillInnerLayer(const reco::Track & track, TH2F* hist,
     hist->Fill(subid, layer);
   }
   if( subid == 4){
-    TOBDetId tobid(subid);
-    int layer = (int)tobid.layer();
-    hist->Fill(subid, layer);
-  }
-  if( subid == 5){
     TIDDetId tidid(subid);
     int wheel = (int)tidid.wheel();
     hist->Fill(subid, wheel);
+  }
+  if( subid == 5){
+    TOBDetId tobid(subid);
+    int layer = (int)tobid.layer();
+    hist->Fill(subid, layer); 
   }
   if( subid == 6){
     TECDetId tecid(subid);
