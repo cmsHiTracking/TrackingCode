@@ -36,6 +36,15 @@
 #include "SimTracker/Records/interface/TrackAssociatorRecord.h"
 #include "DataFormats/RecoCandidate/interface/TrackAssociation.h"
 
+//SiPixelDet and SiStripDet
+#include "DataFormats/SiPixelpDetId/interface/PXBDetId.h"
+#include "DataFormats/SiPixelpDetId/interface/PXFDetId.h"
+
+#include "DataFormats/SiStripDetId/interface/TIBDetId.h"
+#include "DataFormats/SiStripDetId/interface/TOBDetId.h"
+#include "DataFormats/SiStripDetId/interface/TECDetId.h"
+#include "DataFormats/SiStripDetId/interface/TIDDetId.h"
+
 // Particle Flow
 #include "DataFormats/ParticleFlowCandidate/interface/PFCandidate.h"
 #include "DataFormats/ParticleFlowReco/interface/PFBlock.h"
@@ -64,7 +73,7 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       bool multCuts(const reco::Track & track, const reco::Vertex & vertex);
       bool passesTrackCuts(const reco::Track & track, const reco::Vertex & vertex);
       bool caloMatched(const reco::Track & track, const edm::Event& iEvent, unsigned it );
-
+      void fillInnerLayer(const reco::Track & track, TH2F* hist);
       // ----------member data ---------------------------
 
 
@@ -75,6 +84,9 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       TH1F * vtxZ_;
       TH1F * pthat_;
       TF1 * vtxWeightFunc_;
+      TH2F* subdet_layer_RecoToGenMatched_;
+      TH2F* subdet_layer_RecoToGenFake_;
+      TH2F* subdet_layer_GenToRecoMatched_;
 
       HITrackCorrectionTreeHelper treeHelper_;
 
@@ -286,7 +298,9 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
      if(recSimColl.find(track) != recSimColl.end())
      {
        tp = recSimColl[track];
-       mtp = tp.begin()->first.get();  
+       mtp = tp.begin()->first.get(); 
+       fillInnerLayer(*tr, subdet_layer_RecoToGenMatched_ );
+       
        if( fillNTuples_) treeHelper_.Set(*mtp, *tr, vsorted[0], tp.size(), cbin); 
        if( mtp->status() < 0 ) 
        {
@@ -350,6 +364,44 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
      if(nrec>1) trkCorr3D_["hmul3D"]->Fill(tp->eta(),tp->pt(), occ, w);
      if( fillNTuples_) trkTree_["sim"]->Fill(); 
    }
+}
+
+void
+HITrackCorrectionAnalyzer::fillInnerLayer(const reco::Track & track, TH2F* hist)
+{
+  unsigned int id = track->innerDetId();
+  DetId detId(id);
+  unsigned int subid = detId.subdetId();
+  if( subid == 1){
+    PXBDetId pxbid(subid);
+    int layer = (int)pxbid.layer();
+    hist->Fill(subid, layer);
+  }
+  if( subid == 2){
+    PXFDetId pxfid(subid);
+    int layer = (int)pxfid.layer();
+    hist->Fill(subid, layer);
+  }
+  if( subid == 3){
+    TIBDetId tibid(subid);
+    int layer = (int)tibid.layer();
+    hist->Fill(subid, layer);
+  }
+  if( subid == 4){
+    TOBDetId tobid(subid);
+    int layer = (int)tobid.layer();
+    hist->Fill(subid, layer);
+  }
+  if( subid == 5){
+    TIDDetId tidid(subid);
+    int layer = (int)tidid.layer();
+    hist->Fill(subid, layer);
+  }
+  if( subid == 6){
+    TECDetId tecid(subid);
+    int layer = (int)tecid.layer();
+    hist->Fill(subid, layer);
+  }
 }
 
 bool
