@@ -35,6 +35,7 @@
 #include "SimDataFormats/TrackingAnalysis/interface/TrackingParticleFwd.h"
 #include "SimTracker/Records/interface/TrackAssociatorRecord.h"
 #include "DataFormats/RecoCandidate/interface/TrackAssociation.h"
+#include "DataFormats/TrackerCommon/interface/TrackerTopology.h"
 
 //SiPixelDet and SiStripDet
 #include "DataFormats/SiPixelDetId/interface/PXBDetId.h"
