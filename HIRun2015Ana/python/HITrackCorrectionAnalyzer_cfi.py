@@ -27,7 +27,7 @@ HITrackCorrections = cms.EDAnalyzer('HITrackCorrectionAnalyzer',
                                        2.50170e-02, 4.59123e-01, 9.64888e+00 ),
     algoParameters = cms.vint32(4,5,6,7),
     doCaloMatched = cms.bool(True),
-    doInnerMostLayer = cms.bool(True);
+    doInnerMostLayer = cms.bool(True),
     reso = cms.double(2.0),
     crossSection = cms.double(1.0),
     doVtxReweighting = cms.bool(False),
