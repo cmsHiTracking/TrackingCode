@@ -407,7 +407,7 @@ HITrackCorrectionAnalyzer::fillInnerLayer(const reco::Track & track, TH2F* hist,
   }
   if( subid == 4){
     TIDDetId tidid(id);
-    int wheel = (int)tidid.disk();
+    int wheel = (int)tidid.wheel();
     hist->Fill(subid, wheel);
   }
   if( subid == 5){
@@ -417,7 +417,7 @@ HITrackCorrectionAnalyzer::fillInnerLayer(const reco::Track & track, TH2F* hist,
   }
   if( subid == 6){
     TECDetId tecid(id);
-    int wheel = (int)tecid.disk();
+    int wheel = (int)tecid.wheel();
     hist->Fill(subid, wheel);
   }
 }
