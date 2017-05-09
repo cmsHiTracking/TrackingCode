@@ -84,6 +84,7 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       TH1F * vtxZ_;
       TH1F * pthat_;
       TF1 * vtxWeightFunc_;
+      TH2F* subdet_layer_allReco_;
       TH2F* subdet_layer_RecoToGenMatched_;
       TH2F* subdet_layer_RecoToGenFake_;
       TH2F* subdet_layer_GenToRecoMatched_;
@@ -102,9 +103,11 @@ class HITrackCorrectionAnalyzer : public edm::EDAnalyzer {
       std::vector<double> etaBins_;
       std::vector<double> occBins_;
 
+      bool doInnerMostLayer_;
       bool doCaloMatched_;
       double reso_;
       double crossSection_;
+
       
       std::vector<double> vtxWeightParameters_;
       std::vector<int> algoParameters_;
@@ -145,6 +148,7 @@ ptBins_(iConfig.getParameter<std::vector<double> >("ptBins")),
 etaBins_(iConfig.getParameter<std::vector<double> >("etaBins")),
 occBins_(iConfig.getParameter<std::vector<double> >("occBins")),
 doCaloMatched_(iConfig.getParameter<bool>("doCaloMatched")),
+doInnerMostLayer_(iConfig.getParameter<bool>("doInnerMostLayer")),
 reso_(iConfig.getParameter<double>("reso")),
 crossSection_(iConfig.getParameter<double>("crossSection")),
 vtxWeightParameters_(iConfig.getParameter<std::vector<double> >("vtxWeightParameters")),
@@ -285,6 +289,7 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
      edm::RefToBase<reco::Track> track(tcol, i);
      reco::Track* tr=const_cast<reco::Track*>(track.get());
 
+     fillInnerLayer(*tr, subdet_layer_AllReco_, doInnerMostLayer_ );
      // skip tracks that fail cuts, using vertex with most tracks as PV       
      if( ! passesTrackCuts(*tr, vsorted[0]) ) continue;
      if( ! caloMatched(*tr, iEvent, i) ) continue;
@@ -299,8 +304,7 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
      {
        tp = recSimColl[track];
        mtp = tp.begin()->first.get(); 
-       fillInnerLayer(*tr, subdet_layer_RecoToGenMatched_, true );
-
+       fillInnerLayer(*tr, subdet_layer_RecoToGenMatched_, doInnerMostLayer_ );
        if( fillNTuples_) treeHelper_.Set(*mtp, *tr, vsorted[0], tp.size(), cbin); 
        if( mtp->status() < 0 ) 
        {
@@ -310,6 +314,7 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
      }
      else
      {
+       fillInnerLayer(*tr, subdet_layer_RecoToGenFake_, doInnerMostLayer_ );
        if( fillNTuples_) treeHelper_.Set(*tr, vsorted[0], cbin); 
        trkCorr2D_["hfak"]->Fill(tr->eta(), tr->pt(), w);
        trkCorr3D_["hfak3D"]->Fill(tr->eta(), tr->pt(), occ, w);
@@ -342,6 +347,7 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
        {
          const reco::Track* tmtr = rtit->first.get();
          if( ! passesTrackCuts(*tmtr, vsorted[0]) ) continue;
+         fillInnerLayer(*tmtr, subdet_layer_GenToRecoMatched_, doInnerMostLayer_ );
          unsigned index = -1;
          if( doCaloMatched_ ){ 
           for(edm::View<reco::Track>::size_type i=0; i<tcol->size(); ++i){ 
@@ -545,6 +551,11 @@ HITrackCorrectionAnalyzer::initHistos(const edm::Service<TFileService> & fs)
 
   vtxZ_ = fs->make<TH1F>("vtxZ","Vertex z position",100,-30,30);
   pthat_ = fs->make<TH1F>("pthat", "p_{T}(GeV)", 8000,0,800);
+
+  subdet_layer_RecoToGenMatched_ = fs->make<TH2F>("subdet_layer_RecoToGenMatched", ";subdet;layer/disk/wheel", 10,0,10,20,0,20);
+  subdet_layer_RecoToGenFake_ = fs->make<TH2F>("subdet_layer_RecoToGenFake", ";subdet;layer/disk/wheel", 10,0,10,20,0,20);
+  subdet_layer_AllReco_ = fs->make<TH2F>("subdet_layer_AllReco", ";subdet;layer/disk/wheel", 10,0,10,20,0,20);
+  subdet_layer_GenToRecoMatched_ = fs->make<TH2F>("subdet_layer_GenToRecoMatched", ";subdet;layer/disk/wheel", 10,0,10,20,0,20);
 
   std::vector<double> ptBinsFine;
   for( unsigned int bin = 0; bin<ptBins_.size()-1; bin++)
