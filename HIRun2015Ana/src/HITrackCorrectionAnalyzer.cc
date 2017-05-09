@@ -35,8 +35,12 @@
 #include "SimDataFormats/TrackingAnalysis/interface/TrackingParticleFwd.h"
 #include "SimTracker/Records/interface/TrackAssociatorRecord.h"
 #include "DataFormats/RecoCandidate/interface/TrackAssociation.h"
-#include "DataFormats/TrackerCommon/interface/TrackerTopology.h"
 
+
+#include "DataFormats/TrackerCommon/interface/TrackerTopology.h"
+#include "FWCore/Framework/interface/ESHandle.h" 
+#include "Geometry/TrackerGeometryBuilder/interface/TrackerGeometry.h" 
+#include "Geometry/Records/interface/TrackerDigiGeometryRecord.h"
 //SiPixelDet and SiStripDet
 #include "DataFormats/SiPixelDetId/interface/PXBDetId.h"
 #include "DataFormats/SiPixelDetId/interface/PXFDetId.h"
@@ -204,6 +208,12 @@ void
 HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 {
    using namespace edm;
+
+   ESHandle < TrackerGeometry > theTrackerGeometry;
+   iSetup.get < TrackerDigiGeometryRecord > ().get(theTrackerGeometry);
+
+   TrackingGeometry::DetContainer tob = theTrackerGeometry->detsTOB();
+   std::cout << "There are " << tob.size() << " detector elements in the TOB." << std::endl;
 
    // obtain collections of simulated particles 
    edm::Handle<TrackingParticleCollection>  TPCollectionHeff, TPCollectionHfake;
