@@ -381,11 +381,13 @@ HITrackCorrectionAnalyzer::fillInnerLayer(const reco::Track & track, TH2F* hist,
   if( doInner_ ) id = track.innerDetId();
   else id = track.outerDetId();
   
+  DetId getOTLayerNumber(id);
+  std::cout << "test: " << (int) getOTLayerNumber() << std::endl;
   DetId detId(id);
   unsigned int subid = detId.subdetId();
   if( subid == 1){
     PXBDetId pxbid(subid);
-    PXBDetId getITPixelLayerNumber(subid);
+    PXBDetId getOTLayerNumber(subid);
     //int layer = (int)pxbid.layerName();
     int layer = (int) getITPixelLayerNumber();
     hist->Fill(subid, layer);
