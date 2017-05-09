@@ -212,9 +212,6 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
    ESHandle < TrackerGeometry > theTrackerGeometry;
    iSetup.get < TrackerDigiGeometryRecord > ().get(theTrackerGeometry);
 
-   TrackingGeometry::DetContainer tob = theTrackerGeometry->detsTOB();
-   std::cout << "There are " << tob.size() << " detector elements in the TOB." << std::endl;
-
    // obtain collections of simulated particles 
    edm::Handle<TrackingParticleCollection>  TPCollectionHeff, TPCollectionHfake;
    iEvent.getByToken(tpEffSrc_,TPCollectionHeff);
@@ -417,7 +414,8 @@ HITrackCorrectionAnalyzer::fillInnerLayer(const reco::Track & track, TH2F* hist,
   }
   if( subid == 5){
     TOBDetId tobLayer(subid);
-    int layer = tobLayer();
+    TOBDetId idd = subid->geographicalId();
+    int layer = idd.layerNumber();
     hist->Fill(subid, layer); 
   }
   if( subid == 6){
