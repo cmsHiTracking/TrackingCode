@@ -37,8 +37,8 @@
 #include "DataFormats/RecoCandidate/interface/TrackAssociation.h"
 
 //SiPixelDet and SiStripDet
-#include "DataFormats/SiPixelpDetId/interface/PXBDetId.h"
-#include "DataFormats/SiPixelpDetId/interface/PXFDetId.h"
+#include "DataFormats/SiPixelDetId/interface/PXBDetId.h"
+#include "DataFormats/SiPixelDetId/interface/PXFDetId.h"
 
 #include "DataFormats/SiStripDetId/interface/TIBDetId.h"
 #include "DataFormats/SiStripDetId/interface/TOBDetId.h"
@@ -300,7 +300,7 @@ HITrackCorrectionAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSet
        tp = recSimColl[track];
        mtp = tp.begin()->first.get(); 
        fillInnerLayer(*tr, subdet_layer_RecoToGenMatched_ );
-       
+
        if( fillNTuples_) treeHelper_.Set(*mtp, *tr, vsorted[0], tp.size(), cbin); 
        if( mtp->status() < 0 ) 
        {
