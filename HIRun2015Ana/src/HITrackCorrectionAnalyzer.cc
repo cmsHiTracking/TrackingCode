@@ -394,13 +394,13 @@ HITrackCorrectionAnalyzer::fillInnerLayer(const reco::Track & track, TH2F* hist)
   }
   if( subid == 5){
     TIDDetId tidid(subid);
-    int disk = (int)tidid.disk();
-    hist->Fill(subid, disk);
+    int wheel = (int)tidid.wheel();
+    hist->Fill(subid, wheel);
   }
   if( subid == 6){
     TECDetId tecid(subid);
-    int disk = (int)tecid.disk();
-    hist->Fill(subid, disk);
+    int wheel = (int)tecid.wheel();
+    hist->Fill(subid, wheel);
   }
 }
 
