@@ -177,11 +177,11 @@ ppPileupFilter::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
    hNtrkOffline->Fill(count);
 
    //fill evt perf histos
-   int lumi = iEvent.getLuminosityBlock().luminosityBlock();
+   //int lumi = iEvent.getLuminosityBlock().luminosityBlock();
    evtPerf_["evtRaw"]->Fill(0.5);
    evtPerf_["Nvtx"]->Fill(vsorted.size());
    evtPerf_["Ntrk"]->Fill(tcol->size());
-   evtPerf_["Lumi"]->Fill(lumi);
+   //evtPerf_["Lumi"]->Fill(lumi);
 
    //fill vtx perf histos
    int vcount = 0;
