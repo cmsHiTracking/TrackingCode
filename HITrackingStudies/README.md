@@ -46,7 +46,7 @@ A timing summary can then be found in Timing/TimingModule.txt
 
 
 
-4) Checking performance
+4) Making performance tree and hit matched collections
 Standard tracking group efficiency code + HIForest-style tree for debugging
 
 navigate to the analyzer directory:
@@ -57,3 +57,13 @@ edit run_PbPb_cfg.py to get the settings you want (the cuts are the most relevan
 cmsRun run_PbPb_cfg.py
 
 Output file is trk.root
+
+
+
+5) Plotting efficiency/fake
+
+In the 'plottingMacro' directory from the above path:
+
+root -b plotHist2D.C
+
+Output plots will be in the 'files' directory
