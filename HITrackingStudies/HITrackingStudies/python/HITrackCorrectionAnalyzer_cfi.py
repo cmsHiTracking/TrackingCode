@@ -2,8 +2,8 @@ import FWCore.ParameterSet.Config as cms
 
 
 HITrackCorrections = cms.EDAnalyzer('HITrackCorrectionAnalyzer',
-    trackSrc = cms.InputTag("hiGeneralTracks"),
-    vertexSrc = cms.InputTag("hiSelectedVertex"),
+    trackSrc = cms.InputTag("generalTracks"),
+    vertexSrc = cms.InputTag("offlinePrimaryVertices"),
     pfCandSrc = cms.InputTag("particleFlowTmp"),
     jetSrc = cms.InputTag("akPu4CaloJets"),
     tpEffSrc = cms.InputTag('mix','MergedTrackTruth'),

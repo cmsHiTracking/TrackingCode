@@ -5,7 +5,6 @@ process.load('Configuration.StandardSequences.Services_cff')
 process.load('SimGeneral.HepPDTESSource.pythiapdt_cfi')
 process.load('FWCore.MessageService.MessageLogger_cfi')
 process.load('Configuration.StandardSequences.GeometryRecoDB_cff')
-#process.load('Configuration.StandardSequences.MagneticField_38T_PostLS1_cff')
 process.load('Configuration.StandardSequences.MagneticField_38T_cff')
 process.load('Configuration.StandardSequences.ReconstructionHeavyIons_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
@@ -13,7 +12,7 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('HITrackingStudies.HITrackingStudies.HITrackCorrectionAnalyzer_cfi')
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(1)
+    input = cms.untracked.int32(3)
 )
 
 process.options = cms.untracked.PSet(wantSummary = cms.untracked.bool(True))
@@ -30,7 +29,6 @@ process.tpRecoAssocGeneralTracks.label_tr = cms.InputTag("generalTracks")
 process.load("SimTracker.TrackAssociatorProducers.quickTrackAssociatorByHits_cfi")
 process.quickTrackAssociatorByHits.SimToRecoDenominator = cms.string('reco')
 
-#process.load("SimTracker.TrackerHitAssociation.clusterTpAssociationProducer_cfi")
 process.load("SimTracker.TrackerHitAssociation.tpClusterProducer_cfi")
 
 # Input source
@@ -48,10 +46,12 @@ process.centralityBin.nonDefaultGlauberModel = cms.string("HydjetDrum5")
 ### Track cuts ###
 # input collections
 process.HITrackCorrections.centralitySrc = cms.InputTag("centralityBin","HFtowers")
-process.HITrackCorrections.trackSrc = cms.InputTag("hiGeneralTracks")
+process.HITrackCorrections.trackSrc = cms.InputTag("generalTracks")
+process.HITrackCorrections.vertexSrc = cms.InputTag("offlinePrimaryVertices")
 process.HITrackCorrections.qualityString = cms.string("highPurity")
-process.HITrackCorrections.pfCandSrc = cms.InputTag("particleFlowTmp")
-process.HITrackCorrections.jetSrc = cms.InputTag("akPu4CaloJets")
+process.HITrackCorrections.pfCandSrc = cms.InputTag("particleFlow")
+#process.HITrackCorrections.jetSrc = cms.InputTag("akPu4CaloJets")
+process.HITrackCorrections.jetSrc = cms.InputTag("ak4CaloJets")
 # options
 process.HITrackCorrections.useCentrality = False
 process.HITrackCorrections.applyTrackCuts = True
